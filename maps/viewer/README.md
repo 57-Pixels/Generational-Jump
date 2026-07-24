@@ -6,9 +6,11 @@ Google-Maps-style viewer: **2D mercator while zoomed in** (theater / war map), *
 
 After GitHub Pages is enabled and the workflow runs:
 
-**https://57-pixels.github.io/FantasyMilitaryProject/**
+**https://57-pixels.github.io/&lt;repo-name&gt;/** (after rename, use the new repo name)
 
 No local install needed — open that on your phone.
+
+Asset paths are **relative** (`base: "./"`), so renaming the GitHub repo does not break the viewer.
 
 ### One-time GitHub setup
 
