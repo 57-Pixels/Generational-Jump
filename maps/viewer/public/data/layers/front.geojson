@@ -1,0 +1,27 @@
+{
+  "type": "FeatureCollection",
+  "name": "front",
+  "description": "Front line polylines. One or more LineStrings per date snapshot.",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "front-demo-2026-07-24",
+        "date": "2026-07-24",
+        "side_left": "veldara",
+        "side_right": "korvath",
+        "confidence": "placeholder",
+        "note": "Demo front between placeholder control blobs."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [36.6, 48.85],
+          [36.62, 48.7],
+          [36.55, 48.55],
+          [36.65, 48.4]
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "type": "FeatureCollection",
+  "name": "control",
+  "description": "Territory control polygons. Filter by date (inclusive) when time scrubbing is enabled.",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "ctrl-veldara-demo-1",
+        "controller": "veldara",
+        "date_start": "2026-01-01",
+        "date_end": null,
+        "confidence": "placeholder",
+        "note": "Demo polygon near future Eastmarch theater — replace with real control."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [35.8, 48.9],
+            [36.6, 48.9],
+            [36.6, 48.3],
+            [35.8, 48.3],
+            [35.8, 48.9]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "ctrl-korvath-demo-1",
+        "controller": "korvath",
+        "date_start": "2026-01-01",
+        "date_end": null,
+        "confidence": "placeholder",
+        "note": "Demo opposing control."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [36.6, 48.9],
+            [37.4, 48.9],
+            [37.4, 48.3],
+            [36.6, 48.3],
+            [36.6, 48.9]
+          ]
+        ]
+      }
+    }
+  ]
+}

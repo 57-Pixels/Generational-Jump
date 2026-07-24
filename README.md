@@ -19,21 +19,22 @@ world/  →  maps/  →  threat-analysis/  →  doctrine/  →  industry/ + data
 3. [`world/06-settlement-and-borders.md`](world/06-settlement-and-borders.md) — grain nodes, borders, **improbable states**
 4. [`world/07-pseudo-histories.md`](world/07-pseudo-histories.md) — country histories
 5. [`maps/00-world-map-brief.md`](maps/00-world-map-brief.md) — world image-gen → upscale
-6. [`world/01-our-nation.md`](world/01-our-nation.md) — Veldara
-7. [`maps/01-country-maps-brief.md`](maps/01-country-maps-brief.md) — multi-map country set
-8. [`world/02-neighbors-and-threats.md`](world/02-neighbors-and-threats.md)
-9. [`world/03-economy-and-industrial-base.md`](world/03-economy-and-industrial-base.md)
-10. [`world/04-alliances-and-diplomacy.md`](world/04-alliances-and-diplomacy.md)
-11. [`threat-analysis/00-threat-overview.md`](threat-analysis/00-threat-overview.md)
-12. [`doctrine/00-national-defense-strategy.md`](doctrine/00-national-defense-strategy.md)
-13. `designs/` → [`episodes/00-series-outline.md`](episodes/00-series-outline.md)
+6. [`maps/viewer/README.md`](maps/viewer/README.md) — **2D→globe map app** (war layers later)
+7. [`world/01-our-nation.md`](world/01-our-nation.md) — Veldara
+8. [`maps/01-country-maps-brief.md`](maps/01-country-maps-brief.md) — multi-map country set
+9. [`world/02-neighbors-and-threats.md`](world/02-neighbors-and-threats.md)
+10. [`world/03-economy-and-industrial-base.md`](world/03-economy-and-industrial-base.md)
+11. [`world/04-alliances-and-diplomacy.md`](world/04-alliances-and-diplomacy.md)
+12. [`threat-analysis/00-threat-overview.md`](threat-analysis/00-threat-overview.md)
+13. [`doctrine/00-national-defense-strategy.md`](doctrine/00-national-defense-strategy.md)
+14. `designs/` → [`episodes/00-series-outline.md`](episodes/00-series-outline.md)
 
 ## Directory guide
 
 | Path | Contents |
 | --- | --- |
 | `world/` | World bible, pecking order, Veldara baseline, **planetary formation** |
-| `maps/` | Geology-first image-gen briefs: world + multi-type country maps |
+| `maps/` | Map briefs, exports, and **interactive viewer** (`maps/viewer`) |
 | `industry/` | Light industry/cost notes (deliberately thin) |
 | `data/` | Simple CSVs: `programs.csv`, `costs.csv` |
 | `threat-analysis/` | Ranked threats and scenarios |

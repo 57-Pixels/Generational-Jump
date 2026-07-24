@@ -1,0 +1,21 @@
+{
+  "type": "FeatureCollection",
+  "name": "events",
+  "description": "Point events (battles, bridge strikes, depot hits). Popup uses name/date/note.",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "evt-demo-1",
+        "name": "Demo river crossing",
+        "date": "2026-07-20",
+        "kind": "battle",
+        "note": "Placeholder event for click-popup wiring."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [36.58, 48.62]
+      }
+    }
+  ]
+}
