@@ -19,7 +19,8 @@ world/  →  maps/  →  threat-analysis/  →  doctrine/  →  industry/ + data
 3. [`world/06-settlement-and-borders.md`](world/06-settlement-and-borders.md) — grain nodes, borders, **improbable states**
 4. [`world/07-pseudo-histories.md`](world/07-pseudo-histories.md) — country histories
 5. [`maps/00-world-map-brief.md`](maps/00-world-map-brief.md) — world image-gen → upscale
-6. [`maps/viewer/README.md`](maps/viewer/README.md) — **2D→globe map app** (war layers later)
+6. [`maps/viewer/README.md`](maps/viewer/README.md) — **2D→globe map app** (hosted)
+6b. [`maps/generator/README.md`](maps/generator/README.md) — **algorithmic world map** (canon basemap)
 7. [`world/01-our-nation.md`](world/01-our-nation.md) — Veldara
 8. [`maps/01-country-maps-brief.md`](maps/01-country-maps-brief.md) — multi-map country set
 9. [`world/02-neighbors-and-threats.md`](world/02-neighbors-and-threats.md)

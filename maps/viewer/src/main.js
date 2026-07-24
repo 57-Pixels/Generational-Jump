@@ -5,13 +5,12 @@ import maplibregl from "maplibre-gl";
 const GLOBE_MAX_ZOOM = 4.25;
 
 /**
- * Placeholder center for a future Eastmarch theater.
- * Coordinates are stand-ins on the real Earth sphere until custom world tiles
- * and a locked CRS exist — then re-point style + these numbers.
+ * Eastmarch theater on the *algorithmic* world sphere (see maps/generator).
+ * Lon/lat are equirectangular coords from generate_world.py, not Earth.
  */
 const EASTMARCH = {
-  center: [36.5, 48.5],
-  zoom: 5.5,
+  center: [-12, 34],
+  zoom: 3.2,
   bearing: 0,
   pitch: 0,
 };
@@ -26,12 +25,47 @@ const WAR_LAYER_IDS = [
 const asset = (path) =>
   `${import.meta.env.BASE_URL}${path.replace(/^\//, "")}`;
 
+/** Algorithmic basemap from maps/generator → public/world/world-color.png */
+function worldStyle() {
+  const worldUrl = asset("world/world-color.png");
+  return {
+    version: 8,
+    name: "veldara-algorithmic",
+    sources: {
+      world: {
+        type: "image",
+        url: worldUrl,
+        coordinates: [
+          [-180, 85],
+          [180, 85],
+          [180, -85],
+          [-180, -85],
+        ],
+      },
+    },
+    layers: [
+      {
+        id: "background",
+        type: "background",
+        paint: { "background-color": "#0a1e33" },
+      },
+      {
+        id: "world-raster",
+        type: "raster",
+        source: "world",
+        paint: { "raster-opacity": 1, "raster-fade-duration": 0 },
+      },
+    ],
+  };
+}
+
 const map = new maplibregl.Map({
   container: "map",
-  style: "https://demotiles.maplibre.org/style.json",
+  style: worldStyle(),
   center: EASTMARCH.center,
   zoom: EASTMARCH.zoom,
   attributionControl: true,
+  maxPitch: 60,
 });
 
 map.addControl(new maplibregl.NavigationControl({ visualizePitch: true }), "top-right");
@@ -72,6 +106,8 @@ async function addWarLayers() {
     fetch(asset("data/layers/events.geojson")).then((r) => r.json()),
   ]);
 
+  // Demo war geometry was authored on Earth lon/lat — hide by default until
+  // reauthored on the algorithmic sphere. Still load for schema wiring.
   map.addSource("war-control", { type: "geojson", data: control });
   map.addSource("war-front", { type: "geojson", data: front });
   map.addSource("war-events", { type: "geojson", data: events });
@@ -80,6 +116,7 @@ async function addWarLayers() {
     id: "control-fill",
     type: "fill",
     source: "war-control",
+    layout: { visibility: "none" },
     paint: {
       "fill-color": [
         "match",
@@ -98,6 +135,7 @@ async function addWarLayers() {
     id: "control-outline",
     type: "line",
     source: "war-control",
+    layout: { visibility: "none" },
     paint: {
       "line-color": "#ffffff",
       "line-width": 1,
@@ -109,6 +147,7 @@ async function addWarLayers() {
     id: "front-line",
     type: "line",
     source: "war-front",
+    layout: { visibility: "none" },
     paint: {
       "line-color": "#f5d76e",
       "line-width": 3,
@@ -120,6 +159,7 @@ async function addWarLayers() {
     id: "events-circle",
     type: "circle",
     source: "war-events",
+    layout: { visibility: "none" },
     paint: {
       "circle-radius": 5,
       "circle-color": "#ffffff",
@@ -151,7 +191,9 @@ async function addWarLayers() {
 map.on("load", async () => {
   applyProjection();
   await addWarLayers();
-  setWarLayersVisible(warToggle?.checked ?? true);
+  // War demo layers stay off until geometry matches this world
+  if (warToggle) warToggle.checked = false;
+  setWarLayersVisible(false);
 });
 
 map.on("zoom", applyProjection);

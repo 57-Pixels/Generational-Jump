@@ -1,0 +1,17 @@
+{
+  "seed": 42,
+  "width": 2048,
+  "height": 1024,
+  "sea_level": 0.0,
+  "method": "algorithmic-tectonics-v1",
+  "canon": "world/05-planetary-formation.md",
+  "features": [
+    "aurelian+east-gulf",
+    "highspine-subduction",
+    "west-trench",
+    "kharzhan-craton",
+    "farreach-suture",
+    "solmar-island-continent+arc",
+    "climate-rainshadow-hadley"
+  ]
+}
