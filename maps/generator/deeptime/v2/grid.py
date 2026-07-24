@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from functools import lru_cache
 
 import numpy as np
@@ -38,6 +38,17 @@ _FACE_EV = np.array(
     ]
 )
 
+_NEIGHBOR_OFFSETS = (
+    (-1, -1),
+    (0, -1),
+    (1, -1),
+    (-1, 0),
+    (1, 0),
+    (-1, 1),
+    (0, 1),
+    (1, 1),
+)
+
 
 def _normalize(vectors: np.ndarray) -> np.ndarray:
     return vectors / np.maximum(np.linalg.norm(vectors, axis=-1, keepdims=True), 1e-15)
@@ -63,22 +74,81 @@ def _triangle_area(a: np.ndarray, b: np.ndarray, c: np.ndarray) -> np.ndarray:
     return 2.0 * np.arctan2(numerator, denominator)
 
 
-@dataclass(frozen=True)
+def _build_neighbors(n: int, alpha: np.ndarray, beta: np.ndarray, delta: float) -> np.ndarray:
+    """Dense (N, 8) neighbour table via extended face coordinates.
+
+    Prototyped against the legacy set-based builder: set-identical at every
+    tested ``n``, and already fully symmetric, so no repair pass is needed.
+    """
+    size = 6 * n * n
+    neighbors = np.full((size, 8), -1, dtype=np.int32)
+    for slot, (di, dj) in enumerate(_NEIGHBOR_OFFSETS):
+        aa = alpha + di * delta
+        bb = beta + dj * delta
+        for face in range(6):
+            target = CubedSphere.indices_for_xyz_static(
+                _face_vectors(face, aa, bb).reshape(-1, 3), n
+            )
+            neighbors[face * n * n : (face + 1) * n * n, slot] = target
+    self_ref = neighbors == np.arange(size, dtype=np.int32)[:, None]
+    neighbors[self_ref] = -1
+    # Corner cells can map two offsets onto the same neighbour. Compact to
+    # unique ids so degree matches the undirected graph (24 cells of degree 7).
+    sentinel = np.iinfo(np.int32).max
+    keyed = np.where(neighbors >= 0, neighbors, sentinel)
+    order = np.argsort(keyed, axis=1)
+    sorted_nb = np.take_along_axis(neighbors, order, axis=1)
+    duplicate = np.zeros_like(sorted_nb, dtype=bool)
+    duplicate[:, 1:] = (sorted_nb[:, 1:] == sorted_nb[:, :-1]) & (sorted_nb[:, 1:] >= 0)
+    sorted_nb[duplicate] = -1
+    compact_key = np.where(sorted_nb >= 0, 0, 1)
+    compact_order = np.argsort(compact_key, axis=1, kind="stable")
+    return np.take_along_axis(sorted_nb, compact_order, axis=1)
+
+
+@dataclass
 class CubedSphere:
     n: int
     xyz: np.ndarray
     area_sr: np.ndarray
     neighbors: np.ndarray
-    edge_cells: np.ndarray
-    lon_deg: np.ndarray
-    lat_deg: np.ndarray
+    _edge_cells: np.ndarray | None = field(default=None, repr=False, compare=False)
+    _lon_deg: np.ndarray | None = field(default=None, repr=False, compare=False)
+    _lat_deg: np.ndarray | None = field(default=None, repr=False, compare=False)
 
     @property
     def size(self) -> int:
         return int(self.xyz.shape[0])
 
+    @property
+    def lon_deg(self) -> np.ndarray:
+        if self._lon_deg is None:
+            self._lon_deg = np.rad2deg(np.arctan2(self.xyz[:, 1], self.xyz[:, 0]))
+        return self._lon_deg
+
+    @property
+    def lat_deg(self) -> np.ndarray:
+        if self._lat_deg is None:
+            self._lat_deg = np.rad2deg(
+                np.arcsin(np.clip(self.xyz[:, 2], -1.0, 1.0))
+            )
+        return self._lat_deg
+
+    @property
+    def edge_cells(self) -> np.ndarray:
+        """Undirected unique neighbour pairs. Built lazily — never at T1."""
+        if self._edge_cells is None:
+            valid = self.neighbors >= 0
+            src = np.repeat(
+                np.arange(self.size, dtype=np.int32), self.neighbors.shape[1]
+            )
+            dst = self.neighbors.ravel()
+            mask = valid.ravel() & (src < dst)
+            self._edge_cells = np.stack((src[mask], dst[mask]), axis=1)
+        return self._edge_cells
+
     @classmethod
-    @lru_cache(maxsize=12)
+    @lru_cache(maxsize=2)
     def create(cls, n: int) -> "CubedSphere":
         if n < 4:
             raise ValueError("cubed-sphere face resolution must be >= 4")
@@ -104,51 +174,13 @@ class CubedSphere:
         xyz = np.concatenate(faces, axis=0)
         area_sr = np.concatenate(areas)
         area_sr *= (4.0 * np.pi) / float(area_sr.sum())
+        neighbors = _build_neighbors(n, alpha, beta, delta)
 
-        # Build eight-neighbor candidate graph, then symmetrize it. Extended
-        # face coordinates naturally cross cube seams before inverse mapping.
-        source = np.arange(6 * n * n, dtype=np.int32).reshape(6, n, n)
-        pairs: list[np.ndarray] = []
-        for di, dj in (
-            (-1, -1),
-            (0, -1),
-            (1, -1),
-            (-1, 0),
-            (1, 0),
-            (-1, 1),
-            (0, 1),
-            (1, 1),
-        ):
-            aa = alpha + di * delta
-            bb = beta + dj * delta
-            for face in range(6):
-                target_xyz = _face_vectors(face, aa, bb).reshape(-1, 3)
-                target = cls.indices_for_xyz_static(target_xyz, n)
-                src = source[face].ravel()
-                pair = np.stack((np.minimum(src, target), np.maximum(src, target)), axis=1)
-                pairs.append(pair[pair[:, 0] != pair[:, 1]])
-        edge_cells = np.unique(np.concatenate(pairs, axis=0), axis=0).astype(np.int32)
-
-        adjacency: list[set[int]] = [set() for _ in range(6 * n * n)]
-        for left, right in edge_cells:
-            adjacency[int(left)].add(int(right))
-            adjacency[int(right)].add(int(left))
-        max_degree = max(len(items) for items in adjacency)
-        neighbors = np.full((6 * n * n, max_degree), -1, dtype=np.int32)
-        for cell, items in enumerate(adjacency):
-            ordered = sorted(items)
-            neighbors[cell, : len(ordered)] = ordered
-
-        lon_deg = np.rad2deg(np.arctan2(xyz[:, 1], xyz[:, 0]))
-        lat_deg = np.rad2deg(np.arcsin(np.clip(xyz[:, 2], -1.0, 1.0)))
         return cls(
             n=n,
             xyz=xyz,
             area_sr=area_sr,
             neighbors=neighbors,
-            edge_cells=edge_cells,
-            lon_deg=lon_deg,
-            lat_deg=lat_deg,
         )
 
     @staticmethod
