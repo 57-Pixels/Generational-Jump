@@ -106,8 +106,12 @@ load-bearing.
       appears in `neighbors[b]` — and that it matches the old set-based result
       cell for cell. Keep a copy of the old builder in the test file as the
       reference oracle.
-- [ ] Test (fast): every cell has between 3 and 8 valid neighbours; only the 8
-      cube corners may have fewer than 4.
+- [ ] Test (fast): the degree distribution is **exactly 24 cells of degree 7 and
+      every other cell of degree 8**, at every `n`. This was measured on the
+      current implementation at `n` = 8, 16, 32 and 64 and holds exactly; the 24
+      are the three cells meeting at each of the 8 cube corners. It is a much
+      sharper invariant than a range check, so use it — any deviation means the
+      seam handling is wrong.
 - [ ] Test (slow, `DEEPTIME_SLOW`): `create(1024)` completes under 60 s and
       2.5 GB peak RSS.
 
