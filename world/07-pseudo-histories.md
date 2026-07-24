@@ -1,10 +1,12 @@
 # Pseudo-Histories (On-Stage Countries)
 
 > **Status:** working sketches — enough that borders and rivalries feel earned.
+> **Last 20 ka spine:** [`08-last-20ka.md`](08-last-20ka.md) · [`09-historical-timeline.md`](09-historical-timeline.md)
 > **Method:** [`06-settlement-and-borders.md`](06-settlement-and-borders.md) (grain nodes → transport → freeze).
 > **Geology:** [`05-planetary-formation.md`](05-planetary-formation.md).
 >
 > Depth matches importance. Footnote states are listed at the bottom with one line each.
+> These stories live in the **late Holocene → present**; they assume LGM → thaw already happened.
 
 ---
 

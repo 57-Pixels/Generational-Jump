@@ -2,7 +2,7 @@
 
 > **Status:** how countries form in this world — the human layer on top of [`05-planetary-formation.md`](05-planetary-formation.md).
 >
-> **Histories:** [`07-pseudo-histories.md`](07-pseudo-histories.md)
+> **Histories:** [`07-pseudo-histories.md`](07-pseudo-histories.md) · **Last 20 ka:** [`08-last-20ka.md`](08-last-20ka.md) · **Timeline:** [`09-historical-timeline.md`](09-historical-timeline.md)
 >
 > **Rule:** political maps follow **food + transport**, then war freezes a line. Do not draw a cute border and invent a reason later.
 

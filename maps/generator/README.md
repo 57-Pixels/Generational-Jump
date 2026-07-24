@@ -7,14 +7,11 @@ Deterministic planet map from tectonics rules in [`../../world/05-planetary-form
 ```bash
 cd maps/generator
 pip install -r requirements.txt
-python3 generate_world.py --width 2048 --height 1024 --seed 42
+python3 generate_world.py --width 2048 --height 1024 --seed 42 --era present
+python3 generate_world.py --width 2048 --height 1024 --seed 42 --era lgm
 ```
 
-Higher detail (slower):
-
-```bash
-python3 generate_world.py --width 4096 --height 2048 --seed 42
-```
+`--era lgm` applies Earth-analogue Last Glacial Maximum conditions (lower seas, northern ice, exposed East Gulf shelf) per [`../../world/08-last-20ka.md`](../../world/08-last-20ka.md).
 
 ## Outputs
 

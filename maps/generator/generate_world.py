@@ -97,7 +97,10 @@ def ridge(lon: np.ndarray, lat: np.ndarray, lon0: float, lat0: float, lat1: floa
     return profile * along
 
 
-def generate(width: int, height: int, seed: int) -> dict:
+def generate(width: int, height: int, seed: int, era: str = "present") -> dict:
+    if era not in ("present", "lgm"):
+        raise ValueError("era must be 'present' or 'lgm'")
+
     rng = np.random.default_rng(seed)
     lon, lat = lonlat_grids(height, width)
     noise = fbm(height, width, rng, octaves=6, base=5)
@@ -106,81 +109,77 @@ def generate(width: int, height: int, seed: int) -> dict:
     elev = np.full((height, width), -0.55, dtype=np.float64)  # deep ocean baseline
 
     # --- Continents (masks 0..1) ---
-    # Aurelian: central-west northern continent
-    aurelian = ellipse_mask(lon, lat, clon=-35, clat=32, rlon=52, rlat=38)
-    # East Gulf embayment on SE Aurelian (carve passive-margin gulf)
+    aurelian_core = ellipse_mask(lon, lat, clon=-35, clat=32, rlon=52, rlat=38)
     gulf = ellipse_mask(lon, lat, clon=-5, clat=22, rlon=18, rlat=12)
-    aurelian = np.clip(aurelian - 0.85 * gulf, 0, 1)
 
-    # Kharzhan: far east craton
+    if era == "present":
+        # East Gulf embayment carved (passive-margin flooding)
+        aurelian = np.clip(aurelian_core - 0.85 * gulf, 0, 1)
+    else:
+        # LGM: gulf is low exposed shelf/plain, still part of the land mask
+        aurelian = np.clip(aurelian_core + 0.55 * gulf, 0, 1)
+
     kharzhan = ellipse_mask(lon, lat, clon=105, clat=35, rlon=55, rlat=42)
-
-    # Farreach: southern continent
     farreach = ellipse_mask(lon, lat, clon=40, clat=-35, rlon=58, rlat=30)
-
-    # Solmar island-continent (Australia-scale) in West Ocean
     solmar = ellipse_mask(lon, lat, clon=-145, clat=10, rlon=22, rlat=16)
 
-    # Solmar volcanic arc (curved chain south of Solmar)
     arc_lat = -8 + 6 * np.sin(np.deg2rad((lon + 145) * 3.2))
     arc = np.exp(-(((lat - arc_lat) / 2.8) ** 2)) * np.exp(-((((lon + 145) / 28) ** 2)))
     arc = np.clip(arc, 0, 1)
 
-    # Raise continents
     elev += aurelian * (0.95 + 0.12 * noise)
     elev += kharzhan * (1.00 + 0.10 * noise2)
     elev += farreach * (0.90 + 0.14 * noise)
     elev += solmar * (0.85 + 0.12 * noise2)
     elev += arc * 0.55
 
-    # Passive shelves on East Ocean facing coasts (Aurelian east, Kharzhan west) — gentle
-    # already from ellipse falloff; add a bit of shelf uplift near sea level
-    shelf = smoothstep(0.05, 0.35, aurelian + kharzhan) * (1.0 - smoothstep(0.4, 0.9, aurelian + kharzhan))
-    elev += shelf * 0.08
+    if era == "lgm":
+        # Exposed shelves (Earth ~−120 m): lift nearshore bathymetry
+        elev = np.where(elev > -0.45, elev + 0.22, elev + 0.12)
+        # Gulf plain stays low but above LGM sea
+        elev += gulf * 0.18
 
-    # --- Orogeny ---
-    # Highspine: N-S cordillera on western Aurelian (~subduction)
+    shelf = smoothstep(0.05, 0.35, aurelian + kharzhan) * (
+        1.0 - smoothstep(0.4, 0.9, aurelian + kharzhan)
+    )
+    elev += shelf * (0.12 if era == "lgm" else 0.08)
+
     highspine = ridge(lon, lat, lon0=-68, lat0=58, lat1=5, width=4.5)
     elev += highspine * aurelian * (0.55 + 0.2 * noise)
 
-    # Offshore trench west of Highspine (bathymetric low)
     trench = ridge(lon, lat, lon0=-78, lat0=55, lat1=8, width=3.0) * (1.0 - aurelian)
     elev -= trench * 0.35
 
-    # Sereth / Northwood old highland (north Aurelian)
     north_high = ellipse_mask(lon, lat, clon=-30, clat=58, rlon=28, rlat=10) * aurelian
     elev += north_high * 0.22
 
-    # Farreach collisional suture (central orogeny)
     suture = ridge(lon, lat, lon0=38, lat0=-12, lat1=-55, width=5.5) * farreach
     elev += suture * (0.65 + 0.15 * noise2)
 
-    # Outer accretionary mountains on far-east Kharzhan (not on passive west)
     kh_east = ridge(lon, lat, lon0=145, lat0=55, lat1=5, width=7.0) * kharzhan
     elev += kh_east * 0.35
 
-    # Solmar west arc mountains
     sol_west = ridge(lon, lat, lon0=-158, lat0=22, lat1=-2, width=4.0) * solmar
     elev += sol_west * 0.45
 
-    # Detail noise on land
     landish = smoothstep(-0.05, 0.15, elev)
     elev += (noise - 0.5) * 0.12 * landish
-
-    # Polar ice slight uplift (visual only)
     elev += smoothstep(60, 75, np.abs(lat)) * 0.05
 
-    # Sea level at 0
-    sea = 0.0
+    # Sea level: present = 0; LGM ≈ −120 m → lower threshold in elev units
+    sea = -0.28 if era == "lgm" else 0.0
 
-    # --- Climate / color ---
-    # Moisture: wet west of Highspine, rain shadow east, humid gulf, hadley dry bands
-    west_wet = aurelian * np.exp(-(((lon + 72) / 6) ** 2)) * smoothstep(-0.05, 0.2, elev)
-    rain_shadow = aurelian * highspine * 0.0 + aurelian * np.exp(-(((lon + 58) / 10) ** 2)) * (1.0 - west_wet)
-    # simpler rain shadow band just east of ridge
+    # Ice sheets (LGM): northern Aurelian + Kharzhan
+    ice = np.zeros_like(elev)
+    if era == "lgm":
+        northern_land = (aurelian + kharzhan) > 0.2
+        ice = northern_land * smoothstep(45, 55, lat)
+        ice = np.clip(ice + smoothstep(60, 70, np.abs(lat)), 0, 1)
+        elev += ice * 0.35
+
     dlon_hs = (lon + 68 + 180) % 360 - 180
     rain_shadow = aurelian * smoothstep(2, 8, dlon_hs) * smoothstep(25, 12, dlon_hs)
-
+    west_wet = aurelian * np.exp(-(((lon + 72) / 6) ** 2)) * smoothstep(-0.05, 0.2, elev)
     abs_lat = np.abs(lat)
     hadley_dry = smoothstep(12, 18, abs_lat) * smoothstep(35, 28, abs_lat)
 
@@ -188,13 +187,16 @@ def generate(width: int, height: int, seed: int) -> dict:
         0.55
         + 0.35 * west_wet
         - 0.45 * rain_shadow
-        - 0.35 * hadley_dry * (1.0 - 0.5 * gulf)  # gulf breaks desert a bit
-        + 0.25 * gulf * aurelian
+        - 0.35 * hadley_dry * (1.0 - 0.5 * gulf)
+        + 0.25 * gulf * aurelian * (0.3 if era == "lgm" else 1.0)
         + 0.2 * farreach * (1.0 - suture) * smoothstep(0.2, 0.0, np.abs((lon - 38) / 20))
     )
+    if era == "lgm":
+        moisture -= 0.2 * smoothstep(30, 50, abs_lat)  # colder/drier mid-high lats
+        moisture -= 0.35 * ice
     moisture = np.clip(moisture + (noise2 - 0.5) * 0.08, 0, 1)
 
-    color = colorize(elev, sea, lat, moisture, highspine, suture)
+    color = colorize(elev, sea, lat, moisture, ice if era == "lgm" else None)
 
     height_u8 = to_height_png(elev, sea)
     return {
@@ -202,13 +204,18 @@ def generate(width: int, height: int, seed: int) -> dict:
         "sea": sea,
         "color": color,
         "height_u8": height_u8,
+        "era": era,
         "meta": {
             "seed": seed,
             "width": width,
             "height": height,
+            "era": era,
             "sea_level": sea,
             "method": "algorithmic-tectonics-v1",
-            "canon": "world/05-planetary-formation.md",
+            "canon": [
+                "world/05-planetary-formation.md",
+                "world/08-last-20ka.md",
+            ],
             "features": [
                 "aurelian+east-gulf",
                 "highspine-subduction",
@@ -217,6 +224,7 @@ def generate(width: int, height: int, seed: int) -> dict:
                 "farreach-suture",
                 "solmar-island-continent+arc",
                 "climate-rainshadow-hadley",
+                f"era:{era}",
             ],
         },
     }
@@ -234,8 +242,7 @@ def colorize(
     sea: float,
     lat: np.ndarray,
     moisture: np.ndarray,
-    highspine: np.ndarray,
-    suture: np.ndarray,
+    ice_mask: np.ndarray | None = None,
 ) -> np.ndarray:
     rgb = np.zeros(elev.shape + (3,), dtype=np.float64)
 
@@ -250,6 +257,7 @@ def colorize(
     desert_c = np.array([0.76, 0.66, 0.45])
     grass_c = np.array([0.48, 0.60, 0.34])
     forest_c = np.array([0.20, 0.46, 0.27])
+    steppe_c = np.array([0.62, 0.58, 0.40])
 
     w_desert = np.clip(1.0 - moisture * 1.4, 0, 1)
     w_forest = np.clip((moisture - 0.4) * 1.6, 0, 1)
@@ -259,6 +267,12 @@ def colorize(
         + w_grass[:, :, None] * grass_c.reshape(1, 1, 3)
         + w_forest[:, :, None] * forest_c.reshape(1, 1, 3)
     )
+    # Mid-moisture cold → steppe wash
+    steppe_w = np.clip((0.55 - moisture) * smoothstep(35, 50, abs_lat), 0, 1)
+    land_col = land_col * (1 - 0.5 * steppe_w)[:, :, None] + steppe_c.reshape(1, 1, 3) * (
+        0.5 * steppe_w
+    )[:, :, None]
+
     shade = np.clip(0.75 + 0.45 * (elev - sea), 0.45, 1.25)
     land_col *= shade[:, :, None]
     cold = smoothstep(48, 68, abs_lat)
@@ -270,6 +284,8 @@ def colorize(
     rgb[peak] = np.clip(rgb[peak] * 0.5 + np.array([0.93, 0.93, 0.95]) * 0.5, 0, 1)
 
     ice = (abs_lat > 72) | ((abs_lat > 62) & (elev > sea + 0.15))
+    if ice_mask is not None:
+        ice = ice | ((ice_mask > 0.35) & land)
     rgb[ice] = (0.93, 0.95, 0.98)
     return np.clip(rgb, 0, 1)
 
@@ -278,18 +294,23 @@ def save_outputs(result: dict) -> None:
     EXPORTS.mkdir(parents=True, exist_ok=True)
     VIEWER_WORLD.mkdir(parents=True, exist_ok=True)
 
+    era = result.get("era", "present")
+    suffix = "" if era == "present" else f"-{era}"
+
     height_img = Image.fromarray(result["height_u8"], mode="L")
     color_u8 = (result["color"] * 255).astype(np.uint8)
     color_img = Image.fromarray(color_u8, mode="RGB")
 
     for dest_dir in (EXPORTS, VIEWER_WORLD):
-        height_img.save(dest_dir / "world-height.png")
-        color_img.save(dest_dir / "world-color.png")
-        (dest_dir / "world-meta.json").write_text(json.dumps(result["meta"], indent=2) + "\n")
+        height_img.save(dest_dir / f"world-height{suffix}.png")
+        color_img.save(dest_dir / f"world-color{suffix}.png")
+        (dest_dir / f"world-meta{suffix}.json").write_text(
+            json.dumps(result["meta"], indent=2) + "\n"
+        )
 
-    print(f"Wrote {EXPORTS / 'world-color.png'}")
-    print(f"Wrote {EXPORTS / 'world-height.png'}")
-    print(f"Copied into {VIEWER_WORLD} for Pages viewer")
+    print(f"Wrote {EXPORTS / f'world-color{suffix}.png'} (era={era})")
+    if era == "present":
+        print(f"Copied into {VIEWER_WORLD} for Pages viewer")
 
 
 def main() -> None:
@@ -297,10 +318,16 @@ def main() -> None:
     p.add_argument("--width", type=int, default=2048)
     p.add_argument("--height", type=int, default=1024)
     p.add_argument("--seed", type=int, default=42)
+    p.add_argument(
+        "--era",
+        choices=("present", "lgm"),
+        default="present",
+        help="Climate/map snapshot: present (default) or LGM (~20ka Earth-analogue)",
+    )
     args = p.parse_args()
     if args.width % 2:
         raise SystemExit("width should be even for equirectangular")
-    result = generate(args.width, args.height, args.seed)
+    result = generate(args.width, args.height, args.seed, era=args.era)
     save_outputs(result)
 
 

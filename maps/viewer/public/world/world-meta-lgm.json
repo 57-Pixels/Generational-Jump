@@ -2,8 +2,8 @@
   "seed": 42,
   "width": 2048,
   "height": 1024,
-  "era": "present",
-  "sea_level": 0.0,
+  "era": "lgm",
+  "sea_level": -0.28,
   "method": "algorithmic-tectonics-v1",
   "canon": [
     "world/05-planetary-formation.md",
@@ -17,6 +17,6 @@
     "farreach-suture",
     "solmar-island-continent+arc",
     "climate-rainshadow-hadley",
-    "era:present"
+    "era:lgm"
   ]
 }
