@@ -299,7 +299,7 @@ def simulate_geology(
     basin_depth = np.clip(
         0.65 * memory["continental_rift"]
         + 0.5 * memory["passive_margin"]
-        + 0.25 * np.roll(memory["collision"], 1),
+        + 0.25 * grid.smooth(memory["collision"], 2),
         0,
         1,
     )

@@ -4,7 +4,8 @@ Two paths:
 
 | Path | What | Use |
 | --- | --- | --- |
-| **`deeptime/`** | Plate sim over Ma ticks — continents form by rift/subduction/collision | **Default for new stories** (unique seed) |
+| **`deeptime/v2/`** | Cubed-sphere rigid plates → geology → climate/hydrology → resources → settlement | **Default for new stories** |
+| `deeptime/simulate.py` | Legacy raster-advection prototype | Explicit `--engine v1` comparison only |
 | **`generate_world.py`** | Hand-authored ellipse tectonics for the Veldara reference campaign | Reproduce today's Generational-Jump board |
 
 Canon: [`../../world/05-planetary-formation.md`](../../world/05-planetary-formation.md) · [`../../world/12-worldbuilding-principles.md`](../../world/12-worldbuilding-principles.md) · [`../../docs/superpowers/specs/2026-07-24-world-generation-design.md`](../../docs/superpowers/specs/2026-07-24-world-generation-design.md)
@@ -14,14 +15,21 @@ Canon: [`../../world/05-planetary-formation.md`](../../world/05-planetary-format
 ```bash
 cd maps/generator
 pip install -r requirements.txt
-python3 -m deeptime --seed 42 --width 1024 --height 512
-python3 -m deeptime --seed 42 --era lgm
-python3 -m deeptime --seed 100 --reroll-hooks   # try nearby seeds until story hooks pass
+python3 -m deeptime --engine v2 --seed 42 --grid-n 64 --width 1024 --height 512
+python3 -m deeptime --engine v2 --seed 42 --grid-n 64 --era lgm
 ```
 
-Targets present **land ≈ 29%**. Writes `maps/exports/world-*.png` and copies into `maps/viewer/public/world/` (overwrites viewer basemap — commit deliberately).
+Targets present **land ≈ 29%**. LGM reuses identical bedrock at **−120 m** sea level. Writes `maps/exports/world-*` and copies into `maps/viewer/public/world/`.
 
-Also writes `world-plates.png`, `world-resources.png`, and `world-resources.geojson` (gold, REE, HP silica, oil, copper, …).
+V2 separates:
+
+- plate (rigid kinematic domain)
+- continent (continental-crust / terrane lineage)
+- landmass (connected dry land)
+- physical habitability by era
+- incentives that can override poor habitability
+
+A/C uplift requires grid/capital/energy and reports cooling burdens.
 
 ## Reference campaign (ellipses)
 
@@ -34,13 +42,27 @@ python3 generate_world.py --width 2048 --height 1024 --seed 42 --era lgm
 
 | File | Purpose |
 | --- | --- |
-| `../exports/world-height.png` | Greyscale elevation |
 | `../exports/world-color.png` | Atlas color (viewer basemap) |
-| `../exports/world-plates.png` | Plate ID preview (deeptime) |
+| `../exports/world-plates.png` | Rigid plate IDs |
+| `../exports/world-continents.png` | Continental terrane lineages |
+| `../exports/world-landmasses.png` | Connected dry land |
+| `../exports/world-climate.png` | Temperature / precipitation / humidity diagnostic |
+| `../exports/world-rivers.png` / `.geojson` | Drainage network |
+| `../exports/world-resources.png` / `.geojson` | Geology-derived deposits and economic properties |
+| `../exports/world-settlement.png` / `.geojson` | A/C-era attraction and candidate mechanisms |
 | `../exports/world-*-lgm.png` | LGM snapshot |
-| `../exports/world-meta*.json` | Seed, land fraction, hooks |
+| `../exports/world-meta*.json` | Seed, semantics, counts and assumptions |
 | `../viewer/public/world/*` | Pages copies |
 
 ## Viewer
 
-`maps/viewer` loads `world/world-color.png`. Re-run generator, commit PNGs, Pages updates on deploy.
+`maps/viewer` loads the atlas plus Resources, Rivers, Settlement and War toggles.
+
+## Verification
+
+```bash
+PYTHONPATH=maps/generator \
+python3 -m unittest discover -s maps/generator/tests -p 'test_v2_*.py' -v
+```
+
+Tests cover spherical area/neighbors, connected plates, signed boundaries, present/LGM bedrock identity, climate/hydrology, variable resource provinces, A/C uplift, and incentive-driven settlement.

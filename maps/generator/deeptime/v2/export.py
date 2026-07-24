@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import zlib
 from dataclasses import asdict
 from pathlib import Path
 
@@ -229,7 +230,7 @@ def _resource_overlay(world: WorldResult, base: np.ndarray) -> np.ndarray:
         x = int((deposit.lon + 180.0) / 360.0 * width) % width
         y = int((90.0 - deposit.lat) / 180.0 * height)
         radius = 3 if deposit.reserve_2025_t > 1e8 else 2
-        hue = hash(deposit.deposit_class) & 0xFFFFFF
+        hue = zlib.crc32(deposit.deposit_class.encode("utf-8")) & 0xFFFFFF
         color = ((hue >> 16) & 255, (hue >> 8) & 255, hue & 255)
         draw.ellipse(
             [x - radius, y - radius, x + radius, y + radius],

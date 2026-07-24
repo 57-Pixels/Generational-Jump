@@ -80,7 +80,11 @@ def _deposit_context(
         0,
         1,
     )
-    coast = world_grid.smooth((land != np.roll(land, 1)).astype(float), 2)
+    valid = world_grid.neighbors >= 0
+    safe = np.where(valid, world_grid.neighbors, 0)
+    coast = world_grid.smooth(
+        (land & np.any(valid & (~land[safe]), axis=1)).astype(float), 2
+    )
     factors = {
         "wetland": p["wetland"],
         "basin": geology.basin_depth,

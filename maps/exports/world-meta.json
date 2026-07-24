@@ -1,202 +1,71 @@
 {
-  "method": "deeptime-plates-v1",
+  "method": "deeptime-spherical-v2",
   "seed": 42,
-  "width": 1024,
-  "height": 512,
+  "era": "present",
+  "grid": {
+    "kind": "cubed-sphere",
+    "face_n": 64,
+    "cells": 24576
+  },
   "ticks": 80,
   "ma_per_tick": 8.0,
-  "era": "present",
-  "sea_level": -0.10063699442575666,
-  "land_fraction": 0.28999798353124895,
-  "target_land": 0.29,
-  "n_plates": 12,
-  "hooks": {
-    "land_fraction_ok": true,
-    "wide_ocean": true,
-    "has_cordillera": true,
-    "has_suture": true,
-    "has_passive_margin": true,
-    "all_critical": true,
-    "land_fraction": 0.28999798353124895,
-    "note": "v1 hooks are heuristic; reroll seed if all_critical is false for a campaign"
+  "sea_level_m": 564.0283419292103,
+  "land_fraction": 0.2900341476283078,
+  "plate_count": 12,
+  "continent_count": 7,
+  "landmass_count": 6,
+  "resource_deposit_count": 43,
+  "resource_counts": {
+    "coal_basin": 1,
+    "petroleum_system": 1,
+    "helium_gas": 2,
+    "bif_iron": 4,
+    "bauxite_laterite": 10,
+    "sedimentary_manganese": 1,
+    "vanadium_titanomagnetite": 1,
+    "layered_chromite_pgm": 1,
+    "porphyry_cu_mo": 1,
+    "sediment_cu_co": 1,
+    "vms_cu_zn": 1,
+    "sedex_zn_pb": 1,
+    "mvt_zn_pb": 1,
+    "magmatic_ni_cu": 1,
+    "nickel_laterite": 1,
+    "granite_sn_w": 1,
+    "hydrothermal_gold": 1,
+    "antimony_hydrothermal": 1,
+    "uranium_system": 1,
+    "carbonatite_ree_nb": 1,
+    "ionic_clay_hree": 2,
+    "mineral_sands": 1,
+    "lithium_brine": 1,
+    "lct_pegmatite": 1,
+    "metamorphic_graphite": 1,
+    "phosphorite": 1,
+    "potash_evaporite": 1,
+    "fluorspar_hydrothermal": 1,
+    "high_purity_quartz": 1
   },
-  "resources": {
-    "catalog": [
-      "coal",
-      "oil_gas",
-      "iron",
-      "copper",
-      "tin_tungsten",
-      "gold",
-      "silver_base",
-      "rare_earths",
-      "uranium",
-      "silica_hp",
-      "bauxite",
-      "nickel_pgm",
-      "lithium",
-      "phosphates",
-      "potash"
-    ],
-    "deposit_count": 199,
-    "legend": [
-      {
-        "id": "coal",
-        "name": "Coal",
-        "color_rgb": [
-          0.12,
-          0.12,
-          0.14
-        ],
-        "deposit_count": 14
-      },
-      {
-        "id": "oil_gas",
-        "name": "Oil & gas",
-        "color_rgb": [
-          0.12,
-          0.45,
-          0.22
-        ],
-        "deposit_count": 14
-      },
-      {
-        "id": "iron",
-        "name": "Iron",
-        "color_rgb": [
-          0.72,
-          0.28,
-          0.18
-        ],
-        "deposit_count": 14
-      },
-      {
-        "id": "copper",
-        "name": "Copper (porphyry)",
-        "color_rgb": [
-          0.85,
-          0.48,
-          0.12
-        ],
-        "deposit_count": 14
-      },
-      {
-        "id": "tin_tungsten",
-        "name": "Tin / tungsten",
-        "color_rgb": [
-          0.55,
-          0.35,
-          0.75
-        ],
-        "deposit_count": 14
-      },
-      {
-        "id": "gold",
-        "name": "Gold",
-        "color_rgb": [
-          0.92,
-          0.78,
-          0.18
-        ],
-        "deposit_count": 14
-      },
-      {
-        "id": "silver_base",
-        "name": "Silver / base-metal",
-        "color_rgb": [
-          0.75,
-          0.78,
-          0.82
-        ],
-        "deposit_count": 14
-      },
-      {
-        "id": "rare_earths",
-        "name": "Rare earths",
-        "color_rgb": [
-          0.85,
-          0.25,
-          0.65
-        ],
-        "deposit_count": 14
-      },
-      {
-        "id": "uranium",
-        "name": "Uranium",
-        "color_rgb": [
-          0.45,
-          0.85,
-          0.25
-        ],
-        "deposit_count": 14
-      },
-      {
-        "id": "silica_hp",
-        "name": "High-purity silica",
-        "color_rgb": [
-          0.85,
-          0.92,
-          0.95
-        ],
-        "deposit_count": 14
-      },
-      {
-        "id": "bauxite",
-        "name": "Bauxite (aluminum)",
-        "color_rgb": [
-          0.78,
-          0.55,
-          0.28
-        ],
-        "deposit_count": 14
-      },
-      {
-        "id": "nickel_pgm",
-        "name": "Nickel / PGM",
-        "color_rgb": [
-          0.35,
-          0.55,
-          0.7
-        ],
-        "deposit_count": 14
-      },
-      {
-        "id": "lithium",
-        "name": "Lithium (brine/pegmatite)",
-        "color_rgb": [
-          0.55,
-          0.75,
-          0.9
-        ],
-        "deposit_count": 14
-      },
-      {
-        "id": "phosphates",
-        "name": "Phosphates",
-        "color_rgb": [
-          0.4,
-          0.65,
-          0.35
-        ],
-        "deposit_count": 14
-      },
-      {
-        "id": "potash",
-        "name": "Potash",
-        "color_rgb": [
-          0.65,
-          0.4,
-          0.55
-        ],
-        "deposit_count": 3
-      }
-    ],
-    "rule": "world/13-resources-from-geology.md"
+  "settlement": {
+    "ac_changes_habitability": true,
+    "habitability_separate_from_incentives": true,
+    "site_count": 120
   },
-  "canon": [
-    "docs/superpowers/specs/2026-07-24-world-generation-design.md",
-    "world/05-planetary-formation.md",
-    "world/12-worldbuilding-principles.md",
-    "world/13-resources-from-geology.md"
-  ]
+  "semantics": {
+    "plate": "instantaneous rigid kinematic domain",
+    "continent": "continental crust lineage / terrane",
+    "landmass": "connected dry land"
+  },
+  "config": {
+    "seed": 42,
+    "grid_n": 64,
+    "ticks": 80,
+    "dt_ma": 8.0,
+    "n_plates": 12,
+    "n_continents": 7,
+    "era": "present",
+    "target_land_fraction": 0.29,
+    "export_width": 1024,
+    "export_height": 512
+  }
 }

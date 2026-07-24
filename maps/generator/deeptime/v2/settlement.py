@@ -104,8 +104,10 @@ def compute_settlement(
     land = np.asarray(inputs.land, dtype=bool)
     wet_bulb = np.asarray(inputs.hottest_wet_bulb_c, dtype=np.float64)
     coldest = np.asarray(inputs.coldest_month_c, dtype=np.float64)
-    hot_pre = np.exp(-(np.maximum(0.0, wet_bulb - 22.0) / 6.0) ** 2)
-    hot_ind = np.exp(-(np.maximum(0.0, wet_bulb - 24.0) / 7.0) ** 2)
+    # Pre-A/C urbanization pays a substantial hot/humid productivity, sleep,
+    # storage, and indoor-work penalty well below physiological lethality.
+    hot_pre = np.exp(-(np.maximum(0.0, wet_bulb - 20.5) / 5.5) ** 2)
+    hot_ind = np.exp(-(np.maximum(0.0, wet_bulb - 22.5) / 5.5) ** 2)
     cold_pre = np.exp(-(np.maximum(0.0, -10.0 - coldest) / 14.0) ** 2)
     cold_ind = np.exp(-(np.maximum(0.0, -20.0 - coldest) / 18.0) ** 2)
     thermal_pre = hot_pre * cold_pre
@@ -139,6 +141,11 @@ def compute_settlement(
     h_ac = _weighted_geometric(
         [thermal_ac, *common], [0.30, 0.22, 0.12, 0.13, 0.10, 0.13]
     )
+    # A/C changes more than mortality: it changes sleep, indoor productivity,
+    # building form, storage, and which service economies can concentrate.
+    heat_burden = np.clip((wet_bulb - 22.0) / 10.0, 0, 1)
+    urban_ac_lift = 0.7 * ac_feasibility * heat_burden
+    h_ac = 1.0 - (1.0 - h_ac) * (1.0 - urban_ac_lift)
 
     energy_full = (
         900.0

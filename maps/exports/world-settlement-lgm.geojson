@@ -1,0 +1,2767 @@
+{
+  "type": "FeatureCollection",
+  "name": "settlement-sites-v2",
+  "schema_version": "2.0",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 1,
+        "h_pre": 0.9152,
+        "h_ind": 0.9427,
+        "h_ac": 0.9427,
+        "settle_ind": 0.994,
+        "settle_ac": 0.994,
+        "settle_no_incentive": 0.915,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.390625,
+          -38.26289069108044
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 2,
+        "h_pre": 0.8893,
+        "h_ind": 0.9329,
+        "h_ac": 0.9329,
+        "settle_ind": 0.9875,
+        "settle_ac": 0.9875,
+        "settle_no_incentive": 0.888,
+        "mechanism": "environment_led",
+        "dominant_incentive": "resource",
+        "ac_kwh_pc_yr": 78.6,
+        "ac_water_l_pc_day": 0.15
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -51.32812500000001,
+          -0.5489666236092344
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 3,
+        "h_pre": 0.8843,
+        "h_ind": 0.9246,
+        "h_ac": 0.9246,
+        "settle_ind": 0.9867,
+        "settle_ac": 0.9867,
+        "settle_no_incentive": 0.8843,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.888818272048823,
+          -51.0620636764722
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 4,
+        "h_pre": 0.9184,
+        "h_ind": 0.9439,
+        "h_ac": 0.9439,
+        "settle_ind": 0.9862,
+        "settle_ac": 0.9862,
+        "settle_no_incentive": 0.9132,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.359375000000007,
+          42.10774718821986
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 5,
+        "h_pre": 0.8976,
+        "h_ind": 0.9351,
+        "h_ac": 0.9351,
+        "settle_ind": 0.9859,
+        "settle_ac": 0.9859,
+        "settle_no_incentive": 0.9009,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 96.9,
+        "ac_water_l_pc_day": 0.19
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -56.95312500000001,
+          -2.9479834372913665
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 6,
+        "h_pre": 0.7698,
+        "h_ind": 0.8512,
+        "h_ac": 0.8512,
+        "settle_ind": 0.9852,
+        "settle_ac": 0.9852,
+        "settle_no_incentive": 0.763,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 29.9,
+        "ac_water_l_pc_day": 0.06
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -65.390625,
+          -12.183884672360263
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 7,
+        "h_pre": 0.8374,
+        "h_ind": 0.8977,
+        "h_ac": 0.8977,
+        "settle_ind": 0.9852,
+        "settle_ac": 0.9852,
+        "settle_no_incentive": 0.8319,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 20.2,
+        "ac_water_l_pc_day": 0.04
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.85937500000001,
+          9.735734423035964
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 8,
+        "h_pre": 0.8648,
+        "h_ind": 0.9119,
+        "h_ac": 0.9119,
+        "settle_ind": 0.9839,
+        "settle_ac": 0.9839,
+        "settle_no_incentive": 0.8707,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 39.7,
+        "ac_water_l_pc_day": 0.08
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.35937500000001,
+          -0.5986173896492011
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 9,
+        "h_pre": 0.8795,
+        "h_ind": 0.9064,
+        "h_ac": 0.9064,
+        "settle_ind": 0.9824,
+        "settle_ac": 0.9824,
+        "settle_no_incentive": 0.8511,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 65.3,
+        "ac_water_l_pc_day": 0.13
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -55.54687500000001,
+          0.5797986686625975
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 10,
+        "h_pre": 0.8952,
+        "h_ind": 0.9327,
+        "h_ac": 0.9327,
+        "settle_ind": 0.9794,
+        "settle_ac": 0.9794,
+        "settle_no_incentive": 0.8934,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 12.6,
+        "ac_water_l_pc_day": 0.02
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          59.765625,
+          16.553327991069356
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 11,
+        "h_pre": 0.874,
+        "h_ind": 0.9145,
+        "h_ac": 0.9145,
+        "settle_ind": 0.9787,
+        "settle_ac": 0.9787,
+        "settle_no_incentive": 0.8698,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 83.7,
+        "ac_water_l_pc_day": 0.16
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          47.109375,
+          -9.870308944314292
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 12,
+        "h_pre": 0.9222,
+        "h_ind": 0.9559,
+        "h_ac": 0.9559,
+        "settle_ind": 0.9785,
+        "settle_ac": 0.9785,
+        "settle_no_incentive": 0.9243,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.35937500000001,
+          26.389898926703257
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 13,
+        "h_pre": 0.8851,
+        "h_ind": 0.9347,
+        "h_ac": 0.9347,
+        "settle_ind": 0.9777,
+        "settle_ac": 0.9777,
+        "settle_no_incentive": 0.8906,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.732202923031206,
+          -48.1839022301584
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 14,
+        "h_pre": 0.8772,
+        "h_ind": 0.9238,
+        "h_ac": 0.9238,
+        "settle_ind": 0.9777,
+        "settle_ac": 0.9777,
+        "settle_no_incentive": 0.8758,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.140625000000002,
+          -38.315162641883894
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 15,
+        "h_pre": 0.8589,
+        "h_ind": 0.9263,
+        "h_ac": 0.9263,
+        "settle_ind": 0.9758,
+        "settle_ac": 0.9758,
+        "settle_no_incentive": 0.8732,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.794236437253133,
+          -53.94871223197169
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 16,
+        "h_pre": 0.8904,
+        "h_ind": 0.937,
+        "h_ac": 0.937,
+        "settle_ind": 0.9752,
+        "settle_ac": 0.9752,
+        "settle_no_incentive": 0.892,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.71120171845529,
+          -46.79348603991254
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 17,
+        "h_pre": 0.8918,
+        "h_ind": 0.9303,
+        "h_ac": 0.9303,
+        "settle_ind": 0.975,
+        "settle_ac": 0.975,
+        "settle_no_incentive": 0.8789,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.734374999999999,
+          -32.80796843222523
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 18,
+        "h_pre": 0.8812,
+        "h_ind": 0.9224,
+        "h_ac": 0.9224,
+        "settle_ind": 0.9735,
+        "settle_ac": 0.9735,
+        "settle_no_incentive": 0.8696,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.109375,
+          -31.623282271649032
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 19,
+        "h_pre": 0.8325,
+        "h_ind": 0.893,
+        "h_ac": 0.893,
+        "settle_ind": 0.9731,
+        "settle_ac": 0.9731,
+        "settle_no_incentive": 0.8315,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 48.1,
+        "ac_water_l_pc_day": 0.09
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -48.51562500000001,
+          9.01167865791833
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 20,
+        "h_pre": 0.8495,
+        "h_ind": 0.919,
+        "h_ac": 0.919,
+        "settle_ind": 0.972,
+        "settle_ac": 0.972,
+        "settle_no_incentive": 0.8593,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.15422310337981,
+          55.337676051116226
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 21,
+        "h_pre": 0.8268,
+        "h_ind": 0.9006,
+        "h_ac": 0.9006,
+        "settle_ind": 0.971,
+        "settle_ac": 0.971,
+        "settle_no_incentive": 0.8356,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.202637563116406,
+          -57.95006368007751
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 22,
+        "h_pre": 0.9035,
+        "h_ind": 0.9426,
+        "h_ac": 0.9426,
+        "settle_ind": 0.9706,
+        "settle_ac": 0.9706,
+        "settle_no_incentive": 0.8922,
+        "mechanism": "environment_led",
+        "dominant_incentive": "resource",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          42.89062499999999,
+          -0.5151595137663713
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 23,
+        "h_pre": 0.914,
+        "h_ind": 0.9494,
+        "h_ac": 0.9494,
+        "settle_ind": 0.9703,
+        "settle_ac": 0.9703,
+        "settle_no_incentive": 0.9113,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.60937500000001,
+          27.28947241447122
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 24,
+        "h_pre": 0.8606,
+        "h_ind": 0.9106,
+        "h_ac": 0.9106,
+        "settle_ind": 0.9693,
+        "settle_ac": 0.9693,
+        "settle_no_incentive": 0.848,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          61.82649320580484,
+          -47.76327341214298
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 25,
+        "h_pre": 0.8222,
+        "h_ind": 0.8943,
+        "h_ac": 0.8943,
+        "settle_ind": 0.9684,
+        "settle_ac": 0.9684,
+        "settle_no_incentive": 0.824,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 50.9,
+        "ac_water_l_pc_day": 0.1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          47.10937500000001,
+          -7.767747414618168
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 26,
+        "h_pre": 0.8794,
+        "h_ind": 0.9094,
+        "h_ac": 0.9094,
+        "settle_ind": 0.9678,
+        "settle_ac": 0.9678,
+        "settle_no_incentive": 0.8431,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 23.1,
+        "ac_water_l_pc_day": 0.04
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.484375,
+          17.5470766483852
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 27,
+        "h_pre": 0.8611,
+        "h_ind": 0.9015,
+        "h_ac": 0.9015,
+        "settle_ind": 0.9663,
+        "settle_ac": 0.9663,
+        "settle_no_incentive": 0.8284,
+        "mechanism": "environment_led",
+        "dominant_incentive": "resource",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.046875,
+          4.128654579471015
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 28,
+        "h_pre": 0.83,
+        "h_ind": 0.9028,
+        "h_ac": 0.9028,
+        "settle_ind": 0.9658,
+        "settle_ac": 0.9658,
+        "settle_no_incentive": 0.8318,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.140625000000002,
+          -35.51244085754607
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 29,
+        "h_pre": 0.8789,
+        "h_ind": 0.9298,
+        "h_ac": 0.9298,
+        "settle_ind": 0.9658,
+        "settle_ac": 0.9658,
+        "settle_no_incentive": 0.8767,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.508171927081491,
+          49.678651352671416
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 30,
+        "h_pre": 0.9069,
+        "h_ind": 0.938,
+        "h_ac": 0.938,
+        "settle_ind": 0.9652,
+        "settle_ac": 0.9652,
+        "settle_no_incentive": 0.8949,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          58.35937500000001,
+          36.9724940269926
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 31,
+        "h_pre": 0.8757,
+        "h_ind": 0.9182,
+        "h_ac": 0.9182,
+        "settle_ind": 0.9629,
+        "settle_ac": 0.9629,
+        "settle_no_incentive": 0.8612,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.109375,
+          -35.84093823358373
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 32,
+        "h_pre": 0.8859,
+        "h_ind": 0.9335,
+        "h_ac": 0.9335,
+        "settle_ind": 0.9622,
+        "settle_ac": 0.9622,
+        "settle_no_incentive": 0.8811,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.0435598183985615,
+          -45.59201781093599
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 33,
+        "h_pre": 0.8022,
+        "h_ind": 0.8952,
+        "h_ac": 0.8952,
+        "settle_ind": 0.96,
+        "settle_ac": 0.96,
+        "settle_no_incentive": 0.815,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          64.05344385831387,
+          61.507723678289885
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 34,
+        "h_pre": 0.8504,
+        "h_ind": 0.8938,
+        "h_ac": 0.8938,
+        "settle_ind": 0.9592,
+        "settle_ac": 0.9592,
+        "settle_no_incentive": 0.798,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.241305471488518,
+          45.044317837028196
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 35,
+        "h_pre": 0.8266,
+        "h_ind": 0.9004,
+        "h_ac": 0.9004,
+        "settle_ind": 0.9591,
+        "settle_ac": 0.9591,
+        "settle_no_incentive": 0.8149,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.47309004728176,
+          -56.441568939284785
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 36,
+        "h_pre": 0.8786,
+        "h_ind": 0.9271,
+        "h_ac": 0.9271,
+        "settle_ind": 0.958,
+        "settle_ac": 0.958,
+        "settle_no_incentive": 0.8697,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          67.19942275903355,
+          46.193266849664035
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 37,
+        "h_pre": 0.8372,
+        "h_ind": 0.8981,
+        "h_ac": 0.8981,
+        "settle_ind": 0.9568,
+        "settle_ac": 0.9568,
+        "settle_no_incentive": 0.8237,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          59.765625,
+          14.06576305248832
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 38,
+        "h_pre": 0.8699,
+        "h_ind": 0.9254,
+        "h_ac": 0.9254,
+        "settle_ind": 0.9567,
+        "settle_ac": 0.9567,
+        "settle_no_incentive": 0.866,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.390625,
+          -41.04750354820127
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 39,
+        "h_pre": 0.8728,
+        "h_ind": 0.9216,
+        "h_ac": 0.9216,
+        "settle_ind": 0.9547,
+        "settle_ac": 0.9547,
+        "settle_no_incentive": 0.8612,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 26.8,
+        "ac_water_l_pc_day": 0.05
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -54.140625,
+          -3.992336223943465
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 40,
+        "h_pre": 0.7789,
+        "h_ind": 0.8769,
+        "h_ac": 0.8769,
+        "settle_ind": 0.9543,
+        "settle_ac": 0.9543,
+        "settle_no_incentive": 0.7894,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          49.29610634645245,
+          62.18742407406851
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 41,
+        "h_pre": 0.8025,
+        "h_ind": 0.8618,
+        "h_ac": 0.8618,
+        "settle_ind": 0.9535,
+        "settle_ac": 0.9535,
+        "settle_no_incentive": 0.7322,
+        "mechanism": "environment_led",
+        "dominant_incentive": "resource",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -55.546875,
+          -11.079857261506863
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 42,
+        "h_pre": 0.8917,
+        "h_ind": 0.9323,
+        "h_ac": 0.9323,
+        "settle_ind": 0.9528,
+        "settle_ac": 0.9528,
+        "settle_no_incentive": 0.8764,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.109374999999999,
+          34.43500958090581
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 43,
+        "h_pre": 0.8578,
+        "h_ind": 0.9084,
+        "h_ac": 0.9084,
+        "settle_ind": 0.9524,
+        "settle_ac": 0.9524,
+        "settle_no_incentive": 0.8405,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 75.0,
+        "ac_water_l_pc_day": 0.14
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          125.859375,
+          8.58092698374741
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 44,
+        "h_pre": 0.9456,
+        "h_ind": 0.9674,
+        "h_ac": 0.9674,
+        "settle_ind": 0.9521,
+        "settle_ac": 0.9521,
+        "settle_no_incentive": 0.9422,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          44.296875,
+          -4.538226548524
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 45,
+        "h_pre": 0.811,
+        "h_ind": 0.896,
+        "h_ac": 0.896,
+        "settle_ind": 0.951,
+        "settle_ac": 0.951,
+        "settle_no_incentive": 0.812,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.91731665959834,
+          -49.59345820957299
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 46,
+        "h_pre": 0.8074,
+        "h_ind": 0.8841,
+        "h_ac": 0.8841,
+        "settle_ind": 0.9503,
+        "settle_ac": 0.9503,
+        "settle_no_incentive": 0.79,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 39.8,
+        "ac_water_l_pc_day": 0.08
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -48.51562500000001,
+          0.5267481300567584
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 47,
+        "h_pre": 0.8773,
+        "h_ind": 0.9238,
+        "h_ac": 0.9238,
+        "settle_ind": 0.95,
+        "settle_ac": 0.95,
+        "settle_no_incentive": 0.8652,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.734374999999999,
+          28.607473390308627
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 48,
+        "h_pre": 0.8258,
+        "h_ind": 0.8914,
+        "h_ac": 0.8914,
+        "settle_ind": 0.9489,
+        "settle_ac": 0.9489,
+        "settle_no_incentive": 0.8079,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.515625,
+          -41.43082414518661
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 49,
+        "h_pre": 0.8115,
+        "h_ind": 0.8621,
+        "h_ac": 0.8621,
+        "settle_ind": 0.9488,
+        "settle_ac": 0.9488,
+        "settle_no_incentive": 0.7428,
+        "mechanism": "environment_led",
+        "dominant_incentive": "resource",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          93.515625,
+          3.5090255374803387
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 50,
+        "h_pre": 0.8799,
+        "h_ind": 0.9322,
+        "h_ac": 0.9322,
+        "settle_ind": 0.9476,
+        "settle_ac": 0.9476,
+        "settle_no_incentive": 0.8748,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.28606885283463,
+          -43.47982606567153
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 51,
+        "h_pre": 0.8275,
+        "h_ind": 0.8733,
+        "h_ac": 0.8733,
+        "settle_ind": 0.9476,
+        "settle_ac": 0.9476,
+        "settle_no_incentive": 0.756,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          65.66454630235229,
+          -45.85868414716465
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 52,
+        "h_pre": 0.8731,
+        "h_ind": 0.9236,
+        "h_ac": 0.9236,
+        "settle_ind": 0.9471,
+        "settle_ac": 0.9471,
+        "settle_no_incentive": 0.8603,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.7031249999999978,
+          35.85732668811093
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 53,
+        "h_pre": 0.8055,
+        "h_ind": 0.861,
+        "h_ac": 0.861,
+        "settle_ind": 0.947,
+        "settle_ac": 0.947,
+        "settle_no_incentive": 0.726,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.457410944834367,
+          52.55850253827164
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 54,
+        "h_pre": 0.8858,
+        "h_ind": 0.925,
+        "h_ac": 0.925,
+        "settle_ind": 0.9466,
+        "settle_ac": 0.9466,
+        "settle_no_incentive": 0.8652,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.515625,
+          -38.61923419018226
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 55,
+        "h_pre": 0.8487,
+        "h_ind": 0.9098,
+        "h_ac": 0.9098,
+        "settle_ind": 0.9465,
+        "settle_ac": 0.9465,
+        "settle_no_incentive": 0.8358,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.5156250000000004,
+          41.43082414518661
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 56,
+        "h_pre": 0.9119,
+        "h_ind": 0.952,
+        "h_ac": 0.952,
+        "settle_ind": 0.9461,
+        "settle_ac": 0.9461,
+        "settle_no_incentive": 0.9103,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          61.10278404764305,
+          -44.71506774483501
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 57,
+        "h_pre": 0.7778,
+        "h_ind": 0.8717,
+        "h_ac": 0.8717,
+        "settle_ind": 0.9457,
+        "settle_ac": 0.9457,
+        "settle_no_incentive": 0.7707,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.11775779763474,
+          -59.10230256216138
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 58,
+        "h_pre": 0.8942,
+        "h_ind": 0.9291,
+        "h_ac": 0.9291,
+        "settle_ind": 0.9449,
+        "settle_ac": 0.9449,
+        "settle_no_incentive": 0.8638,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -62.57812500000001,
+          28.67634361745421
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 59,
+        "h_pre": 0.8375,
+        "h_ind": 0.9093,
+        "h_ac": 0.9093,
+        "settle_ind": 0.9438,
+        "settle_ac": 0.9438,
+        "settle_no_incentive": 0.8323,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.8077253071227375,
+          46.907176920267695
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 60,
+        "h_pre": 0.9071,
+        "h_ind": 0.9433,
+        "h_ac": 0.9433,
+        "settle_ind": 0.9437,
+        "settle_ac": 0.9437,
+        "settle_no_incentive": 0.8949,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.921875000000003,
+          32.95019572595717
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 61,
+        "h_pre": 0.7557,
+        "h_ind": 0.8378,
+        "h_ac": 0.8378,
+        "settle_ind": 0.9436,
+        "settle_ac": 0.9436,
+        "settle_no_incentive": 0.7275,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -66.796875,
+          -14.924538492536053
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 62,
+        "h_pre": 0.843,
+        "h_ind": 0.8835,
+        "h_ac": 0.8835,
+        "settle_ind": 0.9431,
+        "settle_ac": 0.9431,
+        "settle_no_incentive": 0.7722,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          125.859375,
+          27.800899101457567
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 63,
+        "h_pre": 0.7123,
+        "h_ind": 0.8493,
+        "h_ac": 0.8493,
+        "settle_ind": 0.9425,
+        "settle_ac": 0.9425,
+        "settle_no_incentive": 0.7437,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          44.99999999999998,
+          67.70076297233861
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 64,
+        "h_pre": 0.8276,
+        "h_ind": 0.8989,
+        "h_ac": 0.8989,
+        "settle_ind": 0.941,
+        "settle_ac": 0.941,
+        "settle_no_incentive": 0.8149,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.109374999999999,
+          38.65292941292574
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 65,
+        "h_pre": 0.8561,
+        "h_ind": 0.9089,
+        "h_ac": 0.9089,
+        "settle_ind": 0.9397,
+        "settle_ac": 0.9397,
+        "settle_no_incentive": 0.8331,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.234375,
+          28.022716263312173
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 66,
+        "h_pre": 0.8978,
+        "h_ind": 0.94,
+        "h_ac": 0.94,
+        "settle_ind": 0.9387,
+        "settle_ac": 0.9387,
+        "settle_no_incentive": 0.8876,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.078125,
+          42.78509521287978
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 67,
+        "h_pre": 0.8542,
+        "h_ind": 0.896,
+        "h_ac": 0.896,
+        "settle_ind": 0.9374,
+        "settle_ac": 0.9374,
+        "settle_no_incentive": 0.8041,
+        "mechanism": "environment_led",
+        "dominant_incentive": "resource",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.046875,
+          -0.5893855444373464
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 68,
+        "h_pre": 0.7622,
+        "h_ind": 0.8089,
+        "h_ac": 0.8089,
+        "settle_ind": 0.937,
+        "settle_ac": 0.937,
+        "settle_no_incentive": 0.6352,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 30.9,
+        "ac_water_l_pc_day": 0.06
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -63.984375,
+          -9.498743469787621
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 69,
+        "h_pre": 0.9227,
+        "h_ind": 0.9514,
+        "h_ac": 0.9514,
+        "settle_ind": 0.932,
+        "settle_ac": 0.932,
+        "settle_no_incentive": 0.9132,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.265625,
+          -6.169014026355201
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 70,
+        "h_pre": 0.8058,
+        "h_ind": 0.8873,
+        "h_ac": 0.8873,
+        "settle_ind": 0.9317,
+        "settle_ac": 0.9317,
+        "settle_no_incentive": 0.795,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 26.5,
+        "ac_water_l_pc_day": 0.05
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          47.10937500000001,
+          -5.68258926773919
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 71,
+        "h_pre": 0.8345,
+        "h_ind": 0.9043,
+        "h_ac": 0.9043,
+        "settle_ind": 0.9312,
+        "settle_ac": 0.9312,
+        "settle_no_incentive": 0.8211,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.921875000000003,
+          44.191080790569906
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 72,
+        "h_pre": 0.9071,
+        "h_ind": 0.9438,
+        "h_ac": 0.9438,
+        "settle_ind": 0.931,
+        "settle_ac": 0.931,
+        "settle_no_incentive": 0.9032,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 50.3,
+        "ac_water_l_pc_day": 0.1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -59.765625,
+          -3.038370907807581
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 73,
+        "h_pre": 0.8765,
+        "h_ind": 0.928,
+        "h_ac": 0.928,
+        "settle_ind": 0.9302,
+        "settle_ac": 0.9302,
+        "settle_no_incentive": 0.8587,
+        "mechanism": "environment_led",
+        "dominant_incentive": "resource",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -54.140625,
+          -8.58092698374741
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 74,
+        "h_pre": 0.917,
+        "h_ind": 0.9518,
+        "h_ac": 0.9518,
+        "settle_ind": 0.9298,
+        "settle_ac": 0.9298,
+        "settle_no_incentive": 0.9127,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -51.32812500000001,
+          9.385188257937772
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 75,
+        "h_pre": 0.8254,
+        "h_ind": 0.8714,
+        "h_ac": 0.8714,
+        "settle_ind": 0.9294,
+        "settle_ac": 0.9294,
+        "settle_no_incentive": 0.7558,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.35937500000001,
+          21.30326491537911
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 76,
+        "h_pre": 0.8028,
+        "h_ind": 0.8948,
+        "h_ac": 0.8948,
+        "settle_ind": 0.9287,
+        "settle_ac": 0.9287,
+        "settle_no_incentive": 0.8027,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.7973624368836,
+          -57.95006368007751
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 77,
+        "h_pre": 0.9211,
+        "h_ind": 0.9559,
+        "h_ac": 0.9559,
+        "settle_ind": 0.9269,
+        "settle_ac": 0.9269,
+        "settle_no_incentive": 0.917,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          124.45312500000001,
+          25.668239547082102
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 78,
+        "h_pre": 0.873,
+        "h_ind": 0.9288,
+        "h_ac": 0.9288,
+        "settle_ind": 0.9265,
+        "settle_ac": 0.9265,
+        "settle_no_incentive": 0.8645,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          87.83825638342338,
+          45.682735726688996
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 79,
+        "h_pre": 0.92,
+        "h_ind": 0.9567,
+        "h_ac": 0.9567,
+        "settle_ind": 0.925,
+        "settle_ac": 0.925,
+        "settle_no_incentive": 0.9152,
+        "mechanism": "environment_led",
+        "dominant_incentive": "resource",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -108.984375,
+          -34.351992192682054
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 80,
+        "h_pre": 0.7936,
+        "h_ind": 0.8326,
+        "h_ac": 0.8326,
+        "settle_ind": 0.9249,
+        "settle_ac": 0.9249,
+        "settle_no_incentive": 0.6604,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.359375,
+          -29.555244025117883
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 81,
+        "h_pre": 0.9157,
+        "h_ind": 0.9442,
+        "h_ac": 0.9442,
+        "settle_ind": 0.9248,
+        "settle_ac": 0.9248,
+        "settle_no_incentive": 0.9016,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.07812500000001,
+          -4.850240224039029
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 82,
+        "h_pre": 0.7916,
+        "h_ind": 0.8349,
+        "h_ac": 0.8349,
+        "settle_ind": 0.9247,
+        "settle_ac": 0.9247,
+        "settle_no_incentive": 0.6613,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.17187499999999,
+          24.443507403334657
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 83,
+        "h_pre": 0.9227,
+        "h_ind": 0.9571,
+        "h_ac": 0.9571,
+        "settle_ind": 0.9225,
+        "settle_ac": 0.9225,
+        "settle_no_incentive": 0.9167,
+        "mechanism": "environment_led",
+        "dominant_incentive": "resource",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -51.32812500000001,
+          3.846382556593785
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 84,
+        "h_pre": 0.8287,
+        "h_ind": 0.8955,
+        "h_ac": 0.8955,
+        "settle_ind": 0.9185,
+        "settle_ac": 0.9185,
+        "settle_no_incentive": 0.8043,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -54.140625,
+          21.5817706392309
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 85,
+        "h_pre": 0.9089,
+        "h_ind": 0.9429,
+        "h_ac": 0.9429,
+        "settle_ind": 0.9184,
+        "settle_ac": 0.9184,
+        "settle_no_incentive": 0.8869,
+        "mechanism": "environment_led",
+        "dominant_incentive": "resource",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.484375,
+          -9.01167865791833
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 86,
+        "h_pre": 0.8354,
+        "h_ind": 0.8814,
+        "h_ac": 0.8814,
+        "settle_ind": 0.9183,
+        "settle_ac": 0.9183,
+        "settle_no_incentive": 0.7432,
+        "mechanism": "environment_led",
+        "dominant_incentive": "resource",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.953124999999996,
+          33.869556042451535
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 87,
+        "h_pre": 0.8864,
+        "h_ind": 0.9407,
+        "h_ac": 0.9407,
+        "settle_ind": 0.9161,
+        "settle_ac": 0.9161,
+        "settle_no_incentive": 0.8907,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.367210810991898,
+          -50.773208043077084
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 88,
+        "h_pre": 0.9111,
+        "h_ind": 0.9509,
+        "h_ac": 0.9509,
+        "settle_ind": 0.9161,
+        "settle_ac": 0.9161,
+        "settle_no_incentive": 0.9063,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          16.171874999999996,
+          41.73916106432377
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 89,
+        "h_pre": 0.7544,
+        "h_ind": 0.8348,
+        "h_ac": 0.8348,
+        "settle_ind": 0.9139,
+        "settle_ac": 0.9139,
+        "settle_no_incentive": 0.7076,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          51.328125,
+          -26.927166571694098
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 90,
+        "h_pre": 0.7959,
+        "h_ind": 0.8747,
+        "h_ac": 0.8747,
+        "settle_ind": 0.9139,
+        "settle_ac": 0.9139,
+        "settle_no_incentive": 0.7677,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 14.9,
+        "ac_water_l_pc_day": 0.03
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -48.51562500000001,
+          16.677468619128643
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 91,
+        "h_pre": 0.7038,
+        "h_ind": 0.8417,
+        "h_ac": 0.8417,
+        "settle_ind": 0.9133,
+        "settle_ac": 0.9133,
+        "settle_no_incentive": 0.7112,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          47.35909984185759,
+          64.93603760601943
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 92,
+        "h_pre": 0.7893,
+        "h_ind": 0.8583,
+        "h_ac": 0.8583,
+        "settle_ind": 0.9126,
+        "settle_ac": 0.9126,
+        "settle_no_incentive": 0.7327,
+        "mechanism": "environment_led",
+        "dominant_incentive": "resource",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          34.453125,
+          12.26178748630448
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 93,
+        "h_pre": 0.8168,
+        "h_ind": 0.8729,
+        "h_ac": 0.8729,
+        "settle_ind": 0.9115,
+        "settle_ac": 0.9115,
+        "settle_no_incentive": 0.7657,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          45.70312500000001,
+          -1.510077428903488
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 94,
+        "h_pre": 0.8611,
+        "h_ind": 0.9078,
+        "h_ac": 0.9078,
+        "settle_ind": 0.9115,
+        "settle_ac": 0.9115,
+        "settle_no_incentive": 0.8194,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -48.51562500000001,
+          2.6351333003838877
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 95,
+        "h_pre": 0.7921,
+        "h_ind": 0.8748,
+        "h_ac": 0.8748,
+        "settle_ind": 0.9114,
+        "settle_ac": 0.9114,
+        "settle_no_incentive": 0.7665,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -51.32812500000001,
+          -6.0528444949843205
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 96,
+        "h_pre": 0.8335,
+        "h_ind": 0.8958,
+        "h_ac": 0.8958,
+        "settle_ind": 0.9109,
+        "settle_ac": 0.9109,
+        "settle_no_incentive": 0.804,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          57.637802572219385,
+          -49.44618093530106
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 97,
+        "h_pre": 0.7088,
+        "h_ind": 0.7496,
+        "h_ac": 0.7496,
+        "settle_ind": 0.9107,
+        "settle_ac": 0.9107,
+        "settle_no_incentive": 0.5098,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 102.3,
+        "ac_water_l_pc_day": 0.2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.546875,
+          1.7396195669653023
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 98,
+        "h_pre": 0.7816,
+        "h_ind": 0.8838,
+        "h_ac": 0.8838,
+        "settle_ind": 0.9104,
+        "settle_ac": 0.9104,
+        "settle_no_incentive": 0.7769,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.13850550890417,
+          -60.45094365745101
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 99,
+        "h_pre": 0.8886,
+        "h_ind": 0.9325,
+        "h_ac": 0.9325,
+        "settle_ind": 0.9098,
+        "settle_ac": 0.9098,
+        "settle_no_incentive": 0.871,
+        "mechanism": "environment_led",
+        "dominant_incentive": "resource",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.046875,
+          10.062588202777388
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 100,
+        "h_pre": 0.9115,
+        "h_ind": 0.9471,
+        "h_ac": 0.9471,
+        "settle_ind": 0.9089,
+        "settle_ac": 0.9089,
+        "settle_no_incentive": 0.8999,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          44.296875,
+          -6.569360669202421
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 101,
+        "h_pre": 0.9141,
+        "h_ind": 0.9513,
+        "h_ac": 0.9513,
+        "settle_ind": 0.9079,
+        "settle_ac": 0.9079,
+        "settle_no_incentive": 0.9055,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -51.32812500000001,
+          6.0528444949843205
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 102,
+        "h_pre": 0.8853,
+        "h_ind": 0.9237,
+        "h_ac": 0.9237,
+        "settle_ind": 0.9078,
+        "settle_ac": 0.9078,
+        "settle_no_incentive": 0.856,
+        "mechanism": "environment_led",
+        "dominant_incentive": "resource",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.85937500000001,
+          -0.5698625340316603
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 103,
+        "h_pre": 0.9102,
+        "h_ind": 0.953,
+        "h_ac": 0.953,
+        "settle_ind": 0.9065,
+        "settle_ac": 0.9065,
+        "settle_no_incentive": 0.9065,
+        "mechanism": "environment_led",
+        "dominant_incentive": "resource",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.7031249999999976,
+          40.075999558339014
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 104,
+        "h_pre": 0.8776,
+        "h_ind": 0.9247,
+        "h_ac": 0.9247,
+        "settle_ind": 0.9045,
+        "settle_ac": 0.9045,
+        "settle_no_incentive": 0.8638,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          44.296875,
+          -10.683013865823861
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 105,
+        "h_pre": 0.7545,
+        "h_ind": 0.8573,
+        "h_ac": 0.8573,
+        "settle_ind": 0.9019,
+        "settle_ac": 0.9019,
+        "settle_no_incentive": 0.7326,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.81270570267415,
+          -57.23075846455039
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 106,
+        "h_pre": 0.9165,
+        "h_ind": 0.9494,
+        "h_ac": 0.9494,
+        "settle_ind": 0.9016,
+        "settle_ac": 0.9016,
+        "settle_no_incentive": 0.9011,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          56.953125,
+          12.458266543845186
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 107,
+        "h_pre": 0.865,
+        "h_ind": 0.9093,
+        "h_ac": 0.9093,
+        "settle_ind": 0.9006,
+        "settle_ac": 0.9006,
+        "settle_no_incentive": 0.8322,
+        "mechanism": "environment_led",
+        "dominant_incentive": "resource",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          92.109375,
+          6.3238717165914275
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 108,
+        "h_pre": 0.7208,
+        "h_ind": 0.8174,
+        "h_ac": 0.8174,
+        "settle_ind": 0.9004,
+        "settle_ac": 0.9004,
+        "settle_no_incentive": 0.6784,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 108.2,
+        "ac_water_l_pc_day": 0.21
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -48.51562500000001,
+          6.87310630737049
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 109,
+        "h_pre": 0.8106,
+        "h_ind": 0.8845,
+        "h_ac": 0.8845,
+        "settle_ind": 0.9001,
+        "settle_ac": 0.9001,
+        "settle_no_incentive": 0.7816,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -51.32812500000001,
+          20.859571647973745
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 110,
+        "h_pre": 0.709,
+        "h_ind": 0.7608,
+        "h_ac": 0.7608,
+        "settle_ind": 0.8996,
+        "settle_ac": 0.8996,
+        "settle_no_incentive": 0.4993,
+        "mechanism": "environment_led",
+        "dominant_incentive": "resource",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.609375000000007,
+          23.928671321550674
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 111,
+        "h_pre": 0.7602,
+        "h_ind": 0.8697,
+        "h_ac": 0.8697,
+        "settle_ind": 0.8979,
+        "settle_ac": 0.8979,
+        "settle_no_incentive": 0.75,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.404990403011347,
+          59.49574657177927
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 112,
+        "h_pre": 0.9096,
+        "h_ind": 0.9434,
+        "h_ac": 0.9434,
+        "settle_ind": 0.8979,
+        "settle_ac": 0.8979,
+        "settle_no_incentive": 0.8912,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.546875000000002,
+          28.417617044281506
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 113,
+        "h_pre": 0.9067,
+        "h_ind": 0.9446,
+        "h_ac": 0.9446,
+        "settle_ind": 0.892,
+        "settle_ac": 0.892,
+        "settle_no_incentive": 0.891,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.359375000000007,
+          -32.332455191604
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 114,
+        "h_pre": 0.8497,
+        "h_ind": 0.8923,
+        "h_ac": 0.8923,
+        "settle_ind": 0.8918,
+        "settle_ac": 0.8918,
+        "settle_no_incentive": 0.7886,
+        "mechanism": "environment_led",
+        "dominant_incentive": "resource",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          47.10937500000001,
+          -24.29671633494534
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 115,
+        "h_pre": 0.8949,
+        "h_ind": 0.9371,
+        "h_ac": 0.9371,
+        "settle_ind": 0.8885,
+        "settle_ac": 0.8885,
+        "settle_no_incentive": 0.8789,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          56.95312500000001,
+          16.08588146480088
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 116,
+        "h_pre": 0.8713,
+        "h_ind": 0.9339,
+        "h_ac": 0.9339,
+        "settle_ind": 0.8878,
+        "settle_ac": 0.8878,
+        "settle_no_incentive": 0.8714,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.917137411086358,
+          54.10534610750161
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 117,
+        "h_pre": 0.8351,
+        "h_ind": 0.8917,
+        "h_ac": 0.8917,
+        "settle_ind": 0.8856,
+        "settle_ac": 0.8856,
+        "settle_no_incentive": 0.7957,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          123.04687500000001,
+          7.681216759615104
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 118,
+        "h_pre": 0.7746,
+        "h_ind": 0.8539,
+        "h_ac": 0.8539,
+        "settle_ind": 0.885,
+        "settle_ac": 0.885,
+        "settle_no_incentive": 0.7266,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.07812500000003,
+          12.510907268040706
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 119,
+        "h_pre": 0.8148,
+        "h_ind": 0.8731,
+        "h_ac": 0.8731,
+        "settle_ind": 0.8849,
+        "settle_ac": 0.8849,
+        "settle_no_incentive": 0.7618,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.484375,
+          16.677468619128643
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "rank": 120,
+        "h_pre": 0.7663,
+        "h_ind": 0.8738,
+        "h_ac": 0.8738,
+        "settle_ind": 0.8847,
+        "settle_ac": 0.8847,
+        "settle_no_incentive": 0.7544,
+        "mechanism": "environment_led",
+        "dominant_incentive": "trade",
+        "ac_kwh_pc_yr": 0.0,
+        "ac_water_l_pc_day": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.8285056884590714,
+          61.1177696550815
+        ]
+      }
+    }
+  ]
+}

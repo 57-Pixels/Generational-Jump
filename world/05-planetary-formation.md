@@ -21,7 +21,7 @@ Same physics stack as Earth so 2025 tech and climate intuition transfer:
 
 No magic. Continents move. Mountains rise at collisions and arcs; they erode when quiet. Rivers run downhill to the nearest ocean or endorheic basin. Deserts sit where Hadley cells and rain shadows say they should.
 
-**Definitions (canon):** a **continent** is a **continental plate** (or major continental fragment). A **landmass** is continuous dry land and may contain multiple continents (Farreach = Nerath + Tesen). Present **land ≈ 29%** of surface. Principles: [`12-worldbuilding-principles.md`](12-worldbuilding-principles.md). Generator: [`../maps/generator/deeptime/`](../maps/generator/deeptime/).
+**Definitions (canon):** a **plate** is a current rigid kinematic domain; a **continent** is a major continental-crust/terrane lineage; a **landmass** is connected dry land. One landmass may combine multiple continents and plates (Farreach = Nerath + Tesen). Present **land ≈ 29%**. Principles: [`12-worldbuilding-principles.md`](12-worldbuilding-principles.md). Generator: [`../maps/generator/deeptime/v2/`](../maps/generator/deeptime/v2/).
 
 ## Reference campaign vs new seeds
 
@@ -104,7 +104,7 @@ WEST OCEAN                 EAST OCEAN
               Nerath plate | SUTURE | Tesen plate
 ```
 
-Farreach is **one landmass, two continents** (two continental plates). That is the living example of continent ≠ landmass.
+Farreach is **one landmass, two continental lineages, and two converging present plates**. It is the living example of plate ≠ continent ≠ landmass.
 ## Climate physics (non-negotiable belts)
 
 With ~23° tilt and Earthlike circulation:
@@ -145,7 +145,7 @@ With ~23° tilt and Earthlike circulation:
 | Northwood lakes | Ice-age scour | Sereth border country |
 | Eastmarch | Continuous Aurelian crust, mild relief | Shared silo frontier with Korvath; **Neutral Bend** fossil |
 | Solmar fragment plate + arc | West Ocean subduction family | Solara homeland |
-| Farreach suture | Active collision of **Nerath + Tesen** plates | Maravic War terrain; one landmass, two continents |
+| Farreach suture | Active collision of **Nerath + Tesen** plates | Maravic War terrain; one landmass, two continental lineages |
 
 **Human layer:** [`06-settlement-and-borders.md`](06-settlement-and-borders.md) (incl. improbable states) · [`07-pseudo-histories.md`](07-pseudo-histories.md) · [`13-resources-from-geology.md`](13-resources-from-geology.md) (deposits from this geology).
 

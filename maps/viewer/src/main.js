@@ -77,22 +77,39 @@ const warToggle = document.getElementById("war-layers");
 const resourceToggle = document.getElementById("resource-layers");
 
 const RESOURCE_COLORS = {
-  coal: "#1f1f24",
-  oil_gas: "#1f7338",
-  iron: "#b8472e",
-  copper: "#d97a1f",
-  tin_tungsten: "#8c59bf",
-  gold: "#ebc72e",
-  silver_base: "#bfc7d1",
-  rare_earths: "#d940a6",
-  uranium: "#73d940",
-  silica_hp: "#d9ebf2",
-  bauxite: "#c78c47",
-  nickel_pgm: "#598cb2",
-  lithium: "#8cbfd1",
-  phosphates: "#66a659",
-  potash: "#a6668c",
+  coal_basin: "#1f1f24",
+  petroleum_system: "#1f7338",
+  helium_gas: "#74b8d9",
+  bif_iron: "#b8472e",
+  bauxite_laterite: "#c78c47",
+  sedimentary_manganese: "#776b82",
+  vanadium_titanomagnetite: "#446c87",
+  layered_chromite_pgm: "#798a9b",
+  porphyry_cu_mo: "#d97a1f",
+  sediment_cu_co: "#b46d3a",
+  vms_cu_zn: "#8b7658",
+  sedex_zn_pb: "#a9aeb3",
+  mvt_zn_pb: "#b8bec4",
+  magmatic_ni_cu: "#598cb2",
+  nickel_laterite: "#6b9e85",
+  granite_sn_w: "#8c59bf",
+  hydrothermal_gold: "#ebc72e",
+  antimony_hydrothermal: "#81565f",
+  uranium_system: "#73d940",
+  carbonatite_ree_nb: "#d940a6",
+  ionic_clay_hree: "#e271ba",
+  mineral_sands: "#d1b772",
+  lithium_brine: "#8cbfd1",
+  lct_pegmatite: "#74a8db",
+  metamorphic_graphite: "#4a4f55",
+  phosphorite: "#66a659",
+  potash_evaporite: "#a6668c",
+  fluorspar_hydrothermal: "#68c6bb",
+  high_purity_quartz: "#d9ebf2",
 };
+
+const riverToggle = document.getElementById("river-layers");
+const settlementToggle = document.getElementById("settlement-layers");
 
 function projectionForZoom(zoom) {
   return zoom < GLOBE_MAX_ZOOM ? "globe" : "mercator";
@@ -125,6 +142,99 @@ function setResourceLayersVisible(visible) {
       map.setLayoutProperty(id, "visibility", visibility);
     }
   }
+}
+
+function setRiverLayersVisible(visible) {
+  if (map.getLayer("world-rivers")) {
+    map.setLayoutProperty("world-rivers", "visibility", visible ? "visible" : "none");
+  }
+}
+
+function setSettlementLayersVisible(visible) {
+  const visibility = visible ? "visible" : "none";
+  for (const id of ["settlement-raster", "settlement-sites"]) {
+    if (map.getLayer(id)) {
+      map.setLayoutProperty(id, "visibility", visibility);
+    }
+  }
+}
+
+async function addSurfaceLayers() {
+  const [rivers, settlements] = await Promise.all([
+    fetch(asset("world/world-rivers.geojson")).then((response) => response.json()),
+    fetch(asset("world/world-settlement.geojson")).then((response) => response.json()),
+  ]);
+
+  map.addSource("world-rivers", { type: "geojson", data: rivers });
+  map.addLayer({
+    id: "world-rivers",
+    type: "line",
+    source: "world-rivers",
+    paint: {
+      "line-color": "#48b8f0",
+      "line-width": ["interpolate", ["linear"], ["zoom"], 0, 0.35, 6, 2.2],
+      "line-opacity": 0.8,
+    },
+  });
+
+  map.addSource("settlement-raster-source", {
+    type: "image",
+    url: asset("world/world-settlement.png"),
+    coordinates: [
+      [-180, 85],
+      [180, 85],
+      [180, -85],
+      [-180, -85],
+    ],
+  });
+  map.addLayer({
+    id: "settlement-raster",
+    type: "raster",
+    source: "settlement-raster-source",
+    layout: { visibility: "none" },
+    paint: { "raster-opacity": 0.68, "raster-fade-duration": 0 },
+  });
+
+  map.addSource("settlement-sites-source", {
+    type: "geojson",
+    data: settlements,
+  });
+  map.addLayer({
+    id: "settlement-sites",
+    type: "circle",
+    source: "settlement-sites-source",
+    layout: { visibility: "none" },
+    paint: {
+      "circle-radius": 4,
+      "circle-color": [
+        "match",
+        ["get", "mechanism"],
+        "incentive_driven",
+        "#ff7b47",
+        "technology_enabled",
+        "#4cd4ff",
+        "combined",
+        "#d45cff",
+        "#fff2a8",
+      ],
+      "circle-stroke-color": "#101820",
+      "circle-stroke-width": 1,
+    },
+  });
+  map.on("click", "settlement-sites", (event) => {
+    const feature = event.features?.[0];
+    if (!feature) return;
+    const properties = feature.properties ?? {};
+    new maplibregl.Popup()
+      .setLngLat(event.lngLat)
+      .setHTML(
+        `<strong>Settlement candidate #${properties.rank}</strong><br/>` +
+          `<span>${properties.mechanism}; ${properties.dominant_incentive}</span><br/>` +
+          `<span>pre ${properties.h_pre} · industrial ${properties.h_ind} · A/C ${properties.h_ac}</span><br/>` +
+          `<span>A/C ${properties.ac_kwh_pc_yr} kWh/person/year</span>`,
+      )
+      .addTo(map);
+  });
 }
 
 async function addResourceLayers() {
@@ -190,12 +300,22 @@ async function addResourceLayers() {
   map.on("click", "resources-circle", (e) => {
     const f = e.features?.[0];
     if (!f) return;
-    const { name, grade, resource, intensity } = f.properties ?? {};
+    const {
+      name,
+      resource,
+      grade,
+      depth_m: depth,
+      reserve_2025_t: reserve,
+      processing_difficulty: difficulty,
+      byproducts,
+    } = f.properties ?? {};
     new maplibregl.Popup()
       .setLngLat(e.lngLat)
       .setHTML(
         `<strong>${name ?? resource}</strong><br/>` +
-          `<span>${grade ?? ""} · intensity ${intensity ?? ""}</span>`,
+          `<span>grade ${grade ?? "—"}</span><br/>` +
+          `<span>depth ${depth ?? "—"} m · reserve ${reserve ?? "—"} t</span><br/>` +
+          `<span>processing ${difficulty ?? "—"} · byproducts ${byproducts || "none"}</span>`,
       )
       .addTo(map);
   });
@@ -298,6 +418,7 @@ async function addWarLayers() {
 
 map.on("load", async () => {
   applyProjection();
+  await addSurfaceLayers();
   await addResourceLayers();
   await addWarLayers();
   if (warToggle) warToggle.checked = false;
@@ -307,6 +428,20 @@ map.on("load", async () => {
     setResourceLayersVisible(true);
     resourceToggle.addEventListener("change", () => {
       setResourceLayersVisible(resourceToggle.checked);
+    });
+  }
+  if (riverToggle) {
+    riverToggle.checked = true;
+    setRiverLayersVisible(true);
+    riverToggle.addEventListener("change", () => {
+      setRiverLayersVisible(riverToggle.checked);
+    });
+  }
+  if (settlementToggle) {
+    settlementToggle.checked = false;
+    setSettlementLayersVisible(false);
+    settlementToggle.addEventListener("change", () => {
+      setSettlementLayersVisible(settlementToggle.checked);
     });
   }
 });

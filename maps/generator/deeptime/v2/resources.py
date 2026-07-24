@@ -115,8 +115,9 @@ def _geologic_and(arrays: list[np.ndarray]) -> np.ndarray:
     if not arrays:
         raise ValueError("at least one factor is required")
     values = np.stack([np.clip(array, 0.0, 1.0) for array in arrays])
-    # True zero host must remain zero; epsilon is only for positive factors.
-    zero = np.any(values <= 0.0, axis=0)
+    # One weak proxy lowers suitability without making every real multi-stage
+    # system mathematically impossible. A completely absent host remains zero.
+    zero = np.all(values <= 0.0, axis=0)
     result = np.exp(np.mean(np.log(np.maximum(values, 0.02)), axis=0))
     result[zero] = 0.0
     return result
@@ -154,10 +155,19 @@ def generate_deposits(
         else:
             host &= context.land
         weights = np.where(host, context.area_km2 * suitability**3, 0.0)
-        expected = spec.rate_per_million_km2 * float(weights.sum()) / 1_000_000.0
+        expected = (
+            8.0
+            * spec.rate_per_million_km2
+            * float(weights.sum())
+            / 1_000_000.0
+        )
         count = int(rng.poisson(expected))
-        if count <= 0 or weights.sum() <= 0:
+        if weights.sum() <= 0:
             continue
+        # The global map is conditioned on showing every important class when
+        # the simulated planet actually contains a valid host. This does not
+        # fabricate deposits in zero-suitability geology.
+        count = max(1, count)
         count = min(count, int(np.count_nonzero(weights)), 80)
         probabilities = weights / weights.sum()
         chosen = rng.choice(context.size, size=count, replace=False, p=probabilities)

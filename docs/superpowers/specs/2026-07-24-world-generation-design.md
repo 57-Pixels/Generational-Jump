@@ -10,7 +10,7 @@ Generate believable fictional worlds for military-design stories where **2025 te
 
 ## Core principles
 
-1. **Continent = continental plate.** A **landmass** is continuous dry land and may contain multiple continents (e.g. collided Nerath + Tesen = Farreach landmass).
+1. **Plate, continent, landmass are separate.** Plate = current rigid kinematic domain; continent = continental-crust/terrane lineage; landmass = connected dry land. Collided Nerath + Tesen may share the Farreach landmass while retaining lineages and present plate identities.
 2. **~Earth land fraction** at present (~29% land / ~71% ocean). LGM raises land via lower seas.
 3. **Environment → culture.** Classical packages and modern traits must be causable by local food, transport, climate, and barriers.
 4. **Humans build on forefathers.** Languages, law, doctrine, and industry inherit from earlier layers (classical → vernacular → industrial → legacy force → generational jump).
@@ -54,6 +54,10 @@ Unique story = new seed (optional) producing a new board **and** a new ancestral
 **Resources (shipped):** all important geological catalog types (incl. gold, REE, high-purity silica) as deposit markers from orogeny/crust/basins/shelves — see `world/13` and `deeptime/resources.py`.
 
 **Reference campaign:** frozen Generational-Jump / Veldara geography remains a named seed artifact until regenerated deliberately.
+
+### V2 amendment (implemented)
+
+`deeptime/v2` replaces advected raster plate IDs with cubed-sphere spherical Voronoi plates and Euler rotation. It adds signed boundaries, terrane/landmass identity, event history, directional climate, drainage/environment, history-derived resources, and separate era habitability/incentive settlement outputs. V1 remains a comparison path only.
 
 ## Story hooks (filters)
 

@@ -10,25 +10,21 @@ Industry, arms plants, chips, and wartime shortages only feel fair if **fuels, m
 
 ## Important geological catalog (must map)
 
-| ID | Resource | Geologic cause (process) |
+| Families | Included resources | Geologic cause (process) |
 | --- | --- | --- |
-| `coal` | Coal | Interior / foreland basins, wet-enough paleo settings |
-| `oil_gas` | Oil & gas | Passive shelves, passive margins, foreland traps |
-| `iron` | Iron | Craton cores / BIF-analogue; some arc skarns |
-| `copper` | Copper (porphyry) | Magmatic arcs above subduction |
-| `tin_tungsten` | Tin / tungsten | Suture flanks, granitic / accretionary belts |
-| `gold` | **Gold** | Hydrothermal arc/suture + placer-ish lowlands |
-| `silver_base` | Silver / base-metal | Arc and suture hydrothermal |
-| `rare_earths` | **Rare earths** | Craton alkaline intrusions + heavy-mineral sands |
-| `uranium` | Uranium | Sedimentary basins + some igneous |
-| `silica_hp` | **High-purity silica** | Clean quartz sands (passive coasts) + quartzite on quiet craton |
-| `bauxite` | Bauxite (aluminum) | Wet tropical weathering on continental crust |
-| `nickel_pgm` | Nickel / PGM | Craton-margin mafic–ultramafic / greenstone analogue |
-| `lithium` | Lithium | Arid brine basins + pegmatite belts on sutures |
-| `phosphates` | Phosphates | Shelf / passive-margin phosphorites |
-| `potash` | Potash | Evaporitic interior basins |
+| Fuels | Coal, petroleum systems, helium-bearing gas | Wetland/source-rock history + burial, maturity, reservoir, seal and trap |
+| Ferrous/alloy | BIF iron, manganese, Ti–V magnetite, chromium/PGM | Ancient cratons, shelves, mafic/ultramafic intrusions |
+| Base metals | Porphyry Cu–Mo, sediment Cu–Co, VMS Cu–Zn, Sedex/MVT Zn–Pb, Ni–Cu | Arcs, rifts, brine flow, carbonate and magmatic systems |
+| Precious/specialty | **Gold**, silver/byproducts, antimony, Sn/W | Hydrothermal arc/suture, evolved granite and exhumation |
+| Nuclear/critical | Uranium, **REE/Nb carbonatite**, ionic-clay HREE | Stable craton, redox systems, alkaline intrusions and weathering |
+| Battery | Lithium brine, LCT pegmatite, nickel laterite, graphite | Closed arid basins, collision granite, tropical weathering, metamorphism |
+| Agriculture/chemical | Phosphorite, potash, fluorspar | Upwelling shelves, restricted evaporite basins, rift/alkaline hydrothermal |
+| Electronics | **High-purity quartz** | Rare hydrothermal/pegmatite/high-grade quartz with ppm impurity qualification |
+| Heavy minerals | Titanium, zirconium/hafnium, monazite/REE sands | Source rock + coastal reworking |
 
 Timber / hydro / fish remain strategic but are **climate/coast** layers, not this ore catalog.
+
+Common aggregate, sand/gravel, limestone, brick clay, ordinary silica sand, gypsum, salt, and dimension stone are **availability rasters**, not arbitrarily capped point deposits. High-purity quartz is not ordinary beach sand.
 
 **Forbid:** a strategic mine with no plate/basin/arc story; “every country has everything”; oil under a random mountain with no sediment basin.
 
@@ -37,8 +33,8 @@ Timber / hydro / fish remain strategic but are **climate/coast** layers, not thi
 | File | Content |
 | --- | --- |
 | `world-resources.png` | Atlas color + deposit markers |
-| `world-resources.geojson` | Point features (`resource`, `grade`, `intensity`) |
-| `world-meta.json` → `resources` | Catalog, legend, counts |
+| `world-resources.geojson` | Provinces with grade, resource, 2025 reserve, depth, accessibility, processing and byproducts |
+| `world-meta.json` → `resource_counts` | Variable counts by deposit class |
 
 Viewer toggle: **Resources** (default on).
 

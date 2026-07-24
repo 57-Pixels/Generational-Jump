@@ -19,15 +19,15 @@
 
 ## Continents vs landmasses
 
-**Continent = continental plate.** **Landmass = continuous dry land** (may hold multiple continents). Present ocean ≈ 71% / land ≈ **29%** (Earth-like). See [`12`](12-worldbuilding-principles.md).
+**Plate = current rigid kinematic domain. Continent = continental-crust/terrane lineage. Landmass = continuous dry land.** These overlap but are not aliases. Present ocean ≈ 71% / land ≈ **29%**. See [`12`](12-worldbuilding-principles.md).
 
 | Name | Kind | Role (reference campaign) |
 | --- | --- | --- |
-| **Aurelian** | Continent (plate) | Home board — Veldara, Korvath, Doverin, Sereth + footnotes |
-| **Kharzhan** | Continent (plate) | Continental great-power homeland (other side of the East Ocean rift) |
-| **Nerath** / **Tesen** | Continents (plates) | Colliding under the **Farreach** landmass — Maravic War |
+| **Aurelian** | Continent lineage (mostly one present plate) | Home board — Veldara, Korvath, Doverin, Sereth + footnotes |
+| **Kharzhan** | Continent lineage (mostly one present plate) | Great-power homeland across the East Ocean rift |
+| **Nerath** / **Tesen** | Continental lineages + present plates | Colliding under the **Farreach** landmass — Maravic War |
 | **Farreach** | **Landmass** (not one plate) | Sutured Nerath + Tesen; one dry board, two continents |
-| **Solmar** | Continent (fragment plate) | Solara homeland + arc islands (Australia-scale) |
+| **Solmar** | Continental fragment lineage | Solara homeland + arc islands (Australia-scale) |
 
 Reference-campaign shapes: `05`. New stories may regenerate from deep-time seeds. Politics: `06`/`07`.
 ## Who is on stage vs footnote

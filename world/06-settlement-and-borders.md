@@ -45,7 +45,7 @@ Write history in this order (and stop when the modern border is explained):
 
 ## Continents vs landmasses
 
-**Continent = continental plate.** **Landmass = continuous dry land** (may span multiple plates/continents). Present land ≈ 29%. See [`12`](12-worldbuilding-principles.md).
+**Plate = current kinematic domain; continent = continental-crust lineage; landmass = continuous dry land.** A landmass may span multiple plates/continents. Present land ≈ 29%. See [`12`](12-worldbuilding-principles.md).
 
 | Name | Kind | Notes (reference campaign) |
 | --- | --- | --- |

@@ -27,7 +27,7 @@
 
 ## Continents / landmasses to draw
 
-**Definitions:** continent = continental plate; landmass = continuous dry land (may hold multiple continents). Present land ≈ 29%.
+**Definitions:** plate = current rigid motion; continent = continental-crust lineage; landmass = continuous dry land. Present land ≈ 29%.
 
 **Reference campaign speech:** plates **Aurelian**, **Kharzhan**, **Solmar**, **Nerath**, **Tesen**; landmass **Farreach** = Nerath+Tesen suture. Prefer regenerating via [`generator/deeptime`](generator/deeptime/) for new stories.
 
