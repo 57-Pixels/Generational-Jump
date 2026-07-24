@@ -15,19 +15,26 @@ world/  →  maps/  →  threat-analysis/  →  doctrine/  →  industry/ + data
 ## Reading order
 
 1. [`world/00-world-overview.md`](world/00-world-overview.md) — planet, pecking order, on-stage vs footnotes
-2. [`world/05-planetary-formation.md`](world/05-planetary-formation.md) — tectonics & climate
-3. [`world/06-settlement-and-borders.md`](world/06-settlement-and-borders.md) — grain nodes, borders, **improbable states**
-4. [`world/07-pseudo-histories.md`](world/07-pseudo-histories.md) — country histories
-5. [`maps/00-world-map-brief.md`](maps/00-world-map-brief.md) — world image-gen → upscale
-6. [`maps/viewer/README.md`](maps/viewer/README.md) — **2D→globe map app** (war layers later)
-7. [`world/01-our-nation.md`](world/01-our-nation.md) — Veldara
-8. [`maps/01-country-maps-brief.md`](maps/01-country-maps-brief.md) — multi-map country set
-9. [`world/02-neighbors-and-threats.md`](world/02-neighbors-and-threats.md)
-10. [`world/03-economy-and-industrial-base.md`](world/03-economy-and-industrial-base.md)
-11. [`world/04-alliances-and-diplomacy.md`](world/04-alliances-and-diplomacy.md)
-12. [`threat-analysis/00-threat-overview.md`](threat-analysis/00-threat-overview.md)
-13. [`doctrine/00-national-defense-strategy.md`](doctrine/00-national-defense-strategy.md)
-14. `designs/` → [`episodes/00-series-outline.md`](episodes/00-series-outline.md)
+2. [`world/05-planetary-formation.md`](world/05-planetary-formation.md) — tectonics backdrop
+3. [`world/08-last-20ka.md`](world/08-last-20ka.md) — **LGM→now, Earth-analogue conditions**
+4. [`world/09-historical-timeline.md`](world/09-historical-timeline.md) — dated eras
+4b. [`world/10-classical-civilizations.md`](world/10-classical-civilizations.md) — **Helioran (West) & Shan-Khar (East)** ancestral giants  
+4c. [`world/11-legendary-figures.md`](world/11-legendary-figures.md) — Alexander-scale legends (roles, not Earth names)  
+4d. [`world/12-worldbuilding-principles.md`](world/12-worldbuilding-principles.md) — environment→culture, forefathers, detail budget  
+4e. [`world/13-resources-from-geology.md`](world/13-resources-from-geology.md) — deposits from deep-time (ore, fuel, etc.)  
+5. [`world/06-settlement-and-borders.md`](world/06-settlement-and-borders.md) — grain nodes, borders, improbable states  
+6. [`world/07-pseudo-histories.md`](world/07-pseudo-histories.md) — country histories  
+7. [`maps/generator/README.md`](maps/generator/README.md) — **deep-time plates** (default) + reference ellipse generator  
+8. [`maps/viewer/README.md`](maps/viewer/README.md) — hosted 2D→globe viewer  
+9. [`docs/superpowers/specs/2026-07-24-world-generation-design.md`](docs/superpowers/specs/2026-07-24-world-generation-design.md) — world-gen design  
+10. [`world/01-our-nation.md`](world/01-our-nation.md) — Veldara
+11. [`maps/01-country-maps-brief.md`](maps/01-country-maps-brief.md) — country map set
+12. [`world/02-neighbors-and-threats.md`](world/02-neighbors-and-threats.md)
+13. [`world/03-economy-and-industrial-base.md`](world/03-economy-and-industrial-base.md)
+14. [`world/04-alliances-and-diplomacy.md`](world/04-alliances-and-diplomacy.md)
+15. [`threat-analysis/00-threat-overview.md`](threat-analysis/00-threat-overview.md)
+16. [`doctrine/00-national-defense-strategy.md`](doctrine/00-national-defense-strategy.md)
+17. `designs/` → [`episodes/00-series-outline.md`](episodes/00-series-outline.md)
 
 ## Directory guide
 

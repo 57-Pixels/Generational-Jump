@@ -36,7 +36,19 @@
           <span id="zoom-label">zoom: —</span>
         </div>
         <label class="toggle">
-          <input type="checkbox" id="war-layers" checked />
+          <input type="checkbox" id="resource-layers" checked />
+          Resources
+        </label>
+        <label class="toggle">
+          <input type="checkbox" id="river-layers" checked />
+          Rivers
+        </label>
+        <label class="toggle">
+          <input type="checkbox" id="settlement-layers" />
+          Settlement
+        </label>
+        <label class="toggle">
+          <input type="checkbox" id="war-layers" />
           War layers
         </label>
         <label class="time-wrap" title="Wired for future Ukraine-style time scrubbing">
@@ -49,8 +61,9 @@
         <h1>Layers</h1>
         <p class="note">
           2D while zoomed in (theater / war map). Globe when zoomed out past
-          threshold. Basemap is a <strong>placeholder Earth style</strong> until
-          custom Veldara tiles exist.
+          threshold. Basemap is <strong>algorithmic</strong> (see
+          <code>maps/generator</code>) — not image-gen. War layers off until
+          reauthored on this sphere.
         </p>
         <ul>
           <li><span class="swatch control-a"></span> Control — Veldara</li>
@@ -58,6 +71,11 @@
           <li><span class="swatch front"></span> Front line</li>
           <li><span class="swatch event"></span> Events</li>
         </ul>
+        <h1>Resources</h1>
+        <p class="note">
+          Deposits from deep-time geology (gold, REE, HP silica, oil, copper…).
+          Toggle above. Source: <code>world-resources.geojson</code>.
+        </p>
         <p class="note">Eastmarch placeholder bbox centered for future scenarios.</p>
       </aside>
     </div>

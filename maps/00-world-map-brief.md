@@ -1,17 +1,18 @@
 # World Map — Image Generation Brief
 
-> **Purpose:** generate a **physically plausible** base world map from tectonics + climate, then upscale (~16k).
-> **Foundation (read first):** [`../world/05-planetary-formation.md`](../world/05-planetary-formation.md)
-> **Politics/pecking order:** [`../world/00-world-overview.md`](../world/00-world-overview.md)
+> **Purpose:** constraints for the **algorithmic** world map (and optional art passes).
+> **Canon generator:** [`generator/`](generator/) — run this; do **not** use autoregressive image-gen as the source of truth.
+> **Foundation:** [`../world/05-planetary-formation.md`](../world/05-planetary-formation.md)
 > **Next:** [`01-country-maps-brief.md`](01-country-maps-brief.md)
 
 ## Workflow
 
-1. Skim `05-planetary-formation.md` so you know *why* each landform exists.
-2. Generate a **no-label** equirectangular map using the tectonics-first prompt (not a fantasy silhouette prompt).
-3. Sanity-check against the **Acceptance checklist** (geology before aesthetics).
-4. Upscale to ~16k; do **not** let the upscaler invent new mountain belts or continents.
-5. Label pass last. Lock as master → country maps must match.
+1. Skim `05-planetary-formation.md`.
+2. Run `maps/generator/generate_world.py` (seeded, deterministic).
+3. Inspect `maps/exports/world-color.png` / `world-height.png` against the acceptance checklist.
+4. Commit exports + `viewer/public/world/` copies; Pages viewer picks them up on deploy.
+5. Optional: upscale the color PNG for print — **do not** redraw continents in an image model.
+6. Label pass / political overlays later as GeoJSON on the same sphere.
 
 ## Map specs
 
@@ -26,7 +27,9 @@
 
 ## Continents / landmasses to draw
 
-**Speech:** three continents (**Aurelian**, **Kharzhan**, **Farreach**) + **Solmar** island-continent — not four equal petals.
+**Definitions:** plate = current rigid motion; continent = continental-crust lineage; landmass = continuous dry land. Present land ≈ 29%.
+
+**Reference campaign speech:** plates **Aurelian**, **Kharzhan**, **Solmar**, **Nerath**, **Tesen**; landmass **Farreach** = Nerath+Tesen suture. Prefer regenerating via [`generator/deeptime`](generator/deeptime/) for new stories.
 
 ### Aurelian (home) — mid-frame, northern hemisphere heavy
 

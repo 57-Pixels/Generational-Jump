@@ -16,11 +16,16 @@ Same physics stack as Earth so 2025 tech and climate intuition transfer:
 | Day / year | ≈ 24h / ≈ 365d | Familiar seasons and logistics calendars |
 | Axial tilt | **~23°** | Seasons; climate belts |
 | Rotation | Same sense as Earth | Coriolis → gyres and storm tracks |
-| Oceans | ~70% surface | Maritime powers and SLOCs are real |
+| Oceans | ~71% surface (land ~29%) | Maritime powers and SLOCs are real; Earth-comparable land budget |
 | Plate tectonics | **Active** | Mountains, trenches, arcs, rifts, earthquakes, volcanoes |
 
 No magic. Continents move. Mountains rise at collisions and arcs; they erode when quiet. Rivers run downhill to the nearest ocean or endorheic basin. Deserts sit where Hadley cells and rain shadows say they should.
 
+**Definitions (canon):** a **plate** is a current rigid kinematic domain; a **continent** is a major continental-crust/terrane lineage; a **landmass** is connected dry land. One landmass may combine multiple continents and plates (Farreach = Nerath + Tesen). Present **land ≈ 29%**. Principles: [`12-worldbuilding-principles.md`](12-worldbuilding-principles.md). Generator: [`../maps/generator/deeptime/v2/`](../maps/generator/deeptime/v2/).
+
+## Reference campaign vs new seeds
+
+The named features below (Aurelian, Highspine, East Gulf, …) describe the **Generational-Jump reference campaign**. New stories may run deep-time from another seed; the *processes* stay mandatory, the *coastlines* become seed artifacts.
 ## Deep time (how the present map happened)
 
 Told as a short geologic story — enough to justify shapes, not a textbook.
@@ -89,16 +94,17 @@ Repeated northern glaciations scoured **Northwood** (lakes, disordered drainage,
 WEST OCEAN                 EAST OCEAN
 (subducting  →)            (passive / wide)
         │                         │
-   SOLMAR arc          AURELIAN          KHARZHAN
-   (island-cont.)      west: cordillera   west: passive
+   SOLMAR plate        AURELIAN plate     KHARZHAN plate
+   (fragment)          west: cordillera   west: passive
                        interior: plains   interior: craton
                        SE: East Gulf      east/south: older
                        north: old highland accretionary belts
 
-              FARREACH (south)
-              Nerath | SUTURE | Tesen
+              FARREACH LANDMASS (south)
+              Nerath plate | SUTURE | Tesen plate
 ```
 
+Farreach is **one landmass, two continental lineages, and two converging present plates**. It is the living example of plate ≠ continent ≠ landmass.
 ## Climate physics (non-negotiable belts)
 
 With ~23° tilt and Earthlike circulation:
@@ -138,10 +144,10 @@ With ~23° tilt and Earthlike circulation:
 | East Gulf | Cenozoic embayment on passive margin | Barge outlet; **Mirrin** chokepoint city |
 | Northwood lakes | Ice-age scour | Sereth border country |
 | Eastmarch | Continuous Aurelian crust, mild relief | Shared silo frontier with Korvath; **Neutral Bend** fossil |
-| Solmar island-continent + arc | West Ocean subduction family | Solara homeland (not a fourth peer continent in speech) |
-| Farreach suture | Active continental collision | Maravic War terrain |
+| Solmar fragment plate + arc | West Ocean subduction family | Solara homeland |
+| Farreach suture | Active collision of **Nerath + Tesen** plates | Maravic War terrain; one landmass, two continental lineages |
 
-**Human layer:** [`06-settlement-and-borders.md`](06-settlement-and-borders.md) (incl. improbable states) · [`07-pseudo-histories.md`](07-pseudo-histories.md).
+**Human layer:** [`06-settlement-and-borders.md`](06-settlement-and-borders.md) (incl. improbable states) · [`07-pseudo-histories.md`](07-pseudo-histories.md) · [`13-resources-from-geology.md`](13-resources-from-geology.md) (deposits from this geology).
 
 ## For image generation
 

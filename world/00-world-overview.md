@@ -2,11 +2,12 @@
 
 > **Status:** working world design.
 >
+> **Principles:** [`12-worldbuilding-principles.md`](12-worldbuilding-principles.md) · [`13-resources-from-geology.md`](13-resources-from-geology.md)  
 > **Geology:** [`05-planetary-formation.md`](05-planetary-formation.md)  
+> **Last 20 ka (Earth-analogue civ history):** [`08-last-20ka.md`](08-last-20ka.md) · [`09-historical-timeline.md`](09-historical-timeline.md) · [`10-classical-civilizations.md`](10-classical-civilizations.md) · [`11-legendary-figures.md`](11-legendary-figures.md)  
 > **How countries form (grain → transport → borders):** [`06-settlement-and-borders.md`](06-settlement-and-borders.md)  
 > **Pseudo-histories:** [`07-pseudo-histories.md`](07-pseudo-histories.md)  
-> **Map brief:** [`../maps/00-world-map-brief.md`](../maps/00-world-map-brief.md)
-
+> **Deep-time map:** [`../maps/generator/deeptime/`](../maps/generator/deeptime/)
 ## Ground rules (canon — see decisions-log)
 
 - **Technology level:** Earth, 2025. No magic, no sci-fi.
@@ -16,24 +17,29 @@
 - **Our starting force:** 1980s–1990s generation. Series = full generational jump, all domains.
 - **Catalyst:** the **Maravic War** on Farreach.
 
-## Landmasses (Earthlike — not four equal petals)
+## Continents vs landmasses
 
-| Landmass | Rank | Role |
+**Plate = current rigid kinematic domain. Continent = continental-crust/terrane lineage. Landmass = continuous dry land.** These overlap but are not aliases. Present ocean ≈ 71% / land ≈ **29%**. See [`12`](12-worldbuilding-principles.md).
+
+| Name | Kind | Role (reference campaign) |
 | --- | --- | --- |
-| **Aurelian** | Continent | Home board — Veldara, Korvath, Doverin, Sereth + footnotes |
-| **Kharzhan** | Continent | Continental great-power homeland (other side of the East Ocean rift) |
-| **Farreach** | Continent | Maravic War theater (Nerath vs Tesen) |
-| **Solmar** | **Island-continent** | Solara's maritime homeland + arc islands (Australia-scale, not a fourth peer continent in speech) |
+| **Aurelian** | Continent lineage (mostly one present plate) | Home board — Veldara, Korvath, Doverin, Sereth + footnotes |
+| **Kharzhan** | Continent lineage (mostly one present plate) | Great-power homeland across the East Ocean rift |
+| **Nerath** / **Tesen** | Continental lineages + present plates | Colliding under the **Farreach** landmass — Maravic War |
+| **Farreach** | **Landmass** (not one plate) | Sutured Nerath + Tesen; one dry board, two continents |
+| **Solmar** | Continental fragment lineage | Solara homeland + arc islands (Australia-scale) |
 
-Shapes still come from tectonics in `05`. Politics come from `06`/`07`.
-
+Reference-campaign shapes: `05`. New stories may regenerate from deep-time seeds. Politics: `06`/`07`.
 ## Who is on stage vs footnote
 
-**On stage** (get histories and matter to force design): Veldara, Korvath, Doverin, Sereth, Solara, Kharzhan State, Nerath Compact, Tesen League, Iberon Union (thin).
+**Fuller history** for: **important/neighbors**, **odd ones out** (improbable leftovers), and **countries of interest**. Detail still scales with recency ([`12`](12-worldbuilding-principles.md)).
 
-**Footnotes** (name + one line, map texture): see bottom of `07-pseudo-histories.md`. Promote only when a scenario needs them.
+**On stage** (default fuller set): Veldara, Korvath, Doverin, Sereth, Solara, Kharzhan State, Nerath Compact, Tesen League, Iberon Union (thin), plus named odd-ones-out when they explain a chokepoint/buffer/clerical fossil.
 
+**Footnotes** (name + one line): see bottom of `07-pseudo-histories.md`. Promote when interest or a scenario needs them.
 ## Global pecking order
+
+Today’s bipolar great powers sit on **classical West/East foundations** ([`10-classical-civilizations.md`](10-classical-civilizations.md)): Solara ← Helioran; Kharzhan State ← Shan-Khar.
 
 ### Tier 1 — Great powers (2)
 

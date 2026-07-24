@@ -1,23 +1,26 @@
 # maps/
 
-Cartography briefs + interactive viewer. **Geology first** — see [`../world/05-planetary-formation.md`](../world/05-planetary-formation.md).
+Cartography: **algorithmic world first**, briefs + interactive viewer.
 
 | Path | Use |
 | --- | --- |
-| [`00-world-map-brief.md`](00-world-map-brief.md) | World map design / image-gen → upscale |
-| [`01-country-maps-brief.md`](01-country-maps-brief.md) | Veldara multi-map set |
-| [`viewer/`](viewer/) | **MapLibre app** — 2D in-theater, globe when zoomed out; war-layer hooks |
-| `exports/` | Generated PNGs (`world-master.png`, `veldara-*.png`) |
+| [`generator/`](generator/) | **Canonical map creation** (Python tectonics → PNG) |
+| [`exports/`](exports/) | `world-color.png`, `world-height.png`, meta |
+| [`viewer/`](viewer/) | MapLibre app (2D↔globe) on GitHub Pages |
+| [`00-world-map-brief.md`](00-world-map-brief.md) | Design constraints (still useful; generator implements them) |
+| [`01-country-maps-brief.md`](01-country-maps-brief.md) | Veldara multi-map set (derive from exports later) |
 
-**Rule:** locked master coastlines beat prose. Features without a cause in the formation doc do not belong on the map.
+**Rule:** locked generator outputs (+ formation doc) beat vibes. No autoregressive image-gen as canon.
+
+## Generate the world
+
+```bash
+cd maps/generator && pip install -r requirements.txt && python3 generate_world.py
+```
 
 ## Interactive viewer
 
-**Hosted (preferred):** https://57-pixels.github.io/Generational-Jump/  
-(GitHub Pages — Source: GitHub Actions; see [`viewer/README.md`](viewer/README.md). Relative asset paths survive repo renames.)
-
+**Hosted:** https://57-pixels.github.io/Generational-Jump/  
 ```bash
 cd maps/viewer && npm install && npm run dev   # optional local
 ```
-
-Basemap is a placeholder Earth style until custom Veldara tiles exist. GeoJSON war layers (`control` / `front` / `events`) are wired for a future Ukraine-style time scrubber.

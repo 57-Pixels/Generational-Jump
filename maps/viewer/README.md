@@ -35,6 +35,12 @@ Open `http://localhost:5173`.
 
 Threshold: `GLOBE_MAX_ZOOM` in `src/main.js`.
 
+The algorithmic basemap is served as **Web Mercator XYZ raster tiles**
+(`public/world/tiles/color/{z}/{x}/{y}.png`). That matches MapLibre’s normal
+Earth/satellite path: tile meshes cover ±85.05°, and **globe mode stretches
+edge tiles to the poles**. A single full-world `image` source cannot do that
+(`allowPoles` is false for ImageSource).
+
 ## War layers (ready for later)
 
 Demo GeoJSON in `public/data/layers/`:

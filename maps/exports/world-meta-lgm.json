@@ -1,0 +1,71 @@
+{
+  "method": "deeptime-spherical-v2",
+  "seed": 42,
+  "era": "lgm",
+  "grid": {
+    "kind": "cubed-sphere",
+    "face_n": 64,
+    "cells": 24576
+  },
+  "ticks": 80,
+  "ma_per_tick": 8.0,
+  "sea_level_m": -120.0,
+  "land_fraction": 0.2833282411472662,
+  "land_fraction_emergent": true,
+  "plate_count": 12,
+  "continent_count": 7,
+  "landmass_count": 7,
+  "resource_deposit_count": 34,
+  "resource_counts": {
+    "coal_basin": 1,
+    "petroleum_system": 1,
+    "helium_gas": 1,
+    "bif_iron": 2,
+    "bauxite_laterite": 5,
+    "sedimentary_manganese": 1,
+    "vanadium_titanomagnetite": 1,
+    "layered_chromite_pgm": 1,
+    "porphyry_cu_mo": 1,
+    "sediment_cu_co": 1,
+    "vms_cu_zn": 1,
+    "sedex_zn_pb": 1,
+    "mvt_zn_pb": 1,
+    "magmatic_ni_cu": 1,
+    "nickel_laterite": 1,
+    "granite_sn_w": 1,
+    "hydrothermal_gold": 1,
+    "antimony_hydrothermal": 1,
+    "uranium_system": 1,
+    "carbonatite_ree_nb": 1,
+    "ionic_clay_hree": 1,
+    "mineral_sands": 1,
+    "lithium_brine": 1,
+    "lct_pegmatite": 1,
+    "metamorphic_graphite": 1,
+    "phosphorite": 1,
+    "potash_evaporite": 1,
+    "fluorspar_hydrothermal": 1,
+    "high_purity_quartz": 1
+  },
+  "settlement": {
+    "ac_changes_habitability": true,
+    "habitability_separate_from_incentives": true,
+    "site_count": 120
+  },
+  "semantics": {
+    "plate": "instantaneous rigid kinematic domain",
+    "continent": "continental crust lineage / terrane",
+    "landmass": "connected dry land"
+  },
+  "config": {
+    "seed": 42,
+    "grid_n": 64,
+    "ticks": 80,
+    "dt_ma": 8.0,
+    "n_plates": 12,
+    "n_continents": 7,
+    "era": "lgm",
+    "export_width": 1024,
+    "export_height": 512
+  }
+}
