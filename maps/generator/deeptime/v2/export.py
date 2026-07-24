@@ -11,6 +11,7 @@ from pathlib import Path
 import numpy as np
 from PIL import Image, ImageDraw
 
+from .contract import GENERATOR_VERSION
 from .model import WorldResult
 from .tiles import MERCATOR_MAX_LAT, write_mercator_tiles
 
@@ -327,6 +328,7 @@ def save_world(world: WorldResult, destinations: list[Path]) -> dict:
         )
     meta = {
         "method": "deeptime-spherical-v2",
+        "generator_version": GENERATOR_VERSION,
         "seed": world.config.seed,
         "era": world.config.era,
         "grid": {

@@ -7,6 +7,7 @@ from dataclasses import dataclass
 import numpy as np
 
 from .climate import ClimateFields, compute_climate
+from .contract import validate_contract
 from .environment import EnvironmentFields, compute_environment
 from .geology import GeologyConfig, GeologyFields, simulate_geology
 from .grid import CubedSphere
@@ -38,6 +39,7 @@ class WorldConfig:
     era: str = "present"
     export_width: int = 1024
     export_height: int = 512
+    validate: bool = True
 
 
 @dataclass
@@ -330,6 +332,8 @@ def generate_world(config: WorldConfig) -> WorldResult:
         incentives,
     )
     settlement = compute_settlement(inputs, incentives)
+    if config.validate:
+        validate_contract(geology, climate, hydrology)
     return WorldResult(
         config=config,
         grid=grid,
