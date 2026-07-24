@@ -26,14 +26,15 @@ world/  →  maps/  →  threat-analysis/  →  doctrine/  →  industry/ + data
 6. [`world/07-pseudo-histories.md`](world/07-pseudo-histories.md) — country histories  
 7. [`maps/generator/README.md`](maps/generator/README.md) — **deep-time plates** (default) + reference ellipse generator  
 8. [`maps/viewer/README.md`](maps/viewer/README.md) — hosted 2D→globe viewer  
-9. [`docs/superpowers/specs/2026-07-24-world-generation-design.md`](docs/superpowers/specs/2026-07-24-world-generation-design.md) — world-gen design9. [`world/01-our-nation.md`](world/01-our-nation.md) — Veldara
-10. [`maps/01-country-maps-brief.md`](maps/01-country-maps-brief.md) — country map set
-11. [`world/02-neighbors-and-threats.md`](world/02-neighbors-and-threats.md)
-12. [`world/03-economy-and-industrial-base.md`](world/03-economy-and-industrial-base.md)
-13. [`world/04-alliances-and-diplomacy.md`](world/04-alliances-and-diplomacy.md)
-14. [`threat-analysis/00-threat-overview.md`](threat-analysis/00-threat-overview.md)
-15. [`doctrine/00-national-defense-strategy.md`](doctrine/00-national-defense-strategy.md)
-16. `designs/` → [`episodes/00-series-outline.md`](episodes/00-series-outline.md)
+9. [`docs/superpowers/specs/2026-07-24-world-generation-design.md`](docs/superpowers/specs/2026-07-24-world-generation-design.md) — world-gen design  
+10. [`world/01-our-nation.md`](world/01-our-nation.md) — Veldara
+11. [`maps/01-country-maps-brief.md`](maps/01-country-maps-brief.md) — country map set
+12. [`world/02-neighbors-and-threats.md`](world/02-neighbors-and-threats.md)
+13. [`world/03-economy-and-industrial-base.md`](world/03-economy-and-industrial-base.md)
+14. [`world/04-alliances-and-diplomacy.md`](world/04-alliances-and-diplomacy.md)
+15. [`threat-analysis/00-threat-overview.md`](threat-analysis/00-threat-overview.md)
+16. [`doctrine/00-national-defense-strategy.md`](doctrine/00-national-defense-strategy.md)
+17. `designs/` → [`episodes/00-series-outline.md`](episodes/00-series-outline.md)
 
 ## Directory guide
 
