@@ -3,9 +3,10 @@
 > **Status:** working world design.
 >
 > **Geology:** [`05-planetary-formation.md`](05-planetary-formation.md)  
+> **Last 20 ka (Earth-analogue civ history):** [`08-last-20ka.md`](08-last-20ka.md) · [`09-historical-timeline.md`](09-historical-timeline.md)  
 > **How countries form (grain → transport → borders):** [`06-settlement-and-borders.md`](06-settlement-and-borders.md)  
 > **Pseudo-histories:** [`07-pseudo-histories.md`](07-pseudo-histories.md)  
-> **Map brief:** [`../maps/00-world-map-brief.md`](../maps/00-world-map-brief.md)
+> **Algorithmic map:** [`../maps/generator/`](../maps/generator/)
 
 ## Ground rules (canon — see decisions-log)
 

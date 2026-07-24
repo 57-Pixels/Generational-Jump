@@ -17,19 +17,21 @@ python3 generate_world.py --width 2048 --height 1024 --seed 42 --era lgm
 
 | File | Purpose |
 | --- | --- |
-| `../exports/world-height.png` | Greyscale elevation |
-| `../exports/world-color.png` | Atlas-style color (viewer basemap) |
-| `../exports/world-meta.json` | Seed + feature list |
-| `../viewer/public/world/*` | Same files copied for GitHub Pages |
+| `../exports/world-height.png` | Greyscale elevation (present) |
+| `../exports/world-color.png` | Atlas color (present; viewer basemap) |
+| `../exports/world-*-lgm.png` | LGM snapshot (~20 ka Earth-analogue) |
+| `../exports/world-meta*.json` | Seed, era, feature list |
+| `../viewer/public/world/*` | Copies for GitHub Pages |
 
 ## What v1 encodes
 
-- Aurelian + East Gulf embayment
+- Aurelian + East Gulf (flooded in `present`, exposed shelf plain in `lgm`)
 - Highspine subduction cordillera + offshore trench
 - Kharzhan craton (passive west)
 - Farreach collisional suture
 - Solmar island-continent + curved volcanic arc
 - Rain shadow / Hadley moisture → land colors
+- LGM northern ice + lower sea level (Earth-analogue)
 
 Tune geometry by editing parameters in `generate_world.py` (ellipse centers, ridge longitudes). Same `--seed` ⇒ same map.
 
