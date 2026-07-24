@@ -1,11 +1,9 @@
 import { defineConfig } from "vite";
 
-// Pages: https://57-pixels.github.io/FantasyMilitaryProject/
-// Local `npm run dev` uses "/" so you open http://localhost:5173/
-const pagesBase = "/FantasyMilitaryProject/";
-
+// Relative base so GitHub Pages keeps working after repo renames
+// (avoids hardcoding /OldRepoName/).
 export default defineConfig({
-  base: process.env.GITHUB_ACTIONS ? pagesBase : "/",
+  base: "./",
   root: ".",
   publicDir: "public",
   server: {

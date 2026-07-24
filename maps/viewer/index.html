@@ -5,6 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Veldara Map Viewer</title>
     <link href="https://unpkg.com/maplibre-gl@5.6.0/dist/maplibre-gl.css" rel="stylesheet" />
+    <style>
+      /* Critical layout if the bundle is slow or cached wrong */
+      html,
+      body,
+      #app {
+        margin: 0;
+        height: 100%;
+        background: #0f1419;
+        color: #e7ecf1;
+        font-family: system-ui, sans-serif;
+      }
+      #map {
+        position: absolute;
+        inset: 0;
+      }
+      #chrome,
+      #legend {
+        position: absolute;
+        z-index: 2;
+      }
+    </style>
   </head>
   <body>
     <div id="app">
