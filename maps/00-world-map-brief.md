@@ -27,7 +27,9 @@
 
 ## Continents / landmasses to draw
 
-**Speech:** three continents (**Aurelian**, **Kharzhan**, **Farreach**) + **Solmar** island-continent — not four equal petals.
+**Definitions:** continent = continental plate; landmass = continuous dry land (may hold multiple continents). Present land ≈ 29%.
+
+**Reference campaign speech:** plates **Aurelian**, **Kharzhan**, **Solmar**, **Nerath**, **Tesen**; landmass **Farreach** = Nerath+Tesen suture. Prefer regenerating via [`generator/deeptime`](generator/deeptime/) for new stories.
 
 ### Aurelian (home) — mid-frame, northern hemisphere heavy
 

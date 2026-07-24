@@ -43,18 +43,20 @@ Write history in this order (and stop when the modern border is explained):
 | **Northwood** | Thin soils, lakes, timber, some pastoral | Sparse; highland **Sereth** logic |
 | **Doverin basin** (SW) | Separate river catchment west of a gentle divide | Partner state; different silo network |
 
-## Landmass language (Earthlike, not four equal petals)
+## Continents vs landmasses
 
-| Landmass | Rank | Notes |
+**Continent = continental plate.** **Landmass = continuous dry land** (may span multiple plates/continents). Present land ≈ 29%. See [`12`](12-worldbuilding-principles.md).
+
+| Name | Kind | Notes (reference campaign) |
 | --- | --- | --- |
 | **Aurelian** | Continent | Home board |
 | **Kharzhan** | Continent | Other half of the old northern rift |
-| **Farreach** | Continent | South; Maravic War |
-| **Solmar** | **Island-continent** (Australia-scale) | Solara's homeland — major, not a fourth peer "continent" in speech |
+| **Nerath** / **Tesen** | Continents | Colliding plates under Farreach |
+| **Farreach** | Landmass | Sutured south board; Maravic War |
+| **Solmar** | Continent (fragment) | Solara homeland + arc |
 | Others | Islands, peninsulas, footnote coasts | Map texture |
 
-Small countries exist as **footnotes** — a name and one line — unless a scenario needs them on stage.
-
+History depth: important/neighbors + **odd ones out** + **countries of interest** ([`12`](12-worldbuilding-principles.md)). Small countries start as **footnotes** unless promoted.
 ## Improbable states (Singapore / Luxembourg / Papal States logic)
 
 Earth is full of countries that look like mistakes until you learn the accident:

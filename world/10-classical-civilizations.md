@@ -104,12 +104,19 @@ Wei Dongar is the East’s **legendary operational genius**; Tiber Ambros is the
 
 ---
 
-## How the two met
+## How the two met (and why they barely did)
 
-- Classical era: rare East Ocean contact; luxury and rumor.
-- Early modern sailing: dense contact → industrial bipolar rematch.
-- Farreach: contested prestige zone — Nerath Helioric, Tesen Kharic.
+Classical Helioran and Shan-Khar are **environment-earned** packages on opposite sides of hard geography — Rome/China *logic*:
 
+| Barrier | Role |
+| --- | --- |
+| **East Ocean** (rift ocean) | Wide water between Aurelian/Solmar west and Kharzhan east |
+| **Mountains** | Highspine cordillera; Farreach suture; outer accretionary belts |
+| **Deserts** | Hadley + rain-shadow arid belts on interior flanks |
+
+So: classical era = luxury, rumor, rare caravan/coastal hops. Early modern sailing = dense contact → industrial bipolar rematch. Farreach stays a contested prestige zone (Nerath Helioric lean, Tesen Kharic lean) because the suture landmass sits between spheres without erasing either stem.
+
+Humans still **build on forefathers**: modern languages/cultures are branches of Helioric/Kharic, not invented at industrialization.
 ## Aurelian middling path
 
 - Breadbasket frontier for both classical worlds.

@@ -1,22 +1,28 @@
 {
+  "method": "deeptime-plates-v1",
   "seed": 42,
-  "width": 2048,
-  "height": 1024,
+  "width": 1024,
+  "height": 512,
+  "ticks": 80,
+  "ma_per_tick": 8.0,
   "era": "lgm",
-  "sea_level": -0.28,
-  "method": "algorithmic-tectonics-v1",
+  "sea_level": -0.040637006337976664,
+  "land_fraction": 0.39983932932403443,
+  "target_land": 0.29,
+  "n_plates": 12,
+  "hooks": {
+    "land_fraction_ok": false,
+    "wide_ocean": true,
+    "has_cordillera": true,
+    "has_suture": true,
+    "has_passive_margin": true,
+    "all_critical": true,
+    "land_fraction": 0.39983932932403443,
+    "note": "v1 hooks are heuristic; reroll seed if all_critical is false for a campaign"
+  },
   "canon": [
+    "docs/superpowers/specs/2026-07-24-world-generation-design.md",
     "world/05-planetary-formation.md",
-    "world/08-last-20ka.md"
-  ],
-  "features": [
-    "aurelian+east-gulf",
-    "highspine-subduction",
-    "west-trench",
-    "kharzhan-craton",
-    "farreach-suture",
-    "solmar-island-continent+arc",
-    "climate-rainshadow-hadley",
-    "era:lgm"
+    "world/12-worldbuilding-principles.md"
   ]
 }

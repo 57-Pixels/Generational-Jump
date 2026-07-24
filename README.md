@@ -18,12 +18,14 @@ world/  →  maps/  →  threat-analysis/  →  doctrine/  →  industry/ + data
 2. [`world/05-planetary-formation.md`](world/05-planetary-formation.md) — tectonics backdrop
 3. [`world/08-last-20ka.md`](world/08-last-20ka.md) — **LGM→now, Earth-analogue conditions**
 4. [`world/09-historical-timeline.md`](world/09-historical-timeline.md) — dated eras
-4b. [`world/10-classical-civilizations.md`](world/10-classical-civilizations.md) — **Helioran (West) & Shan-Khar (East)** ancestral giants
-5. [`world/06-settlement-and-borders.md`](world/06-settlement-and-borders.md) — grain nodes, borders, improbable states
-6. [`world/07-pseudo-histories.md`](world/07-pseudo-histories.md) — country histories
-7. [`maps/generator/README.md`](maps/generator/README.md) — algorithmic map (`present` / `lgm`)
-8. [`maps/viewer/README.md`](maps/viewer/README.md) — hosted 2D→globe viewer
-9. [`world/01-our-nation.md`](world/01-our-nation.md) — Veldara
+4b. [`world/10-classical-civilizations.md`](world/10-classical-civilizations.md) — **Helioran (West) & Shan-Khar (East)** ancestral giants  
+4c. [`world/11-legendary-figures.md`](world/11-legendary-figures.md) — Alexander-scale legends (roles, not Earth names)  
+4d. [`world/12-worldbuilding-principles.md`](world/12-worldbuilding-principles.md) — environment→culture, forefathers, detail budget  
+5. [`world/06-settlement-and-borders.md`](world/06-settlement-and-borders.md) — grain nodes, borders, improbable states  
+6. [`world/07-pseudo-histories.md`](world/07-pseudo-histories.md) — country histories  
+7. [`maps/generator/README.md`](maps/generator/README.md) — **deep-time plates** (default) + reference ellipse generator  
+8. [`maps/viewer/README.md`](maps/viewer/README.md) — hosted 2D→globe viewer  
+9. [`docs/superpowers/specs/2026-07-24-world-generation-design.md`](docs/superpowers/specs/2026-07-24-world-generation-design.md) — world-gen design9. [`world/01-our-nation.md`](world/01-our-nation.md) — Veldara
 10. [`maps/01-country-maps-brief.md`](maps/01-country-maps-brief.md) — country map set
 11. [`world/02-neighbors-and-threats.md`](world/02-neighbors-and-threats.md)
 12. [`world/03-economy-and-industrial-base.md`](world/03-economy-and-industrial-base.md)
