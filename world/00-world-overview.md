@@ -2,7 +2,7 @@
 
 > **Status:** working world design.
 >
-> **Principles:** [`12-worldbuilding-principles.md`](12-worldbuilding-principles.md)  
+> **Principles:** [`12-worldbuilding-principles.md`](12-worldbuilding-principles.md) · [`13-resources-from-geology.md`](13-resources-from-geology.md)  
 > **Geology:** [`05-planetary-formation.md`](05-planetary-formation.md)  
 > **Last 20 ka (Earth-analogue civ history):** [`08-last-20ka.md`](08-last-20ka.md) · [`09-historical-timeline.md`](09-historical-timeline.md) · [`10-classical-civilizations.md`](10-classical-civilizations.md) · [`11-legendary-figures.md`](11-legendary-figures.md)  
 > **How countries form (grain → transport → borders):** [`06-settlement-and-borders.md`](06-settlement-and-borders.md)  

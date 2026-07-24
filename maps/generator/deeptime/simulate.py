@@ -285,7 +285,9 @@ def simulate(cfg: SimConfig) -> SimResult:
             "docs/superpowers/specs/2026-07-24-world-generation-design.md",
             "world/05-planetary-formation.md",
             "world/12-worldbuilding-principles.md",
+            "world/13-resources-from-geology.md",
         ],
+        "planned_layers": ["resource_prospects_from_orogeny_crust_basins"],
     }
     return SimResult(
         elev=elev,
