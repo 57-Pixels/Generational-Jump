@@ -25,6 +25,8 @@
 
 **Freeze:** A generation of Eastmarch wars ends in a surveyed line that satisfies no one — classic open-plain border. Modern Veldara is the federal bargain: Heartland votes + Gulf money + Westreach navy.
 
+**Classical shadow:** Helioran law/ports via Westreach + Solara; local grain federalism is home-grown ([`10-classical-civilizations.md`](10-classical-civilizations.md)).
+
 **Why we look like a mini-US:** coastal/port strip + mountain barrier + vast interior food basin + second warm-water gulf + an open land frontier.
 
 ---
@@ -40,6 +42,8 @@
 **Freeze:** Same Eastmarch wars; their textbooks say they lost a strip, ours say we held the line. Rivalry is structural: **two grain empires, one plain, weak natural border**.
 
 **Great-power lean:** Kharzhan credits, doctrine, and spares — the continental patron that speaks "land war."
+
+**Classical shadow:** Shan-Khar administrative-military habits via Kharzhan patronage ([`10`](10-classical-civilizations.md)).
 
 ---
 
@@ -73,7 +77,9 @@
 
 **Transport spine:** Coastal shipping as the "highway"; interior rail secondary. Southern arc islands = waystations.
 
-**Aggregation:** Port leagues → naval federation → federal maritime republic. Controlling **chokepoints and credit** beats controlling acreage.
+**Classical root:** Heir to the **Helioran Commonwealth** ([`10-classical-civilizations.md`](10-classical-civilizations.md)) — law, naval prestige, civic memory.
+
+**Aggregation:** Port leagues → naval federation → federal maritime republic reclaiming Helioran legitimacy. Controlling **chokepoints and credit** beats controlling acreage.
 
 **Freeze:** Ocean borders are easy; influence abroad is the real frontier. Becomes the maritime/tech great power — licenses, carriers, finance.
 
@@ -84,6 +90,8 @@
 **Food core:** Immense interior grain + river corridors on the craton; multiple hearth regions that were conquered into one tax space.
 
 **Transport spine:** River trunk lines + rail land-bridges; passive west coast ports toward East Ocean.
+
+**Classical root:** Claims succession from the **Shan-Khar Imperium** ([`10`](10-classical-civilizations.md)) — bureaucracy, census, “center endures.”
 
 **Aggregation:** Classic continental pattern — unify the plains, then keep going until logistics snap. Militarized bureaucracy is how you run that many silos.
 
@@ -97,7 +105,7 @@
 
 **Transport spine:** Coastal rail + limited suture passes.
 
-**Aggregation:** Trading cities federate into a compact; democratic institutions follow commercial grain/import dependence.
+**Aggregation:** Trading cities federate into a compact; democratic institutions follow commercial grain/import dependence. **Helioran/Solara** civilizational lean.
 
 **Freeze:** The suture orogeny is a real wall — until modern war makes passes and air matter. Fighting Tesen is fighting over **passes, foothill industry, and which way the grain and fuel move**.
 

@@ -55,6 +55,7 @@ Exact °C and meters can stay “Earth-like”; the **direction of change** is w
 - Stable enough coasts + glacial soils + rivers → **grain nodes** (the barony insight).
 - Open **Eastmarch** plain never gets a glacial wall between future Veldara and Korvath → structural rivalry.
 - Farreach suture stays a highland barrier; Maravic-scale conflict waits for modern logistics.
+- By the classical era, two historically large packages dominate prestige memory: **Helioran (West)** and **Shan-Khar (East)** — [`10-classical-civilizations.md`](10-classical-civilizations.md). Everything after is partly their rematch.
 
 ## What we deliberately skip (for now)
 

@@ -26,26 +26,29 @@ Generator today implements **`lgm`** and **`present`** snapshots; other eras can
 | --- | --- |
 | ~11–9 ka | Independent agricultural starts in at least two hearths (northern river plains + one Farreach wet coast) — Earth Neolithic *pattern* |
 | ~6–4 ka | Irrigation / grain-board polities on Heartland-analogue and Kharzhan rivers |
-| ~3–2 ka | Classical-scale states; Highspine toll powers; first durable Eastmarch frontier wars |
-| ~1000–1500 | Maritime leagues on Solmar; continental consolidation on Kharzhan |
-| ~1500–1800 | Gunpowder + ocean sailing → Solara’s naval edge; colonial/trading footprints (footnotes) |
+| ~3–2.5 ka | **Classical rise:** Helioran (West/Solmar littoral) and Shan-Khar (East/Kharzhan rivers) become historically large civilizations — see [`10-classical-civilizations.md`](10-classical-civilizations.md) |
+| ~2.2–1.4 ka | Helioran Commonwealth peaks (maritime/law empire); Shan-Khar cycles of unify/break on the craton |
+| ~1.4 ka–1000 CE | Helioran fragmentation into successor kingdoms; Shan-Khar reunifies under new dynasties; Aurelian plains remain contested breadbaskets |
+| ~1000–1500 | Maritime leagues on Solmar reclaim Helioran prestige; continental consolidation on Kharzhan continues |
+| ~1500–1800 | Gunpowder + ocean sailing → Solara’s naval edge (Helioran heir); colonial/trading footprints (footnotes) |
 | ~1800–1900 | Rail gauge wars on Aurelian; Veldara federal bargains (Gulf + Heartland + Westreach passes) |
 | ~1900–1945 | Industrial total wars (offstage detail later); force structures that become “legacy” |
-| ~1945–1990s | Bipolar Solara–Kharzhan order; Veldara/Korvath client-lean patterns |
+| ~1945–1990s | Bipolar Solara–Kharzhan order = industrial rematch of West/East classical packages; Veldara/Korvath client-lean patterns |
 | ~1990s–2010s | Veldara stagnates on late-Cold-War kit while politics underfunds modernization |
 | ~2020s | **Maravic War** on Farreach (Earth Ukraine-era *lessons*, fictional belligerents) |
 | Now | Veldara **Modernization Act** / generational jump (the series) |
 
 ## On-stage powers — when they “become themselves”
 
-| Polity | Rough “recognizable” from |
-| --- | --- |
-| Solara | Early modern naval federation → industrial maritime hegemon |
-| Kharzhan State | Continental grain/rail consolidation → industrial land hegemon |
-| Veldara | 19th-c. federal grain+ports bargain; 20th-c. major |
-| Korvath | Parallel plain empire; militarized centralization |
-| Doverin / Sereth | Catchment / highland leftovers that never got absorbed |
-| Nerath / Tesen | Holocene split by suture; modernized into Maravic peers |
+| Polity | Rough “recognizable” from | Classical shadow |
+| --- | --- | --- |
+| Solara | Early modern naval federation → industrial maritime hegemon | **Helioran** heir |
+| Kharzhan State | Continental grain/rail consolidation → industrial land hegemon | **Shan-Khar** heir |
+| Veldara | 19th-c. federal grain+ports bargain; 20th-c. major | Helioran law/ports + local grain federalism |
+| Korvath | Parallel plain empire; militarized centralization | Shan-Khar admin/military habits |
+| Doverin / Sereth | Catchment / highland leftovers that never got absorbed | Thin Helioran rim / highland outside both cores |
+| Nerath / Tesen | Holocene split by suture; modernized into Maravic peers | Nerath→Helioran/Solara; Tesen→Shan-Khar/Kharzhan |
+| Iberon | Broker ports | Helioran rim that stayed mercantile |
 
 ## Improbable leftovers
 

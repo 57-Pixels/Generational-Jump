@@ -3,7 +3,7 @@
 > **Status:** working world design.
 >
 > **Geology:** [`05-planetary-formation.md`](05-planetary-formation.md)  
-> **Last 20 ka (Earth-analogue civ history):** [`08-last-20ka.md`](08-last-20ka.md) · [`09-historical-timeline.md`](09-historical-timeline.md)  
+> **Last 20 ka (Earth-analogue civ history):** [`08-last-20ka.md`](08-last-20ka.md) · [`09-historical-timeline.md`](09-historical-timeline.md) · [`10-classical-civilizations.md`](10-classical-civilizations.md)  
 > **How countries form (grain → transport → borders):** [`06-settlement-and-borders.md`](06-settlement-and-borders.md)  
 > **Pseudo-histories:** [`07-pseudo-histories.md`](07-pseudo-histories.md)  
 > **Algorithmic map:** [`../maps/generator/`](../maps/generator/)
@@ -35,6 +35,8 @@ Shapes still come from tectonics in `05`. Politics come from `06`/`07`.
 **Footnotes** (name + one line, map texture): see bottom of `07-pseudo-histories.md`. Promote only when a scenario needs them.
 
 ## Global pecking order
+
+Today’s bipolar great powers sit on **classical West/East foundations** ([`10-classical-civilizations.md`](10-classical-civilizations.md)): Solara ← Helioran; Kharzhan State ← Shan-Khar.
 
 ### Tier 1 — Great powers (2)
 
