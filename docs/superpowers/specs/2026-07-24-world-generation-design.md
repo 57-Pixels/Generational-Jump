@@ -49,7 +49,9 @@ Unique story = new seed (optional) producing a new board **and** a new ancestral
 - Accumulate orogeny; derive elevation; set sea level so land ≈ 29%
 - Soft **hooks** (reject/reroll or warn): wide inter-hearth ocean, ≥1 suture landmass, ≥1 subduction cordillera with passive opposite coast, arid/mountain barriers possible
 
-**Not in v1:** full mantle CFD, paleoclimate GCM, automatic nation naming, **full resource raster** (rules locked in `world/13`; derive next from orogeny/crust/basins).
+**Not in v1:** full mantle CFD, paleoclimate GCM, automatic nation naming.
+
+**Resources (shipped):** all important geological catalog types (incl. gold, REE, high-purity silica) as deposit markers from orogeny/crust/basins/shelves — see `world/13` and `deeptime/resources.py`.
 
 **Reference campaign:** frozen Generational-Jump / Veldara geography remains a named seed artifact until regenerated deliberately.
 

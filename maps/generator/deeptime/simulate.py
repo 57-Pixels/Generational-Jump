@@ -14,6 +14,8 @@ from pathlib import Path
 import numpy as np
 from PIL import Image
 
+from .resources import RESOURCE_CATALOG, build_resources, deposits_geojson
+
 ROOT = Path(__file__).resolve().parent
 GENERATOR = ROOT.parent
 EXPORTS = GENERATOR.parent / "exports"
@@ -63,6 +65,8 @@ class SimResult:
     color: np.ndarray
     height_u8: np.ndarray
     meta: dict = field(default_factory=dict)
+    resources_overlay: np.ndarray | None = None
+    resources_geojson: dict | None = None
 
 
 def _seed_cratons(
@@ -266,6 +270,20 @@ def simulate(cfg: SimConfig) -> SimResult:
     color = colorize(elev, sea, lat, moisture, cfg.era)
     height_u8 = to_height_png(elev)
 
+    resources = build_resources(
+        elev=elev,
+        sea=sea,
+        cont=cont,
+        orogeny=orogeny,
+        ocean_age=ocean_age,
+        lat=lat,
+        lon=lon,
+        moisture=moisture,
+        base_color=color,
+        seed=cfg.seed,
+    )
+    geojson = deposits_geojson(resources.deposits)
+
     hooks = evaluate_hooks(elev, sea, cont, orogeny, plate, weights, lon, lat)
 
     meta = {
@@ -281,13 +299,18 @@ def simulate(cfg: SimConfig) -> SimResult:
         "target_land": cfg.target_land,
         "n_plates": int(plate.max() + 1),
         "hooks": hooks,
+        "resources": {
+            "catalog": list(RESOURCE_CATALOG.keys()),
+            "deposit_count": len(resources.deposits),
+            "legend": resources.legend,
+            "rule": "world/13-resources-from-geology.md",
+        },
         "canon": [
             "docs/superpowers/specs/2026-07-24-world-generation-design.md",
             "world/05-planetary-formation.md",
             "world/12-worldbuilding-principles.md",
             "world/13-resources-from-geology.md",
         ],
-        "planned_layers": ["resource_prospects_from_orogeny_crust_basins"],
     }
     return SimResult(
         elev=elev,
@@ -299,6 +322,8 @@ def simulate(cfg: SimConfig) -> SimResult:
         color=color,
         height_u8=height_u8,
         meta=meta,
+        resources_overlay=resources.overlay_rgb,
+        resources_geojson=geojson,
     )
 
 
@@ -438,7 +463,6 @@ def save_result(result: SimResult, prefix: str = "world") -> None:
     VIEWER_WORLD.mkdir(parents=True, exist_ok=True)
     era = result.meta.get("era", "present")
     suffix = "" if era == "present" else f"-{era}"
-    # Also tag deeptime in meta filename
     height_img = Image.fromarray(result.height_u8, mode="L")
     color_img = Image.fromarray((result.color * 255).astype(np.uint8), mode="RGB")
     plate_norm = (result.plate_id.astype(np.float64) / max(result.plate_id.max(), 1) * 255).astype(
@@ -446,16 +470,30 @@ def save_result(result: SimResult, prefix: str = "world") -> None:
     )
     plate_img = Image.fromarray(plate_norm, mode="L")
 
+    resources_img = None
+    if result.resources_overlay is not None:
+        resources_img = Image.fromarray(
+            (result.resources_overlay * 255).astype(np.uint8), mode="RGB"
+        )
+
     for dest in (EXPORTS, VIEWER_WORLD):
         height_img.save(dest / f"{prefix}-height{suffix}.png")
         color_img.save(dest / f"{prefix}-color{suffix}.png")
         plate_img.save(dest / f"{prefix}-plates{suffix}.png")
+        if resources_img is not None:
+            resources_img.save(dest / f"{prefix}-resources{suffix}.png")
+        if result.resources_geojson is not None:
+            (dest / f"{prefix}-resources{suffix}.geojson").write_text(
+                json.dumps(result.resources_geojson, indent=2) + "\n"
+            )
         (dest / f"{prefix}-meta{suffix}.json").write_text(
             json.dumps(result.meta, indent=2) + "\n"
         )
+    n_dep = result.meta.get("resources", {}).get("deposit_count", 0)
     print(
         f"deeptime seed={result.meta['seed']} land={result.land_fraction:.3f} "
-        f"hooks={result.meta['hooks'].get('all_critical')} → {EXPORTS / f'{prefix}-color{suffix}.png'}"
+        f"hooks={result.meta['hooks'].get('all_critical')} deposits={n_dep} "
+        f"→ {EXPORTS / f'{prefix}-color{suffix}.png'}"
     )
 
 

@@ -74,6 +74,25 @@ map.addControl(new maplibregl.ScaleControl({ maxWidth: 120 }), "bottom-right");
 const projLabel = document.getElementById("proj-label");
 const zoomLabel = document.getElementById("zoom-label");
 const warToggle = document.getElementById("war-layers");
+const resourceToggle = document.getElementById("resource-layers");
+
+const RESOURCE_COLORS = {
+  coal: "#1f1f24",
+  oil_gas: "#1f7338",
+  iron: "#b8472e",
+  copper: "#d97a1f",
+  tin_tungsten: "#8c59bf",
+  gold: "#ebc72e",
+  silver_base: "#bfc7d1",
+  rare_earths: "#d940a6",
+  uranium: "#73d940",
+  silica_hp: "#d9ebf2",
+  bauxite: "#c78c47",
+  nickel_pgm: "#598cb2",
+  lithium: "#8cbfd1",
+  phosphates: "#66a659",
+  potash: "#a6668c",
+};
 
 function projectionForZoom(zoom) {
   return zoom < GLOBE_MAX_ZOOM ? "globe" : "mercator";
@@ -97,6 +116,95 @@ function setWarLayersVisible(visible) {
       map.setLayoutProperty(id, "visibility", visibility);
     }
   }
+}
+
+function setResourceLayersVisible(visible) {
+  const visibility = visible ? "visible" : "none";
+  for (const id of ["resources-circle", "resources-label"]) {
+    if (map.getLayer(id)) {
+      map.setLayoutProperty(id, "visibility", visibility);
+    }
+  }
+}
+
+async function addResourceLayers() {
+  const url = asset("world/world-resources.geojson");
+  let data;
+  try {
+    const res = await fetch(url);
+    if (!res.ok) throw new Error(String(res.status));
+    data = await res.json();
+  } catch {
+    console.warn("Resource GeoJSON missing — run deeptime generator");
+    return;
+  }
+
+  map.addSource("resources", { type: "geojson", data });
+
+  const matchColor = ["match", ["get", "resource"]];
+  for (const [id, color] of Object.entries(RESOURCE_COLORS)) {
+    matchColor.push(id, color);
+  }
+  matchColor.push("#ffffff");
+
+  map.addLayer({
+    id: "resources-circle",
+    type: "circle",
+    source: "resources",
+    paint: {
+      "circle-radius": [
+        "match",
+        ["get", "grade"],
+        "major",
+        6,
+        "significant",
+        4.5,
+        3.5,
+      ],
+      "circle-color": matchColor,
+      "circle-stroke-width": 1,
+      "circle-stroke-color": "#111111",
+      "circle-opacity": 0.95,
+    },
+  });
+
+  map.addLayer({
+    id: "resources-label",
+    type: "symbol",
+    source: "resources",
+    layout: {
+      "text-field": ["get", "name"],
+      "text-size": 10,
+      "text-offset": [0, 1.1],
+      "text-optional": true,
+      "text-max-width": 8,
+    },
+    paint: {
+      "text-color": "#f2f5f8",
+      "text-halo-color": "#0a1218",
+      "text-halo-width": 1.2,
+    },
+    minzoom: 3.2,
+  });
+
+  map.on("click", "resources-circle", (e) => {
+    const f = e.features?.[0];
+    if (!f) return;
+    const { name, grade, resource, intensity } = f.properties ?? {};
+    new maplibregl.Popup()
+      .setLngLat(e.lngLat)
+      .setHTML(
+        `<strong>${name ?? resource}</strong><br/>` +
+          `<span>${grade ?? ""} · intensity ${intensity ?? ""}</span>`,
+      )
+      .addTo(map);
+  });
+  map.on("mouseenter", "resources-circle", () => {
+    map.getCanvas().style.cursor = "pointer";
+  });
+  map.on("mouseleave", "resources-circle", () => {
+    map.getCanvas().style.cursor = "";
+  });
 }
 
 async function addWarLayers() {
@@ -190,10 +298,17 @@ async function addWarLayers() {
 
 map.on("load", async () => {
   applyProjection();
+  await addResourceLayers();
   await addWarLayers();
-  // War demo layers stay off until geometry matches this world
   if (warToggle) warToggle.checked = false;
   setWarLayersVisible(false);
+  if (resourceToggle) {
+    resourceToggle.checked = true;
+    setResourceLayersVisible(true);
+    resourceToggle.addEventListener("change", () => {
+      setResourceLayersVisible(resourceToggle.checked);
+    });
+  }
 });
 
 map.on("zoom", applyProjection);

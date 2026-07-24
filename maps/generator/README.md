@@ -21,7 +21,7 @@ python3 -m deeptime --seed 100 --reroll-hooks   # try nearby seeds until story h
 
 Targets present **land ≈ 29%**. Writes `maps/exports/world-*.png` and copies into `maps/viewer/public/world/` (overwrites viewer basemap — commit deliberately).
 
-Also writes `world-plates.png` (plate-id preview).
+Also writes `world-plates.png`, `world-resources.png`, and `world-resources.geojson` (gold, REE, HP silica, oil, copper, …).
 
 ## Reference campaign (ellipses)
 

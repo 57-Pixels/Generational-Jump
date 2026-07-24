@@ -20,9 +20,183 @@
     "land_fraction": 0.28999798353124895,
     "note": "v1 hooks are heuristic; reroll seed if all_critical is false for a campaign"
   },
+  "resources": {
+    "catalog": [
+      "coal",
+      "oil_gas",
+      "iron",
+      "copper",
+      "tin_tungsten",
+      "gold",
+      "silver_base",
+      "rare_earths",
+      "uranium",
+      "silica_hp",
+      "bauxite",
+      "nickel_pgm",
+      "lithium",
+      "phosphates",
+      "potash"
+    ],
+    "deposit_count": 199,
+    "legend": [
+      {
+        "id": "coal",
+        "name": "Coal",
+        "color_rgb": [
+          0.12,
+          0.12,
+          0.14
+        ],
+        "deposit_count": 14
+      },
+      {
+        "id": "oil_gas",
+        "name": "Oil & gas",
+        "color_rgb": [
+          0.12,
+          0.45,
+          0.22
+        ],
+        "deposit_count": 14
+      },
+      {
+        "id": "iron",
+        "name": "Iron",
+        "color_rgb": [
+          0.72,
+          0.28,
+          0.18
+        ],
+        "deposit_count": 14
+      },
+      {
+        "id": "copper",
+        "name": "Copper (porphyry)",
+        "color_rgb": [
+          0.85,
+          0.48,
+          0.12
+        ],
+        "deposit_count": 14
+      },
+      {
+        "id": "tin_tungsten",
+        "name": "Tin / tungsten",
+        "color_rgb": [
+          0.55,
+          0.35,
+          0.75
+        ],
+        "deposit_count": 14
+      },
+      {
+        "id": "gold",
+        "name": "Gold",
+        "color_rgb": [
+          0.92,
+          0.78,
+          0.18
+        ],
+        "deposit_count": 14
+      },
+      {
+        "id": "silver_base",
+        "name": "Silver / base-metal",
+        "color_rgb": [
+          0.75,
+          0.78,
+          0.82
+        ],
+        "deposit_count": 14
+      },
+      {
+        "id": "rare_earths",
+        "name": "Rare earths",
+        "color_rgb": [
+          0.85,
+          0.25,
+          0.65
+        ],
+        "deposit_count": 14
+      },
+      {
+        "id": "uranium",
+        "name": "Uranium",
+        "color_rgb": [
+          0.45,
+          0.85,
+          0.25
+        ],
+        "deposit_count": 14
+      },
+      {
+        "id": "silica_hp",
+        "name": "High-purity silica",
+        "color_rgb": [
+          0.85,
+          0.92,
+          0.95
+        ],
+        "deposit_count": 14
+      },
+      {
+        "id": "bauxite",
+        "name": "Bauxite (aluminum)",
+        "color_rgb": [
+          0.78,
+          0.55,
+          0.28
+        ],
+        "deposit_count": 14
+      },
+      {
+        "id": "nickel_pgm",
+        "name": "Nickel / PGM",
+        "color_rgb": [
+          0.35,
+          0.55,
+          0.7
+        ],
+        "deposit_count": 14
+      },
+      {
+        "id": "lithium",
+        "name": "Lithium (brine/pegmatite)",
+        "color_rgb": [
+          0.55,
+          0.75,
+          0.9
+        ],
+        "deposit_count": 14
+      },
+      {
+        "id": "phosphates",
+        "name": "Phosphates",
+        "color_rgb": [
+          0.4,
+          0.65,
+          0.35
+        ],
+        "deposit_count": 14
+      },
+      {
+        "id": "potash",
+        "name": "Potash",
+        "color_rgb": [
+          0.65,
+          0.4,
+          0.55
+        ],
+        "deposit_count": 3
+      }
+    ],
+    "rule": "world/13-resources-from-geology.md"
+  },
   "canon": [
     "docs/superpowers/specs/2026-07-24-world-generation-design.md",
     "world/05-planetary-formation.md",
-    "world/12-worldbuilding-principles.md"
+    "world/12-worldbuilding-principles.md",
+    "world/13-resources-from-geology.md"
   ]
 }

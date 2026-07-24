@@ -1,0 +1,3389 @@
+{
+  "type": "FeatureCollection",
+  "name": "geological-resources",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "coal-0",
+        "resource": "coal",
+        "name": "Coal",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.0703125,
+          -6.164383561643831
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "coal-1",
+        "resource": "coal",
+        "name": "Coal",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.5546875,
+          33.639921722113506
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "coal-2",
+        "resource": "coal",
+        "name": "Coal",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.2109375,
+          41.3894324853229
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "coal-3",
+        "resource": "coal",
+        "name": "Coal",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          83.671875,
+          6.868884540117421
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "coal-4",
+        "resource": "coal",
+        "name": "Coal",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.046875,
+          7.573385518590996
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "coal-5",
+        "resource": "coal",
+        "name": "Coal",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          49.921875,
+          10.039138943248531
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "coal-6",
+        "resource": "coal",
+        "name": "Coal",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.46875,
+          -7.221135029354201
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "coal-7",
+        "resource": "coal",
+        "name": "Coal",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -48.8671875,
+          40.33268101761253
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "coal-8",
+        "resource": "coal",
+        "name": "Coal",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.546875,
+          -7.221135029354201
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "coal-9",
+        "resource": "coal",
+        "name": "Coal",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.0625,
+          -5.107632093933461
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "coal-10",
+        "resource": "coal",
+        "name": "Coal",
+        "grade": "major",
+        "intensity": 0.999
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.890625,
+          -40.332681017612515
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "coal-11",
+        "resource": "coal",
+        "name": "Coal",
+        "grade": "major",
+        "intensity": 0.999
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          93.515625,
+          -5.812133072407036
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "coal-12",
+        "resource": "coal",
+        "name": "Coal",
+        "grade": "major",
+        "intensity": 0.999
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          95.9765625,
+          -36.81017612524461
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "coal-13",
+        "resource": "coal",
+        "name": "Coal",
+        "grade": "major",
+        "intensity": 0.999
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          97.3828125,
+          12.857142857142861
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "oil_gas-14",
+        "resource": "oil_gas",
+        "name": "Oil & gas",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          168.3984375,
+          62.172211350293544
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "oil_gas-15",
+        "resource": "oil_gas",
+        "name": "Oil & gas",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.0546875,
+          89.6477495107632
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "oil_gas-16",
+        "resource": "oil_gas",
+        "name": "Oil & gas",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -167.6953125,
+          37.5146771037182
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "oil_gas-17",
+        "resource": "oil_gas",
+        "name": "Oil & gas",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          46.0546875,
+          66.75146771037183
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "oil_gas-18",
+        "resource": "oil_gas",
+        "name": "Oil & gas",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -178.9453125,
+          29.412915851272018
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "oil_gas-19",
+        "resource": "oil_gas",
+        "name": "Oil & gas",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.859375,
+          82.6027397260274
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "oil_gas-20",
+        "resource": "oil_gas",
+        "name": "Oil & gas",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -49.21875,
+          -18.845401174168288
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "oil_gas-21",
+        "resource": "oil_gas",
+        "name": "Oil & gas",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.34375,
+          58.29745596868885
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "oil_gas-22",
+        "resource": "oil_gas",
+        "name": "Oil & gas",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          178.2421875,
+          -23.424657534246563
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "oil_gas-23",
+        "resource": "oil_gas",
+        "name": "Oil & gas",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.125,
+          -4.755381604696666
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "oil_gas-24",
+        "resource": "oil_gas",
+        "name": "Oil & gas",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          92.8125,
+          78.37573385518591
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "oil_gas-25",
+        "resource": "oil_gas",
+        "name": "Oil & gas",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.390625,
+          70.27397260273972
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "oil_gas-26",
+        "resource": "oil_gas",
+        "name": "Oil & gas",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          165.5859375,
+          46.32093933463797
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "oil_gas-27",
+        "resource": "oil_gas",
+        "name": "Oil & gas",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.921875,
+          70.27397260273972
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "iron-28",
+        "resource": "iron",
+        "name": "Iron",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          45.703125,
+          52.30919765166341
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "iron-29",
+        "resource": "iron",
+        "name": "Iron",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          50.2734375,
+          52.30919765166341
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "iron-30",
+        "resource": "iron",
+        "name": "Iron",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.1953125,
+          51.956947162426616
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "iron-31",
+        "resource": "iron",
+        "name": "Iron",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.78125,
+          51.25244618395303
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "iron-32",
+        "resource": "iron",
+        "name": "Iron",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          59.765625,
+          50.900195694716245
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "iron-33",
+        "resource": "iron",
+        "name": "Iron",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.2109375,
+          49.843444227005875
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "iron-34",
+        "resource": "iron",
+        "name": "Iron",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          64.3359375,
+          49.49119373776908
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "iron-35",
+        "resource": "iron",
+        "name": "Iron",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.640625,
+          48.7866927592955
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "iron-36",
+        "resource": "iron",
+        "name": "Iron",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          45.3515625,
+          47.72994129158513
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "iron-37",
+        "resource": "iron",
+        "name": "Iron",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          49.921875,
+          47.72994129158513
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "iron-38",
+        "resource": "iron",
+        "name": "Iron",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.0703125,
+          47.37769080234834
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "iron-39",
+        "resource": "iron",
+        "name": "Iron",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.1953125,
+          47.025440313111545
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "iron-40",
+        "resource": "iron",
+        "name": "Iron",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.78125,
+          46.32093933463797
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "iron-41",
+        "resource": "iron",
+        "name": "Iron",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          59.765625,
+          46.32093933463797
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "copper-42",
+        "resource": "copper",
+        "name": "Copper (porphyry)",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          144.140625,
+          -32.230919765166334
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "copper-43",
+        "resource": "copper",
+        "name": "Copper (porphyry)",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          45.3515625,
+          -28.356164383561634
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "copper-44",
+        "resource": "copper",
+        "name": "Copper (porphyry)",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -63.28125,
+          28.708414872798436
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "copper-45",
+        "resource": "copper",
+        "name": "Copper (porphyry)",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.265625,
+          -3.6986301369862957
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "copper-46",
+        "resource": "copper",
+        "name": "Copper (porphyry)",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.125,
+          22.367906066536207
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "copper-47",
+        "resource": "copper",
+        "name": "Copper (porphyry)",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.4921875,
+          33.28767123287672
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "copper-48",
+        "resource": "copper",
+        "name": "Copper (porphyry)",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.4296875,
+          25.538160469667318
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "copper-49",
+        "resource": "copper",
+        "name": "Copper (porphyry)",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          84.0234375,
+          -9.334637964774942
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "copper-50",
+        "resource": "copper",
+        "name": "Copper (porphyry)",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          61.875,
+          -29.7651663405088
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "copper-51",
+        "resource": "copper",
+        "name": "Copper (porphyry)",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.8828125,
+          32.23091976516634
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "copper-52",
+        "resource": "copper",
+        "name": "Copper (porphyry)",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.6328125,
+          5.81213307240705
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "copper-53",
+        "resource": "copper",
+        "name": "Copper (porphyry)",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.8359375,
+          1.9373776908023501
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "copper-54",
+        "resource": "copper",
+        "name": "Copper (porphyry)",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          156.796875,
+          -41.389432485322885
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "copper-55",
+        "resource": "copper",
+        "name": "Copper (porphyry)",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.765625,
+          -18.140900195694712
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "tin_tungsten-56",
+        "resource": "tin_tungsten",
+        "name": "Tin / tungsten",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.8515625,
+          -8.982387475538161
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "tin_tungsten-57",
+        "resource": "tin_tungsten",
+        "name": "Tin / tungsten",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.875,
+          -37.162426614481404
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "tin_tungsten-58",
+        "resource": "tin_tungsten",
+        "name": "Tin / tungsten",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.828125,
+          -8.277886497064571
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "tin_tungsten-59",
+        "resource": "tin_tungsten",
+        "name": "Tin / tungsten",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          148.0078125,
+          -35.401174168297445
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "tin_tungsten-60",
+        "resource": "tin_tungsten",
+        "name": "Tin / tungsten",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.046875,
+          -16.731898238747547
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "tin_tungsten-61",
+        "resource": "tin_tungsten",
+        "name": "Tin / tungsten",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          81.5625,
+          -23.424657534246563
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "tin_tungsten-62",
+        "resource": "tin_tungsten",
+        "name": "Tin / tungsten",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.7734375,
+          12.152641878669286
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "tin_tungsten-63",
+        "resource": "tin_tungsten",
+        "name": "Tin / tungsten",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          60.46875,
+          -9.686888454011736
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "tin_tungsten-64",
+        "resource": "tin_tungsten",
+        "name": "Tin / tungsten",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          49.921875,
+          11.095890410958901
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "tin_tungsten-65",
+        "resource": "tin_tungsten",
+        "name": "Tin / tungsten",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          56.25,
+          -20.254403131115453
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "tin_tungsten-66",
+        "resource": "tin_tungsten",
+        "name": "Tin / tungsten",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.484375,
+          30.46966731898239
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "tin_tungsten-67",
+        "resource": "tin_tungsten",
+        "name": "Tin / tungsten",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          86.1328125,
+          -8.982387475538161
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "tin_tungsten-68",
+        "resource": "tin_tungsten",
+        "name": "Tin / tungsten",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          59.765625,
+          -25.8904109589041
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "tin_tungsten-69",
+        "resource": "tin_tungsten",
+        "name": "Tin / tungsten",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          50.625,
+          -10.039138943248531
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "gold-70",
+        "resource": "gold",
+        "name": "Gold",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          144.140625,
+          -32.230919765166334
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "gold-71",
+        "resource": "gold",
+        "name": "Gold",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.1640625,
+          0.1761252446184045
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "gold-72",
+        "resource": "gold",
+        "name": "Gold",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          45.3515625,
+          -28.356164383561634
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "gold-73",
+        "resource": "gold",
+        "name": "Gold",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -63.28125,
+          28.708414872798436
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "gold-74",
+        "resource": "gold",
+        "name": "Gold",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.265625,
+          -3.6986301369862957
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "gold-75",
+        "resource": "gold",
+        "name": "Gold",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.125,
+          22.367906066536207
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "gold-76",
+        "resource": "gold",
+        "name": "Gold",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.4921875,
+          33.28767123287672
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "gold-77",
+        "resource": "gold",
+        "name": "Gold",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.4296875,
+          25.538160469667318
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "gold-78",
+        "resource": "gold",
+        "name": "Gold",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          84.0234375,
+          -9.334637964774942
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "gold-79",
+        "resource": "gold",
+        "name": "Gold",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          61.875,
+          -29.7651663405088
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "gold-80",
+        "resource": "gold",
+        "name": "Gold",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.8828125,
+          32.23091976516634
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "gold-81",
+        "resource": "gold",
+        "name": "Gold",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          81.5625,
+          -17.788649706457917
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "gold-82",
+        "resource": "gold",
+        "name": "Gold",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.6328125,
+          5.81213307240705
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "gold-83",
+        "resource": "gold",
+        "name": "Gold",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.5625,
+          -12.857142857142847
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "silver_base-84",
+        "resource": "silver_base",
+        "name": "Silver / base-metal",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.8515625,
+          -8.982387475538161
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "silver_base-85",
+        "resource": "silver_base",
+        "name": "Silver / base-metal",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.875,
+          -37.162426614481404
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "silver_base-86",
+        "resource": "silver_base",
+        "name": "Silver / base-metal",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.828125,
+          -8.277886497064571
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "silver_base-87",
+        "resource": "silver_base",
+        "name": "Silver / base-metal",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          148.0078125,
+          -35.401174168297445
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "silver_base-88",
+        "resource": "silver_base",
+        "name": "Silver / base-metal",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.046875,
+          -16.731898238747547
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "silver_base-89",
+        "resource": "silver_base",
+        "name": "Silver / base-metal",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          81.5625,
+          -23.424657534246563
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "silver_base-90",
+        "resource": "silver_base",
+        "name": "Silver / base-metal",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.7734375,
+          12.152641878669286
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "silver_base-91",
+        "resource": "silver_base",
+        "name": "Silver / base-metal",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          60.46875,
+          -9.686888454011736
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "silver_base-92",
+        "resource": "silver_base",
+        "name": "Silver / base-metal",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          49.921875,
+          11.095890410958901
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "silver_base-93",
+        "resource": "silver_base",
+        "name": "Silver / base-metal",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          56.25,
+          -20.254403131115453
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "silver_base-94",
+        "resource": "silver_base",
+        "name": "Silver / base-metal",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.484375,
+          30.46966731898239
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "silver_base-95",
+        "resource": "silver_base",
+        "name": "Silver / base-metal",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          86.1328125,
+          -8.982387475538161
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "silver_base-96",
+        "resource": "silver_base",
+        "name": "Silver / base-metal",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          59.765625,
+          -25.8904109589041
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "silver_base-97",
+        "resource": "silver_base",
+        "name": "Silver / base-metal",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          50.625,
+          -10.039138943248531
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "rare_earths-98",
+        "resource": "rare_earths",
+        "name": "Rare earths",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.7734375,
+          44.911937377690805
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "rare_earths-99",
+        "resource": "rare_earths",
+        "name": "Rare earths",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.1484375,
+          43.50293542074364
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "rare_earths-100",
+        "resource": "rare_earths",
+        "name": "Rare earths",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          15.8203125,
+          41.74168297455969
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "rare_earths-101",
+        "resource": "rare_earths",
+        "name": "Rare earths",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.78125,
+          40.68493150684932
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "rare_earths-102",
+        "resource": "rare_earths",
+        "name": "Rare earths",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.859375,
+          39.980430528375734
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "rare_earths-103",
+        "resource": "rare_earths",
+        "name": "Rare earths",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.1953125,
+          39.980430528375734
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "rare_earths-104",
+        "resource": "rare_earths",
+        "name": "Rare earths",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.9375,
+          39.27592954990216
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "rare_earths-105",
+        "resource": "rare_earths",
+        "name": "Rare earths",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3671875,
+          38.21917808219178
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "rare_earths-106",
+        "resource": "rare_earths",
+        "name": "Rare earths",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.2734375,
+          38.21917808219178
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "rare_earths-107",
+        "resource": "rare_earths",
+        "name": "Rare earths",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -66.09375,
+          37.866927592954994
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "rare_earths-108",
+        "resource": "rare_earths",
+        "name": "Rare earths",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -59.765625,
+          36.45792563600783
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "rare_earths-109",
+        "resource": "rare_earths",
+        "name": "Rare earths",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.0,
+          36.10567514677104
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "rare_earths-110",
+        "resource": "rare_earths",
+        "name": "Rare earths",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0,
+          36.10567514677104
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "rare_earths-111",
+        "resource": "rare_earths",
+        "name": "Rare earths",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.078125,
+          35.40117416829746
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "uranium-112",
+        "resource": "uranium",
+        "name": "Uranium",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          92.8125,
+          -0.8806262230919657
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "uranium-113",
+        "resource": "uranium",
+        "name": "Uranium",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.7890625,
+          33.28767123287672
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "uranium-114",
+        "resource": "uranium",
+        "name": "Uranium",
+        "grade": "major",
+        "intensity": 0.986
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          87.890625,
+          -5.107632093933461
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "uranium-115",
+        "resource": "uranium",
+        "name": "Uranium",
+        "grade": "major",
+        "intensity": 0.979
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.5234375,
+          -22.367906066536193
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "uranium-116",
+        "resource": "uranium",
+        "name": "Uranium",
+        "grade": "major",
+        "intensity": 0.973
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          54.84375,
+          -1.5851272015655553
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "uranium-117",
+        "resource": "uranium",
+        "name": "Uranium",
+        "grade": "major",
+        "intensity": 0.945
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.609375,
+          -25.8904109589041
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "uranium-118",
+        "resource": "uranium",
+        "name": "Uranium",
+        "grade": "major",
+        "intensity": 0.924
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          98.4375,
+          -6.164383561643831
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "uranium-119",
+        "resource": "uranium",
+        "name": "Uranium",
+        "grade": "major",
+        "intensity": 0.919
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.859375,
+          -4.403131115459871
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "uranium-120",
+        "resource": "uranium",
+        "name": "Uranium",
+        "grade": "major",
+        "intensity": 0.914
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          67.8515625,
+          -0.1761252446183903
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "uranium-121",
+        "resource": "uranium",
+        "name": "Uranium",
+        "grade": "major",
+        "intensity": 0.851
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.4765625,
+          -3.6986301369862957
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "uranium-122",
+        "resource": "uranium",
+        "name": "Uranium",
+        "grade": "major",
+        "intensity": 0.826
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          124.1015625,
+          -19.549902152641877
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "uranium-123",
+        "resource": "uranium",
+        "name": "Uranium",
+        "grade": "major",
+        "intensity": 0.8
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.7109375,
+          -11.448140900195682
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "uranium-124",
+        "resource": "uranium",
+        "name": "Uranium",
+        "grade": "major",
+        "intensity": 0.779
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.9375,
+          -32.93542074363991
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "uranium-125",
+        "resource": "uranium",
+        "name": "Uranium",
+        "grade": "major",
+        "intensity": 0.757
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          119.1796875,
+          -26.242661448140893
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "silica_hp-126",
+        "resource": "silica_hp",
+        "name": "High-purity silica",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -64.3359375,
+          31.526418786692766
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "silica_hp-127",
+        "resource": "silica_hp",
+        "name": "High-purity silica",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -59.4140625,
+          31.526418786692766
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "silica_hp-128",
+        "resource": "silica_hp",
+        "name": "High-purity silica",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -54.4921875,
+          31.526418786692766
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "silica_hp-129",
+        "resource": "silica_hp",
+        "name": "High-purity silica",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -47.8125,
+          31.17416829745597
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "silica_hp-130",
+        "resource": "silica_hp",
+        "name": "High-purity silica",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -42.890625,
+          31.17416829745597
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "silica_hp-131",
+        "resource": "silica_hp",
+        "name": "High-purity silica",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -37.96875,
+          30.821917808219183
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "silica_hp-132",
+        "resource": "silica_hp",
+        "name": "High-purity silica",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -32.6953125,
+          30.821917808219183
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "silica_hp-133",
+        "resource": "silica_hp",
+        "name": "High-purity silica",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -27.421875,
+          30.821917808219183
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "silica_hp-134",
+        "resource": "silica_hp",
+        "name": "High-purity silica",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -22.1484375,
+          30.821917808219183
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "silica_hp-135",
+        "resource": "silica_hp",
+        "name": "High-purity silica",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -17.2265625,
+          30.821917808219183
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "silica_hp-136",
+        "resource": "silica_hp",
+        "name": "High-purity silica",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -101.25,
+          22.720156555773002
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "silica_hp-137",
+        "resource": "silica_hp",
+        "name": "High-purity silica",
+        "grade": "major",
+        "intensity": 0.808
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.7734375,
+          44.911937377690805
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "silica_hp-138",
+        "resource": "silica_hp",
+        "name": "High-purity silica",
+        "grade": "major",
+        "intensity": 0.808
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.1484375,
+          43.50293542074364
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "silica_hp-139",
+        "resource": "silica_hp",
+        "name": "High-purity silica",
+        "grade": "major",
+        "intensity": 0.808
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          15.8203125,
+          41.74168297455969
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "bauxite-140",
+        "resource": "bauxite",
+        "name": "Bauxite (aluminum)",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.1640625,
+          0.1761252446184045
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "bauxite-141",
+        "resource": "bauxite",
+        "name": "Bauxite (aluminum)",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.265625,
+          -3.6986301369862957
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "bauxite-142",
+        "resource": "bauxite",
+        "name": "Bauxite (aluminum)",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          84.0234375,
+          -9.334637964774942
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "bauxite-143",
+        "resource": "bauxite",
+        "name": "Bauxite (aluminum)",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.9921875,
+          11.448140900195696
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "bauxite-144",
+        "resource": "bauxite",
+        "name": "Bauxite (aluminum)",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          51.328125,
+          11.448140900195696
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "bauxite-145",
+        "resource": "bauxite",
+        "name": "Bauxite (aluminum)",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.8203125,
+          0.8806262230919799
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "bauxite-146",
+        "resource": "bauxite",
+        "name": "Bauxite (aluminum)",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.546875,
+          5.107632093933475
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "bauxite-147",
+        "resource": "bauxite",
+        "name": "Bauxite (aluminum)",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.6328125,
+          5.81213307240705
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "bauxite-148",
+        "resource": "bauxite",
+        "name": "Bauxite (aluminum)",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          123.3984375,
+          10.391389432485326
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "bauxite-149",
+        "resource": "bauxite",
+        "name": "Bauxite (aluminum)",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.5625,
+          -12.857142857142847
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "bauxite-150",
+        "resource": "bauxite",
+        "name": "Bauxite (aluminum)",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.8359375,
+          1.9373776908023501
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "bauxite-151",
+        "resource": "bauxite",
+        "name": "Bauxite (aluminum)",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.015625,
+          1.2328767123287747
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "bauxite-152",
+        "resource": "bauxite",
+        "name": "Bauxite (aluminum)",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.28125,
+          13.913894324853231
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "bauxite-153",
+        "resource": "bauxite",
+        "name": "Bauxite (aluminum)",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.0703125,
+          -6.164383561643831
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nickel_pgm-154",
+        "resource": "nickel_pgm",
+        "name": "Nickel / PGM",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.0703125,
+          49.49119373776908
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nickel_pgm-155",
+        "resource": "nickel_pgm",
+        "name": "Nickel / PGM",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          123.046875,
+          -9.686888454011736
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nickel_pgm-156",
+        "resource": "nickel_pgm",
+        "name": "Nickel / PGM",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.9296875,
+          44.911937377690805
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nickel_pgm-157",
+        "resource": "nickel_pgm",
+        "name": "Nickel / PGM",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          82.96875,
+          16.73189823874756
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nickel_pgm-158",
+        "resource": "nickel_pgm",
+        "name": "Nickel / PGM",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.34375,
+          26.947162426614483
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nickel_pgm-159",
+        "resource": "nickel_pgm",
+        "name": "Nickel / PGM",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.3828125,
+          89.6477495107632
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nickel_pgm-160",
+        "resource": "nickel_pgm",
+        "name": "Nickel / PGM",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.0859375,
+          26.2426614481409
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nickel_pgm-161",
+        "resource": "nickel_pgm",
+        "name": "Nickel / PGM",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.9765625,
+          82.95499021526419
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nickel_pgm-162",
+        "resource": "nickel_pgm",
+        "name": "Nickel / PGM",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          157.8515625,
+          -53.71819960861055
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nickel_pgm-163",
+        "resource": "nickel_pgm",
+        "name": "Nickel / PGM",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.9296875,
+          25.890410958904113
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nickel_pgm-164",
+        "resource": "nickel_pgm",
+        "name": "Nickel / PGM",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          99.84375,
+          11.448140900195696
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nickel_pgm-165",
+        "resource": "nickel_pgm",
+        "name": "Nickel / PGM",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.9921875,
+          -0.5283757338551851
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nickel_pgm-166",
+        "resource": "nickel_pgm",
+        "name": "Nickel / PGM",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          61.5234375,
+          -1.5851272015655553
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nickel_pgm-167",
+        "resource": "nickel_pgm",
+        "name": "Nickel / PGM",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.109375,
+          -36.105675146771034
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "lithium-168",
+        "resource": "lithium",
+        "name": "Lithium (brine/pegmatite)",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.9765625,
+          81.19373776908023
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "lithium-169",
+        "resource": "lithium",
+        "name": "Lithium (brine/pegmatite)",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -101.25,
+          75.20547945205479
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "lithium-170",
+        "resource": "lithium",
+        "name": "Lithium (brine/pegmatite)",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.2890625,
+          45.968688845401175
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "lithium-171",
+        "resource": "lithium",
+        "name": "Lithium (brine/pegmatite)",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -68.90625,
+          44.911937377690805
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "lithium-172",
+        "resource": "lithium",
+        "name": "Lithium (brine/pegmatite)",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.875,
+          43.855185909980435
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "lithium-173",
+        "resource": "lithium",
+        "name": "Lithium (brine/pegmatite)",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.3046875,
+          42.798434442270064
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "lithium-174",
+        "resource": "lithium",
+        "name": "Lithium (brine/pegmatite)",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -52.03125,
+          42.44618395303327
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "lithium-175",
+        "resource": "lithium",
+        "name": "Lithium (brine/pegmatite)",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.3203125,
+          41.74168297455969
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "lithium-176",
+        "resource": "lithium",
+        "name": "Lithium (brine/pegmatite)",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.6953125,
+          41.3894324853229
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "lithium-177",
+        "resource": "lithium",
+        "name": "Lithium (brine/pegmatite)",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -45.703125,
+          41.3894324853229
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "lithium-178",
+        "resource": "lithium",
+        "name": "Lithium (brine/pegmatite)",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -67.8515625,
+          40.33268101761253
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "lithium-179",
+        "resource": "lithium",
+        "name": "Lithium (brine/pegmatite)",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.234375,
+          40.33268101761253
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "lithium-180",
+        "resource": "lithium",
+        "name": "Lithium (brine/pegmatite)",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -63.28125,
+          39.27592954990216
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "lithium-181",
+        "resource": "lithium",
+        "name": "Lithium (brine/pegmatite)",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.5078125,
+          39.27592954990216
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "phosphates-182",
+        "resource": "phosphates",
+        "name": "Phosphates",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.484375,
+          39.980430528375734
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "phosphates-183",
+        "resource": "phosphates",
+        "name": "Phosphates",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.859375,
+          39.980430528375734
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "phosphates-184",
+        "resource": "phosphates",
+        "name": "Phosphates",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.8828125,
+          39.980430528375734
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "phosphates-185",
+        "resource": "phosphates",
+        "name": "Phosphates",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.2578125,
+          39.980430528375734
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "phosphates-186",
+        "resource": "phosphates",
+        "name": "Phosphates",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -63.28125,
+          39.980430528375734
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "phosphates-187",
+        "resource": "phosphates",
+        "name": "Phosphates",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.65625,
+          39.980430528375734
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "phosphates-188",
+        "resource": "phosphates",
+        "name": "Phosphates",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -52.3828125,
+          39.980430528375734
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "phosphates-189",
+        "resource": "phosphates",
+        "name": "Phosphates",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -47.109375,
+          39.980430528375734
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "phosphates-190",
+        "resource": "phosphates",
+        "name": "Phosphates",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -34.8046875,
+          39.980430528375734
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "phosphates-191",
+        "resource": "phosphates",
+        "name": "Phosphates",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.1953125,
+          39.980430528375734
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "phosphates-192",
+        "resource": "phosphates",
+        "name": "Phosphates",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -42.1875,
+          39.62818003913895
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "phosphates-193",
+        "resource": "phosphates",
+        "name": "Phosphates",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -28.4765625,
+          38.923679060665364
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "phosphates-194",
+        "resource": "phosphates",
+        "name": "Phosphates",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.203125,
+          38.923679060665364
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "phosphates-195",
+        "resource": "phosphates",
+        "name": "Phosphates",
+        "grade": "major",
+        "intensity": 1.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -17.9296875,
+          38.923679060665364
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "potash-196",
+        "resource": "potash",
+        "name": "Potash",
+        "grade": "minor",
+        "intensity": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.015625,
+          28.003913894324853
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "potash-197",
+        "resource": "potash",
+        "name": "Potash",
+        "grade": "minor",
+        "intensity": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -161.71875,
+          67.4559686888454
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "potash-198",
+        "resource": "potash",
+        "name": "Potash",
+        "grade": "minor",
+        "intensity": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -178.2421875,
+          56.53620352250489
+        ]
+      }
+    }
+  ]
+}
