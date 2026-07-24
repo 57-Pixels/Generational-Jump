@@ -9,21 +9,21 @@
         "id": "coal_basin-0",
         "resource": "coal_basin",
         "name": "Coal basin",
-        "prospect_score": 0.4095,
-        "ore_resource_t": 994002936.42,
-        "grade": "{\"coal_quality\": 0.6331526571011731}",
-        "depth_m": 398.3,
-        "accessibility": 0.8217,
-        "processing_difficulty": 0.2615,
-        "recovery": 0.7997,
-        "reserve_2025_t": 520081181.58,
+        "prospect_score": 0.376,
+        "ore_resource_t": 967679002.64,
+        "grade": "{\"coal_quality\": 0.6288762672041442}",
+        "depth_m": 347.6,
+        "accessibility": 0.8323,
+        "processing_difficulty": 0.2423,
+        "recovery": 0.8085,
+        "reserve_2025_t": 496701523.8,
         "byproducts": "germanium, coalbed_methane"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          37.265625,
-          5.04366525545523
+          38.67187499999999,
+          4.948449853240042
         ]
       }
     },
@@ -33,21 +33,21 @@
         "id": "petroleum_system-1",
         "resource": "petroleum_system",
         "name": "Oil & gas",
-        "prospect_score": 0.1551,
-        "ore_resource_t": 802728034.77,
-        "grade": "{\"boe_per_t\": 0.0949044966089542}",
-        "depth_m": 81.0,
-        "accessibility": 0.8059,
-        "processing_difficulty": 0.4938,
-        "recovery": 0.6928,
-        "reserve_2025_t": 170006506.05,
+        "prospect_score": 0.2817,
+        "ore_resource_t": 888291401.55,
+        "grade": "{\"boe_per_t\": 0.0973629029861541}",
+        "depth_m": 181.3,
+        "accessibility": 0.785,
+        "processing_difficulty": 0.475,
+        "recovery": 0.7015,
+        "reserve_2025_t": 263741651.28,
         "byproducts": "helium, sulfur"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -55.54687500000001,
-          -9.90216600359321
+          -75.234375,
+          -10.206021605077954
         ]
       }
     },
@@ -57,21 +57,21 @@
         "id": "helium_gas-2",
         "resource": "helium_gas",
         "name": "Helium-bearing gas",
-        "prospect_score": 0.3239,
-        "ore_resource_t": 15336099.18,
-        "grade": "{\"helium_vol_pct\": 0.9607208246565636}",
-        "depth_m": 169.3,
-        "accessibility": 0.8179,
-        "processing_difficulty": 0.823,
-        "recovery": 0.5414,
-        "reserve_2025_t": 2716580.97,
+        "prospect_score": 0.2758,
+        "ore_resource_t": 14757613.37,
+        "grade": "{\"helium_vol_pct\": 0.9514385906778163}",
+        "depth_m": 98.6,
+        "accessibility": 0.905,
+        "processing_difficulty": 0.8114,
+        "recovery": 0.5467,
+        "reserve_2025_t": 2552777.91,
         "byproducts": "natural_gas"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          33.046875,
-          -0.5893855444373464
+          4.921875000000003,
+          -0.7005325642988416
         ]
       }
     },
@@ -81,21 +81,21 @@
         "id": "helium_gas-3",
         "resource": "helium_gas",
         "name": "Helium-bearing gas",
-        "prospect_score": 0.2098,
-        "ore_resource_t": 156467440.92,
-        "grade": "{\"helium_vol_pct\": 0.6071745420880135}",
-        "depth_m": 182.2,
-        "accessibility": 0.9159,
-        "processing_difficulty": 0.6721,
-        "recovery": 0.6108,
-        "reserve_2025_t": 30284816.48,
+        "prospect_score": 0.3036,
+        "ore_resource_t": 168655899.8,
+        "grade": "{\"helium_vol_pct\": 0.6187844444011378}",
+        "depth_m": 278.1,
+        "accessibility": 0.7582,
+        "processing_difficulty": 0.7968,
+        "recovery": 0.5535,
+        "reserve_2025_t": 28178118.04,
         "byproducts": "natural_gas"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          11.953124999999996,
-          33.869556042451535
+          34.453125,
+          28.211519740901714
         ]
       }
     },
@@ -105,21 +105,21 @@
         "id": "bif_iron-4",
         "resource": "bif_iron",
         "name": "Banded iron",
-        "prospect_score": 0.3714,
-        "ore_resource_t": 922833199.58,
-        "grade": "{\"fe_pct\": 37.79196969899512}",
-        "depth_m": 130.3,
-        "accessibility": 0.847,
-        "processing_difficulty": 0.3292,
-        "recovery": 0.7685,
-        "reserve_2025_t": 424395570.48,
+        "prospect_score": 0.341,
+        "ore_resource_t": 900628309.11,
+        "grade": "{\"fe_pct\": 37.560267759377865}",
+        "depth_m": 127.6,
+        "accessibility": 0.9234,
+        "processing_difficulty": 0.33,
+        "recovery": 0.7682,
+        "reserve_2025_t": 411304245.54,
         "byproducts": ""
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -94.92187500000001,
-          0.7005325642988416
+          -87.890625,
+          0.702648599448483
         ]
       }
     },
@@ -129,21 +129,21 @@
         "id": "bif_iron-5",
         "resource": "bif_iron",
         "name": "Banded iron",
-        "prospect_score": 0.4346,
-        "ore_resource_t": 786068723.38,
-        "grade": "{\"fe_pct\": 35.860018179784944}",
-        "depth_m": 175.4,
-        "accessibility": 0.519,
-        "processing_difficulty": 0.5185,
-        "recovery": 0.6815,
-        "reserve_2025_t": 248055312.23,
+        "prospect_score": 0.205,
+        "ore_resource_t": 654160983.73,
+        "grade": "{\"fe_pct\": 34.234744894637366}",
+        "depth_m": 175.0,
+        "accessibility": 0.8568,
+        "processing_difficulty": 0.459,
+        "recovery": 0.7088,
+        "reserve_2025_t": 176520116.93,
         "byproducts": ""
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -68.203125,
-          -39.38673088590684
+          -99.140625,
+          -39.71780128989146
         ]
       }
     },
@@ -177,21 +177,21 @@
         "id": "bif_iron-7",
         "resource": "bif_iron",
         "name": "Banded iron",
-        "prospect_score": 0.4633,
-        "ore_resource_t": 622571985.59,
-        "grade": "{\"fe_pct\": 61.33170388655258}",
-        "depth_m": 70.1,
-        "accessibility": 0.6384,
-        "processing_difficulty": 0.3114,
-        "recovery": 0.7768,
-        "reserve_2025_t": 301750518.73,
+        "prospect_score": 0.4183,
+        "ore_resource_t": 600538178.38,
+        "grade": "{\"fe_pct\": 60.77621780384155}",
+        "depth_m": 65.1,
+        "accessibility": 0.8688,
+        "processing_difficulty": 0.284,
+        "recovery": 0.7894,
+        "reserve_2025_t": 316567405.4,
         "byproducts": ""
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          62.57812500000001,
-          34.03347722245971
+          65.390625,
+          34.67311271792062
         ]
       }
     },
@@ -201,21 +201,21 @@
         "id": "bauxite_laterite-8",
         "resource": "bauxite_laterite",
         "name": "Bauxite",
-        "prospect_score": 0.6046,
-        "ore_resource_t": 159028503.52,
-        "grade": "{\"al2o3_pct\": 43.58862384896176}",
-        "depth_m": 221.0,
-        "accessibility": 0.7252,
-        "processing_difficulty": 0.6219,
-        "recovery": 0.6339,
-        "reserve_2025_t": 65877448.77,
+        "prospect_score": 0.6062,
+        "ore_resource_t": 159229776.18,
+        "grade": "{\"al2o3_pct\": 43.602547047635014}",
+        "depth_m": 222.9,
+        "accessibility": 0.7215,
+        "processing_difficulty": 0.6185,
+        "recovery": 0.6355,
+        "reserve_2025_t": 66288495.81,
         "byproducts": "gallium, scandium"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -89.296875,
-          10.546098656433736
+          -87.890625,
+          10.539888468419987
         ]
       }
     },
@@ -297,21 +297,21 @@
         "id": "bauxite_laterite-12",
         "resource": "bauxite_laterite",
         "name": "Bauxite",
-        "prospect_score": 0.5685,
-        "ore_resource_t": 1111786840.77,
-        "grade": "{\"al2o3_pct\": 30.29654442382681}",
-        "depth_m": 217.8,
-        "accessibility": 0.5709,
-        "processing_difficulty": 0.5926,
-        "recovery": 0.6474,
-        "reserve_2025_t": 418120632.34,
+        "prospect_score": 0.5459,
+        "ore_resource_t": 1091889746.6,
+        "grade": "{\"al2o3_pct\": 30.15871298032173}",
+        "depth_m": 194.4,
+        "accessibility": 0.6105,
+        "processing_difficulty": 0.5906,
+        "recovery": 0.6483,
+        "reserve_2025_t": 405850053.87,
         "byproducts": "gallium, scandium"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -94.92187500000001,
-          -4.903814800870226
+          -93.515625,
+          -4.9126579589502315
         ]
       }
     },
@@ -345,21 +345,21 @@
         "id": "bauxite_laterite-14",
         "resource": "bauxite_laterite",
         "name": "Bauxite",
-        "prospect_score": 0.6442,
-        "ore_resource_t": 943411875.6,
-        "grade": "{\"al2o3_pct\": 31.078765702922823}",
-        "depth_m": 31.1,
-        "accessibility": 0.7607,
-        "processing_difficulty": 0.6243,
-        "recovery": 0.6328,
-        "reserve_2025_t": 416695199.25,
+        "prospect_score": 0.6302,
+        "ore_resource_t": 932902497.76,
+        "grade": "{\"al2o3_pct\": 30.99098137036145}",
+        "depth_m": 32.6,
+        "accessibility": 0.6211,
+        "processing_difficulty": 0.6485,
+        "recovery": 0.6217,
+        "reserve_2025_t": 366821004.45,
         "byproducts": "gallium, scandium"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -68.203125,
-          13.751491400151552
+          -66.796875,
+          13.617593707148083
         ]
       }
     },
@@ -369,21 +369,21 @@
         "id": "bauxite_laterite-15",
         "resource": "bauxite_laterite",
         "name": "Bauxite",
-        "prospect_score": 0.4265,
-        "ore_resource_t": 241250087.66,
-        "grade": "{\"al2o3_pct\": 41.99314771996402}",
-        "depth_m": 120.7,
-        "accessibility": 0.7813,
+        "prospect_score": 0.4392,
+        "ore_resource_t": 243700977.34,
+        "grade": "{\"al2o3_pct\": 42.10046105224059}",
+        "depth_m": 125.2,
+        "accessibility": 0.775,
         "processing_difficulty": 0.5904,
         "recovery": 0.6484,
-        "reserve_2025_t": 80447272.39,
+        "reserve_2025_t": 82925176.5,
         "byproducts": "gallium, scandium"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          45.70312500000001,
-          -22.64298650250046
+          47.109375,
+          -23.1226581910017
         ]
       }
     },
@@ -441,21 +441,21 @@
         "id": "sedimentary_manganese-18",
         "resource": "sedimentary_manganese",
         "name": "Manganese",
-        "prospect_score": 0.4028,
-        "ore_resource_t": 41885386.43,
-        "grade": "{\"mn_pct\": 43.64072679935523}",
-        "depth_m": 362.9,
-        "accessibility": 0.7275,
-        "processing_difficulty": 0.7394,
-        "recovery": 0.5799,
-        "reserve_2025_t": 9857571.33,
+        "prospect_score": 0.3446,
+        "ore_resource_t": 39980651.67,
+        "grade": "{\"mn_pct\": 43.130875981595786}",
+        "depth_m": 292.3,
+        "accessibility": 0.7118,
+        "processing_difficulty": 0.7539,
+        "recovery": 0.5732,
+        "reserve_2025_t": 7798072.5,
         "byproducts": "cobalt, nickel"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -79.99374914855768,
-          -63.63656979593969
+          -80.57611454996939,
+          -62.25862621276609
         ]
       }
     },
@@ -465,21 +465,21 @@
         "id": "vanadium_titanomagnetite-19",
         "resource": "vanadium_titanomagnetite",
         "name": "Titanium\u2013vanadium magnetite",
-        "prospect_score": 0.6081,
-        "ore_resource_t": 740227080.66,
-        "grade": "{\"tio2_pct\": 22.70418061983887}",
-        "depth_m": 135.8,
-        "accessibility": 0.6227,
-        "processing_difficulty": 0.9328,
-        "recovery": 0.4909,
-        "reserve_2025_t": 176713920.53,
+        "prospect_score": 0.5324,
+        "ore_resource_t": 696726224.63,
+        "grade": "{\"tio2_pct\": 22.35961766465257}",
+        "depth_m": 144.7,
+        "accessibility": 0.8151,
+        "processing_difficulty": 0.9316,
+        "recovery": 0.4915,
+        "reserve_2025_t": 163829560.97,
         "byproducts": "iron, vanadium, scandium"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          75.234375,
-          -10.206021605077954
+          79.453125,
+          -11.756849920025385
         ]
       }
     },
@@ -489,21 +489,21 @@
         "id": "layered_chromite_pgm-20",
         "resource": "layered_chromite_pgm",
         "name": "Chromium / PGM",
-        "prospect_score": 0.3617,
-        "ore_resource_t": 37070236.19,
-        "grade": "{\"cr2o3_pct\": 24.063855089451696}",
-        "depth_m": 139.5,
-        "accessibility": 0.7615,
-        "processing_difficulty": 0.7245,
-        "recovery": 0.5867,
-        "reserve_2025_t": 8359140.31,
+        "prospect_score": 0.2378,
+        "ore_resource_t": 33572709.23,
+        "grade": "{\"cr2o3_pct\": 23.469177264275586}",
+        "depth_m": 86.4,
+        "accessibility": 0.8088,
+        "processing_difficulty": 0.7199,
+        "recovery": 0.5889,
+        "reserve_2025_t": 5745890.91,
         "byproducts": "platinum_group, nickel, cobalt, gold"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -65.390625,
-          -12.183884672360263
+          -75.234375,
+          -12.933274819296065
         ]
       }
     },
@@ -513,21 +513,21 @@
         "id": "porphyry_cu_mo-21",
         "resource": "porphyry_cu_mo",
         "name": "Porphyry copper",
-        "prospect_score": 0.2953,
-        "ore_resource_t": 282401647.58,
-        "grade": "{\"cu_pct\": 0.7600514312888549}",
-        "depth_m": 35.9,
-        "accessibility": 0.5432,
-        "processing_difficulty": 0.5348,
-        "recovery": 0.674,
-        "reserve_2025_t": 63122040.18,
+        "prospect_score": 0.2575,
+        "ore_resource_t": 273980941.13,
+        "grade": "{\"cu_pct\": 0.754264027505464}",
+        "depth_m": 31.2,
+        "accessibility": 0.44,
+        "processing_difficulty": 0.6301,
+        "recovery": 0.6302,
+        "reserve_2025_t": 40948898.88,
         "byproducts": "molybdenum, rhenium, gold, silver, tellurium"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -72.421875,
-          -37.3426954895406
+          -66.796875,
+          -37.7171541859072
         ]
       }
     },
@@ -537,21 +537,21 @@
         "id": "sediment_cu_co-22",
         "resource": "sediment_cu_co",
         "name": "Sediment-hosted copper\u2013cobalt",
-        "prospect_score": 0.3107,
-        "ore_resource_t": 286639496.9,
-        "grade": "{\"cu_pct\": 1.7072658891747374}",
-        "depth_m": 165.3,
-        "accessibility": 0.8218,
-        "processing_difficulty": 0.5128,
-        "recovery": 0.6841,
-        "reserve_2025_t": 87806966.76,
+        "prospect_score": 0.3936,
+        "ore_resource_t": 306283956.56,
+        "grade": "{\"cu_pct\": 1.7360818141606258}",
+        "depth_m": 180.3,
+        "accessibility": 0.8264,
+        "processing_difficulty": 0.5288,
+        "recovery": 0.6768,
+        "reserve_2025_t": 108791599.73,
         "byproducts": "cobalt, silver, germanium"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          33.046875,
-          4.128654579471015
+          34.453125,
+          1.7396195669653023
         ]
       }
     },
@@ -561,21 +561,21 @@
         "id": "vms_cu_zn-23",
         "resource": "vms_cu_zn",
         "name": "Volcanogenic Cu\u2013Zn",
-        "prospect_score": 0.1448,
-        "ore_resource_t": 29624049.15,
-        "grade": "{\"combined_base_pct\": 5.228408774920196}",
-        "depth_m": 135.5,
-        "accessibility": 0.6409,
-        "processing_difficulty": 0.9243,
-        "recovery": 0.4948,
-        "reserve_2025_t": 1961919.17,
+        "prospect_score": 0.2044,
+        "ore_resource_t": 31070491.82,
+        "grade": "{\"combined_base_pct\": 5.291724445508813}",
+        "depth_m": 213.6,
+        "accessibility": 0.8609,
+        "processing_difficulty": 0.892,
+        "recovery": 0.5097,
+        "reserve_2025_t": 3491286.0,
         "byproducts": "gold, silver, indium, germanium"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -75.234375,
-          -0.6799075481698579
+          -93.515625,
+          2.1054089702144143
         ]
       }
     },
@@ -585,21 +585,21 @@
         "id": "sedex_zn_pb-24",
         "resource": "sedex_zn_pb",
         "name": "Sedimentary Zn\u2013Pb",
-        "prospect_score": 0.4155,
-        "ore_resource_t": 78939620.41,
-        "grade": "{\"zn_pb_pct\": 8.220959819388627}",
-        "depth_m": 321.8,
-        "accessibility": 0.6301,
-        "processing_difficulty": 0.6901,
-        "recovery": 0.6025,
-        "reserve_2025_t": 19336519.26,
+        "prospect_score": 0.4052,
+        "ore_resource_t": 78291949.63,
+        "grade": "{\"zn_pb_pct\": 8.203876223850271}",
+        "depth_m": 339.5,
+        "accessibility": 0.641,
+        "processing_difficulty": 0.6477,
+        "recovery": 0.622,
+        "reserve_2025_t": 20393162.31,
         "byproducts": "silver, germanium, cadmium"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -78.046875,
-          -8.94567203404487
+          -66.796875,
+          -9.71071316382258
         ]
       }
     },
@@ -609,21 +609,21 @@
         "id": "mvt_zn_pb-25",
         "resource": "mvt_zn_pb",
         "name": "Carbonate Zn\u2013Pb",
-        "prospect_score": 0.1906,
-        "ore_resource_t": 135950580.77,
-        "grade": "{\"zn_pb_pct\": 5.513196764724138}",
-        "depth_m": 183.9,
-        "accessibility": 0.7059,
-        "processing_difficulty": 0.6299,
-        "recovery": 0.6302,
-        "reserve_2025_t": 21991246.59,
+        "prospect_score": 0.1769,
+        "ore_resource_t": 134471816.7,
+        "grade": "{\"zn_pb_pct\": 5.497992833186019}",
+        "depth_m": 156.7,
+        "accessibility": 0.7176,
+        "processing_difficulty": 0.6265,
+        "recovery": 0.6318,
+        "reserve_2025_t": 21287400.72,
         "byproducts": "germanium, gallium, cadmium"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          52.73437500000001,
-          32.494872089022266
+          54.140625,
+          32.969286225725156
         ]
       }
     },
@@ -633,21 +633,21 @@
         "id": "magmatic_ni_cu-26",
         "resource": "magmatic_ni_cu",
         "name": "Magmatic nickel\u2013copper",
-        "prospect_score": 0.2128,
-        "ore_resource_t": 59344872.4,
-        "grade": "{\"ni_pct\": 1.3228132868174212}",
-        "depth_m": 230.1,
-        "accessibility": 0.5807,
-        "processing_difficulty": 0.77,
-        "recovery": 0.5658,
-        "reserve_2025_t": 6631306.71,
+        "prospect_score": 0.2266,
+        "ore_resource_t": 60008149.3,
+        "grade": "{\"ni_pct\": 1.3265309103391927}",
+        "depth_m": 202.1,
+        "accessibility": 0.5567,
+        "processing_difficulty": 0.7731,
+        "recovery": 0.5644,
+        "reserve_2025_t": 6776271.35,
         "byproducts": "copper, cobalt, platinum_group"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          69.60937499999999,
-          -11.22375311156308
+          72.421875,
+          -12.756456574364378
         ]
       }
     },
@@ -657,21 +657,21 @@
         "id": "nickel_laterite-27",
         "resource": "nickel_laterite",
         "name": "Nickel laterite",
-        "prospect_score": 0.1519,
-        "ore_resource_t": 92275299.02,
-        "grade": "{\"ni_pct\": 1.1403270289466922}",
-        "depth_m": 76.0,
-        "accessibility": 0.8041,
+        "prospect_score": 0.3966,
+        "ore_resource_t": 112226233.05,
+        "grade": "{\"ni_pct\": 1.1981030448745151}",
+        "depth_m": 174.0,
+        "accessibility": 0.8913,
         "processing_difficulty": 1.0,
         "recovery": 0.46,
-        "reserve_2025_t": 6302943.23,
+        "reserve_2025_t": 17756507.61,
         "byproducts": "cobalt, scandium"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          23.203124999999996,
-          5.81993370497452
+          34.453125,
+          5.22489423935452
         ]
       }
     },
@@ -681,21 +681,21 @@
         "id": "granite_sn_w-28",
         "resource": "granite_sn_w",
         "name": "Tin / tungsten granite",
-        "prospect_score": 0.4049,
-        "ore_resource_t": 100951347.99,
-        "grade": "{\"sn_w_pct\": 0.6979327384098936}",
-        "depth_m": 78.0,
-        "accessibility": 0.5307,
-        "processing_difficulty": 0.7781,
-        "recovery": 0.5621,
-        "reserve_2025_t": 18602943.66,
+        "prospect_score": 0.3882,
+        "ore_resource_t": 99611324.28,
+        "grade": "{\"sn_w_pct\": 0.6955817996592453}",
+        "depth_m": 79.4,
+        "accessibility": 0.4102,
+        "processing_difficulty": 0.8061,
+        "recovery": 0.5492,
+        "reserve_2025_t": 14669294.87,
         "byproducts": "molybdenum, bismuth, lithium"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -58.35937500000001,
-          13.868328281258382
+          -59.765625,
+          14.06576305248832
         ]
       }
     },
@@ -705,21 +705,21 @@
         "id": "hydrothermal_gold-29",
         "resource": "hydrothermal_gold",
         "name": "Gold",
-        "prospect_score": 0.3938,
-        "ore_resource_t": 27071898.03,
-        "grade": "{\"au_g_t\": 2.5022571501335418}",
-        "depth_m": 85.9,
-        "accessibility": 0.2581,
-        "processing_difficulty": 0.7918,
-        "recovery": 0.5558,
-        "reserve_2025_t": 3567229.9,
+        "prospect_score": 0.409,
+        "ore_resource_t": 27403081.94,
+        "grade": "{\"au_g_t\": 2.5099514247840258}",
+        "depth_m": 88.2,
+        "accessibility": 0.4116,
+        "processing_difficulty": 0.7796,
+        "recovery": 0.5614,
+        "reserve_2025_t": 4539177.12,
         "byproducts": "silver, copper, tellurium, antimony"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
           -66.796875,
-          5.81993370497452
+          4.525489431855929
         ]
       }
     },
@@ -729,21 +729,21 @@
         "id": "antimony_hydrothermal-30",
         "resource": "antimony_hydrothermal",
         "name": "Antimony",
-        "prospect_score": 0.1625,
-        "ore_resource_t": 20503387.05,
-        "grade": "{\"sb_pct\": 3.0405907613854124}",
-        "depth_m": 270.1,
-        "accessibility": 0.6589,
-        "processing_difficulty": 0.8816,
-        "recovery": 0.5144,
-        "reserve_2025_t": 1636983.22,
+        "prospect_score": 0.1272,
+        "ore_resource_t": 19932591.21,
+        "grade": "{\"sb_pct\": 3.018991251230523}",
+        "depth_m": 377.8,
+        "accessibility": 0.6853,
+        "processing_difficulty": 0.8782,
+        "recovery": 0.516,
+        "reserve_2025_t": 1468593.7,
         "byproducts": "gold, silver"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -86.484375,
-          -21.759690782324736
+          49.92187500000001,
+          26.46393409964683
         ]
       }
     },
@@ -753,21 +753,21 @@
         "id": "uranium_system-31",
         "resource": "uranium_system",
         "name": "Uranium",
-        "prospect_score": 0.209,
-        "ore_resource_t": 21007416.71,
-        "grade": "{\"u3o8_pct\": 0.24895257185545103}",
-        "depth_m": 137.2,
-        "accessibility": 0.8052,
-        "processing_difficulty": 0.6292,
-        "recovery": 0.6306,
-        "reserve_2025_t": 3967802.95,
+        "prospect_score": 0.1971,
+        "ore_resource_t": 20809085.03,
+        "grade": "{\"u3o8_pct\": 0.2483569979964715}",
+        "depth_m": 195.0,
+        "accessibility": 0.8318,
+        "processing_difficulty": 0.6281,
+        "recovery": 0.6311,
+        "reserve_2025_t": 3911110.86,
         "byproducts": "vanadium, molybdenum, rare_earths"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          76.640625,
-          -13.010330387473235
+          49.921875,
+          -25.24304503822627
         ]
       }
     },
@@ -825,21 +825,21 @@
         "id": "ionic_clay_hree-34",
         "resource": "ionic_clay_hree",
         "name": "Heavy rare-earth clay",
-        "prospect_score": 0.5757,
-        "ore_resource_t": 53137138.92,
-        "grade": "{\"treo_pct\": 0.11989920282531363}",
-        "depth_m": 136.1,
-        "accessibility": 0.4442,
+        "prospect_score": 0.6105,
+        "ore_resource_t": 54636533.75,
+        "grade": "{\"treo_pct\": 0.12074460944624645}",
+        "depth_m": 125.9,
+        "accessibility": 0.5864,
         "processing_difficulty": 1.0,
         "recovery": 0.46,
-        "reserve_2025_t": 8912265.11,
+        "reserve_2025_t": 11207396.77,
         "byproducts": "heavy_rare_earths"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          85.078125,
-          16.115343903838593
+          86.484375,
+          16.143027949163663
         ]
       }
     },
@@ -873,21 +873,21 @@
         "id": "lithium_brine-36",
         "resource": "lithium_brine",
         "name": "Lithium brine",
-        "prospect_score": 0.2249,
-        "ore_resource_t": 25786561.77,
-        "grade": "{\"li_mg_l\": 639.7190314135984}",
-        "depth_m": 568.8,
-        "accessibility": 0.8836,
-        "processing_difficulty": 0.69,
-        "recovery": 0.6026,
-        "reserve_2025_t": 4866605.85,
+        "prospect_score": 0.1427,
+        "ore_resource_t": 24145079.26,
+        "grade": "{\"li_mg_l\": 629.1825336426555}",
+        "depth_m": 312.9,
+        "accessibility": 0.2043,
+        "processing_difficulty": 0.9368,
+        "recovery": 0.4891,
+        "reserve_2025_t": 888138.6,
         "byproducts": "potassium, boron"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          35.85937500000001,
-          10.894548877805466
+          0.7031249999999977,
+          -17.576882896381655
         ]
       }
     },
@@ -897,21 +897,21 @@
         "id": "lct_pegmatite-37",
         "resource": "lct_pegmatite",
         "name": "Lithium pegmatite",
-        "prospect_score": 0.6698,
-        "ore_resource_t": 32688096.36,
-        "grade": "{\"li2o_pct\": 1.0880290600753488}",
-        "depth_m": 242.6,
-        "accessibility": 0.4764,
-        "processing_difficulty": 0.7045,
-        "recovery": 0.5959,
-        "reserve_2025_t": 11652439.48,
+        "prospect_score": 0.7098,
+        "ore_resource_t": 33752840.07,
+        "grade": "{\"li2o_pct\": 1.096870786388361}",
+        "depth_m": 239.9,
+        "accessibility": 0.5779,
+        "processing_difficulty": 0.636,
+        "recovery": 0.6275,
+        "reserve_2025_t": 14719231.17,
         "byproducts": "tantalum, cesium, beryllium, tin"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          45.0,
-          -62.27008629391104
+          42.78464231771201,
+          -63.13877913584263
         ]
       }
     },
@@ -921,21 +921,21 @@
         "id": "metamorphic_graphite-38",
         "resource": "metamorphic_graphite",
         "name": "Natural graphite",
-        "prospect_score": 0.1504,
-        "ore_resource_t": 25046373.24,
-        "grade": "{\"tgc_pct\": 9.279777141679908}",
-        "depth_m": 371.1,
-        "accessibility": 0.8661,
-        "processing_difficulty": 0.6825,
-        "recovery": 0.6061,
-        "reserve_2025_t": 3807436.51,
+        "prospect_score": 0.1681,
+        "ore_resource_t": 25403196.75,
+        "grade": "{\"tgc_pct\": 9.31298248793599}",
+        "depth_m": 226.3,
+        "accessibility": 0.1595,
+        "processing_difficulty": 0.8625,
+        "recovery": 0.5232,
+        "reserve_2025_t": 1171182.38,
         "byproducts": ""
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          62.1300819602943,
-          -53.64949079379846
+          6.110994666960928,
+          -70.91495966363587
         ]
       }
     },
@@ -945,21 +945,21 @@
         "id": "phosphorite-39",
         "resource": "phosphorite",
         "name": "Phosphate",
-        "prospect_score": 0.4184,
-        "ore_resource_t": 367116819.73,
-        "grade": "{\"p2o5_pct\": 24.7903804152813}",
-        "depth_m": 221.5,
-        "accessibility": 0.1869,
-        "processing_difficulty": 0.6266,
-        "recovery": 0.6318,
-        "reserve_2025_t": 68347327.73,
+        "prospect_score": 0.4019,
+        "ore_resource_t": 362320938.46,
+        "grade": "{\"p2o5_pct\": 24.708205320296084}",
+        "depth_m": 212.6,
+        "accessibility": 0.6742,
+        "processing_difficulty": 0.5206,
+        "recovery": 0.6805,
+        "reserve_2025_t": 119251252.11,
         "byproducts": "uranium, rare_earths, fluorine"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
           -111.796875,
-          -36.616985920064316
+          -37.99941021362174
         ]
       }
     },
@@ -969,21 +969,21 @@
         "id": "potash_evaporite-40",
         "resource": "potash_evaporite",
         "name": "Potash",
-        "prospect_score": 0.1719,
-        "ore_resource_t": 717028779.55,
-        "grade": "{\"k2o_pct\": 23.644657921707513}",
-        "depth_m": 999.2,
-        "accessibility": 0.7769,
-        "processing_difficulty": 0.6267,
-        "recovery": 0.6317,
-        "reserve_2025_t": 118924593.51,
+        "prospect_score": 0.1373,
+        "ore_resource_t": 697449746.55,
+        "grade": "{\"k2o_pct\": 23.47994414380667}",
+        "depth_m": 900.3,
+        "accessibility": 0.22,
+        "processing_difficulty": 0.7096,
+        "recovery": 0.5936,
+        "reserve_2025_t": 45160778.02,
         "byproducts": "magnesium_salts"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          24.609375000000007,
-          23.928671321550674
+          20.390624999999993,
+          23.235436522247234
         ]
       }
     },
@@ -993,21 +993,21 @@
         "id": "fluorspar_hydrothermal-41",
         "resource": "fluorspar_hydrothermal",
         "name": "Fluorspar",
-        "prospect_score": 0.1782,
-        "ore_resource_t": 49926615.99,
-        "grade": "{\"caf2_pct\": 44.03864242551848}",
-        "depth_m": 325.4,
-        "accessibility": 0.6927,
-        "processing_difficulty": 0.6638,
-        "recovery": 0.6147,
-        "reserve_2025_t": 7146413.93,
+        "prospect_score": 0.1235,
+        "ore_resource_t": 47789480.2,
+        "grade": "{\"caf2_pct\": 43.55484444654332}",
+        "depth_m": 138.5,
+        "accessibility": 0.9424,
+        "processing_difficulty": 0.5848,
+        "recovery": 0.651,
+        "reserve_2025_t": 8871220.5,
         "byproducts": "barite, lead, zinc, rare_earths"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -100.546875,
-          7.605248830323058
+          52.40750735639278,
+          44.713081325922005
         ]
       }
     },
@@ -1017,21 +1017,21 @@
         "id": "high_purity_quartz-42",
         "resource": "high_purity_quartz",
         "name": "High-purity quartz",
-        "prospect_score": 0.1907,
-        "ore_resource_t": 1760695.94,
-        "grade": "{\"impurity_ppm\": 49.47127441771972}",
-        "depth_m": 70.5,
-        "accessibility": 0.3506,
+        "prospect_score": 0.2325,
+        "ore_resource_t": 1820551.0,
+        "grade": "{\"impurity_ppm\": 49.890633229043694}",
+        "depth_m": 96.7,
+        "accessibility": 0.4825,
         "processing_difficulty": 1.0,
         "recovery": 0.46,
-        "reserve_2025_t": 78891.45,
+        "reserve_2025_t": 111393.87,
         "byproducts": ""
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          5.262186721629556,
-          -68.11956759223156
+          37.96002809296093,
+          -64.75844539731811
         ]
       }
     }

@@ -149,7 +149,7 @@ def generate_deposits(
     for spec in DEPOSIT_CATALOG:
         arrays = [context.factors.get(name, np.zeros(context.size)) for name in spec.factors]
         suitability = _geologic_and(arrays)
-        host = suitability > 0.14
+        host = suitability > 0.08
         if spec.offshore:
             host &= context.land | (context.water_depth < 1200.0)
         else:

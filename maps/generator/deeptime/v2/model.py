@@ -112,13 +112,30 @@ def _deposit_context(
         "collision": h["collision"],
         "collision_or_arc": np.maximum(h["collision"], h["arc"]),
         "sediment": geology.sediment,
-        "restricted": np.clip(geology.basin_depth * (1.0 - coast), 0, 1),
-        "brine": np.clip(geology.basin_depth * (0.4 + p["aridity"]), 0, 1),
+        "restricted": np.clip(
+            0.45 * geology.basin_depth
+            + 0.55 * geology.sediment * p["aridity"] * (1.0 - coast),
+            0,
+            1,
+        ),
+        "brine": np.clip(
+            0.45 * geology.basin_depth
+            + 0.55 * geology.sediment * (0.35 + p["aridity"]),
+            0,
+            1,
+        ),
         "carbonate": l["carbonate"],
         "alkaline": h["alkaline"],
         "heavy_mineral": l["heavy_mineral_source"],
         "coastal_reworking": np.clip(coast * geology.sediment, 0, 1),
-        "closed": np.clip(geology.basin_depth * p["aridity"], 0, 1),
+        "closed": np.clip(
+            land
+            * geology.sediment
+            * p["aridity"]
+            * (1.0 - np.clip(geology.orogeny, 0, 1)),
+            0,
+            1,
+        ),
         "aridity": p["aridity"],
         "quartz": l["quartz"],
         "purity": np.clip(l["quartz"] * (1.0 - l["mafic"]) * (1.0 - geology.sediment), 0, 1),

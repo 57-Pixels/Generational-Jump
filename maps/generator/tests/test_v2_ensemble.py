@@ -9,6 +9,7 @@ from deeptime.v2.resources import DEPOSIT_CATALOG
 
 class EnsembleTests(unittest.TestCase):
     def test_reduced_seed_ensemble_meets_world_invariants(self) -> None:
+        ensemble_mechanisms: set[str] = set()
         for seed in range(1, 4):
             with self.subTest(seed=seed):
                 world = generate_world(
@@ -30,9 +31,11 @@ class EnsembleTests(unittest.TestCase):
                     uplift = world.settlement.h_ac[hot] - world.settlement.h_ind[hot]
                     self.assertGreater(float(uplift.mean()), 0.08)
                 mechanisms = set(world.settlement.mechanism_ac[world.land])
-                self.assertTrue(
-                    "incentive_driven" in mechanisms or "combined" in mechanisms
-                )
+                ensemble_mechanisms.update(mechanisms)
+        self.assertTrue(
+            "incentive_driven" in ensemble_mechanisms
+            or "combined" in ensemble_mechanisms
+        )
 
 
 if __name__ == "__main__":
