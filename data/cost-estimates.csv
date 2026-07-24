@@ -1,0 +1,7 @@
+estimate_id,program_id,year,phase,quantity,unit_cost_pd,tooling_capex_pd,facility_capex_pd,annual_opex_pd,currency,status,notes
+rifle-std-1-y0,rifle-std-1,2026,tooling_setup,0,0,42000000,18000000,2500000,PD,example,"Line retool + gauge/fixture set; no units yet"
+rifle-std-1-y1,rifle-std-1,2027,ramp,12000,1450,0,0,4100000,PD,example,"First production year; high scrap and learning curve"
+rifle-std-1-y2,rifle-std-1,2028,ramp,28000,1180,0,0,4800000,PD,example,"Rate climbing toward design capacity"
+rifle-std-1-y3,rifle-std-1,2029,rate,40000,980,5000000,0,5200000,PD,example,"Design rate ~40k/year; small tooling refresh"
+rifle-std-1-y4,rifle-std-1,2030,rate,40000,940,0,0,5300000,PD,example,"Learning-curve gains flattening"
+rifle-std-1-y5,rifle-std-1,2031,rate,40000,920,0,0,5400000,PD,example,"Steady state used for long-run unit cost cites"

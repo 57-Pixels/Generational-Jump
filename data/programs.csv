@@ -1,0 +1,2 @@
+program_id,name,domain,status,design_doc,start_year,notes
+rifle-std-1,Standard Infantry Rifle,soldier-systems,example,designs/soldier-systems/infantry-rifle.md,2026,"WORKED EXAMPLE — full generational jump from 80s-90s service rifle; replace when canon"

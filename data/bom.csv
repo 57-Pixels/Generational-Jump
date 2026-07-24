@@ -1,0 +1,11 @@
+bom_id,program_id,part_id,part_name,category,material,qty_per_unit,unit,unit_mass_kg,source,domestic_share_pct,notes
+rifle-std-1-receiver,rifle-std-1,rcv-01,Upper/lower receiver set,structure,aluminum_7075_billet,1,ea,0.85,domestic,100,"Forged/machined at domestic small-arms plant"
+rifle-std-1-barrel,rifle-std-1,brl-01,Cold-hammer-forged barrel,barrel,steel_4140_chrome_moly,1,ea,0.95,domestic,100,"Barrel line is the pacing machine tool"
+rifle-std-1-bolt,rifle-std-1,blt-01,Bolt and carrier group,action,steel_8620_carburized,1,ea,0.42,domestic,100,""
+rifle-std-1-handguard,rifle-std-1,hg-01,Free-float handguard,structure,aluminum_6061_extrusion,1,ea,0.28,domestic,100,""
+rifle-std-1-stock,rifle-std-1,stk-01,Collapsible stock,furniture,polymer_glass_filled,1,ea,0.35,import,20,"Polymer pellets imported; molding domestic"
+rifle-std-1-mag,rifle-std-1,mag-01,30-round magazine,magazine,steel_stamped,3,ea,0.12,domestic,100,"Three mags issued per rifle in base kit"
+rifle-std-1-optic_rail,rifle-std-1,rail-01,Picatinny top rail,interface,aluminum_6061,1,ea,0.08,domestic,100,"Optics are a separate program; rail is on the rifle"
+rifle-std-1-finish,rifle-std-1,fin-01,Corrosion-resistant finish,finish,phosphate_and_cerakote_analogue,1,ea,0.02,mixed,70,"Chemicals partly imported"
+rifle-std-1-spring_set,rifle-std-1,spr-01,Recoil and hammer spring set,small_parts,spring_steel,1,ea,0.05,domestic,100,""
+rifle-std-1-fasteners,rifle-std-1,fst-01,Pins screws and detents kit,small_parts,steel_various,1,kit,0.04,domestic,90,""
