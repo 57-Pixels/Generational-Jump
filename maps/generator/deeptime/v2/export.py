@@ -422,7 +422,10 @@ def save_world(world: WorldResult, destinations: list[Path]) -> dict:
             "mercator_max_lat": MERCATOR_MAX_LAT,
             "note": "MapLibre globe extends raster tiles to poles; image sources do not",
         },
-        "config": asdict(world.config),
+        "config": {
+            key: (str(value) if isinstance(value, Path) else value)
+            for key, value in asdict(world.config).items()
+        },
     }
 
     for destination in destinations:
