@@ -47,7 +47,7 @@ plates (Euler + Voronoi labels)
 
 ### Viewer
 
-- Image source coordinates: `[-180,90]…[180,-90]`.
+- Basemap is an XYZ `raster` source (see decision 4); there is no full-world `image` source.
 - Globe remains default world view; mercator theater mode still cannot show true poles (projection limit) — acceptable.
 - Resource/settlement layers: polygon fill + outline; click still shows properties.
 
