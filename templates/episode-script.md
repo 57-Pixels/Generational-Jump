@@ -1,45 +1,39 @@
-# Episode [NN]: [Title]
+# Episode [ID]: [Title]
 
-> **Source design doc(s):** [link(s) to designs/ doc(s), or world/threat docs for early episodes]
+> **Source design doc(s) / industry doc(s):** [links]
+> **Program id(s) / CSV filters:** [e.g. rifle-std-1]
 > **Status:** outline / scripted / recorded / published
 > **Target length:** [minutes]
+> **Arc position:** [e.g. Soldier systems — Part 4 of 6]
 
-## Cold open (0:00–0:45)
+## Cold open (first 30–60s)
 
-The hook. Lead with the problem or the counterintuitive decision, never with background. ("Every one of our neighbors uses tracked armor. We're not buying any. Here's why.")
+Hook on the design problem, bottleneck, or counterintuitive cost — not background.
 
-## Recap of constraints (0:45–2:00)
+## Legacy / requirement
 
-Only the constraints *this episode's decision* depends on. Link back to earlier episodes rather than re-explaining. One map or one budget figure on screen beats a paragraph of narration.
+What 80s–90s baseline we are replacing, and the problem statement.
 
-## The problem (2:00–4:00)
+## Body
 
-The operational problem from the design doc's Requirement section, told as a scenario: what happens on the day the threat shows up and we don't have an answer.
+Use the beats that match this episode's job (options, materials, line, cost, fielding). Pull tables from `data/*.csv` rather than inventing figures.
 
-## The options (4:00–8:00)
+## Decision moment (if this is the decision episode)
 
-Walk the options from the design doc. Give each option a fair hearing — the episode is only convincing if the rejected options genuinely sound good before they're taken apart.
+Constraints → choice, with rejected alternatives answered in the skeptical viewer's voice.
 
-## The decision (8:00–10:00)
+## What this unlocks / costs us later
 
-The pick, and the reasoning chain from constraints to choice. This should feel inevitable in hindsight.
+Second-order effects and hooks into the next episode or arc.
 
-## "Why not just...?" (10:00–12:00)
+## Outro
 
-Address the Rejected Alternatives section head-on. Read the objections in the voice of the skeptical viewer.
-
-## What this costs us later (12:00–13:00)
-
-Second-order effects. Plant hooks for future episodes ("that training pipeline problem is a whole video of its own").
-
-## Outro (13:00–13:30)
-
-One-sentence summary of the decision. Tease the next episode.
+One-sentence takeaway + tease.
 
 ---
 
 ## Production notes
 
-- **Visuals needed:** [maps, tables, comparison charts]
-- **Canon checkpoints:** [decisions this episode establishes — copy each into decisions-log.md]
-- **Corrections from previous episodes:** [if any]
+- **CSV charts/tables needed:** [list files + filters]
+- **Canon checkpoints:** [decisions-log IDs]
+- **Confidence on air:** [order-of-magnitude / study-grade / quote-analogue / line-model]

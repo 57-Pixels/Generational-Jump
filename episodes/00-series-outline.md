@@ -1,38 +1,64 @@
 # Series Outline
 
-> **Status:** skeleton — episode order and arc are proposals; retitle and reorder freely as the design docs land.
-> Every equipment episode is produced *from* a finished design doc, never the other way around. If the doc isn't done, the episode isn't ready.
+> **Status:** living outline for a **long, in-depth** series.
+> This is design work — platforms, materials, assembly lines, and costs — not surface-level "we'd buy X" listicles.
+> Quantitative claims on screen must come from `data/*.csv`.
 
-## The series in one sentence
+## Series in one sentence
 
-A fictional country with real-world 2025 technology, a hostile larger neighbor, and a limited budget — and every video is one decision about how it survives.
+A country with an 80s–90s military watches a modern war elsewhere, then executes a **full-domain generational jump** — and we design the equipment *and* the factories in depth, from the boring foundations to the exciting platforms.
 
-## Arc
+## Shape
 
-**Act I — The situation (episodes 1–3):** establish the world, the enemy, and the strategy. These episodes create the constraints every later episode cites; front-loading them means equipment episodes never have to stop and explain the map.
+**Act 0 — Why jump (short):** wake-up war, legacy force, mandate, budget, industrial spine.
 
-**Act II — The decisions (episodes 4+):** one equipment decision per episode, each driven by its design doc, ordered so that early decisions set up later ones (the rifle sets up optics; air defense sets up the air force question).
+**Acts I→N — Domain arcs (long):** each domain is a **multi-episode arc**, boring → exciting overall:
 
-**Act III — stress test (future):** war-game the finished force against the scenarios and be honest about what breaks. Revisit the worst decision of the series and fix it on camera.
+1. Industry & costing discipline (how we estimate)
+2. Logistics
+3. Soldier systems
+4. C4ISR
+5. Land
+6. Air defense
+7. Air force
+8. Navy
+9. Stress tests / revisiting bad decisions
 
-## Episode list
+Inside a domain arc, typical episode pattern:
 
-| # | Working title | Source doc(s) | Status |
+1. Requirement & legacy baseline  
+2. Mechanism / architecture options  
+3. Materials & BOM  
+4. Production line & workforce  
+5. Cost model & decision  
+6. Fielding & second-order effects  
+
+Not every item needs all six on camera — but the **design doc must contain them** before the decision episode airs.
+
+## Episode index (starter)
+
+Numbers will drift as arcs expand. Treat IDs as stable; order as preferred default.
+
+| ID | Working title | Source | Status |
 | --- | --- | --- | --- |
-| 01 | The Country That Shouldn't Survive | `world/00`–`world/04` | Not started — world canon first |
-| 02 | The Neighbor Problem | `threat-analysis/00`, `scenarios/01` | Not started |
-| 03 | Hold, Bleed, Outlast — the strategy | `doctrine/00` | Not started |
-| 04 | The Rifle Decision — Why We're Not Buying the Best | [`designs/soldier-systems/infantry-rifle.md`](../designs/soldier-systems/infantry-rifle.md) | **Outlined** ([ep04](ep04-infantry-rifle.md), worked example) |
-| 05 | Surviving Day One — air defense | `designs/air/` (not written) | Not started |
-| 06 | Tank Country, No Tanks — the anti-armor complex | `designs/land/` (not written) | Not started |
-| 07 | The 72-Hour Army — mobilization and depots | `designs/logistics/` (not written) | Not started |
-| 08 | One Port — coastal defense and the fuel problem | `designs/sea/`, `designs/logistics/` (not written) | Not started |
-| 09 | Seeing First — ISR and the drone bet | `designs/c4isr/` (not written) | Not started |
-| 10 | The Escalation Trap — how far can our missiles reach? | `designs/land/` or `air/` (not written) | Not started |
+| A0-01 | The Wake-Up Call | `world/00` | Not started |
+| A0-02 | The 80s–90s Force We Actually Have | `world/01` | Not started |
+| A0-03 | Money, Plants, and Project-Dollars | `world/03`, `industry/*`, `data/README.md` | Not started |
+| I-01 | How We Cost a Weapon | `industry/01-costing-method.md` | Not started |
+| L-arc | Logistics arc (trucks, fuel, ammo, maintenance) | `designs/logistics/` | Not started |
+| S-arc | Soldier systems arc | `designs/soldier-systems/` | Rifle arc outlined |
+| S-rifle | Rifle deep-dive (multi-part) | [`ep-soldier-rifle-arc.md`](ep-soldier-rifle-arc.md) | **Outlined (worked example)** |
+| C-arc | C4ISR arc | `designs/c4isr/` | Not started |
+| G-arc | Land combat arc | `designs/land/` | Not started |
+| AD-arc | Air defense arc | `designs/air/` | Not started |
+| AF-arc | Air force arc | `designs/air/` | Not started |
+| N-arc | Navy arc | `designs/sea/` | Not started |
+| Z-arc | Stress tests against scenarios | `threat-analysis/` | Not started |
 
-## Standing rules for episodes
+## Standing rules
 
-- Cold open on the decision or the problem, never on background.
-- Steelman every rejected option before rejecting it — the episode is only convincing if the wrong answers sound right first.
-- Every number shown on screen must exist in a repo doc. If the episode needs a number the docs don't have, the doc gets fixed first.
-- Each episode ends by planting the hook for a follow-on decision (the design docs' "follow-on decisions triggered" section is the hook supply).
+- Cold open on a design problem or counterintuitive cost/line fact.
+- Steelman rejected options.
+- No number on screen unless it exists in `data/` (or is clearly labeled scenario fiction).
+- Factory episodes are first-class, not B-roll.
+- When canon changes, update CSVs first, then prose.

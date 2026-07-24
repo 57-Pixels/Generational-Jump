@@ -1,32 +1,26 @@
 # Economy and Industrial Base
 
-> **Status:** framework — answer the key questions, then replace the starter suggestions with canon.
-> This doc sets the budget ceiling and the build/license/import decision for every design doc. When a design doc's constraints table cites a number, it should be this doc's number.
+> **Status:** framework — sets affordability *and* factory reality for the generational jump.
+> Quantitative program data lives in `data/*.csv`. This doc sets national ceilings and plant capability.
 
 ## Key questions to answer
 
-1. **GDP and the defense budget, in absolute terms.** Percentages hide the truth: 3% of a small GDP still can't buy a squadron of modern fighters. Set a real annual figure and force every program to fit inside it.
-2. **What's the split between personnel, operations, and procurement?** Most militaries eat 50–70% of their budget in salaries and pensions before buying anything. What's ours?
-3. **What can domestic industry actually do?** Be precise, per tier:
-   - **Can design and build:** (usually: trucks, small arms, ammunition, boats, software)
-   - **Can build under license:** (usually: armored vehicles, artillery, radars)
-   - **Can maintain but not build:** (usually: jet aircraft, complex missiles)
-   - **Cannot even maintain:** (whatever needs the vendor's own technicians)
-4. **What are the critical import dependencies?** Fuel, propellants and explosives, electronics, machine tools. Which arrive through the port (blockadable) and which overland (interdictable)?
-5. **What does the country export that the world wants?** Leverage in arms deals often comes from the civilian economy.
-6. **Wartime surge:** which civilian industries convert, and how fast? The recent war (see `world/00-world-overview.md`) proved ammunition consumption rates that peacetime industries cannot meet.
+1. **GDP and defense budget** in absolute terms — including the Modernization Act envelope.
+2. **Split:** personnel / O&M / procurement+industrial investment.
+3. **What legacy industry can do today** vs. what the jump requires (see `industry/00-overview.md`).
+4. **Critical imports** for materials and machine tools (see `industry/02-materials.md`).
+5. **Exports / leverage** in license negotiations.
+6. **Surge lessons from the wake-up war:** ammo, drones, barrels, missiles — which lines must be built for wartime rates, not peacetime rates?
 
 ## Starter suggestions
 
-> **[STARTER SUGGESTION]** — overwrite freely.
+> **[STARTER SUGGESTION]**
 
-- **GDP:** ~$180B (analogue: roughly Hungary/Ukraine-prewar scale per capita). **Defense budget: $4.3B/year** at the current 2.4% of GDP; a vivid threat could unlock ~$6.3B (3.5%).
-- **Budget split today:** 48% personnel, 28% operations and maintenance, 24% procurement and R&D — about **$1.0B/year for new equipment**. Every design doc competes for a slice of that.
-- **Domestic industry:**
-  - **Design and build:** commercial trucks (one real factory), small arms and mortar ammunition, patrol boats, and a genuinely good software/drone startup scene.
-  - **License-build:** artillery barrels and wheeled armored vehicles — plants exist from an older era, need retooling (~2 years, ~$150M).
-  - **Maintain only:** helicopters and legacy jet trainers.
-  - **Cannot maintain:** modern fast jets, long-range SAM systems.
-- **Import dependencies:** 100% of jet fuel and 70% of diesel arrive by sea through the one port. Propellant precursors imported overland via Doverin. Electronics: global market, no single chokepoint, but 8–14 week lead times.
-- **Exports with leverage:** grain, specialty steel, and increasingly drone software — the western great power's manufacturers want access to our drone talent.
-- **Surge capacity:** the truck plant can convert to militarized chassis in ~6 months. Artillery-shell production could triple in ~18 months *if* propellant imports hold — which makes the Doverin land route strategic infrastructure.
+- **GDP:** ~$450B. **Defense baseline:** ~$11B/year (~2.4% GDP). **Modernization Act add-on:** ~$4B/year dedicated to procurement + industrial capex for 15 years (politically ring-fenced). Rough **$7–8B/year** available for new equipment and factories combined — still finite; programs compete.
+- **Budget split (baseline + Act):** personnel still dominates the baseline; the Act money is mostly capex and procurement. Factory tooling fights with finished imports for every PD.
+- **Legacy industry:**
+  - **Can build today:** small arms, ammo (limited surge), trucks, patrol craft, software/drones startups.
+  - **Can overhaul / partially build:** armor, artillery, corvettes.
+  - **Import / license required for the jump:** modern fighters, major SAM seekers, submarine combat systems, many microelectronics.
+- **Materials risks:** propellant precursors, advanced semiconductors, turbine hot sections — see `industry/02-materials.md`.
+- **Series implication:** cost episodes use `data/cost-estimates.csv`; national ceilings in *this* doc are the parent constraint those rows must fit under in aggregate.

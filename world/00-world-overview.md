@@ -1,27 +1,30 @@
 # World Overview
 
-> **Status:** framework — answer the key questions, then replace the starter suggestions with canon.
-> Every doc in `threat-analysis/`, `doctrine/`, and `designs/` inherits its constraints from this folder.
+> **Status:** framework — answer the key questions, then replace starter suggestions with canon.
+> Every doc in `threat-analysis/`, `doctrine/`, `industry/`, and `designs/` inherits constraints from this folder.
 
-## Ground rules (already canon)
+## Ground rules (canon — see decisions-log)
 
 - **Technology level:** Earth, 2025. Everything that exists in the real world in 2025 exists here — no more, no less. No magic, no sci-fi.
-- **Different world:** the geography, countries, and history are fictional. Real-world countries and brands don't exist; equipment is described by real-world *analogue* ("a 4th-generation fighter comparable to the F-16").
-- **Physics and economics are real:** logistics, budgets, and training pipelines behave as they do on Earth.
+- **Different world:** geography, countries, and history are fictional. Equipment is described by real-world *analogue*.
+- **Physics and economics are real:** logistics, budgets, materials, and factory learning curves behave as on Earth.
+- **Our starting force:** 1980s–1990s generation equipment across the board. The series is about the **full generational jump** to modern systems in **every domain**.
+- **Catalyst:** a major conventional war **on the other side of the world** is the wake-up call. We are not fighting it; we are watching it and refusing to stay obsolete.
 
-## Key questions to answer (in rough order of importance)
+## Key questions to answer
 
-1. **How many great powers exist, and are any of them near us?** A world with one hegemon, two blocs, or true multipolarity produces completely different survival strategies for a small country.
-2. **Is there an equivalent of the global arms market?** Can small countries buy top-tier equipment, or do the great powers restrict exports? This single answer shapes half of our procurement decisions.
-3. **Are nuclear weapons a thing in this world, and who has them?** This decides whether "survival" is a conventional-forces problem at all.
-4. **How connected is the world economy?** Sanctions, chokepoints, and import dependence only matter if trade matters.
-5. **What is the recent history of war?** Has anyone fought a large conventional war in the last decade? Everyone's doctrine (including our enemies') is shaped by the last war they watched.
+1. **How many great powers exist, and where are we relative to them?**
+2. **Is there a global arms and materials market?** Who sells finished weapons, machine tools, microelectronics, and propellants?
+3. **Nuclear weapons:** who has them? (Shapes escalation, not our early modernization shopping list.)
+4. **What exactly is the wake-up-call war teaching?** Drones, artillery, air defense, EW, industrial surge, ships vs. missiles — name the lessons we are taking seriously (and the ones we might be misreading).
+5. **How connected is trade?** Sanctions and chokepoints only matter if we depend on imports for the jump.
 
 ## Starter suggestions
 
-> **[STARTER SUGGESTION]** — overwrite freely; nothing below is canon until moved above this line and logged in `decisions-log.md`.
+> **[STARTER SUGGESTION]** — overwrite freely; nothing below is canon until promoted in `decisions-log.md`.
 
-- **Structure:** one continent dominates the story. Two rival great powers anchor its east and west (real-world analogues: one a manpower-rich land power, one a wealthy maritime/technology power). Our country is a mid-sized state in the contested middle, near neither power's heartland but inside both powers' claimed sphere of influence.
-- **Arms market:** exists, but tiered. Second-tier equipment (analogues of 1990s–2000s systems) is freely available; current-generation systems require political alignment with a great power.
-- **Nuclear weapons:** exist and both great powers have them, which is precisely why they prefer to compete through proxies and pressure on middle countries like ours. We do not have them and pursuing them would invite preemption.
-- **Recent history:** a bloody conventional war between two mid-sized states ended three years ago, watched closely by every military on the continent. Drones, artillery, and electronic warfare dominated it. Everyone is drawing lessons from it — some of them wrong.
+- **Structure:** one primary continent for our story, plus other continents where the wake-up war is being fought. Two rival great powers; we are a mid-to-upper mid-sized state with full geographic access to land, air, and sea domains (not a token coast).
+- **Wake-up war:** a multi-year peer conventional war elsewhere, still ongoing or recently frozen. Public, filmed, and dissected by every general staff. Headline lessons: mass drones + artillery, the primacy of air defense, industrial ammunition surge, and the vulnerability of legacy forces that look fine on parade.
+- **Arms / materials market:** exists and is tiered. We can buy machine tools and many components; current-generation complete weapon systems often need political alignment. **Our modernization prefers building capacity** (license + domestic lines) over forever-imports — because the series designs factories, not just purchases.
+- **Nuclear weapons:** both great powers have them. We do not pursue them in this series' scope.
+- **Our posture after the wake-up:** political consensus that the 80s–90s force would fail in a modern war. Mandate: full-domain generational jump over roughly 15–20 years, paced by budget and industrial capacity.

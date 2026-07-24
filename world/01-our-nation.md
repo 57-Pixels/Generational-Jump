@@ -1,35 +1,42 @@
 # Our Nation
 
-> **Status:** framework — answer the key questions, then replace the starter suggestions with canon.
-> This is the most load-bearing document in the repo. Almost every design decision cites it.
+> **Status:** framework — most load-bearing country doc in the repo.
+> Geography must support **all domains**: land army, air force, and a real navy (not coastal missiles only).
 
 ## Key questions to answer
 
-### Geography (decides force structure before anything else)
+### Geography (must unlock every domain)
 
-1. **Coastline or landlocked?** This single answer decides whether a navy exists at all, whether we can be blockaded, and whether imports arrive by sea or overland through neighbors.
-2. **What does the terrain look like at the borders?** Plains invite armor; mountains and rivers are force multipliers for defenders; forests and cities favor infantry. Where are our natural defensive lines, and which border has none?
-3. **How big is the country?** Strategic depth changes everything: a country that can trade space for time equips differently from one whose capital is 60 km from the border.
-4. **Climate:** what must equipment survive? Mud seasons, extreme cold, dust, and humidity kill more equipment programs than enemy fire.
+1. **Coastline:** long enough for a meaningful navy and at least one major naval base + commercial ports. (Full-domain jump requires a maritime industrial story.)
+2. **Land borders and terrain:** plains, mountains, rivers — what wars on our soil would look like.
+3. **Size / strategic depth:** does trading space make sense?
+4. **Climate:** what equipment and factories must survive.
+5. **Airspace and basing:** room for dispersed air bases, training ranges, and test facilities.
 
-### People
+### People and state
 
-5. **Population and demographics:** how many people, how old? This sets the ceiling on military size and decides conscription vs. professional force.
-6. **Is the population willing to fight?** National cohesion determines whether territorial-defense concepts (reserves, total defense) are viable.
+6. **Population and demographics** — ceiling on force size and industrial workforce.
+7. **Will to modernize** — the wake-up war's political effect at home.
+8. **Government and procurement style** — annual budgets vs. multi-year program authority (matters for factory capex).
+9. **Vital ground** — capital, ports, industry, energy.
 
-### State
+### Legacy force (starting inventory)
 
-7. **Government type and stability:** procurement in a democracy with contested budgets works differently from procurement by decree.
-8. **What does the country actually need to protect to "survive"?** The capital? A port? An industrial region? A pipeline? Name the vital ground — doctrine flows from it.
+10. **What does the 80s–90s force actually look like by domain?** This is the "before" picture every design doc replaces.
 
 ## Starter suggestions
 
 > **[STARTER SUGGESTION]** — overwrite freely.
 
 - **Name:** Veldara (placeholder).
-- **Geography:** mid-sized country, roughly 240,000 km² (analogue: about the size of Romania). Short coastline (~150 km) with one major deep-water port in the southwest. Eastern border is open plain — tank country — facing our most dangerous neighbor. Northern border runs along a mountain range. A major river bisects the country north–south, forming the only natural defensive line in front of the capital.
-- **Climate:** continental — hot summers, cold winters, and a spring mud season that halts off-road movement for about six weeks.
-- **Population:** 11 million, median age 38 and rising. Enough for an active force of ~35,000 and meaningful reserves, but only with conscription or strong reserve incentives.
-- **Cohesion:** high; the country was occupied within living memory and national service is broadly accepted.
-- **Government:** parliamentary democracy, defense budgets contested annually. Defense spending currently 2.4% of GDP with political headroom to ~3.5% if the threat becomes vivid to voters.
-- **Vital ground:** the capital (on the river), the southwestern port (only sea line of communication), and the eastern industrial belt (uncomfortably close to the eastern border).
+- **Geography:** ~450,000 km² (analogue: roughly Sweden+ or larger Romania). Substantial coastline on an open sea (~1,200 km) with two deep-water commercial ports and one naval base. Eastern land border is mixed plain and rolling farmland. Northern border mountainous. Interior has space for air bases and a proving ground.
+- **Climate:** continental coast — cold winters inland, milder wet coasts, spring mud inland.
+- **Population:** ~22 million. Supports a sizable active force *and* an industrial workforce for a long modernization — machinists matter as much as riflemen.
+- **Politics:** parliamentary system; wake-up war created a cross-party **Modernization Act** analogue — multi-year funding envelopes for named programs (factories can plan past one budget year).
+- **Vital ground:** capital, both commercial ports, the naval base, the small-arms/ammo complex, and the primary energy import terminals.
+- **Legacy force snapshot (80s–90s):**
+  - **Land:** large inventory of legacy MBTs/IFVs/artillery; skilled on old kit; little modern ATGM/drone integration.
+  - **Air:** 3rd-gen fighter analogues, limited AEW, thin SHORAD/SAM modernization.
+  - **Sea:** aging frigates/corvettes and diesel subs from the late Cold-War analogue era; shipyard can repair but struggles to build modern combatants.
+  - **C4ISR / soldier systems:** voice-centric radios, scant networking, iron sights still common in reserve units.
+  - **Logistics:** abundant legacy trucks; weak precision-maintenance culture; ammo stocks sized for a short old-style war.

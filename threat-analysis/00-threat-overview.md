@@ -1,35 +1,32 @@
 # Threat Overview
 
-> **Status:** framework — rankings below follow the starter world; re-rank when canon changes.
-> One doc per scenario lives in `scenarios/`, using [`templates/threat-scenario.md`](../templates/threat-scenario.md). This doc is the ranked index.
+> **Status:** framework — rankings follow the starter world; re-rank when canon changes.
+> Two clocks run at once: **today's neighbor threats**, and **the modernization race** the distant wake-up war started.
 
-## How to rank threats
+## How to rank
 
-Rank by **likelihood x severity**, then sanity-check against one rule: *the force is sized for the threats that can end the country, and everything else gets handled by that same force or accepted as risk.* A military that tries to buy an answer to every threat buys a bad answer to all of them.
+Rank by likelihood × severity for conflict scenarios, and keep a separate note on **obsolescence risk** (losing the modernization race). The force is being rebuilt for modern war as revealed abroad, sized against the pacing regional adversary.
 
-For each threat, note:
+## Ranked conflict threats
 
-- **Likelihood** — grounded in the adversary's incentives, not our fears
-- **Severity** — existential / major / limited
-- **Warning time** — how much notice we realistically get
-- **What it demands of us** — the one-line capability implication
-
-## Ranked threats
-
-> **[STARTER SUGGESTION]** — derived from the starter world in `world/`. Overwrite together with those docs.
+> **[STARTER SUGGESTION]**
 
 | # | Threat | Likelihood | Severity | Warning | Demands |
 | --- | --- | --- | --- | --- | --- |
-| 1 | **Korvath invasion across the eastern plain** ([scenario](scenarios/01-eastern-invasion.md)) | Medium | Existential | Weeks (mobilization is visible) | Stop armor on the plain; survive the opening air/missile strike; hold the river line |
-| 2 | **Korvath coercion short of war** — blockade of the port, missile demonstrations, sabotage | High | Major | Days | Coastal defense, air defense of the port, resilient fuel reserves, counter-sabotage |
-| 3 | **Sereth opportunism in the northern border region** | Medium | Limited | Days | Light mountain-capable forces; can't pull the main force off the eastern axis |
-| 4 | **Sabotage and subversion via northern smuggling networks** | High (ongoing) | Limited | None | Territorial defense units, infrastructure protection, counterintelligence |
-| 5 | **Escalation trap** — winning too visibly draws the eastern great power in directly | Low | Existential | N/A | A design constraint, not a force requirement: capabilities that stay under the patron's threshold |
+| 1 | **Korvath cross-border war after one side modernizes and the other does not** ([scenario](scenarios/01-eastern-invasion.md)) | Medium | Existential | Weeks | A finished (or finishing) generational jump — especially AD, C4ISR, fires, logistics |
+| 2 | **Maritime interdiction of materials and fuel during crisis** | Medium–High | Major | Days–weeks | Navy + stockpiles + domestic lines for consumables |
+| 3 | **Korvath coercion short of war** while both modernize | High | Major | Days | Credible AD, ISR, and political stamina for the Act funding |
+| 4 | **Northern opportunistic crisis (Sereth)** | Medium | Limited | Days | Secondary forces that do not raid the modernization budget |
+| 5 | **Industrial failure** — lines slip, licenses stall, we field a hollow "modern" force | High (peacetime) | Existential long-term | Ongoing | The industry/cost discipline this repo exists to enforce |
+
+## Obsolescence risk (non-scenario, but real)
+
+If Korvath completes a modern AD/drone/fires complex while we still fly and drive 80s–90s analogues, we lose without a shot. Treat slipped programs as threat-relevant.
 
 ## Scenario index
 
 | Scenario | Status |
 | --- | --- |
-| [`scenarios/01-eastern-invasion.md`](scenarios/01-eastern-invasion.md) | Starter draft |
-| `scenarios/02-port-blockade.md` | Not written |
+| [`scenarios/01-eastern-invasion.md`](scenarios/01-eastern-invasion.md) | Starter draft (updated for modernization race) |
+| `scenarios/02-maritime-interdiction.md` | Not written |
 | `scenarios/03-northern-incursion.md` | Not written |
