@@ -27,13 +27,25 @@ class ClimateFields:
     cdd24: np.ndarray
 
 
-def _ocean_influence(grid: CubedSphere, ocean: np.ndarray, steps: int = 24) -> np.ndarray:
+_CHUNK = 2_000_000
+
+
+def _ocean_influence(
+    grid: CubedSphere, ocean: np.ndarray, steps: int = 24, chunk: int = _CHUNK
+) -> np.ndarray:
+    """Propagate ocean influence without allocating an (N, 8) temporary at once."""
     influence = ocean.astype(np.float64)
     valid = grid.neighbors >= 0
     safe = np.where(valid, grid.neighbors, 0)
+    nxt = np.empty_like(influence)
     for _ in range(steps):
-        neighbor_max = np.where(valid, influence[safe], 0.0).max(axis=1)
-        influence = np.maximum(influence, neighbor_max * 0.86)
+        for start in range(0, grid.size, chunk):
+            end = min(start + chunk, grid.size)
+            v = valid[start:end]
+            s = safe[start:end]
+            neighbor_max = np.where(v, influence[s], 0.0).max(axis=1)
+            nxt[start:end] = np.maximum(influence[start:end], neighbor_max * 0.86)
+        influence, nxt = nxt, influence
     return np.clip(influence, 0, 1)
 
 
@@ -57,19 +69,33 @@ def _wind_vectors(grid: CubedSphere) -> np.ndarray:
     return wind / np.maximum(np.linalg.norm(wind, axis=1, keepdims=True), 1e-12)
 
 
-def _upstream_neighbors(grid: CubedSphere, wind: np.ndarray) -> np.ndarray:
+def _upstream_neighbors(
+    grid: CubedSphere, wind: np.ndarray, chunk: int = _CHUNK
+) -> np.ndarray:
+    """Pick the neighbour most aligned with wind, processing cells in slices.
+
+    Avoids materialising the full (N, 8, 3) direction temporary (~4.8 GB at T1).
+    """
     valid = grid.neighbors >= 0
     safe = np.where(valid, grid.neighbors, 0)
-    neighbor_xyz = grid.xyz[safe]
-    # Direction travelled from candidate neighbor toward this cell.
-    direction = grid.xyz[:, None, :] - neighbor_xyz
-    radial = np.einsum("mki,mi->mk", direction, grid.xyz)
-    direction -= radial[:, :, None] * grid.xyz[:, None, :]
-    direction /= np.maximum(np.linalg.norm(direction, axis=2, keepdims=True), 1e-12)
-    alignment = np.einsum("mki,mi->mk", direction, wind)
-    alignment = np.where(valid, alignment, -np.inf)
-    chosen = np.argmax(alignment, axis=1)
-    return safe[np.arange(grid.size), chosen]
+    chosen = np.empty(grid.size, dtype=np.int64)
+    for start in range(0, grid.size, chunk):
+        end = min(start + chunk, grid.size)
+        v = valid[start:end]
+        s = safe[start:end]
+        xyz = grid.xyz[start:end]
+        neighbor_xyz = grid.xyz[s]
+        direction = xyz[:, None, :] - neighbor_xyz
+        radial = np.einsum("mki,mi->mk", direction, xyz)
+        direction -= radial[:, :, None] * xyz[:, None, :]
+        direction /= np.maximum(
+            np.linalg.norm(direction, axis=2, keepdims=True), 1e-12
+        )
+        alignment = np.einsum("mki,mi->mk", direction, wind[start:end])
+        alignment = np.where(v, alignment, -np.inf)
+        local = np.argmax(alignment, axis=1)
+        chosen[start:end] = s[np.arange(end - start), local]
+    return chosen
 
 
 def compute_climate(

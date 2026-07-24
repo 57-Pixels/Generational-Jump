@@ -70,20 +70,25 @@ def _receivers(
     land: np.ndarray,
     parent: np.ndarray,
 ) -> np.ndarray:
+    """Vectorised receivers: ocean-adjacent → -1, else steepest descent / parent."""
     receiver = np.full(grid.size, -1, dtype=np.int32)
     valid = grid.neighbors >= 0
     safe = np.where(valid, grid.neighbors, 0)
-    for cell in np.flatnonzero(land):
-        neighbors = safe[cell, valid[cell]]
-        wet = neighbors[~land[neighbors]]
-        if len(wet):
-            receiver[cell] = -1
-            continue
-        lower = neighbors[filled[neighbors] < filled[cell] - 1e-7]
-        if len(lower):
-            receiver[cell] = int(lower[np.argmin(filled[lower])])
-        else:
-            receiver[cell] = int(parent[cell])
+    touches_ocean = land & np.any(valid & (~land[safe]), axis=1)
+    inland = land & ~touches_ocean
+
+    neighbor_filled = np.where(valid, filled[safe], np.inf)
+    # Neighbours that are not strictly lower are ineligible.
+    ineligible = (~valid) | (neighbor_filled >= filled[:, None] - 1e-7)
+    scored = np.where(ineligible, np.inf, neighbor_filled)
+    best_slot = np.argmin(scored, axis=1)
+    best = safe[np.arange(grid.size), best_slot]
+    has_lower = np.any(~ineligible, axis=1)
+
+    use_lower = inland & has_lower
+    use_parent = inland & ~has_lower
+    receiver[use_lower] = best[use_lower]
+    receiver[use_parent] = parent[use_parent]
     return receiver
 
 
