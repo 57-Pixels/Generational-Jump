@@ -1,4 +1,4 @@
-"""Deep-time crust, terranes, geologic events, and bedrock relief."""
+"""Deep-time crust fields, geologic events, and bedrock relief."""
 
 from __future__ import annotations
 
@@ -30,10 +30,18 @@ EVENT_NAMES = (
     "exhumation",
 )
 
+OCEAN_THICKNESS_KM = 7.0
+CONTINENT_MIN_KM = 17.0
+CONTINENT_CORE_KM = 38.0
+
 
 def _smoothstep(edge0: float, edge1: float, values: np.ndarray) -> np.ndarray:
     t = np.clip((values - edge0) / (edge1 - edge0), 0.0, 1.0)
     return t * t * (3.0 - 2.0 * t)
+
+
+def _normalize(vectors: np.ndarray) -> np.ndarray:
+    return vectors / np.maximum(np.linalg.norm(vectors, axis=-1, keepdims=True), 1e-15)
 
 
 @dataclass(frozen=True)
@@ -43,42 +51,6 @@ class GeologyConfig:
     dt_ma: float = 8.0
     n_plates: int = 12
     n_continents: int = 7
-
-
-@dataclass
-class TerraneModel:
-    centers: np.ndarray
-    radii_rad: np.ndarray
-    continent_id: np.ndarray
-    attached_plate: np.ndarray
-    basement_age_ma: np.ndarray
-
-    def rotate(self, plate_model: PlateModel, dt_ma: float) -> None:
-        for plate in np.unique(self.attached_plate):
-            mask = self.attached_plate == plate
-            omega = plate_model.omega_xyz[int(plate)]
-            rate = float(np.linalg.norm(omega))
-            self.centers[mask] = rodrigues_rotate(
-                self.centers[mask], omega, rate * dt_ma
-            )
-
-    def rasterize(
-        self, grid: CubedSphere
-    ) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
-        n_continents = int(self.continent_id.max()) + 1
-        scores = np.zeros((n_continents, grid.size), dtype=np.float64)
-        age = np.zeros(grid.size, dtype=np.float64)
-        for index, center in enumerate(self.centers):
-            angular = np.arccos(np.clip(grid.xyz @ center, -1.0, 1.0))
-            radius = self.radii_rad[index]
-            lobe = 1.0 - _smoothstep(radius * 0.72, radius, angular)
-            cid = int(self.continent_id[index])
-            scores[cid] = np.maximum(scores[cid], lobe)
-            age = np.maximum(age, lobe * self.basement_age_ma[index])
-        continent_id = np.argmax(scores, axis=0).astype(np.int32)
-        continental = np.max(scores, axis=0)
-        continent_id[continental < 0.18] = -1
-        return continental, continent_id, age
 
 
 @dataclass
@@ -99,22 +71,57 @@ class GeologyFields:
     landmass_id: np.ndarray = field(default_factory=lambda: np.empty(0, dtype=np.int32))
 
 
-def _initialize_terranes(
-    plate_model: PlateModel, config: GeologyConfig, rng: np.random.Generator
-) -> TerraneModel:
-    centers: list[np.ndarray] = []
-    radii: list[float] = []
-    continent_ids: list[int] = []
-    attached: list[int] = []
-    ages: list[float] = []
+def _tangent_basis(center: np.ndarray) -> tuple[np.ndarray, np.ndarray]:
+    center = _normalize(center.reshape(1, 3))[0]
+    hint = np.array([0.0, 0.0, 1.0]) if abs(center[2]) < 0.9 else np.array([1.0, 0.0, 0.0])
+    east = np.cross(hint, center)
+    east = east / max(float(np.linalg.norm(east)), 1e-15)
+    north = np.cross(center, east)
+    return east, north
+
+
+def _anisotropic_lobe(
+    grid: CubedSphere,
+    center: np.ndarray,
+    axis_a: float,
+    axis_b: float,
+    angle: float,
+    noise: np.ndarray,
+) -> np.ndarray:
+    """Irregular elongated occupancy in the tangent plane (not a circular cap)."""
+    east, north = _tangent_basis(center)
+    cosine = np.cos(angle)
+    sine = np.sin(angle)
+    e1 = cosine * east + sine * north
+    e2 = -sine * east + cosine * north
+    u = grid.xyz @ e1
+    v = grid.xyz @ e2
+    radial = np.sqrt((u / max(axis_a, 1e-6)) ** 2 + (v / max(axis_b, 1e-6)) ** 2)
+    warped = radial + 0.28 * noise + 0.12 * np.sin(4.0 * np.arctan2(v, u + 1e-9))
+    return 1.0 - _smoothstep(0.72, 1.18, warped)
+
+
+def _seed_crust_fields(
+    grid: CubedSphere,
+    plate_model: PlateModel,
+    config: GeologyConfig,
+    rng: np.random.Generator,
+) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
+    thickness = np.full(grid.size, OCEAN_THICKNESS_KM, dtype=np.float64)
+    continent_id = np.full(grid.size, -1, dtype=np.int32)
+    basement_age = np.zeros(grid.size, dtype=np.float64)
+    noise = grid.smooth(rng.normal(size=grid.size), iterations=6)
+    noise /= max(float(np.std(noise)), 1e-9)
+
     n_plates = len(plate_model.seed_xyz)
-    selected_plates = rng.choice(
+    selected = rng.choice(
         n_plates, size=min(config.n_continents, n_plates), replace=False
     )
-    for continent, plate in enumerate(selected_plates):
+    for continent, plate in enumerate(selected):
         main = plate_model.seed_xyz[int(plate)]
         age = float(rng.uniform(900.0, 3500.0))
-        lobe_count = int(rng.integers(3, 7))
+        lobe_count = int(rng.integers(4, 8))
+        score = np.zeros(grid.size)
         for lobe in range(lobe_count):
             if lobe == 0:
                 center = main.copy()
@@ -123,19 +130,61 @@ def _initialize_terranes(
                 if np.linalg.norm(axis) < 1e-8:
                     axis = np.cross(main, np.array([0.0, 0.0, 1.0]))
                 center = rodrigues_rotate(
-                    main[None, :], axis, float(rng.uniform(0.08, 0.38))
+                    main[None, :], axis, float(rng.uniform(0.10, 0.42))
                 )[0]
-            centers.append(center)
-            radii.append(float(rng.uniform(0.22, 0.48)))
-            continent_ids.append(continent)
-            attached.append(int(plate))
-            ages.append(age + float(rng.uniform(-150.0, 150.0)))
-    return TerraneModel(
-        centers=np.asarray(centers),
-        radii_rad=np.asarray(radii),
-        continent_id=np.asarray(continent_ids, dtype=np.int32),
-        attached_plate=np.asarray(attached, dtype=np.int32),
-        basement_age_ma=np.asarray(ages),
+            # Strongly anisotropic: one axis often 2–4× the other.
+            short = float(rng.uniform(0.14, 0.28))
+            long = float(rng.uniform(0.36, 0.78))
+            if rng.random() < 0.5:
+                short, long = long, short
+            angle = float(rng.uniform(0.0, np.pi))
+            score = np.maximum(
+                score,
+                _anisotropic_lobe(grid, center, long, short, angle, noise),
+            )
+        mask = score > 0.20
+        thickness[mask] = np.maximum(
+            thickness[mask],
+            CONTINENT_CORE_KM * (0.72 + 0.45 * score[mask]),
+        )
+        continent_id[mask] = continent
+        basement_age[mask] = np.maximum(
+            basement_age[mask], age + rng.normal(0.0, 80.0, size=int(mask.sum()))
+        )
+    return thickness, continent_id, basement_age
+
+
+def _advect_scalar(
+    grid: CubedSphere,
+    plate_model: PlateModel,
+    values: np.ndarray,
+    dt_ma: float,
+) -> np.ndarray:
+    """Backward-remesh advection with each cell's current plate Euler pole."""
+    out = values.copy()
+    n_plates = len(plate_model.seed_xyz)
+    for plate in range(n_plates):
+        mask = plate_model.plate_id == plate
+        if not np.any(mask):
+            continue
+        omega = plate_model.omega_xyz[plate]
+        rate = float(np.linalg.norm(omega))
+        if rate < 1e-15 or abs(dt_ma) < 1e-15:
+            continue
+        source_xyz = rodrigues_rotate(grid.xyz[mask], omega, -rate * dt_ma)
+        source = grid.indices_for_xyz(source_xyz)
+        out[mask] = values[source]
+    return out
+
+
+def _advect_labels(
+    grid: CubedSphere,
+    plate_model: PlateModel,
+    labels: np.ndarray,
+    dt_ma: float,
+) -> np.ndarray:
+    return _advect_scalar(grid, plate_model, labels.astype(np.float64), dt_ma).astype(
+        np.int32
     )
 
 
@@ -156,12 +205,106 @@ def _add_edge_intensity(
     np.add.at(target, chosen[:, 1], amount)
 
 
+def _continental_fraction(thickness_km: np.ndarray) -> np.ndarray:
+    return _smoothstep(CONTINENT_MIN_KM - 2.0, CONTINENT_CORE_KM, thickness_km)
+
+
+def _apply_crust_events(
+    thickness: np.ndarray,
+    continent_id: np.ndarray,
+    basement_age: np.ndarray,
+    current: dict[str, np.ndarray],
+    grid: CubedSphere,
+    dt_ma: float,
+    rng: np.random.Generator,
+) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
+    thickness = thickness.copy()
+    continent_id = continent_id.copy()
+    basement_age = basement_age.copy()
+
+    collision = current["collision"]
+    arc = current["arc"]
+    rift = current["continental_rift"]
+    suture = current["suture"]
+    transform = current["transform"]
+
+    # Growth must outpace boundary attrition over long runs or continents vanish.
+    thickness += (3.6 * collision + 2.4 * arc + 0.8 * suture) * dt_ma
+    thickness -= (0.85 * rift + 0.12 * transform) * dt_ma
+
+    continental = _continental_fraction(thickness)
+    # Stable interiors slowly relax toward typical continental thickness.
+    interior = continental > 0.55
+    thickness[interior] += 0.22 * (CONTINENT_CORE_KM - thickness[interior]) * (
+        dt_ma / 8.0
+    )
+
+    # Margin-local noise so coasts gain embayments instead of smooth isolines.
+    valid = grid.neighbors >= 0
+    safe = np.where(valid, grid.neighbors, 0)
+    neighbor_cont = np.where(valid, continental[safe], 0.0).sum(axis=1) / np.maximum(
+        valid.sum(axis=1), 1
+    )
+    margin = (continental > 0.15) & (continental < 0.85) & (neighbor_cont < continental)
+    jitter = grid.smooth(rng.normal(size=grid.size), iterations=2)
+    thickness += 0.45 * jitter * margin.astype(float) * dt_ma / 8.0
+
+    # Hysteresis oceanization: avoid flickering coastlines.
+    oceanize = thickness < (CONTINENT_MIN_KM - 3.0)
+    reclaim = (thickness >= CONTINENT_MIN_KM) & (continent_id < 0)
+    thickness[oceanize] = OCEAN_THICKNESS_KM + 1.5 * current["ridge"][oceanize]
+    continent_id[oceanize] = -1
+    basement_age[oceanize] = 0.0
+    if np.any(reclaim):
+        for cell in np.flatnonzero(reclaim):
+            neigh = grid.neighbors[cell]
+            neigh = neigh[neigh >= 0]
+            ids = continent_id[neigh]
+            ids = ids[ids >= 0]
+            if len(ids):
+                continent_id[cell] = int(ids[0])
+                basement_age[cell] = max(float(basement_age[cell]), 250.0)
+
+    # Weld only the boundary cells themselves — do not flood-merge whole continents
+    # into a single global id (that collapsed lineage counts to 1).
+    edges = grid.edge_cells
+    if len(edges):
+        left = edges[:, 0]
+        right = edges[:, 1]
+        weld = (
+            (suture[left] + suture[right] > 0.08)
+            & (continent_id[left] >= 0)
+            & (continent_id[right] >= 0)
+        )
+        for a, b in edges[weld]:
+            keep = min(int(continent_id[a]), int(continent_id[b]))
+            continent_id[a] = keep
+            continent_id[b] = keep
+
+    # New crust at arcs inherits nearby continental lineage.
+    growing = (arc > 0.08) & (continent_id < 0) & (thickness >= CONTINENT_MIN_KM)
+    if np.any(growing):
+        for cell in np.flatnonzero(growing):
+            neigh = grid.neighbors[cell]
+            neigh = neigh[neigh >= 0]
+            ids = continent_id[neigh]
+            ids = ids[ids >= 0]
+            if len(ids):
+                continent_id[cell] = int(ids[0])
+                basement_age[cell] = max(float(basement_age[cell]), 200.0)
+
+    thickness = np.clip(thickness, OCEAN_THICKNESS_KM, 72.0)
+    return thickness, continent_id, basement_age
+
+
 def simulate_geology(
     grid: CubedSphere, config: GeologyConfig
 ) -> tuple[GeologyFields, PlateModel]:
     rng = np.random.default_rng(config.seed)
     plates = PlateModel.initialize(grid, config.n_plates, config.seed)
-    terranes = _initialize_terranes(plates, config, rng)
+    thickness, continent_id, basement_age = _seed_crust_fields(
+        grid, plates, config, rng
+    )
     cumulative = {name: np.zeros(grid.size, dtype=np.float64) for name in EVENT_NAMES}
     memory = {name: np.zeros(grid.size, dtype=np.float64) for name in EVENT_NAMES}
     decay_ma = {
@@ -179,13 +322,11 @@ def simulate_geology(
         "exhumation": 250.0,
     }
 
-    continental = np.zeros(grid.size)
-    continent_id = np.full(grid.size, -1, dtype=np.int32)
-    basement_age = np.zeros(grid.size)
     for _ in range(config.ticks):
-        continental, continent_id, basement_age = terranes.rasterize(grid)
+        continental = _continental_fraction(thickness)
         boundary = plates.boundaries(grid)
         edges = boundary.edge_cells
+        current = {name: np.zeros(grid.size, dtype=np.float64) for name in EVENT_NAMES}
         if len(edges):
             cont_left = continental[edges[:, 0]] > 0.28
             cont_right = continental[edges[:, 1]] > 0.28
@@ -202,7 +343,6 @@ def simulate_geology(
                 1.5,
             )
 
-            current = {name: np.zeros(grid.size, dtype=np.float64) for name in EVENT_NAMES}
             _add_edge_intensity(current["ridge"], edges, divergent & both_ocean, speed)
             _add_edge_intensity(
                 current["continental_rift"], edges, divergent & (~both_ocean), speed
@@ -223,7 +363,10 @@ def simulate_geology(
                 speed * 0.7,
             )
             _add_edge_intensity(
-                current["mafic"], edges, divergent | (convergent & both_ocean), speed * 0.5
+                current["mafic"],
+                edges,
+                divergent | (convergent & both_ocean),
+                speed * 0.5,
             )
 
             for name in EVENT_NAMES:
@@ -231,10 +374,24 @@ def simulate_geology(
                 memory[name] += current[name]
                 cumulative[name] += current[name] * config.dt_ma
 
-        terranes.rotate(plates, config.dt_ma)
+        thickness, continent_id, basement_age = _apply_crust_events(
+            thickness,
+            continent_id,
+            basement_age,
+            current,
+            grid,
+            config.dt_ma,
+            rng,
+        )
+        thickness = _advect_scalar(grid, plates, thickness, config.dt_ma)
+        basement_age = _advect_scalar(grid, plates, basement_age, config.dt_ma)
+        continent_id = _advect_labels(grid, plates, continent_id, config.dt_ma)
+        # Heal remesh speckles from nearest-neighbor advection.
+        thickness = grid.smooth(thickness, iterations=1, self_weight=4.0)
+        continent_id[thickness < CONTINENT_MIN_KM] = -1
         plates.advance(grid, config.dt_ma)
 
-    continental, continent_id, basement_age = terranes.rasterize(grid)
+    continental = _continental_fraction(thickness)
     for name in EVENT_NAMES:
         memory[name] = grid.smooth(memory[name], iterations=3)
         maximum = float(memory[name].max())
@@ -244,8 +401,6 @@ def simulate_geology(
         if cumulative_max > 1e-12:
             cumulative[name] /= cumulative_max
 
-    # Quiet continental/ocean transition after long rifting becomes passive margin.
-    cont_neighbor = np.zeros(grid.size)
     valid = grid.neighbors >= 0
     safe = np.where(valid, grid.neighbors, 0)
     cont_neighbor = np.where(valid, continental[safe], 0.0).mean(axis=1)
@@ -259,8 +414,6 @@ def simulate_geology(
     memory["passive_margin"] = grid.smooth(margin.astype(float), 3)
     cumulative["passive_margin"] = memory["passive_margin"].copy()
 
-    # Seed rare alkaline/hotspot provinces independently of current boundaries,
-    # but keep them spatially coherent and deterministic.
     alkaline_noise = grid.smooth(rng.random(grid.size), iterations=8)
     alkaline_noise = np.clip(
         (alkaline_noise - np.percentile(alkaline_noise, 85))
@@ -278,6 +431,14 @@ def simulate_geology(
 
     texture = grid.smooth(rng.normal(size=grid.size), iterations=5)
     texture /= max(float(np.std(texture)), 1e-9)
+    # Soften the continental mask used for elevation so coasts are not cliffs.
+    continental_soft = grid.smooth(continental, iterations=2, self_weight=2.5)
+    continental_soft = np.minimum(continental_soft, continental + 0.22)
+    coastal_noise = grid.smooth(rng.normal(size=grid.size), iterations=2)
+    continental_soft = np.clip(
+        continental_soft + 0.05 * coastal_noise * memory["passive_margin"], 0.0, 1.0
+    )
+
     ridge = memory["ridge"]
     ocean_age = np.clip(
         180.0 * (1.0 - 0.85 * ridge) + 20.0 * (texture + 1.0), 0.0, 220.0
@@ -285,8 +446,8 @@ def simulate_geology(
     crust_age = np.where(continental > 0.25, basement_age, ocean_age)
     crust_thickness = np.where(
         continental > 0.25,
-        28.0 + 14.0 * continental + 18.0 * memory["collision"],
-        6.0 + 2.0 * ridge,
+        thickness,
+        OCEAN_THICKNESS_KM + 2.0 * ridge,
     )
 
     orogeny = np.clip(
@@ -309,17 +470,27 @@ def simulate_geology(
         1,
     )
 
+    # Isostasy-ish with an explicit shelf band so LGM (−120 m) expands coasts.
     ocean_elevation = -2600.0 - 250.0 * np.sqrt(np.clip(ocean_age, 0, 180))
     continental_elevation = (
-        180.0
-        + 550.0 * continental
-        + 3600.0 * orogeny
-        - 900.0 * basin_depth
-        + 180.0 * texture
+        40.0
+        + 48.0 * (crust_thickness - OCEAN_THICKNESS_KM)
+        + 3000.0 * orogeny
+        - 850.0 * basin_depth
+        + 140.0 * texture
     )
-    transition = _smoothstep(0.16, 0.48, continental)
+    transition = _smoothstep(0.18, 0.58, continental_soft)
     elevation = ocean_elevation * (1.0 - transition) + continental_elevation * transition
+    shelf_zone = (
+        (continental_soft > 0.10)
+        & (continental_soft < 0.52)
+        & (continental < 0.55)
+    )
+    elevation[shelf_zone] = -240.0 + 520.0 * (
+        (continental_soft[shelf_zone] - 0.10) / 0.42
+    )
     elevation += 450.0 * ridge * (1.0 - transition)
+    continental = continental_soft
 
     ancient = np.clip((crust_age - 1200.0) / 1800.0, 0, 1) * continental
     felsic = np.clip(0.45 * continental + 0.45 * memory["collision"], 0, 1)

@@ -35,6 +35,8 @@ Open `http://localhost:5173`.
 
 Threshold: `GLOBE_MAX_ZOOM` in `src/main.js`.
 
+The algorithmic basemap image is mapped to **±90°** so globe poles show atlas content (mercator theater mode still cannot reach true poles — projection limit).
+
 ## War layers (ready for later)
 
 Demo GeoJSON in `public/data/layers/`:

@@ -19,7 +19,7 @@ python3 -m deeptime --engine v2 --seed 42 --grid-n 64 --width 1024 --height 512
 python3 -m deeptime --engine v2 --seed 42 --grid-n 64 --era lgm
 ```
 
-Targets present **land ≈ 29%**. LGM reuses identical bedrock at **−120 m** sea level. Writes `maps/exports/world-*` and copies into `maps/viewer/public/world/`.
+Targets **emergent** present land fraction from crust history (no 29% clamp). LGM reuses identical bedrock at **−120 m** sea level. Writes `maps/exports/world-*` and copies into `maps/viewer/public/world/`.
 
 V2 separates:
 
@@ -29,7 +29,7 @@ V2 separates:
 - physical habitability by era
 - incentives that can override poor habitability
 
-A/C uplift requires grid/capital/energy and reports cooling burdens.
+Continents evolve as a **crust-thickness field** (collision thickens, rift thins, anisotropic seeds) — not circular caps. A/C uplift requires grid/capital/energy and reports cooling burdens.
 
 ## Reference campaign (ellipses)
 

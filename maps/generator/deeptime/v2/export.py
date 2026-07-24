@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import math
 import zlib
 from dataclasses import asdict
 from pathlib import Path
@@ -87,12 +88,36 @@ def _save_rgb(path: Path, rgb: np.ndarray) -> None:
     Image.fromarray((np.clip(rgb, 0, 1) * 255).astype(np.uint8), mode="RGB").save(path)
 
 
+def _irregular_ring(
+    lon: float,
+    lat: float,
+    seed_key: str,
+    scale_deg: float,
+    vertices: int = 7,
+) -> list[list[float]]:
+    """Deterministic non-circular footprint around a lon/lat point."""
+    digest = zlib.crc32(seed_key.encode("utf-8")) & 0xFFFFFFFF
+    rng = np.random.default_rng(digest)
+    cos_lat = max(math.cos(math.radians(lat)), 0.2)
+    ring: list[list[float]] = []
+    for index in range(vertices):
+        angle = (2.0 * math.pi * index) / vertices + float(rng.uniform(-0.35, 0.35))
+        radius = scale_deg * float(rng.uniform(0.40, 1.25))
+        ring.append(
+            [
+                lon + (radius * math.cos(angle)) / cos_lat,
+                lat + radius * math.sin(angle),
+            ]
+        )
+    ring.append(ring[0])
+    return ring
+
+
 def _resource_geojson(world: WorldResult) -> dict:
-    return {
-        "type": "FeatureCollection",
-        "name": "geological-resources-v2",
-        "schema_version": "2.0",
-        "features": [
+    features = []
+    for deposit in world.deposits:
+        scale = 0.55 + 0.55 * min(math.log10(max(deposit.reserve_2025_t, 10.0)) / 10.0, 1.0)
+        features.append(
             {
                 "type": "Feature",
                 "properties": {
@@ -110,14 +135,27 @@ def _resource_geojson(world: WorldResult) -> dict:
                     "recovery": round(deposit.recovery, 4),
                     "reserve_2025_t": round(deposit.reserve_2025_t, 2),
                     "byproducts": ", ".join(deposit.byproducts),
+                    "lon": deposit.lon,
+                    "lat": deposit.lat,
                 },
                 "geometry": {
-                    "type": "Point",
-                    "coordinates": [deposit.lon, deposit.lat],
+                    "type": "Polygon",
+                    "coordinates": [
+                        _irregular_ring(
+                            deposit.lon,
+                            deposit.lat,
+                            deposit.id,
+                            scale_deg=scale,
+                        )
+                    ],
                 },
             }
-            for deposit in world.deposits
-        ],
+        )
+    return {
+        "type": "FeatureCollection",
+        "name": "geological-resources-v2",
+        "schema_version": "2.1",
+        "features": features,
     }
 
 
@@ -176,6 +214,8 @@ def _settlement_sites(world: WorldResult, maximum: int = 120) -> dict:
         work[neighbors[neighbors >= 0]] = -1
     features = []
     for rank, cell in enumerate(chosen, start=1):
+        lon = float(world.grid.lon_deg[cell])
+        lat = float(world.grid.lat_deg[cell])
         features.append(
             {
                 "type": "Feature",
@@ -204,12 +244,15 @@ def _settlement_sites(world: WorldResult, maximum: int = 120) -> dict:
                     "ac_water_l_pc_day": round(
                         float(world.settlement.ac_water_l_pc_day[cell]), 2
                     ),
+                    "lon": lon,
+                    "lat": lat,
                 },
                 "geometry": {
-                    "type": "Point",
+                    "type": "Polygon",
                     "coordinates": [
-                        float(world.grid.lon_deg[cell]),
-                        float(world.grid.lat_deg[cell]),
+                        _irregular_ring(
+                            lon, lat, f"settle-{rank}-{cell}", scale_deg=0.7
+                        )
                     ],
                 },
             }
@@ -217,7 +260,7 @@ def _settlement_sites(world: WorldResult, maximum: int = 120) -> dict:
     return {
         "type": "FeatureCollection",
         "name": "settlement-sites-v2",
-        "schema_version": "2.0",
+        "schema_version": "2.1",
         "features": features,
     }
 
@@ -227,16 +270,17 @@ def _resource_overlay(world: WorldResult, base: np.ndarray) -> np.ndarray:
     image = Image.fromarray((base * 255).astype(np.uint8), mode="RGB")
     draw = ImageDraw.Draw(image)
     for deposit in world.deposits:
-        x = int((deposit.lon + 180.0) / 360.0 * width) % width
-        y = int((90.0 - deposit.lat) / 180.0 * height)
-        radius = 3 if deposit.reserve_2025_t > 1e8 else 2
+        scale = 2.5 + 2.0 * min(math.log10(max(deposit.reserve_2025_t, 10.0)) / 10.0, 1.0)
+        ring = _irregular_ring(deposit.lon, deposit.lat, deposit.id, scale_deg=scale)
+        pixels = []
+        for lon, lat in ring[:-1]:
+            x = int((lon + 180.0) / 360.0 * width) % width
+            y = int(np.clip((90.0 - lat) / 180.0 * height, 0, height - 1))
+            pixels.append((x, y))
         hue = zlib.crc32(deposit.deposit_class.encode("utf-8")) & 0xFFFFFF
         color = ((hue >> 16) & 255, (hue >> 8) & 255, hue & 255)
-        draw.ellipse(
-            [x - radius, y - radius, x + radius, y + radius],
-            fill=color,
-            outline=(15, 15, 15),
-        )
+        if len(pixels) >= 3:
+            draw.polygon(pixels, fill=color, outline=(15, 15, 15))
     return np.asarray(image).astype(np.float64) / 255.0
 
 
@@ -293,6 +337,7 @@ def save_world(world: WorldResult, destinations: list[Path]) -> dict:
         "ma_per_tick": world.config.dt_ma,
         "sea_level_m": world.sea_level_m,
         "land_fraction": world.land_fraction,
+        "land_fraction_emergent": True,
         "plate_count": len(world.plate_model.seed_xyz),
         "continent_count": len(
             np.unique(world.geology.continent_id[world.geology.continent_id >= 0])

@@ -25,6 +25,13 @@ const WAR_LAYER_IDS = [
 const asset = (path) =>
   `${import.meta.env.BASE_URL}${path.replace(/^\//, "")}`;
 
+const WORLD_IMAGE_BOUNDS = [
+  [-180, 90],
+  [180, 90],
+  [180, -90],
+  [-180, -90],
+];
+
 /** Algorithmic basemap from maps/generator → public/world/world-color.png */
 function worldStyle() {
   const worldUrl = asset("world/world-color.png");
@@ -35,12 +42,7 @@ function worldStyle() {
       world: {
         type: "image",
         url: worldUrl,
-        coordinates: [
-          [-180, 85],
-          [180, 85],
-          [180, -85],
-          [-180, -85],
-        ],
+        coordinates: WORLD_IMAGE_BOUNDS,
       },
     },
     layers: [
@@ -137,7 +139,7 @@ function setWarLayersVisible(visible) {
 
 function setResourceLayersVisible(visible) {
   const visibility = visible ? "visible" : "none";
-  for (const id of ["resources-circle", "resources-label"]) {
+  for (const id of ["resources-fill", "resources-outline", "resources-label"]) {
     if (map.getLayer(id)) {
       map.setLayoutProperty(id, "visibility", visibility);
     }
@@ -152,7 +154,7 @@ function setRiverLayersVisible(visible) {
 
 function setSettlementLayersVisible(visible) {
   const visibility = visible ? "visible" : "none";
-  for (const id of ["settlement-raster", "settlement-sites"]) {
+  for (const id of ["settlement-raster", "settlement-sites", "settlement-sites-fill"]) {
     if (map.getLayer(id)) {
       map.setLayoutProperty(id, "visibility", visibility);
     }
@@ -180,12 +182,7 @@ async function addSurfaceLayers() {
   map.addSource("settlement-raster-source", {
     type: "image",
     url: asset("world/world-settlement.png"),
-    coordinates: [
-      [-180, 85],
-      [180, 85],
-      [180, -85],
-      [-180, -85],
-    ],
+    coordinates: WORLD_IMAGE_BOUNDS,
   });
   map.addLayer({
     id: "settlement-raster",
@@ -200,13 +197,12 @@ async function addSurfaceLayers() {
     data: settlements,
   });
   map.addLayer({
-    id: "settlement-sites",
-    type: "circle",
+    id: "settlement-sites-fill",
+    type: "fill",
     source: "settlement-sites-source",
     layout: { visibility: "none" },
     paint: {
-      "circle-radius": 4,
-      "circle-color": [
+      "fill-color": [
         "match",
         ["get", "mechanism"],
         "incentive_driven",
@@ -217,16 +213,27 @@ async function addSurfaceLayers() {
         "#d45cff",
         "#fff2a8",
       ],
-      "circle-stroke-color": "#101820",
-      "circle-stroke-width": 1,
+      "fill-opacity": 0.55,
     },
   });
-  map.on("click", "settlement-sites", (event) => {
+  map.addLayer({
+    id: "settlement-sites",
+    type: "line",
+    source: "settlement-sites-source",
+    layout: { visibility: "none" },
+    paint: {
+      "line-color": "#101820",
+      "line-width": 1,
+    },
+  });
+  map.on("click", "settlement-sites-fill", (event) => {
     const feature = event.features?.[0];
     if (!feature) return;
     const properties = feature.properties ?? {};
+    const lon = Number(properties.lon ?? event.lngLat.lng);
+    const lat = Number(properties.lat ?? event.lngLat.lat);
     new maplibregl.Popup()
-      .setLngLat(event.lngLat)
+      .setLngLat([lon, lat])
       .setHTML(
         `<strong>Settlement candidate #${properties.rank}</strong><br/>` +
           `<span>${properties.mechanism}; ${properties.dominant_incentive}</span><br/>` +
@@ -258,23 +265,22 @@ async function addResourceLayers() {
   matchColor.push("#ffffff");
 
   map.addLayer({
-    id: "resources-circle",
-    type: "circle",
+    id: "resources-fill",
+    type: "fill",
     source: "resources",
     paint: {
-      "circle-radius": [
-        "match",
-        ["get", "grade"],
-        "major",
-        6,
-        "significant",
-        4.5,
-        3.5,
-      ],
-      "circle-color": matchColor,
-      "circle-stroke-width": 1,
-      "circle-stroke-color": "#111111",
-      "circle-opacity": 0.95,
+      "fill-color": matchColor,
+      "fill-opacity": 0.72,
+    },
+  });
+
+  map.addLayer({
+    id: "resources-outline",
+    type: "line",
+    source: "resources",
+    paint: {
+      "line-color": "#111111",
+      "line-width": 1,
     },
   });
 
@@ -297,7 +303,7 @@ async function addResourceLayers() {
     minzoom: 3.2,
   });
 
-  map.on("click", "resources-circle", (e) => {
+  map.on("click", "resources-fill", (e) => {
     const f = e.features?.[0];
     if (!f) return;
     const {
@@ -308,9 +314,11 @@ async function addResourceLayers() {
       reserve_2025_t: reserve,
       processing_difficulty: difficulty,
       byproducts,
+      lon,
+      lat,
     } = f.properties ?? {};
     new maplibregl.Popup()
-      .setLngLat(e.lngLat)
+      .setLngLat([Number(lon ?? e.lngLat.lng), Number(lat ?? e.lngLat.lat)])
       .setHTML(
         `<strong>${name ?? resource}</strong><br/>` +
           `<span>grade ${grade ?? "—"}</span><br/>` +
@@ -319,10 +327,10 @@ async function addResourceLayers() {
       )
       .addTo(map);
   });
-  map.on("mouseenter", "resources-circle", () => {
+  map.on("mouseenter", "resources-fill", () => {
     map.getCanvas().style.cursor = "pointer";
   });
-  map.on("mouseleave", "resources-circle", () => {
+  map.on("mouseleave", "resources-fill", () => {
     map.getCanvas().style.cursor = "";
   });
 }

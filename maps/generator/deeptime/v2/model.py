@@ -19,9 +19,12 @@ from .settlement import (
     SettlementInputs,
     compute_settlement,
 )
-from .topology import area_fraction, component_labels, fit_area_fraction_level
+from .topology import area_fraction, component_labels
 
 EARTH_RADIUS_KM = 6371.0
+# Fixed reference sea level on the elevation field. Land fraction is emergent.
+PRESENT_SEA_LEVEL_M = 0.0
+LGM_SEA_LEVEL_DROP_M = 120.0
 
 
 @dataclass(frozen=True)
@@ -33,7 +36,6 @@ class WorldConfig:
     n_plates: int = 12
     n_continents: int = 7
     era: str = "present"
-    target_land_fraction: float = 0.29
     export_width: int = 1024
     export_height: int = 512
 
@@ -294,10 +296,11 @@ def generate_world(config: WorldConfig) -> WorldResult:
             n_continents=config.n_continents,
         ),
     )
-    present_sea = fit_area_fraction_level(
-        geology.elevation_m, grid.area_sr, config.target_land_fraction
+    sea_level = (
+        PRESENT_SEA_LEVEL_M
+        if config.era == "present"
+        else PRESENT_SEA_LEVEL_M - LGM_SEA_LEVEL_DROP_M
     )
-    sea_level = present_sea if config.era == "present" else present_sea - 120.0
     land = geology.elevation_m >= sea_level
     land_fraction = area_fraction(land, grid.area_sr)
     geology.landmass_id = component_labels(grid, land)

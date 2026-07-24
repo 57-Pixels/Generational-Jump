@@ -15,8 +15,9 @@ class EnsembleTests(unittest.TestCase):
                 world = generate_world(
                     WorldConfig(seed=seed, grid_n=20, ticks=24, export_width=128, export_height=64)
                 )
-                self.assertGreaterEqual(world.land_fraction, 0.26)
-                self.assertLessEqual(world.land_fraction, 0.32)
+                self.assertGreater(world.land_fraction, 0.02)
+                self.assertLess(world.land_fraction, 0.98)
+                self.assertAlmostEqual(world.sea_level_m, 0.0, places=6)
                 world.plate_model.assert_connected(world.grid)
                 landmasses = np.unique(world.geology.landmass_id[world.land])
                 self.assertGreater(len(landmasses), 0)

@@ -11,7 +11,7 @@ Generate believable fictional worlds for military-design stories where **2025 te
 ## Core principles
 
 1. **Plate, continent, landmass are separate.** Plate = current rigid kinematic domain; continent = continental-crust/terrane lineage; landmass = connected dry land. Collided Nerath + Tesen may share the Farreach landmass while retaining lineages and present plate identities.
-2. **~Earth land fraction** at present (~29% land / ~71% ocean). LGM raises land via lower seas.
+2. **Emergent land fraction** from crust history (no forced ~29%). LGM raises land via lower seas when shelves exist. Veldara *reference campaign* board may still be authored Earth-comparable.
 3. **Environment → culture.** Classical packages and modern traits must be causable by local food, transport, climate, and barriers.
 4. **Humans build on forefathers.** Languages, law, doctrine, and industry inherit from earlier layers (classical → vernacular → industrial → legacy force → generational jump).
 5. **Path dependence.** Industrial modernity needs the event-*types* of Earth’s stack (surplus agriculture → classical states/literacy/law → early modern science/trade → fossil industry → industrial war). Roles, not Earth names.
@@ -26,7 +26,7 @@ Generate believable fictional worlds for military-design stories where **2025 te
 ```
 seed
   → deep-time plate sim (Ga → present)
-  → heightfield + plate map (~29% land)
+  → heightfield + plate map (emergent land %)
   → resource prospects (from orogeny / crust / basins / shelves)
   → climate / moisture
   → settlement & food cores (coarse)
@@ -46,7 +46,7 @@ Unique story = new seed (optional) producing a new board **and** a new ancestral
 **v1 method (ship now):**
 - Equirectangular grid; continental vs oceanic crust; plate IDs + velocities
 - Tick in Ma steps: advect, grow ridges, consume trenches, raise sutures/arcs, age ocean crust
-- Accumulate orogeny; derive elevation; set sea level so land ≈ 29%
+- Accumulate orogeny; derive elevation; fixed sea level (no land% retarget)
 - Soft **hooks** (reject/reroll or warn): wide inter-hearth ocean, ≥1 suture landmass, ≥1 subduction cordillera with passive opposite coast, arid/mountain barriers possible
 
 **Not in v1:** full mantle CFD, paleoclimate GCM, automatic nation naming.

@@ -17,7 +17,7 @@
 | **Plate** | Instantaneous rigid kinematic domain; may carry oceanic and continental crust |
 | **Continent** | Major continental-crust / terrane lineage; may cross or change plates over deep time |
 | **Landmass** | Continuous dry land — may contain **multiple continents** after collision |
-| **Present land** | ≈ **29%** of surface (Earth-like); LGM higher via lower seas |
+| **Present land** | **Emergent** from crust history in the algorithmic generator (no forced %). Veldara reference-campaign board remains Earth-comparable (~29%) by authoring |
 
 Example: Farreach can be one landmass made of **Nerath** + **Tesen** plates colliding at a suture.
 

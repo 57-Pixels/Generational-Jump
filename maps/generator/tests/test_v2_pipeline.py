@@ -15,7 +15,7 @@ class PipelineTests(unittest.TestCase):
         self.assertTrue(np.isfinite(first.climate.precipitation_mm_yr).all())
         self.assertTrue(np.isfinite(first.settlement.h_ac).all())
 
-    def test_present_and_lgm_share_bedrock_and_have_plausible_land(self) -> None:
+    def test_present_and_lgm_share_bedrock_and_emergent_land(self) -> None:
         present = generate_world(
             WorldConfig(seed=9, grid_n=12, ticks=10, era="present", export_width=128, export_height=64)
         )
@@ -24,10 +24,10 @@ class PipelineTests(unittest.TestCase):
         )
         np.testing.assert_allclose(present.geology.elevation_m, lgm.geology.elevation_m)
         self.assertAlmostEqual(present.sea_level_m - lgm.sea_level_m, 120.0, places=6)
-        self.assertGreaterEqual(present.land_fraction, 0.26)
-        self.assertLessEqual(present.land_fraction, 0.32)
-        self.assertGreater(lgm.land_fraction, present.land_fraction)
-        self.assertLess(lgm.land_fraction, 0.36)
+        self.assertAlmostEqual(present.sea_level_m, 0.0, places=6)
+        self.assertGreater(present.land_fraction, 0.01)
+        self.assertLess(present.land_fraction, 0.995)
+        self.assertGreaterEqual(lgm.land_fraction, present.land_fraction)
 
     def test_plate_and_landmass_topology_is_sane(self) -> None:
         world = generate_world(
