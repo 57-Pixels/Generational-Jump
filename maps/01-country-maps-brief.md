@@ -1,203 +1,200 @@
 # Veldara — Country Map Set Design Brief
 
-> **Purpose:** after the world master map is generated and upscaled, produce **multiple themed maps of Veldara** that share one outline.
+> **Purpose:** multi-map set of Veldara that **inherits geology** from the world master — no decorative terrain.
+> **Foundation:** [`../world/05-planetary-formation.md`](../world/05-planetary-formation.md)
+> **World map:** [`00-world-map-brief.md`](00-world-map-brief.md) (lock coastlines first)
 > **Country canon:** [`../world/01-our-nation.md`](../world/01-our-nation.md)
-> **Depends on:** locked coastlines from [`00-world-map-brief.md`](00-world-map-brief.md)
 
 ## Workflow
 
-1. Crop / trace **Veldara only** from the upscaled world master (same coastline forever).
-2. Generate or draw each map type below on that **identical silhouette**.
-3. Upscale country maps as needed (8k–16k on the long edge is plenty).
-4. Fill details (cities, bases, industry) to match these briefs; if art and prose disagree, **update the prose**.
+1. Crop/trace Veldara from the upscaled **world master** (same coastline forever).
+2. Derive every landform from the formation doc (table below) — if you can't cite a cause, delete the feature.
+3. Generate themed maps on that silhouette.
+4. Upscale as needed; fill names later.
 
-## Shared frame (every Veldara map)
+## Shared frame
 
 | Spec | Value |
 | --- | --- |
-| Extent | All of Veldara + a thin strip of neighbor land (Korvath east, Doverin west, Sereth north) faded or unlabeled |
-| Aspect | ~**16:10** or **3:2** landscape |
-| Outline | Exact match to world master crop |
+| Extent | Veldara + faded slivers of Korvath (E), Doverin (W/SW), Sereth (N) |
+| Outline | Exact world-master crop |
 | North | Up |
-| Scale bar + sparse lat/long | Yes on final labeled versions |
-| Style | Same clean modern atlas family as the world map |
+| Style | Same Earthlike atlas family as the world physical map |
 
-### Macro-regions to show on every physical-ish map
+## Region = process (not vibe)
 
-Use these region names consistently:
+| Region | Geologic / climatic cause | What maps must show |
+| --- | --- | --- |
+| **Westreach** | Coastal strip west of subduction cordillera; orographic rain | Narrow wet coastal lowland, deep rocky inlets/harbors, dense settlement later |
+| **Highspine** | Active West Ocean subduction orogeny + volcanic arc | Continuous N–S mountain belt parallel to west coast; volcanoes OK *on the arc*; trench offshore on physical maps |
+| **Western lee / High Plains steppe** | Rain shadow immediately east of Highspine | Drier belt before true Heartland humidity returns |
+| **Heartland Plains** | Stable interior + glacial till/outwash/loess | Flat-to-rolling, thick soils, big consequent rivers toward East Gulf |
+| **Northwood** | Ice-scoured old crust / highland flank | Lakes, disordered drainage, thin soils, cold climate |
+| **Eastmarch** | Same Aurelian crust as Korvath; mild Cenozoic warping only | Open approaches, low ridges — **not** a plate boundary; threat axis for Map F |
+| **Gulf Coast** | Passive-margin embayment + warm gulf climate | Broad shelf, deltas, lagoons, humid subtropical; dredging-dependent ports |
+| **Southmere** | Southern warm passive/gulf margin | Deltas, wetlands, energy geology (sedimentary basins) |
 
-| Region | Character |
-| --- | --- |
-| **Westreach** | West Ocean coast + coastal ranges + port megacities |
-| **Highspine** | North–south mountain chain inland of Westreach |
-| **Heartland Plains** | Vast central agricultural / rail / armor country |
-| **Northwood** | Forests, lakes, cold; Sereth border |
-| **Eastmarch** | Eastern provinces facing Korvath — mixed plain and low ridges |
-| **Gulf Coast** | East Gulf shore — denser cities, naval complex, older industry |
-| **Southmere** | Warm south — deltas, energy terminals |
+**Aurel City:** east-central **river confluence** where Heartland drainages gather toward the Gulf — a classic capital-on-navigation site, not a mountain fortress.
 
-Federal capital: **Aurel City** (east-central river confluence between Heartland and Gulf Coast).
+**Drainage law:** rivers rise in Highspine / Sereth highland / Eastmarch and run to West Ocean (short steep) or East Gulf (long). No river crosses Highspine westward.
 
 ---
 
 ## Map A — Political / administrative
 
-**Job:** provinces/states, capital, major cities, land borders.
+**Job:** provinces, capital, cities, borders — draped on real terrain (coast/river logic for cities).
 
-**Show:**
-- 8–12 provinces (names can be placeholder until you care)
-- International borders: Korvath (east, long), Doverin (west), Sereth (north)
-- Cities: Aurel City (capital star), 2 Westreach ports, 2 Gulf ports, 3 Heartland hubs
-- No terrain shading beyond a whisper
-
-**Image-gen prompt seed:**
-
-```text
-Clean political map of a large federal country, landscape 3:2, identical coastline to reference,
-soft white-to-gray land, colored province fills with thin borders, capital starred,
-major cities as dots, labeled international borders east west and north,
-no roads, no fantasy style, modern atlas, clear typography space
-```
-
----
-
-## Map B — Physical / topographic
-
-**Job:** mountains, plains, rivers, coasts — the terrain that drives warfare.
-
-**Show:**
-- Highspine mountains, Heartland flatness, Northwood lakes, Eastmarch low ridges, Southmere deltas
-- 2–3 major river systems draining to West Ocean and East Gulf
-- Elevation shading (hypsometric)
+**City placement rules:**
+- Westreach ports = natural rocky harbors behind the cordillera gaps/rivers
+- Gulf ports = hard points / dredged delta mouths (fewer than west, and call that out)
+- Heartland hubs = rail/river junctions
+- Do not put the capital on the Highspine crest
 
 **Prompt seed:**
 
 ```text
-Physical topographic atlas map of a large country, hypsometric tint, western coastal mountains,
-vast central plains, northern forest lakes, eastern low ridges, southern river deltas,
-east-facing gulf coastline, west ocean coastline, major rivers, no cities, no borders labels,
-clean cartography, high detail terrain
+Political map of a large federal country matching reference coastline,
+provinces follow rivers and mountain divides where possible,
+capital at major river confluence toward a southeastern gulf,
+major ports on western rocky coast and gulf hard points,
+thin international borders east west north, clean modern atlas, no fantasy
+```
+
+---
+
+## Map B — Physical / topographic (do this first)
+
+**Job:** show the asymmetric continent slice correctly.
+
+**Must-have landforms:**
+1. West Ocean + offshore trench line
+2. Highspine cordillera parallel to west coast
+3. Rain-shadow steppe just east of mountains
+4. Broad Heartland plains
+5. Northwood glacial lakes
+6. East Gulf with deltaic shelf (wide bathymetry)
+7. Long rivers to the gulf; short steep west-coast rivers
+
+**Prompt seed:**
+
+```text
+Physical topographic map, Earthlike realism, western subduction cordillera parallel to coast
+with offshore trench, rain shadow plains just east of mountains, vast glacial-covered interior plains,
+northern ice-scoured lake shield, southeastern passive-margin gulf with large river deltas and wide shelf,
+hypsometric tint, major rivers draining to gulf, no cities, scientific atlas
 ```
 
 ---
 
 ## Map C — Climate
 
-**Job:** what kit must survive.
+**Job:** Hadley / storm-track / rain-shadow truth.
 
-**Show:** climate zones only (simple pastel fills):
-
-| Zone | Where |
-| --- | --- |
-| Subarctic / cold continental | Northwood |
-| Humid continental | Heartland + Eastmarch |
-| Marine west coast | Westreach |
-| Humid subtropical | Gulf Coast + Southmere |
-| Highland | Highspine |
+| Zone | Where | Cause |
+| --- | --- | --- |
+| Marine west coast | Westreach | Storm track + orographic lift |
+| Highland | Highspine | Elevation |
+| Semi-arid lee | Immediate east of Highspine | Rain shadow |
+| Humid continental | Heartland + Eastmarch | Interior mid-latitude |
+| Subarctic | Northwood | Latitude + continentality |
+| Humid subtropical | Gulf Coast + Southmere | Warm gulf + onshore flow |
 
 **Prompt seed:**
 
 ```text
-Climate zones map of a large country, soft pastel fills, legend-ready regions,
-cold north forests, continental center, marine western coast, humid subtropical gulf south,
-mountain highland strip inland of west coast, minimal labels, clean atlas style
+Climate zones map grounded in Earth atmospheric science,
+wet marine strip only on western ocean side of cordillera,
+semi-arid band in mountain rain shadow, humid continental interior,
+cold north, humid subtropical around southeastern warm gulf,
+pastel fills, clean legend space, no fantasy biomes
 ```
 
 ---
 
 ## Map D — Population & infrastructure
 
-**Job:** where people and movement live.
+**Job:** people follow coasts, gaps, and rivers — not uniform fill.
 
-**Show:**
-- Population density wash (darker = denser): Westreach + Gulf Coast dark; Heartland medium; Northwood light
-- Rail spine east–west + north–south
-- Interstate-analogue highways (sparse, not spaghetti)
-- Major airports (4–6 dots)
+**Density rules:** Westreach + Gulf urban belts dark; Heartland medium along rivers/rail; Highspine nearly empty; Northwood light; Eastmarch frontier-medium.
+
+**Infra rules:** east–west rail through cordillera **passes** (few); main trunk across Heartland to Gulf; highways sparse trunks.
 
 **Prompt seed:**
 
 ```text
-Population density and infrastructure map, soft density heatmap, few major rail lines,
-sparse highway trunk routes, major airport dots, coastal cities denser,
-central plains lighter, clean modern atlas, no clutter
+Population density heatmap and sparse trunk rail/highway map,
+dense western coastal cities and gulf cities, interior plains medium along rivers,
+mountains nearly empty, northern lakes sparsely settled, clean atlas, no clutter
 ```
 
 ---
 
 ## Map E — Resources & industry
 
-**Job:** what the modernization builds on.
+**Job:** resources follow geology.
 
-**Show (icons or simple area fills):**
-- Grain belt: Heartland
-- Energy (oil/gas or terminals): Southmere + offshore gulf marks
-- Shipbuilding: one Westreach cluster + one Gulf cluster
-- Aerospace / advanced mfg: inland plateau or capital region
-- Small arms / ammo complex: Heartland secondary city (place and name when ready)
-- Mining / metals: Highspine foothills
+| Resource | Where | Why |
+| --- | --- | --- |
+| Hydro / metals | Highspine foothills | Arc/orogen geology |
+| Grain | Heartland | Glacial soils |
+| Oil/gas / terminals | Southmere + Gulf sedimentary basins | Passive-margin sediments |
+| Shipyards | Westreach rocky ports first; Gulf selected hard points | Harbor physics |
+| Aerospace / advanced mfg | Capital region / Heartland secondary cities | Labor + transport, not ore |
+| Small arms / ammo | Heartland secondary industrial city | Inland, rail-served |
 
 **Prompt seed:**
 
 ```text
-Economic resources map of a large country, simple industrial icons,
-agriculture shading on central plains, energy markers on southern gulf,
-shipyard marks on west coast and gulf, aerospace cluster near capital region,
-mountain foothills mining marks, clean legend space, atlas style
+Resources and industry map tied to geology,
+mining in western cordillera foothills, grain shading on glacial plains,
+hydrocarbon markers in southern gulf sedimentary basin,
+shipyards on deep western harbors, clean legend, Earthlike economic atlas
 ```
 
 ---
 
-## Map F — Military / strategic (the useful one for the series)
+## Map F — Military / strategic
 
-**Job:** threat axes, basing, vital ground — what design docs cite.
+**Job:** threat geometry follows open Eastmarch crust continuity — Korvath is on the same plate.
 
 **Show:**
-- Korvath threat arrows across Eastmarch into Heartland
-- Secondary Sereth pressure marks in Northwood (small)
-- Friendly Doverin border (no threat arrows)
-- Naval bases: Westreach + Gulf (stars)
-- Air bases: dispersed set (6–10) with denser cluster opposite Korvath
-- Training range / proving ground in sparse Heartland or Highspine rain shadow
-- Vital ground callouts: Aurel City, both port complexes, energy terminals
-- Optional: 72-hour / mobilization depot regions as shaded soft boxes (keep abstract)
-
-**Do not show:** exact ORBATs, classified-looking grids, or pretend satellite targeting overlays.
+- Primary threat arrows: Korvath → Eastmarch → Heartland (open approach)
+- Secondary pressure: Sereth highland routes into Northwood (limited avenues)
+- Friendly Doverin west (political border on continuous crust)
+- Naval: Westreach (best harbors) + Gulf (contest the embayment)
+- Air bases: depth in Heartland + coverage facing Eastmarch; avoid packing everything on the Westreach strip alone
+- Vital ground: Aurel City, Westreach ports, Gulf complex, Southmere energy, cordillera passes (mobility chokepoints)
 
 **Prompt seed:**
 
 ```text
-Strategic military overview map, clean and restrained, eastern threat axis arrows,
-northern secondary pressure marks, naval base stars on west coast and gulf,
-dispersed airbase symbols, capital and ports highlighted as vital ground,
-no blood, no propaganda posters, professional defense atlas style, muted colors
+Strategic military atlas map, restrained professional style,
+eastern open-plain threat axis into interior, limited northern highland avenues,
+naval bases on western deepwater coast and gulf, dispersed airbases with depth,
+highlighted passes through western cordillera, capital and ports as vital ground,
+no propaganda, muted colors
 ```
 
 ---
 
-## Suggested generation order
+## Generation order
 
-1. **B Physical** (locks terrain language)
-2. **A Political** (locks provinces/cities on that terrain)
-3. **C Climate**
-4. **D Population & infrastructure**
-5. **E Resources & industry**
-6. **F Military / strategic** (last — needs cities + terrain + borders)
+1. **B Physical** (locks process landforms)  
+2. **C Climate** (must match B)  
+3. **A Political** / **D Population** (cities follow B+C)  
+4. **E Resources** (follow geology)  
+5. **F Military** (follow open eastern approach + harbors)
 
-## Acceptance checklist (whole set)
+## Acceptance checklist
 
-- [ ] Every map shares the same Veldara coastline (pixel-trace from world master)
-- [ ] Two-ocean / gulf access is obvious on A, B, and F
-- [ ] Eastmarch clearly faces Korvath; Northwood faces Sereth; Doverin on the west
-- [ ] Aurel City consistent location across A/D/F
-- [ ] Map F is usable as a cold-open still for Episode A0-01 / threat videos
-- [ ] Exports saved under `maps/exports/veldara-*.png` (add when generated)
+- [ ] West mountains exist **because** of subduction; east gulf is passive — asymmetry obvious
+- [ ] Rain shadow appears on climate + physical maps
+- [ ] Rivers obey drainage law
+- [ ] Northwood looks glaciated; Heartland looks farmable for glacial reasons
+- [ ] Eastmarch is continuous terrain into Korvath (no fake border mountain wall unless we write a local uplift cause)
+- [ ] Same coastline on every map
+- [ ] Exports in `maps/exports/veldara-*.png`
 
-## Filling details after images exist
+## After images exist
 
-When the maps are good, promote concrete names into canon:
-
-1. Province list → `world/01-our-nation.md`
-2. City + base names → decisions-log + Map F callouts
-3. Industry sites → `world/03` and light `industry/README.md` notes
-4. Threat axes → confirm `threat-analysis/scenarios/01-eastern-invasion.md` still matches Eastmarch geography
+Promote concrete province/city/base names into `world/01` and `decisions-log.md`. If art reveals a better harbor or pass layout, **update the formation-consistent prose** — don't keep a wrong story to save an old paragraph.

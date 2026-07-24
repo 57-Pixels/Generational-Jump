@@ -18,19 +18,20 @@
 
 We are **Tier 2 major**, not a great power. We can field everything; we cannot outspend Solara or Kharzhan.
 
-## Geography (summary — detail lives in the map brief)
+## Geography (summary — detail in map + formation briefs)
 
-Oriented roughly north-up on Aurelian's western-central mass:
+Oriented on western-central **Aurelian**. Terrain is **asymmetric on purpose**:
 
-- **West Coast** — long Pacific-analogue shore: mountains inland of coastal cities, major commercial + naval ports.
-- **Central Plains** — vast agricultural and transport heartland; tank country; strategic depth.
-- **East Seaboard / Gulf** — denser population, older industrial belt, second set of ports on a large gulf that opens to the East Ocean.
-- **North** — forests, lakes, cold winters; border with highland **Sereth**.
-- **South** — warmer coast and river deltas; energy terminals.
-- **East land border** — long frontier with **Korvath** across mixed plains and low ridges (the pacing threat axis).
-- **West land border** — with partner **Doverin** (shorter, friendlier).
+- **Westreach + Highspine** — West Ocean subduction: wet coast, cordillera, rain shadow just inland ([`05-planetary-formation.md`](05-planetary-formation.md)).
+- **Heartland Plains** — stable interior with glacial soils; long rivers to the gulf; strategic depth / armor country.
+- **East Gulf / Gulf Coast / Southmere** — passive-margin embayment: deltas, wide shelf, humid subtropical, second maritime front.
+- **Northwood** — ice-scoured lakes; highland border with **Sereth** (old crust, not a young volcanic wall).
+- **Eastmarch** — continuous crust into **Korvath** (political border, not a plate edge) — open threat axis.
+- **West land border** — **Doverin**, same plate, friendlier politics.
 
-Climate spans near-subarctic north to humid subtropical south — equipment must handle heat, cold, mud, and salt air.
+Climate spans near-subarctic north to humid subtropical gulf — kit must handle heat, cold, mud, salt air, and cordillera winters.
+
+**Maps:** [`../maps/01-country-maps-brief.md`](../maps/01-country-maps-brief.md).
 
 ## People and politics
 

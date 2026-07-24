@@ -2,6 +2,7 @@
 
 > **Status:** working world design — the geography and pecking order below are the defaults for map generation and the series. Overwrite in `decisions-log.md` if you reject a piece; until then, treat this as the world we are designing against.
 >
+> **Physical foundation (tectonics/climate):** [`05-planetary-formation.md`](05-planetary-formation.md) — landforms must follow this.
 > **Map brief:** [`../maps/00-world-map-brief.md`](../maps/00-world-map-brief.md) (image-gen → upscale workflow).
 
 ## Ground rules (canon — see decisions-log)
@@ -14,17 +15,15 @@
 
 ## The planet at a glance
 
-Four major landmasses + polar ice:
+Four major landmasses + polar ice — shapes explained by breakup of a northern megacontinent, West Ocean subduction, and a southern collisional orogeny (see [`05-planetary-formation.md`](05-planetary-formation.md)):
 
-| Landmass | Role |
-| --- | --- |
-| **Aurelian** | Our home continent. Large, temperate-to-arctic north, warm south. Where **Veldara** (us) and our rivals sit. |
-| **Solmar** | Western maritime great-power homeland — island-continent + archipelago. Outward-looking, naval, high-tech. |
-| **Kharzhan** | Eastern continental great-power homeland — vast interior, dense industrial belt, long land frontiers. |
-| **Farreach** | Southern/far continent — where the **Maravic War** (wake-up call) is being fought. |
-| Polar caps | North and south ice; little political weight. |
-
-Two great oceans (West Ocean / East Ocean) and several enclosed seas. Trade is global; chokepoints and export licenses matter.
+| Landmass | Role | Key physical cause |
+| --- | --- | --- |
+| **Aurelian** | Home continent — **Veldara**, Korvath, Doverin, Sereth | West = subduction cordillera; east/gulf = passive margin; glaciated north |
+| **Solmar** | Solara's island-continent homeland | Same West Ocean subduction family + volcanic island arc |
+| **Kharzhan** | Kharzhan State's vast homeland | Thick craton; passive west coast facing East Ocean |
+| **Farreach** | Maravic War theater | Active Nerath–Tesen **collision suture** |
+| Polar caps | North/south ice | Axial tilt + latitude |
 
 ## Global pecking order
 

@@ -1,129 +1,135 @@
 # World Map — Image Generation Brief
 
-> **Purpose:** generate a clean **base world map**, then upscale (~16k) and use it as the canvas for labels and detail.
-> **Canon geography:** [`../world/00-world-overview.md`](../world/00-world-overview.md)
-> **Next step after upscale:** country detail maps in [`01-country-maps-brief.md`](01-country-maps-brief.md)
+> **Purpose:** generate a **physically plausible** base world map from tectonics + climate, then upscale (~16k).
+> **Foundation (read first):** [`../world/05-planetary-formation.md`](../world/05-planetary-formation.md)
+> **Politics/pecking order:** [`../world/00-world-overview.md`](../world/00-world-overview.md)
+> **Next:** [`01-country-maps-brief.md`](01-country-maps-brief.md)
 
 ## Workflow
 
-1. Generate a **low-label / no-label** world map from the prompt below (high composition quality matters more than tiny text).
-2. Upscale to ~16k with your upscaler (preserve coastlines; avoid inventing new continents).
-3. Add labels, borders, and city dots in a second pass (editor or a second image-gen inpainting pass using the **Label pass** notes).
-4. Lock the upscaled unlabeled (or lightly labeled) map as the **master reference**; all later country maps must match its coastlines.
+1. Skim `05-planetary-formation.md` so you know *why* each landform exists.
+2. Generate a **no-label** equirectangular map using the tectonics-first prompt (not a fantasy silhouette prompt).
+3. Sanity-check against the **Acceptance checklist** (geology before aesthetics).
+4. Upscale to ~16k; do **not** let the upscaler invent new mountain belts or continents.
+5. Label pass last. Lock as master → country maps must match.
 
 ## Map specs
 
 | Spec | Value |
 | --- | --- |
-| Projection | **Equirectangular** (plate carrée) — easiest to upscale and crop |
-| Aspect | **2:1** (e.g. 4096×2048 gen → upscale toward 16384×8192) |
-| Style | Clean modern atlas: muted oceans, subtle relief shading on land, thin coastlines, **no fantasy parchment**, no ornate compass roses dominating the frame |
-| Labels on first pass | **None** (preferred) or only continent names in large sparse type |
-| Grid | Optional very faint lat/long; omit if it fights the upscaler |
-| Ice | Visible north and south polar caps |
+| Projection | **Equirectangular** 2:1 |
+| Gen → upscale | e.g. 4096×2048 → toward 16384×8192 |
+| Style | Modern physical atlas / hypsometric + subtle bathymetry — **Earthlike realism**, not parchment fantasy |
+| Labels (pass 1) | **None** |
+| Show | Coastlines, shelves, cordillera, glacial north, suture orogeny, island arc, polar ice |
+| Hide | Borders, cities, roads, flags, ornate compasses |
 
-## Continents to draw (shape language)
+## What each landmass must look like (cause → form)
 
-Describe shapes so the model stays consistent. These are **design targets**, not sacred coastlines — once you generate a good map, **that** map becomes canon and these prose shapes defer to it.
+### Aurelian (home) — mid-frame, northern hemisphere heavy
 
-### 1. Aurelian (home continent) — center-west of the frame
+| Feature | Cause | Visual |
+| --- | --- | --- |
+| West coast + inland mountains | Oceanic plate subducting east under the continent | Tight coastal plain → steep **cordillera** (Highspine) parallel to coast; possible offshore trench darker blue |
+| Interior plains | Stable interior + glacial/outwash cover | Broad low relief heartland east of the cordillera |
+| Northern lakes/shield | Ice-age scour on old crust | Irregular lakes, mottled coastline in the north — not smooth |
+| East / southeast gulf | Passive-margin embayment + big river sediment | Wide **gulf** with broad shelf, deltaic coast, few cliffs |
+| Facing East Ocean coast outside the gulf | Passive rift margin | Gentler, sedimented, **no** young volcanic chain |
 
-- Large irregular continent, roughly **North America–meets–Eurasia** silhouette energy without copying either.
-- **Wider east–west than north–south**, with a big western ocean coast and a large eastern gulf that almost pinches a peninsula.
-- Northern third = broad forests/lakes; central belt = plains; western edge = mountain spine just inland of the coast; south = warmer lowlands.
-- Room for: **Veldara** (large western-central chunk with two coasts), **Korvath** (east of Veldara), **Doverin** (west/southwest neighbor), **Sereth** (north highland).
+Veldara will later claim: west cordillera coast + plains + gulf. Korvath continues east on the **same** continent (no oceanic suture between them).
 
-### 2. Solmar (Solara's homeland) — far west / west-ocean
+### Solmar — far west in the West Ocean
 
-- Large **island-continent** plus a trailing archipelago to the south/east.
-- Compact mountainous west, gentler eastern shelves.
-- Reads as a maritime power's home: lots of coast relative to area.
+| Feature | Cause | Visual |
+| --- | --- | --- |
+| Island-continent | Continental fragment above the West Ocean subduction system | Large island landmass, not a tiny atoll cluster |
+| Mountainous west | Arc / cordillera above the slab | High west side |
+| Gentler east | Back-arc / remnant shelf | Lower east coast |
+| Southern island chain | Volcanic island arc from slab rollback | Curved **arc** of islands — curved, not random spray |
 
-### 3. Kharzhan landmass — far east
+### Kharzhan — far east
 
-- Huge **continental block**, deeper interior than Aurelian.
-- Long north–south span; few deep oceanic gulfs; big river plains in the center.
-- Feels land-power heavy: fewer islands, more frontier depth.
+| Feature | Cause | Visual |
+| --- | --- | --- |
+| Huge block | Thick craton from the old megacontinent | Vast interior, long N–S |
+| West coast (faces East Ocean) | Other side of the old rift = **passive margin** | Broad plains to the sea, big rivers, **no** Andes on this shore |
+| Far east / south margins | Older accretionary belts | Mountains on the *outer* rim away from Aurelian, not mirroring Aurelian's west cordillera |
 
-### 4. Farreach — lower third / south-east of center
+### Farreach — southern hemisphere continent
 
-- Separate southern continent where the Maravic War burns.
-- Two large sub-regions divided by a mountain spine or inland sea: **Nerath** side vs **Tesen** side (do not draw front lines on the base map).
-- Warmer color palette (savanna/subtropical/desert belts OK).
+| Feature | Cause | Visual |
+| --- | --- | --- |
+| Central high range | Active **continental collision suture** | Serious orogeny down the middle or slightly offset |
+| Flank arid belts | Rain shadows + subtropical subsidence | Tan interiors on one or both flanks |
+| Wet windward coasts | Orographic lift where winds hit the suture | Green strips on the wet side only |
+| Separate from northern continents | Never fully sutured north | Clear oceanic separation — wake-up war is geographically "elsewhere" |
 
-### Oceans & seas
+### Oceans
 
-- **West Ocean** between Solmar and Aurelian's west coast.
-- **East Ocean** between Aurelian's gulf side and Kharzhan.
-- A **narrower equatorial belt of islands** is fine for visual interest — keep them secondary so they don't steal focus from the four landmasses.
+- **West Ocean:** active — trench hints along Aurelian west + Solmar west; island arc south of Solmar.
+- **East Ocean:** younger basin from megacontinent breakup — wider shelves on Aurelian east and Kharzhan west.
 
-## Color & relief (keep simple for upscaling)
+## Climate coloring (subtle, physics-true)
 
-- Ocean: flat blue-gray, slightly darker in trenches if subtle.
-- Land: soft hypsometric tint (green lowlands → tan high plains → gray-white peaks).
-- No national fill colors on the **first** pass (borders come later).
-- No city glow, no roads, no icons.
+Do **not** paint biomes at random. If the model supports soft biome tint:
+
+- Wet mid-latitude marine strip **west** of Highspine only
+- Drier lee just east of Highspine
+- Humid subtropical around the East Gulf
+- Cold mottled north (glacial)
+- Farreach: wet coasts vs dry suture flanks
+- Subtropical arid bands near ~20–30° latitude on west coasts of continents where applicable
 
 ## Image-gen prompt (copy/paste)
 
-Use as a base; adjust for your model.
-
 ```text
-Equirectangular world map, 2:1 aspect, clean modern atlas style, muted blue-gray oceans,
-subtle hypsometric land relief, thin precise coastlines, four major continents:
-(1) large central-west continent with a long western ocean coast, inland western mountains,
-central plains, northern forests and lakes, and a large eastern gulf;
-(2) far-west island-continent with a southern archipelago;
-(3) far-east huge continental landmass with deep interior plains and few gulfs;
-(4) southern separate continent with a central mountain spine,
-plus north and south polar ice caps,
-no country borders, no city labels, no roads, no fantasy parchment,
-no ornate decorations, no watermarks, high detail coastlines, cartographic, neutral lighting
+Equirectangular Earthlike physical world map, 2:1, realistic plate-tectonics geography,
+hypsometric land tint, subtle ocean bathymetry, no borders no cities no labels,
+
+western ocean with a subduction trench and a large island-continent that has a high volcanic
+cordillera on its oceanward west side and a curved volcanic island arc trailing south,
+
+central continent in the northern hemisphere with: (1) an Andean-style cordillera parallel to
+its western ocean coast from eastward subduction, (2) broad interior plains east of those mountains,
+(3) glacial lake-strewn shield terrain in the far north, (4) a large passive-margin gulf and deltaic
+shelf on the southeast coast, (5) no young mountains on the passive eastern ocean margin,
+
+eastern huge craton continent across a wide younger ocean with passive western coasts and big rivers,
+mountains only on its far outer east and south margins,
+
+southern separate continent split by a high collisional suture orogeny with rain-shadow arid flanks
+and wetter windward coasts,
+
+north and south polar ice, realistic coastlines, natural Earth-analog landforms,
+scientific atlas style, photoreal cartography, not fantasy
 ```
 
-### Negative prompt (if your tool supports it)
+### Negative prompt
 
 ```text
-text, labels, country names, cities, roads, flags, fantasy map, parchment, compass rose,
-sea monsters, clouds covering land, satellite photo, blurry coasts, extra continents,
-UI, watermark, collage
+fantasy map, parchment, compass rose, sea monsters, country borders, city lights, text, labels,
+perfectly symmetric continents, random volcanoes inland, mountains on both opposite coasts of the
+same continent without cause, circular supercontinent, roads, flags, watermark, UI, satellite HUD
 ```
+
+## Acceptance checklist (geology first)
+
+- [ ] Aurelian west = cordillera + trench logic; Aurelian east/gulf = passive / deltaic — **asymmetric**
+- [ ] Solmar = arc/island-continent + **curved** volcanic island chain (not confetti islands)
+- [ ] Kharzhan west coast facing East Ocean is **not** a mirror of Aurelian's Andes
+- [ ] Farreach has a believable **collision** range, not a decorative stripe
+- [ ] Northern Aurelian shows glacial lake chaos
+- [ ] No mountain belt without a plate story in `05-planetary-formation.md`
+- [ ] First pass unlabeled; upscale doesn't invent a fifth continent
 
 ## Label pass (after upscale)
 
-Add in a graphics editor (recommended) or careful inpaint:
-
-**Continent names (large):** Aurelian, Solmar, Kharzhan, Farreach  
+**Continents:** Aurelian, Solmar, Kharzhan, Farreach  
 **Oceans:** West Ocean, East Ocean  
-**Countries (medium, only once coasts are locked):**
+**Optional process labels (small):** Highspine Cordillera, East Gulf, Solmar Arc, Farreach Suture  
 
-| Label | Where on Aurelian |
-| --- | --- |
-| Veldara | Western-central mass with west coast + east gulf access |
-| Korvath | East of Veldara, inland + some gulf/east coast if it fits |
-| Doverin | West/southwest of Veldara |
-| Sereth | North of Veldara, highland |
+Countries only after coastlines lock — see world overview for names.
 
-| Label | Elsewhere |
-| --- | --- |
-| Solara | Solmar island-continent |
-| Kharzhan State | Kharzhan landmass |
-| Nerath Compact | Farreach, one side of the spine |
-| Tesen League | Farreach, other side of the spine |
+## Exports
 
-Optional small caption: "Maravic War theater" under Farreach — no front line art on the master map.
-
-## Acceptance checklist
-
-- [ ] Exactly four primary landmasses readable at a glance
-- [ ] Aurelian clearly has **two major maritime fronts** (west ocean + east gulf)
-- [ ] Solmar reads as island-continent; Kharzhan reads as deep continental
-- [ ] Farreach is visually separate (wake-up war can be "elsewhere")
-- [ ] First pass has little/no text so upscale doesn't destroy lettering
-- [ ] Upscaled master saved as `maps/exports/world-master.png` (or similar — add when you generate)
-
-## After the master exists
-
-1. Log coastline lock in `decisions-log.md` ("world master map locked").
-2. Trace Veldara's border from the master into the country map set ([`01-country-maps-brief.md`](01-country-maps-brief.md)).
-3. Update any prose in `world/` that disagrees with the locked coastlines (map wins).
+Save master as `maps/exports/world-master.png`. Map coastlines then beat prose; update formation doc only if you consciously revise geology.
