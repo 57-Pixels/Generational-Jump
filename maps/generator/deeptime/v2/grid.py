@@ -214,27 +214,17 @@ class CubedSphere:
         return self.indices_for_xyz_static(xyz, self.n)
 
     def components(self, mask: np.ndarray) -> list[np.ndarray]:
-        mask = np.asarray(mask, dtype=bool)
-        seen = np.zeros(self.size, dtype=bool)
-        result: list[np.ndarray] = []
-        for start in np.flatnonzero(mask):
-            if seen[start]:
-                continue
-            stack = [int(start)]
-            seen[start] = True
-            cells: list[int] = []
-            while stack:
-                cell = stack.pop()
-                cells.append(cell)
-                for neighbor in self.neighbors[cell]:
-                    if neighbor < 0:
-                        continue
-                    n = int(neighbor)
-                    if mask[n] and not seen[n]:
-                        seen[n] = True
-                        stack.append(n)
-            result.append(np.asarray(cells, dtype=np.int32))
-        return sorted(result, key=len, reverse=True)
+        # Circular with topology.component_labels; import deferred by design.
+        from .topology import component_labels
+
+        labels = component_labels(self, mask)
+        if not np.any(labels >= 0):
+            return []
+        count = int(labels.max()) + 1
+        return [
+            np.flatnonzero(labels == label).astype(np.int32)
+            for label in range(count)
+        ]
 
     def smooth(self, field: np.ndarray, iterations: int = 1, self_weight: float = 2.0) -> np.ndarray:
         out = np.asarray(field, dtype=np.float64).copy()

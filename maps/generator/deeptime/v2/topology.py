@@ -3,14 +3,52 @@
 from __future__ import annotations
 
 import numpy as np
+from scipy import sparse
+from scipy.sparse.csgraph import connected_components
 
 from .grid import CubedSphere
 
 
 def component_labels(grid: CubedSphere, mask: np.ndarray) -> np.ndarray:
+    """Label connected True regions; label 0 is the largest by cell count."""
+    mask = np.asarray(mask, dtype=bool)
     labels = np.full(grid.size, -1, dtype=np.int32)
-    for label, cells in enumerate(grid.components(mask)):
-        labels[cells] = label
+    members = np.flatnonzero(mask)
+    if members.size == 0:
+        return labels
+
+    # Map global cell index -> dense subgraph index.
+    local = np.full(grid.size, -1, dtype=np.int32)
+    local[members] = np.arange(members.size, dtype=np.int32)
+
+    neighbors = grid.neighbors[members]
+    valid = neighbors >= 0
+    src = np.repeat(np.arange(members.size, dtype=np.int32), neighbors.shape[1])
+    dst_global = neighbors.ravel()
+    keep = valid.ravel() & mask[dst_global]
+    src = src[keep]
+    dst = local[dst_global[keep]]
+    # Undirected: keep each edge once.
+    undirected = src < dst
+    src = src[undirected]
+    dst = dst[undirected]
+
+    graph = sparse.coo_matrix(
+        (np.ones(len(src), dtype=np.int8), (src, dst)),
+        shape=(members.size, members.size),
+    )
+    graph = graph + graph.T
+    n_components, raw = connected_components(
+        csgraph=graph, directed=False, return_labels=True
+    )
+    if n_components == 0:
+        return labels
+
+    counts = np.bincount(raw, minlength=n_components)
+    order = np.argsort(-counts)
+    remap = np.empty(n_components, dtype=np.int32)
+    remap[order] = np.arange(n_components, dtype=np.int32)
+    labels[members] = remap[raw]
     return labels
 
 
