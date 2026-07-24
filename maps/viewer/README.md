@@ -35,7 +35,10 @@ Open `http://localhost:5173`.
 
 Threshold: `GLOBE_MAX_ZOOM` in `src/main.js`.
 
-The algorithmic basemap image is mapped to **±90°** so globe poles show atlas content (mercator theater mode still cannot reach true poles — projection limit).
+The algorithmic basemap is a full equirectangular atlas pinned to MapLibre’s
+**Web Mercator max latitude (~±85.05°)**. True ±90° image corners break the
+raster (no land drawn). Polar rows of the PNG still paint into the visible
+cap; globe mode may show a thin background fringe beyond that limit.
 
 ## War layers (ready for later)
 

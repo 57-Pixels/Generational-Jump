@@ -25,11 +25,13 @@ const WAR_LAYER_IDS = [
 const asset = (path) =>
   `${import.meta.env.BASE_URL}${path.replace(/^\//, "")}`;
 
+/** Web Mercator max latitude — image sources at ±90 fail to render in MapLibre. */
+const MERCATOR_MAX_LAT = 85.05112878;
 const WORLD_IMAGE_BOUNDS = [
-  [-180, 90],
-  [180, 90],
-  [180, -90],
-  [-180, -90],
+  [-180, MERCATOR_MAX_LAT],
+  [180, MERCATOR_MAX_LAT],
+  [180, -MERCATOR_MAX_LAT],
+  [-180, -MERCATOR_MAX_LAT],
 ];
 
 /** Algorithmic basemap from maps/generator → public/world/world-color.png */
