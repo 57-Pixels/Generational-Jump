@@ -8,6 +8,7 @@
 2. **Path dependence** — 2025 industry needs an Earthlike *sequence* (agriculture → classical surplus/literacy/law → early modern science/trade → fossil industry → industrial war). Roles, not Earth names.
 3. **Environment → culture** — packages come from coasts, rivers, plains, deserts, mountains.
 4. **Humans build on forefathers** — languages, law, doctrine, kit inherit; the generational jump rebuilds *on* 80s–90s ancestors.
+5. **Resources from geology** — ore, fuel, and strategic materials sit where deep-time processes put them (arcs, cratons, basins, shelves). No painted mega-mines. See [`13-resources-from-geology.md`](13-resources-from-geology.md).
 
 ## Geography definitions
 
@@ -30,4 +31,4 @@ West and East classical giants barely meet until early modern **because of ocean
 
 ## Map generation
 
-Deep-time plates (`maps/generator/deeptime`) form continents; settlement and culture layers follow. Unique story ⇒ optional new seed; still obey this sequence.
+Deep-time plates (`maps/generator/deeptime`) form continents **and** (next) resource prospects; settlement and culture layers follow. Unique story ⇒ optional new seed; still obey this sequence.

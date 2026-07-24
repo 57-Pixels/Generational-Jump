@@ -147,7 +147,7 @@ With ~23° tilt and Earthlike circulation:
 | Solmar fragment plate + arc | West Ocean subduction family | Solara homeland |
 | Farreach suture | Active collision of **Nerath + Tesen** plates | Maravic War terrain; one landmass, two continents |
 
-**Human layer:** [`06-settlement-and-borders.md`](06-settlement-and-borders.md) (incl. improbable states) · [`07-pseudo-histories.md`](07-pseudo-histories.md).
+**Human layer:** [`06-settlement-and-borders.md`](06-settlement-and-borders.md) (incl. improbable states) · [`07-pseudo-histories.md`](07-pseudo-histories.md) · [`13-resources-from-geology.md`](13-resources-from-geology.md) (deposits from this geology).
 
 ## For image generation
 

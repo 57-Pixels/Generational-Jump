@@ -19,6 +19,7 @@ Generate believable fictional worlds for military-design stories where **2025 te
 7. **Detail scales with recency.** Deep time coarse; classical enough for inheritance; last century / Maravic / jump fully detailed.
 8. **History depth by relevance:** important/neighbors · odd-ones-out (improbable states) · countries of interest. Footnotes otherwise.
 9. **Classical isolation:** West/East giants barely meet until early modern because of **oceans + mountains + deserts** (Rome/China *logic*).
+10. **Resources from geology.** Ore, oil, coal, specialty minerals are outputs of the same deep-time stack (arcs, sutures, cratons, passive-margin basins) — not placed for plot convenience. See `world/13-resources-from-geology.md`.
 
 ## Pipeline
 
@@ -26,11 +27,13 @@ Generate believable fictional worlds for military-design stories where **2025 te
 seed
   → deep-time plate sim (Ga → present)
   → heightfield + plate map (~29% land)
+  → resource prospects (from orogeny / crust / basins / shelves)
   → climate / moisture
   → settlement & food cores (coarse)
   → classical hearths earned by environment
   → language/culture stems + legends (roles)
   → on-stage modern states (neighbors, patrons, odd ones, interest)
+  → industrial base constrained by deposits + trade
   → legacy forces → Maravic wake-up → generational jump series
 ```
 
@@ -46,7 +49,7 @@ Unique story = new seed (optional) producing a new board **and** a new ancestral
 - Accumulate orogeny; derive elevation; set sea level so land ≈ 29%
 - Soft **hooks** (reject/reroll or warn): wide inter-hearth ocean, ≥1 suture landmass, ≥1 subduction cordillera with passive opposite coast, arid/mountain barriers possible
 
-**Not in v1:** full mantle CFD, paleoclimate GCM, automatic nation naming.
+**Not in v1:** full mantle CFD, paleoclimate GCM, automatic nation naming, **full resource raster** (rules locked in `world/13`; derive next from orogeny/crust/basins).
 
 **Reference campaign:** frozen Generational-Jump / Veldara geography remains a named seed artifact until regenerated deliberately.
 

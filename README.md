@@ -21,6 +21,7 @@ world/  →  maps/  →  threat-analysis/  →  doctrine/  →  industry/ + data
 4b. [`world/10-classical-civilizations.md`](world/10-classical-civilizations.md) — **Helioran (West) & Shan-Khar (East)** ancestral giants  
 4c. [`world/11-legendary-figures.md`](world/11-legendary-figures.md) — Alexander-scale legends (roles, not Earth names)  
 4d. [`world/12-worldbuilding-principles.md`](world/12-worldbuilding-principles.md) — environment→culture, forefathers, detail budget  
+4e. [`world/13-resources-from-geology.md`](world/13-resources-from-geology.md) — deposits from deep-time (ore, fuel, etc.)  
 5. [`world/06-settlement-and-borders.md`](world/06-settlement-and-borders.md) — grain nodes, borders, improbable states  
 6. [`world/07-pseudo-histories.md`](world/07-pseudo-histories.md) — country histories  
 7. [`maps/generator/README.md`](maps/generator/README.md) — **deep-time plates** (default) + reference ellipse generator  
