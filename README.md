@@ -18,6 +18,7 @@ world/  →  maps/  →  threat-analysis/  →  doctrine/  →  industry/ + data
 2. [`world/05-planetary-formation.md`](world/05-planetary-formation.md) — tectonics backdrop
 3. [`world/08-last-20ka.md`](world/08-last-20ka.md) — **LGM→now, Earth-analogue conditions**
 4. [`world/09-historical-timeline.md`](world/09-historical-timeline.md) — dated eras
+4b. [`world/10-classical-civilizations.md`](world/10-classical-civilizations.md) — **Helioran (West) & Shan-Khar (East)** ancestral giants
 5. [`world/06-settlement-and-borders.md`](world/06-settlement-and-borders.md) — grain nodes, borders, improbable states
 6. [`world/07-pseudo-histories.md`](world/07-pseudo-histories.md) — country histories
 7. [`maps/generator/README.md`](maps/generator/README.md) — algorithmic map (`present` / `lgm`)

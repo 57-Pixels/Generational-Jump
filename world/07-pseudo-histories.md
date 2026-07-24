@@ -117,7 +117,7 @@
 
 **Transport spine:** Interior highways + pipeline logic later; fewer great ports.
 
-**Aggregation:** League of irrigated provinces under a hard center. Authoritarian habit tracks water bureaucracy.
+**Aggregation:** League of irrigated provinces under a hard center. Authoritarian habit tracks water bureaucracy. **Shan-Khar/Kharzhan** civilizational lean.
 
 **Freeze:** Same suture wars as Nerath; lean on Kharzhan for mass and spares.
 
