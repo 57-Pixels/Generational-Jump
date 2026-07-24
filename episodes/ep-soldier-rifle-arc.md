@@ -1,125 +1,64 @@
 # Soldier systems — Rifle arc (worked example)
 
-> **[WORKED EXAMPLE]** — shows how one "item" becomes a multi-episode deep dive.
+> **[WORKED EXAMPLE]** — shows how one program becomes an episode (or a short arc if I'm enjoying it).
 > **Source design doc:** [`designs/soldier-systems/infantry-rifle.md`](../designs/soldier-systems/infantry-rifle.md)
 > **Program id:** `rifle-std-1`
-> **Data:** `data/programs.csv`, `cost-estimates.csv`, `bom.csv`, `production-lines.csv`
+> **Data:** `data/programs.csv`, `data/costs.csv`
 
-This replaces the old single-episode `ep04` surface treatment. Depth is the point.
+Depth follows interest. This can be one solid episode or a short arc — but industry/cost stays a brief beat, not its own mini-series.
 
 ---
 
-## Part 1 — The legacy rifle problem (~12–15 min)
+## Part 1 — The legacy rifle problem & the options (~15 min)
 
-**Status:** outline  
-**Focus:** requirement, legacy baseline, why optics-only is not a generational jump
+**Status:** outline
+**Focus:** requirement, legacy baseline, and the four options steelmanned
 
 ### Cold open
-"We still issue rifles designed before most of our corporals were born. The wake-up war did not invent infantry — it made our inventory look like a museum with a logistics problem."
+"We still issue rifles designed before most of our corporals were born — and the fix isn't the rifle you'd expect."
 
 ### Beats
-- Show the mixed 80s–90s inventory and dual-caliber risk
+- Mixed 80s–90s inventory and dual-caliber risk
 - Wake-up war lesson: optics + ammo + training, not brand mystique
-- Requirement statement from the design doc
-- Preview: we will design the line, not just pick a catalog item
-
-### Canon / data
-- No CSV numbers required yet beyond program existence
+- The four options (import / optics-only / license-build / clean-sheet), each at its strongest
+- Leave the decision open until after the trade-offs
 
 ---
 
-## Part 2 — Options (import vs retrofit vs license vs clean-sheet) (~15–18 min)
+## Part 2 — The decision, with a rough cost check (~15 min)
 
-**Status:** outline  
-**Focus:** steelman all four options; introduce industrial path as a first-class axis
-
-### Cold open
-"The best rifle you can buy off a foreign shelf is not the best rifle for a country rebuilding its plants."
-
-### Beats
-- Option A–D from the design doc, each at its strongest
-- Introduce the rule: bridges are allowed; forever-imports as end states are not
-- Leave the audience unsure — decision comes after materials/line/cost
-
----
-
-## Part 3 — Materials and BOM (~12–15 min)
-
-**Status:** outline  
-**Focus:** walk `data/bom.csv` for `rifle-std-1`
+**Status:** outline
+**Focus:** decide Option C, and sanity-check it on cost — briefly
 
 ### Cold open
-"Before we argue brands, we argue aluminum, barrel steel, and polymer pellets."
+"The best rifle you can buy off a foreign shelf is the wrong rifle for a country rebuilding its own plants."
 
 ### Beats
-- On-screen table from CSV: structure vs barrel vs furniture
-- Domestic vs import share
-- 180-day stockpile on polymer/finish chemicals
-- Hook: the barrel cell will decide our annual rate
+- Constraint chain → license-build on the existing plant
+- **Rough cost beat (keep it short):** ~60M PD to set up, ~1,000 PD/unit at scale, ~310M PD total; import path ~2.5× per unit and builds no plant. Say the numbers are rough estimates.
+- Key materials in one line: barrel steel/aluminum domestic; polymer + some chemicals imported (small stockpile)
+- License clauses that matter: wartime continuation + spare-part rights
+- Answer the "why not just buy the best?" objection on camera
 
 ### Data on screen
-- Rows from `data/bom.csv`
+- `data/costs.csv` row for `rifle-std-1`
 
 ---
 
-## Part 4 — The assembly line (~15–20 min)
+## Part 3 (optional) — Fielding & what it unlocks (~8–10 min)
 
-**Status:** outline  
-**Focus:** walk `data/production-lines.csv`; bottleneck forge
-
-### Cold open
-"Our entire rifle future bottlenecks on one cold-hammer forge cell."
+**Status:** optional — merge into Part 2 if the topic doesn't warrant its own episode
 
 ### Beats
-- Station-by-station flow (1→9)
-- Cycle times → why ~40k/year is the design rate at two shifts
-- Workforce and training lead for second shift
-- Surge options: second forge vs live with the cap
-- Retool of legacy plant vs greenfield (cost implication)
-
-### Data on screen
-- `production-lines.csv` stations; highlight `bottleneck=true`
+- Fielding order (active → reserve), surplus bridge for training only
+- Optics program now has a stable rail standard
+- Single-caliber logistics simplification
+- Tease the next thing I actually want to design
 
 ---
 
-## Part 5 — Cost model and decision (~15–18 min)
+## Production notes
 
-**Status:** outline  
-**Focus:** `data/cost-estimates.csv` + final decision
-
-### Cold open
-"Sixty million project-dollars before the first rifle. Then the unit cost falls off a cliff — if we actually learn."
-
-### Beats
-- Tooling year vs ramp vs rate (table from CSV)
-- Compare to premium import unit cost
-- License clauses that must be true for the industrial story to work
-- Decision: Option C + training-stock bridge
-- Confidence tags (`study-grade`) — honesty on camera
-
-### Data on screen
-- All `rifle-std-1-*` cost rows
-
----
-
-## Part 6 — Fielding and what this unlocks (~10–12 min)
-
-**Status:** outline  
-**Focus:** second-order effects; optics program hook; ammo surge hook
-
-### Cold open
-"The rifle was never the expensive half of modern infantry. It was the permission slip."
-
-### Beats
-- Fielding schedule by cohort (active → reserve)
-- Optics program now has a rail standard
-- Ammo and magazine logistics simplification
-- Tease next soldier-systems episode (optics or armor) or return to logistics ammo surge
-
----
-
-## Production notes (arc-wide)
-
-- **Visuals:** CSV-driven tables/charts (website-ready later); plant floor diagram; bottleneck callout
+- **Visuals:** one options table; one small cost callout from `data/costs.csv`
 - **Canon:** D-0001
-- **Rule:** if a number changes, change the CSV first, then re-export graphics
+- **Rule:** keep the industry/cost segment brief; the reasoning is the show

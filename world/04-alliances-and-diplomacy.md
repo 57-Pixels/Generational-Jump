@@ -16,7 +16,7 @@
 > **[STARTER SUGGESTION]**
 
 - **No automatic defense treaty.** Planning assumption: materiel help possible; troops not guaranteed. Design for fighting with what we can make and stockpile.
-- **Preferred modernization path:** license + domestic production lines (fits the series' factory focus). Finished imports are bridges and fillers, not the default end state.
+- **Preferred modernization path:** license + domestic production where it's worthwhile (high-volume items). Finished imports are bridges and fillers, not the default end state.
 - **Suppliers:**
   - Western great power: best tech, most strings, slow approvals.
   - Non-aligned advanced exporters: faster licenses, more tech transfer — sweet spot for many programs.

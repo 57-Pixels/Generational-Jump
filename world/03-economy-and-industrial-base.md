@@ -7,8 +7,8 @@
 
 1. **GDP and defense budget** in absolute terms — including the Modernization Act envelope.
 2. **Split:** personnel / O&M / procurement+industrial investment.
-3. **What legacy industry can do today** vs. what the jump requires (see `industry/00-overview.md`).
-4. **Critical imports** for materials and machine tools (see `industry/02-materials.md`).
+3. **What legacy industry can do today** vs. what the jump requires (see `industry/README.md`).
+4. **Critical imports** for materials and machine tools (see `industry/README.md`).
 5. **Exports / leverage** in license negotiations.
 6. **Surge lessons from the wake-up war:** ammo, drones, barrels, missiles — which lines must be built for wartime rates, not peacetime rates?
 
@@ -22,5 +22,5 @@
   - **Can build today:** small arms, ammo (limited surge), trucks, patrol craft, software/drones startups.
   - **Can overhaul / partially build:** armor, artillery, corvettes.
   - **Import / license required for the jump:** modern fighters, major SAM seekers, submarine combat systems, many microelectronics.
-- **Materials risks:** propellant precursors, advanced semiconductors, turbine hot sections — see `industry/02-materials.md`.
-- **Series implication:** cost episodes use `data/cost-estimates.csv`; national ceilings in *this* doc are the parent constraint those rows must fit under in aggregate.
+- **Materials risks:** propellant precursors, advanced semiconductors, turbine hot sections — see `industry/README.md`.
+- **Series implication:** rough per-program costs live in `data/costs.csv`; the national ceilings in *this* doc are the parent constraint those rough numbers should fit under in aggregate.

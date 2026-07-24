@@ -36,4 +36,4 @@ One-sentence takeaway + tease.
 
 - **CSV charts/tables needed:** [list files + filters]
 - **Canon checkpoints:** [decisions-log IDs]
-- **Confidence on air:** [order-of-magnitude / study-grade / quote-analogue / line-model]
+- **Confidence on air:** [rough / study / firm]
