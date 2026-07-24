@@ -10,14 +10,27 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from deeptime.simulate import SimConfig, run_until_hooks, save_result, simulate
+from deeptime.v2.export import save_world
+from deeptime.v2.model import WorldConfig, generate_world
+
+GENERATOR = Path(__file__).resolve().parent.parent
+EXPORTS = GENERATOR.parent / "exports"
+VIEWER_WORLD = GENERATOR.parent / "viewer" / "public" / "world"
 
 
 def main(argv: list[str] | None = None) -> None:
-    p = argparse.ArgumentParser(description="Deep-time plate world generator v1")
+    p = argparse.ArgumentParser(description="Deep-time spherical world generator")
+    p.add_argument(
+        "--engine",
+        choices=("v2", "v1"),
+        default="v2",
+        help="v2 spherical pipeline (default) or legacy v1 raster prototype",
+    )
     p.add_argument("--seed", type=int, default=42)
     p.add_argument("--width", type=int, default=1024)
     p.add_argument("--height", type=int, default=512)
     p.add_argument("--ticks", type=int, default=80)
+    p.add_argument("--grid-n", type=int, default=64, help="v2 cubed-sphere face resolution")
     p.add_argument("--era", choices=("present", "lgm"), default="present")
     p.add_argument(
         "--reroll-hooks",
@@ -35,18 +48,40 @@ def main(argv: list[str] | None = None) -> None:
     if args.width % 2:
         raise SystemExit("width should be even")
 
-    cfg = SimConfig(
-        width=args.width,
-        height=args.height,
-        seed=args.seed,
-        ticks=args.ticks,
-        era=args.era,
+    if args.engine == "v1":
+        cfg = SimConfig(
+            width=args.width,
+            height=args.height,
+            seed=args.seed,
+            ticks=args.ticks,
+            era=args.era,
+        )
+        if args.reroll_hooks:
+            result = run_until_hooks(cfg, max_tries=args.max_tries)
+        else:
+            result = simulate(cfg)
+        save_result(result)
+        return
+
+    world = generate_world(
+        WorldConfig(
+            seed=args.seed,
+            grid_n=args.grid_n,
+            ticks=args.ticks,
+            era=args.era,
+            export_width=args.width,
+            export_height=args.height,
+        )
     )
-    if args.reroll_hooks:
-        result = run_until_hooks(cfg, max_tries=args.max_tries)
-    else:
-        result = simulate(cfg)
-    save_result(result)
+    destinations = [EXPORTS]
+    if not args.no_viewer_copy:
+        destinations.append(VIEWER_WORLD)
+    meta = save_world(world, destinations)
+    print(
+        f"v2 seed={args.seed} land={meta['land_fraction']:.3f} "
+        f"plates={meta['plate_count']} continents={meta['continent_count']} "
+        f"landmasses={meta['landmass_count']} deposits={meta['resource_deposit_count']}"
+    )
 
 
 if __name__ == "__main__":
