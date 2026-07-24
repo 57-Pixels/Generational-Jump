@@ -12,6 +12,7 @@ import numpy as np
 from PIL import Image, ImageDraw
 
 from .model import WorldResult
+from .tiles import MERCATOR_MAX_LAT, write_mercator_tiles
 
 
 def _palette(values: np.ndarray, seed: int = 0) -> np.ndarray:
@@ -357,6 +358,13 @@ def save_world(world: WorldResult, destinations: list[Path]) -> dict:
             "continent": "continental crust lineage / terrane",
             "landmass": "connected dry land",
         },
+        "viewer_tiles": {
+            "scheme": "xyz",
+            "path": "tiles/color/{z}/{x}/{y}.png",
+            "max_zoom": 3,
+            "mercator_max_lat": MERCATOR_MAX_LAT,
+            "note": "MapLibre globe extends raster tiles to poles; image sources do not",
+        },
         "config": asdict(world.config),
     }
 
@@ -370,6 +378,11 @@ def save_world(world: WorldResult, destinations: list[Path]) -> dict:
         _save_rgb(destination / f"world-rivers{suffix}.png", rivers_raster)
         _save_rgb(destination / f"world-resources{suffix}.png", resources)
         _save_rgb(destination / f"world-settlement{suffix}.png", settlement)
+        if world.config.era == "present":
+            tile_meta = write_mercator_tiles(
+                base, destination / "tiles" / "color", max_zoom=3
+            )
+            meta["viewer_tiles"].update(tile_meta)
         (destination / f"world-resources{suffix}.geojson").write_text(
             json.dumps(resource_geojson, indent=2) + "\n"
         )

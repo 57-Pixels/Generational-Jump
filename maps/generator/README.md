@@ -42,7 +42,8 @@ python3 generate_world.py --width 2048 --height 1024 --seed 42 --era lgm
 
 | File | Purpose |
 | --- | --- |
-| `../exports/world-color.png` | Atlas color (viewer basemap) |
+| `../exports/world-color.png` | Atlas color (equirect reference) |
+| `../exports/tiles/color/{z}/{x}/{y}.png` | Web Mercator XYZ basemap for the viewer (globe poles) |
 | `../exports/world-plates.png` | Rigid plate IDs |
 | `../exports/world-continents.png` | Continental terrane lineages |
 | `../exports/world-landmasses.png` | Connected dry land |

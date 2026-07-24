@@ -9,7 +9,7 @@ v2 continents are unions of **circular spherical caps** (`TerraneModel.rasterize
 1. **Crust-field tectonics (approach C):** continental crust is a continuous thickness/age field evolved by plate-boundary events — not painted circles.
 2. **No land-fraction target:** drop `target_land_fraction` / `fit_area_fraction_level` for v2. Land% is an emergent output. (Veldara *reference campaign* prose may still describe that board as ~29%; algorithmic seeds do not.)
 3. **Fixed present sea level** (0 m reference on the elevation field); LGM remains bedrock − 120 m.
-4. **Viewer poles:** MapLibre image sources cannot use true ±90° (Web Mercator); pin the equirect atlas to ~±85.05° so the basemap renders. Polar PNG rows still paint into that band; a thin globe fringe beyond remains a projection limit.
+4. **Viewer poles:** basemap is Web Mercator XYZ **raster tiles**. MapLibre globe stretches edge tiles to the poles the same way it does for Earth satellite rasters. Do not use a full-world `image` source for the basemap (`allowPoles` is false there).
 5. **Non-circular markers:** deposits and settlement sites export irregular polygon footprints; viewer renders fill/outline, not circles.
 
 ## Architecture

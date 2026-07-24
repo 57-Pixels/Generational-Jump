@@ -25,7 +25,7 @@ const WAR_LAYER_IDS = [
 const asset = (path) =>
   `${import.meta.env.BASE_URL}${path.replace(/^\//, "")}`;
 
-/** Web Mercator max latitude — image sources at ±90 fail to render in MapLibre. */
+/** Web Mercator max latitude used by MapLibre / EPSG:3857. */
 const MERCATOR_MAX_LAT = 85.05112878;
 const WORLD_IMAGE_BOUNDS = [
   [-180, MERCATOR_MAX_LAT],
@@ -34,17 +34,24 @@ const WORLD_IMAGE_BOUNDS = [
   [-180, -MERCATOR_MAX_LAT],
 ];
 
-/** Algorithmic basemap from maps/generator → public/world/world-color.png */
+/**
+ * Basemap as XYZ raster tiles (not an image source).
+ * MapLibre globe extends tile meshes to the poles the same way it does for
+ * Earth satellite rasters; ImageSource passes allowPoles=false.
+ */
 function worldStyle() {
-  const worldUrl = asset("world/world-color.png");
+  const tiles = [asset("world/tiles/color/{z}/{x}/{y}.png")];
   return {
     version: 8,
     name: "veldara-algorithmic",
     sources: {
       world: {
-        type: "image",
-        url: worldUrl,
-        coordinates: WORLD_IMAGE_BOUNDS,
+        type: "raster",
+        tiles,
+        tileSize: 256,
+        minzoom: 0,
+        maxzoom: 3,
+        attribution: "Algorithmic world (deeptime v2)",
       },
     },
     layers: [
