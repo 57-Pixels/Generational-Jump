@@ -1,81 +1,68 @@
 # World Overview
 
-> **Status:** working world design — the geography and pecking order below are the defaults for map generation and the series. Overwrite in `decisions-log.md` if you reject a piece; until then, treat this as the world we are designing against.
+> **Status:** working world design.
 >
-> **Physical foundation (tectonics/climate):** [`05-planetary-formation.md`](05-planetary-formation.md) — landforms must follow this.
-> **Map brief:** [`../maps/00-world-map-brief.md`](../maps/00-world-map-brief.md) (image-gen → upscale workflow).
+> **Geology:** [`05-planetary-formation.md`](05-planetary-formation.md)  
+> **How countries form (grain → transport → borders):** [`06-settlement-and-borders.md`](06-settlement-and-borders.md)  
+> **Pseudo-histories:** [`07-pseudo-histories.md`](07-pseudo-histories.md)  
+> **Map brief:** [`../maps/00-world-map-brief.md`](../maps/00-world-map-brief.md)
 
 ## Ground rules (canon — see decisions-log)
 
 - **Technology level:** Earth, 2025. No magic, no sci-fi.
 - **Different world:** fictional geography and states; equipment by real-world *analogue*.
 - **Physics and economics are real.**
+- **Countries are earned:** food cores and transport spines first; borders are freeze-frames of that history.
 - **Our starting force:** 1980s–1990s generation. Series = full generational jump, all domains.
-- **Catalyst:** a major conventional war **on the other side of the world** (the Maravic War).
+- **Catalyst:** the **Maravic War** on Farreach.
 
-## The planet at a glance
+## Landmasses (Earthlike — not four equal petals)
 
-Four major landmasses + polar ice — shapes explained by breakup of a northern megacontinent, West Ocean subduction, and a southern collisional orogeny (see [`05-planetary-formation.md`](05-planetary-formation.md)):
-
-| Landmass | Role | Key physical cause |
+| Landmass | Rank | Role |
 | --- | --- | --- |
-| **Aurelian** | Home continent — **Veldara**, Korvath, Doverin, Sereth | West = subduction cordillera; east/gulf = passive margin; glaciated north |
-| **Solmar** | Solara's island-continent homeland | Same West Ocean subduction family + volcanic island arc |
-| **Kharzhan** | Kharzhan State's vast homeland | Thick craton; passive west coast facing East Ocean |
-| **Farreach** | Maravic War theater | Active Nerath–Tesen **collision suture** |
-| Polar caps | North/south ice | Axial tilt + latitude |
+| **Aurelian** | Continent | Home board — Veldara, Korvath, Doverin, Sereth + footnotes |
+| **Kharzhan** | Continent | Continental great-power homeland (other side of the East Ocean rift) |
+| **Farreach** | Continent | Maravic War theater (Nerath vs Tesen) |
+| **Solmar** | **Island-continent** | Solara's maritime homeland + arc islands (Australia-scale, not a fourth peer continent in speech) |
+
+Shapes still come from tectonics in `05`. Politics come from `06`/`07`.
+
+## Who is on stage vs footnote
+
+**On stage** (get histories and matter to force design): Veldara, Korvath, Doverin, Sereth, Solara, Kharzhan State, Nerath Compact, Tesen League, Iberon Union (thin).
+
+**Footnotes** (name + one line, map texture): see bottom of `07-pseudo-histories.md`. Promote only when a scenario needs them.
 
 ## Global pecking order
 
 ### Tier 1 — Great powers (2)
 
-Nuclear-armed, global reach, set the tone of the arms market.
+| Power | Character |
+| --- | --- |
+| **Solara** | Maritime/tech hegemon on Solmar. Licenses, aerospace, navy, credit. |
+| **Kharzhan State** | Continental industrial-military giant. Land power, magazines, clients (incl. Korvath). |
 
-| Power | Character | Real-world flavour (analogue, not copy) |
-| --- | --- | --- |
-| **Solara** (on Solmar) | Maritime/tech hegemon. Best navy and aerospace industry. Sells licenses and high-end systems with political strings. | Roughly "wealthy maritime superpower" |
-| **Kharzhan State** | Continental industrial-military giant. Huge land forces, deep magazine industry, patron of several client states. | Roughly "continental peer superpower" |
+### Tier 2 — Major powers
 
-They compete everywhere; they prefer not to fight each other directly.
+| Power | Notes |
+| --- | --- |
+| **Veldara** (us) | Mini-US scale; Heartland grain federation + two coasts; modernizing from 80s–90s kit |
+| **Korvath** | Other silo empire on the shared Eastmarch plain; pacing rival |
+| **Nerath Compact** / **Tesen League** | Maravic belligerents |
+| **Iberon Union** | Trade/workshop broker — not a peer fighter |
 
-### Tier 2 — Major powers (including us)
+### Tier 3 — Regional (still on stage, thinner)
 
-Regional heavyweights with full-domain militaries and real industrial bases. None can alone defeat a great power; any can reshape a continent.
+**Doverin** (partner catchment), **Sereth** (highland).
 
-| Power | Continent | Notes |
-| --- | --- | --- |
-| **Veldara** (us) | Aurelian | "Mini-US" scale major power — large, diverse, two-ocean access. Modernizing from 80s–90s kit. |
-| **Korvath** | Aurelian | Our pacing rival. Slightly smaller than us, more militarized culture, leans Kharzhan. |
-| **Nerath Compact** | Farreach | One of the two Maravic War belligerents — industrial democracy, Solara-leaning. |
-| **Tesen League** | Farreach | The other Maravic War belligerent — authoritarian, Kharzhan-leaning. |
-| **Iberon Union** | Solmar periphery / bridge | Wealthy trading major; arms middleman; not a peer fighter. |
+### Tier 4 — Footnotes
 
-### Tier 3 — Regional powers
-
-Serious local players, incomplete domains or thinner industry: **Doverin** (our western partner on Aurelian), **Sereth** (northern highland state), **Oryx Coast** (Farreach oil coast), others as needed.
-
-### Tier 4 — Small states & clients
-
-Everyone else. Useful for basing rights, smugglers, and map texture — not force-design drivers unless named later.
+Everyone else.
 
 ## Wake-up call: the Maravic War
 
-- **Where:** Farreach, between **Nerath Compact** and **Tesen League**.
-- **What:** multi-year peer conventional war, filmed and dissected worldwide.
-- **Status:** ongoing or recently frozen — either works for the series; default = **still grinding**.
-- **Lessons we are taking seriously:** mass drones + artillery, dense air defense, industrial ammo surge, EW, vulnerability of parade-ready legacy forces.
-- **Lessons we might misread:** (open — fill as we learn on camera.)
+Farreach, Nerath vs Tesen, multi-year peer war, still grinding by default. Lessons: drones, AD, ammo surge, EW, legacy-force fragility.
 
-## Arms and materials market
+## Arms market / nukes / our posture
 
-- Tiered. Machine tools and many components are buyable.
-- Current-gen complete systems usually need Solara or Kharzhan political alignment.
-- Our preference: **license + domestic build** for high-volume items; accept imports for low-volume exquisite systems early.
-
-## Nuclear weapons
-
-Solara and Kharzhan have them. A short list of majors may have small arsenals; **Veldara does not pursue nukes in this series' scope.**
-
-## Our posture
-
-Cross-party consensus after watching Maravic: the 80s–90s force would fail. Mandate = full-domain generational jump over ~15–20 years, paced by budget and interest-driven program order.
+Tiered market (Solara/Kharzhan strings on top systems). Nukes: great powers; we don't pursue in-series. Mandate after Maravic: full-domain generational jump ~15–20 years, interest-driven program order.

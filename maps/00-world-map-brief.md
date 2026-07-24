@@ -24,7 +24,9 @@
 | Show | Coastlines, shelves, cordillera, glacial north, suture orogeny, island arc, polar ice |
 | Hide | Borders, cities, roads, flags, ornate compasses |
 
-## What each landmass must look like (cause → form)
+## Continents / landmasses to draw
+
+**Speech:** three continents (**Aurelian**, **Kharzhan**, **Farreach**) + **Solmar** island-continent — not four equal petals.
 
 ### Aurelian (home) — mid-frame, northern hemisphere heavy
 
@@ -38,11 +40,11 @@
 
 Veldara will later claim: west cordillera coast + plains + gulf. Korvath continues east on the **same** continent (no oceanic suture between them).
 
-### Solmar — far west in the West Ocean
+### Solmar — island-continent (Australia-scale) in the West Ocean
 
 | Feature | Cause | Visual |
 | --- | --- | --- |
-| Island-continent | Continental fragment above the West Ocean subduction system | Large island landmass, not a tiny atoll cluster |
+| Island-continent | Continental fragment above the West Ocean subduction system | Large island landmass — smaller than the three continents, still major |
 | Mountainous west | Arc / cordillera above the slab | High west side |
 | Gentler east | Back-arc / remnant shelf | Lower east coast |
 | Southern island chain | Volcanic island arc from slab rollback | Curved **arc** of islands — curved, not random spray |
@@ -124,11 +126,11 @@ same continent without cause, circular supercontinent, roads, flags, watermark, 
 
 ## Label pass (after upscale)
 
-**Continents:** Aurelian, Solmar, Kharzhan, Farreach  
+**Continents / landmasses:** Aurelian, Kharzhan, Farreach; Solmar *(island-continent)*  
 **Oceans:** West Ocean, East Ocean  
 **Optional process labels (small):** Highspine Cordillera, East Gulf, Solmar Arc, Farreach Suture  
 
-Countries only after coastlines lock — see world overview for names.
+On-stage countries after coastlines lock. Footnote improbables (Mirrin, Three-Passes, Lateran Quarter, Neutral Bend, …) only on detailed political zooms — see `07-pseudo-histories.md`.
 
 ## Exports
 

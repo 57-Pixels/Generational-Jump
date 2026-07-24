@@ -133,13 +133,15 @@ With ~23° tilt and Earthlike circulation:
 
 | Feature | Geologic cause | Political use |
 | --- | --- | --- |
-| Highspine / West Cordillera | West Ocean subduction | Veldara Westreach inland wall |
-| Heartland Plains | Old interior + glacial cover | Veldara depth / armor country |
-| East Gulf | Cenozoic embayment on passive margin | Veldara second coast + navy |
-| Northwood lakes | Ice-age scour on old highland flank | Sereth border country |
-| Eastmarch | Continuous Aurelian crust, mild relief | Korvath threat axis |
-| Solmar arc + islands | Same West Ocean subduction family | Solara homeland |
+| Highspine / West Cordillera | West Ocean subduction | Veldara Westreach wall; pass tolls; **Three-Passes** buffer |
+| Heartland Plains | Old interior + glacial cover | Grain-barony core of Veldara |
+| East Gulf | Cenozoic embayment on passive margin | Barge outlet; **Mirrin** chokepoint city |
+| Northwood lakes | Ice-age scour | Sereth border country |
+| Eastmarch | Continuous Aurelian crust, mild relief | Shared silo frontier with Korvath; **Neutral Bend** fossil |
+| Solmar island-continent + arc | West Ocean subduction family | Solara homeland (not a fourth peer continent in speech) |
 | Farreach suture | Active continental collision | Maravic War terrain |
+
+**Human layer:** [`06-settlement-and-borders.md`](06-settlement-and-borders.md) (incl. improbable states) · [`07-pseudo-histories.md`](07-pseudo-histories.md).
 
 ## For image generation
 

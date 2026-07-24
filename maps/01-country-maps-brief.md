@@ -42,13 +42,21 @@
 
 ## Map A — Political / administrative
 
-**Job:** provinces, capital, cities, borders — draped on real terrain (coast/river logic for cities).
+**Job:** provinces, capital, cities, borders — plus a few **improbable leftovers** so the map feels like Earth.
 
 **City placement rules:**
 - Westreach ports = natural rocky harbors behind the cordillera gaps/rivers
-- Gulf ports = hard points / dredged delta mouths (fewer than west, and call that out)
+- Gulf ports = hard points / dredged delta mouths (fewer than west)
 - Heartland hubs = rail/river junctions
 - Do not put the capital on the Highspine crest
+
+**Improbable footnotes to ink (small labels OK):**
+- **Mirrin Free City** at the gulf mouth (Singapore-ish)
+- **Three-Passes Republic** in Highspine (Luxembourg-ish buffer)
+- **Lateran Quarter** as a tiny patch inside Aurel City (Papal remnant)
+- **Neutral Bend** on the Eastmarch river kink (treaty fossil)
+
+If a first-time reader doesn't ask "why does *that* exist?", add another footnote.
 
 **Prompt seed:**
 
@@ -57,9 +65,10 @@ Political map of a large federal country matching reference coastline,
 provinces follow rivers and mountain divides where possible,
 capital at major river confluence toward a southeastern gulf,
 major ports on western rocky coast and gulf hard points,
-thin international borders east west north, clean modern atlas, no fantasy
+include a tiny free city at the gulf mouth, a microstate covering mountain passes,
+a tiny irregular clerical enclave inside the capital metro, and an odd demilitarized
+border kink on the eastern plain, thin international borders, clean modern atlas, no fantasy
 ```
-
 ---
 
 ## Map B — Physical / topographic (do this first)

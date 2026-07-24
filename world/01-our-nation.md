@@ -1,8 +1,10 @@
 # Our Nation — Veldara
 
-> **Status:** working country design — sized as a **medium-to-large "mini US"** major power.
+> **Status:** working country design — **mini-US** major power aggregated from grain baronies + ports.
 >
-> **Map briefs:** [`../maps/01-country-maps-brief.md`](../maps/01-country-maps-brief.md) (multiple map types for detail fill-in after the world map).
+> **History:** [`07-pseudo-histories.md`](07-pseudo-histories.md) (Veldara section)  
+> **Settlement method:** [`06-settlement-and-borders.md`](06-settlement-and-borders.md)  
+> **Maps:** [`../maps/01-country-maps-brief.md`](../maps/01-country-maps-brief.md)
 
 ## Scale (the "mini US" brief)
 

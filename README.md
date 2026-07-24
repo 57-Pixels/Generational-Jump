@@ -14,18 +14,19 @@ world/  →  maps/  →  threat-analysis/  →  doctrine/  →  industry/ + data
 
 ## Reading order
 
-1. [`world/00-world-overview.md`](world/00-world-overview.md) — planet, **pecking order**, Maravic wake-up war
-2. [`world/05-planetary-formation.md`](world/05-planetary-formation.md) — **tectonics & climate physics** (why the map looks like it does)
-3. [`maps/00-world-map-brief.md`](maps/00-world-map-brief.md) — **image-gen brief** for the world map (then upscale)
-4. [`world/01-our-nation.md`](world/01-our-nation.md) — **Veldara** (mini-US scale) + legacy force
-5. [`maps/01-country-maps-brief.md`](maps/01-country-maps-brief.md) — **multi-map** country set
-6. [`world/02-neighbors-and-threats.md`](world/02-neighbors-and-threats.md)
-7. [`world/03-economy-and-industrial-base.md`](world/03-economy-and-industrial-base.md)
-8. [`world/04-alliances-and-diplomacy.md`](world/04-alliances-and-diplomacy.md)
-9. [`threat-analysis/00-threat-overview.md`](threat-analysis/00-threat-overview.md)
-10. [`doctrine/00-national-defense-strategy.md`](doctrine/00-national-defense-strategy.md)
-11. `designs/` — one design doc per program (reasoning + a short industry note)
-12. [`episodes/00-series-outline.md`](episodes/00-series-outline.md)
+1. [`world/00-world-overview.md`](world/00-world-overview.md) — planet, pecking order, on-stage vs footnotes
+2. [`world/05-planetary-formation.md`](world/05-planetary-formation.md) — tectonics & climate
+3. [`world/06-settlement-and-borders.md`](world/06-settlement-and-borders.md) — grain nodes, borders, **improbable states**
+4. [`world/07-pseudo-histories.md`](world/07-pseudo-histories.md) — country histories
+5. [`maps/00-world-map-brief.md`](maps/00-world-map-brief.md) — world image-gen → upscale
+6. [`world/01-our-nation.md`](world/01-our-nation.md) — Veldara
+7. [`maps/01-country-maps-brief.md`](maps/01-country-maps-brief.md) — multi-map country set
+8. [`world/02-neighbors-and-threats.md`](world/02-neighbors-and-threats.md)
+9. [`world/03-economy-and-industrial-base.md`](world/03-economy-and-industrial-base.md)
+10. [`world/04-alliances-and-diplomacy.md`](world/04-alliances-and-diplomacy.md)
+11. [`threat-analysis/00-threat-overview.md`](threat-analysis/00-threat-overview.md)
+12. [`doctrine/00-national-defense-strategy.md`](doctrine/00-national-defense-strategy.md)
+13. `designs/` → [`episodes/00-series-outline.md`](episodes/00-series-outline.md)
 
 ## Directory guide
 
