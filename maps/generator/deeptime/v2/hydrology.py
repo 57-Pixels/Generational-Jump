@@ -143,11 +143,15 @@ def compute_hydrology(
     valid = grid.neighbors >= 0
     safe = np.where(valid, grid.neighbors, 0)
     coastal = land & np.any(valid & (~land[safe]), axis=1)
-    local_relief = np.where(
-        valid,
-        np.abs(elevation[:, None] - elevation[safe]),
-        0.0,
-    ).max(axis=1)
+    local_relief = np.zeros(grid.size, dtype=np.float64)
+    chunk = 2_000_000
+    for start in range(0, grid.size, chunk):
+        end = min(start + chunk, grid.size)
+        v = valid[start:end]
+        s = safe[start:end]
+        local_relief[start:end] = np.where(
+            v, np.abs(elevation[start:end, None] - elevation[s]), 0.0
+        ).max(axis=1)
     delta = np.zeros(grid.size)
     if np.any(coastal):
         q_scale = max(float(np.percentile(discharge[coastal], 90)), 1.0)
