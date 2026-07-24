@@ -1,75 +1,135 @@
 # Classical Civilizations — West & East
 
-> **Purpose:** two historically large civilizations that **set the template** for almost everything after — Earth Rome/China *roles*, not copies.
+> **Purpose:** two historically large civilizations that **set the template** for almost everything after — and the point where we **branch hard from Earth**.
 >
-> **Spine:** [`08-last-20ka.md`](08-last-20ka.md) · [`09-historical-timeline.md`](09-historical-timeline.md)  
-> Successors: Solara (West lineage), Kharzhan State (East lineage), with Aurelian majors (Veldara, Korvath, …) inheriting mixtures.
+> Modern **languages and cultures** descend from these two packages (plus local substrates). Legendary figures here are *this* world’s Alexanders, Caesars, Qin Shi Huangs — not Earth’s.
+>
+> **Spine:** [`08-last-20ka.md`](08-last-20ka.md) · [`09-historical-timeline.md`](09-historical-timeline.md) · figures below  
+> Successors: Solara (West lineage), Kharzhan State (East lineage), Aurelian majors as mixtures.
 
-## The idea (Earth pattern)
+## The idea (Earth pattern, then we leave Earth)
 
-On Earth, later states still argue in the shadow of a few classical giants: law, writing prestige, bureaucracy, universal empires, “who is civilized.” We need the same: **one Western classical world** and **one Eastern classical world**, big enough and old enough that early modern and industrial powers are remixes, not inventions from nothing.
+On Earth, later states still argue in the shadow of a few classical giants. Same here: **one Western classical world** and **one Eastern classical world**.
 
-They peak in the **classical / late antique** window (~3 ka BP → ~600–800 CE analogue), then fragment — but their **institutions, scripts, religions-of-record, and prestige languages** stick.
+**Branch rule:** Up through LGM/Holocene climate we mirror Earth *conditions*. From the classical age onward, **names, languages, heroes, and empires are ours** — no Rome, no China, no Alexander on the map. Only *roles*.
 
-## Western classical civilization — **Helioran Commonwealth** (working name)
+They peak ~3 ka BP → ~600–800 CE analogue, then fragment — but **scripts, prestige languages, law, and legend** stick.
+
+---
+
+## Languages & cultures (the fork from Earth)
+
+This is the stem. Modern speech and identity are branches.
+
+### Western stem — **Helioric** family
+
+| Layer | What it is | Modern descendants (examples) |
+| --- | --- | --- |
+| **Classical Helioran** | Prestige language of law, navy, scripture-of-record | Dead for daily speech; still quoted in Solara courts and Veldara constitutions |
+| **Vulgar Helioric** dialects | Spoken successors after the Commonwealth fragments | Solara standard; Iberon coastal; Westreach “old port” speech |
+| **Aurelian Helioric** | Frontier mix: Helioric + Heartland grain-country substrate | Modern **Veldaran** (official), Doverin close cousin |
+| **Script** | Helioran alphabet (phonemic, left-to-right) | Almost all West-leaning states |
+
+**Cultural package (West):** civic law, republican/imperial dual memory, “port = civilized,” individual honor + contract, naval epic literature, archival clergy.
+
+### Eastern stem — **Kharic** family
+
+| Layer | What it is | Modern descendants (examples) |
+| --- | --- | --- |
+| **Classical Shan-Kharic** | Prestige literary/bureaucratic language | Still the exam/classical register in Kharzhan; Korvath elites study it |
+| **Common Kharic** | Spoken empire koine | Modern **Kharzhan**; Korvathi is a closely related plain dialect continuum |
+| **Farreach Kharic** | Suture-flank offshoot | Tesen official registers lean this way |
+| **Script** | Logographic-syllabic classical system + later simplified civic script | East-leaning states; dual-script literacy is a Kharzhan class marker |
+
+**Cultural package (East):** mandate of order, exam bureaucracy, census/grain boards, family-line duty, continental epic of reunification, “the center endures.”
+
+### Substrates & leftovers (not third classical giants)
+
+- **Heartland Old Speech** — pre-Helioric grain-country tongues; survive in Veldaran rural idiom and place names.
+- **Sereth highland speech** — isolate-ish; bilingualism with Veldaran/Korvathi on the borders.
+- **Farreach windward tongues** — Nerath keeps a Helioric official layer over local coastal languages.
+- **Solmar arc island languages** — small families; Solara administers in Helioric.
+
+**Rule for the series/sim:** when in doubt, a modern cultural trait traces to **Helioric**, **Kharic**, or a named substrate — not to “just like the French.”
+
+---
+
+## Western classical civilization — **Helioran Commonwealth**
 
 | | |
 | --- | --- |
-| **Core geography** | Solmar lowlands + West Ocean littoral; later coastal footholds on western Aurelian (Westreach) and Iberon-analogue shores |
-| **Food / transport** | Maritime protein + intensive coastal ag; **shipping as the highway**; grain imports from Aurelian shores when empire peaks |
-| **Earth role** | Greco-Roman + later “West” package: civic law, republican/imperial dual memory, roads/ports as civilization, universalizing high culture |
-| **Peak** | Circa 2.2 ka–1.4 ka BP analogue — Mediterranean-*scale* then ocean-facing empire |
-| **How it dies** | Overextension, succession wars, arc volcanism/ash years, pressure from steppe/sea peoples; **does not vanish** — successor kingdoms on Solmar keep the law code and alphabet |
+| **Core geography** | Solmar lowlands + West Ocean littoral; footholds on Westreach and Iberon shores |
+| **Food / transport** | Maritime protein + coastal ag; **shipping as highway**; imported Aurelian grain at peak |
+| **Earth role (then leave it)** | Greco-Roman *job*, not Greco-Roman names |
+| **Peak** | ~2.2–1.4 ka BP analogue |
+| **Fall** | Overextension, succession wars, arc ash years, sea/steppe pressure; successor kingdoms keep law + alphabet |
 
-### What it leaves behind (must show up later)
+### Legendary figures (West)
 
-- **Prestige script & legal templates** Solara still cites; Veldara’s federal constitution borrows separation-of-powers language from Helioran commentaries
-- **Port = civilization** bias — why Westreach city-states felt “cultured” before the Heartland federated
-- **Naval prestige** as moral story, not just tech — Solara’s self-image
-- Clerical/archival remnants (Lateran Quarter *type*) claim Helioran continuity
+| Figure (working name) | Earth *role* | What they did in *this* world |
+| --- | --- | --- |
+| **Caelus the Far-Sailor** | Homeric / foundational epic hero | Semi-legendary; charts the West Ocean littoral; every Solara academy claims his wake |
+| **Orsania Philarch** | Lawgiver / Solon–Twelve Tables energy | Codifies the Commonwealth charter; “Orsanian law” still means basic contract + citizen rights |
+| **Tiber Ambros** | Alexander-the-Great analogue | Conquers from Solmar across Westreach into the Heartland fringe in a decade; dies young; empire splits among successors (**Ambrosian Partition**) — why Westreach cities have Greek-*style* rival leagues in memory |
+| **Marcian Vale** | Caesar / foundational imperator | Ends the Commonwealth’s civil wars; builds the port-road spine; assassinated on the Senate quay — republican ghost never leaves Solara politics |
+| **Helena of the Archives** | Constantine / cultural consolidator energy | Ties clerical archive to state; seeds Lateran-type continuity cults |
+| **Rhem the Burned** | Defensive last hero / Stilicho–Aetius mix | Holds the arc against sea peoples during the ash decade; dies with the outer provinces — tragic textbook staple |
 
-## Eastern classical civilization — **Shan-Khar Imperium** (working name)
+Tiber Ambros is the **legend ceiling**: schoolkids know the partition the way Earth kids know Alexander’s Diadochi.
+
+---
+
+## Eastern classical civilization — **Shan-Khar Imperium**
 
 | | |
 | --- | --- |
-| **Core geography** | Kharzhan river plains + canal spine; multiple grain hearths unified by exam/bureaucracy rather than only by blood aristocracy |
-| **Food / transport** | Hydraulic grain empire; rivers + canals; land logistics first |
-| **Earth role** | Chinese imperial *package*: mandate ideology, civil service, census/tax grain boards, cultural confidence that “the center” is eternal |
-| **Peak** | Longer continuous high plateau — cycles of break and reunify across ~2.5 ka, like imperial China *rhythm* |
-| **How it “dies”** | It doesn’t cleanly — dynastic collapses, reunifications; the **modern Kharzhan State** claims direct succession (whether historians agree or not)
+| **Core geography** | Kharzhan river plains + canal spine |
+| **Food / transport** | Hydraulic grain; rivers/canals; land logistics |
+| **Earth role (then leave it)** | Chinese imperial *job*, not Chinese names |
+| **Rhythm** | Break and reunify across ~2.5 ka |
+| **“Death”** | Never clean — modern Kharzhan claims the mandate unbroken |
 
-### What it leaves behind
+### Legendary figures (East)
 
-- **Bureaucracy & exam prestige** — modern Kharzhan officer/technical schools still feel like classical ladders
-- **Universal empire as default imagination** — why Kharzhan clients (Korvath) talk in “order vs chaos” language
-- **Grain board / census DNA** — Eastmarch rivals inherit the *idea* of plain-wide tax machines
-- Writing system / classical corpus that industrial Kharzhan never abandoned
+| Figure (working name) | Earth *role* | What they did in *this* world |
+| --- | --- | --- |
+| **Shan of the First Canal** | Culture hero / Yu-the-Great energy | Tames the floods; founds the grain-board idea; half history, half myth |
+| **Kharran the Examiner** | Institutional founder | Invents the exam bureaucracy; “Kharran ladder” = modern officer/tech schools |
+| **Empress Li-Shen** | Expansionist unifier / occasional Wu–Han mix | Reunifies after a long fracture; pushes garrisons toward the East Ocean; classical poetry’s golden age |
+| **General Wei Dongar** | Alexander-adjacent *land* conqueror | Drives a generation of campaigns across the steppe margin into Aurelian’s eastern plain; never holds the Heartland — but Korvath’s officer caste still toasts him |
+| **The Silent Mandate** (personage disputed) | Philosophical pivot | Abolishes a dynasty without a massacre (or so the texts say); used by every later reformer |
+| **Iron Prefect Soru** | Legalist consolidator / Qin energy | Standardizes weights, script reforms, brutal canal corvée; hated and indispensable in memory |
+
+Wei Dongar is the East’s **legendary operational genius**; Tiber Ambros is the West’s **legendary explosion across the map**. Different myths, same “one person bent history” function.
+
+---
 
 ## How the two met
 
-- Across the **East Ocean**: rare classical-era contact (storm-blown ships, luxury trade); denser after early modern sailing.
-- Mutual exoticism → later industrial **Solara vs Kharzhan** bipolarity is a rematch of civilizational packages with factories.
-- Farreach (Nerath/Tesen) sat **between influences** — suture highlands delayed full absorption; Maravic War is partly which classical package’s modern heir gets the foothills.
+- Classical era: rare East Ocean contact; luxury and rumor.
+- Early modern sailing: dense contact → industrial bipolar rematch.
+- Farreach: contested prestige zone — Nerath Helioric, Tesen Kharic.
 
-## Aurelian middling path (Veldara / Korvath)
+## Aurelian middling path
 
-- Heartland grain baronies were **not** the classical center; they were the frontier breadbaskets Helioran ships and Shan-Khar caravans both wanted.
-- **Veldara** modern identity: Helioran legal-maritime inheritance via Westreach + Solara, plus local federal grain practicality.
-- **Korvath** modern identity: more Shan-Khar administrative-military inheritance via Kharzhan patronage and plain-empire habits.
-- **Eastmarch wars** are local — but each side’s textbooks cast them as civilizational edge maintenance.
+- Breadbasket frontier for both classical worlds.
+- **Veldaran** language = Helioric + Heartland substrate; culture = Orsanian law + grain federalism.
+- **Korvathi** = Kharic plain dialect; culture = exam/military Shan-Khar habits via Kharzhan.
+- Eastmarch wars: local dirt, civilizational textbook framing.
 
 ## Naming
 
-Helioran / Shan-Khar are **working labels**. Rename freely; keep the West-maritime vs East-continental **roles**.
+All proper names here are **working labels**. Keep roles; rename freely. When renaming a legend, update this table so the sim/series stay consistent.
 
 ## Downstream
 
 | Later thing | Classical root |
 | --- | --- |
-| Solara | Helioran naval + law successor |
-| Kharzhan State | Shan-Khar imperial successor |
-| Iberon | Helioran rim trading cities that never became the metropole |
-| Veldara constitution / Westreach culture | Helioran |
-| Korvath centralization | Shan-Khar |
-| Maravic alignments | Nerath leans Helioran/Solara; Tesen leans Shan-Khar/Kharzhan |
-| Improbable clerical enclaves | Helioran archival religion-of-record |
+| Solara speech/law | Helioric + Helioran |
+| Kharzhan speech/exams | Kharic + Shan-Khar |
+| Veldaran | Helioric + Heartland substrate |
+| Korvathi | Kharic continuum |
+| Nerath / Tesen | Helioric vs Kharic official layers |
+| “Alexander stories” | **Tiber Ambros** (West), **Wei Dongar** (East) |
+| Law quotes in Veldara videos | Orsania Philarch / Orsanian law |
+| Clerical enclaves | Helena of the Archives continuity |
