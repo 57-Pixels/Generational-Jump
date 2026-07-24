@@ -7,28 +7,31 @@ The focus is the **design reasoning** behind each choice. Industry and cost matt
 ## How the documents connect
 
 ```
-world/  →  threat-analysis/  →  doctrine/  →  industry/ + data/*.csv  →  designs/  →  episodes/
-(constraints)   (scenarios)     (jump plan)   (factories & costs)      (programs)   (videos)
+world/  →  maps/  →  threat-analysis/  →  doctrine/  →  industry/ + data/  →  designs/  →  episodes/
+(bible)    (image-gen     (scenarios)        (jump)       (light costs)         (programs)   (videos)
+            briefs)
 ```
 
 ## Reading order
 
-1. [`world/00-world-overview.md`](world/00-world-overview.md) — wake-up war, tech baseline, jump mandate
-2. [`world/01-our-nation.md`](world/01-our-nation.md) — geography (all domains), people, **legacy 80s–90s force**
-3. [`world/02-neighbors-and-threats.md`](world/02-neighbors-and-threats.md)
-4. [`world/03-economy-and-industrial-base.md`](world/03-economy-and-industrial-base.md)
-5. [`world/04-alliances-and-diplomacy.md`](world/04-alliances-and-diplomacy.md)
-6. [`threat-analysis/00-threat-overview.md`](threat-analysis/00-threat-overview.md)
-7. [`doctrine/00-national-defense-strategy.md`](doctrine/00-national-defense-strategy.md)
-8. `designs/` — one design doc per program (reasoning + a short industry note)
-9. [`industry/README.md`](industry/README.md) + [`data/README.md`](data/README.md) — the light industry/cost layer
-10. [`episodes/00-series-outline.md`](episodes/00-series-outline.md)
+1. [`world/00-world-overview.md`](world/00-world-overview.md) — planet, **pecking order**, Maravic wake-up war
+2. [`maps/00-world-map-brief.md`](maps/00-world-map-brief.md) — **image-gen brief** for the world map (then upscale)
+3. [`world/01-our-nation.md`](world/01-our-nation.md) — **Veldara** (mini-US scale) + legacy force
+4. [`maps/01-country-maps-brief.md`](maps/01-country-maps-brief.md) — **multi-map** country set (political, physical, climate, infra, industry, military)
+5. [`world/02-neighbors-and-threats.md`](world/02-neighbors-and-threats.md)
+6. [`world/03-economy-and-industrial-base.md`](world/03-economy-and-industrial-base.md)
+7. [`world/04-alliances-and-diplomacy.md`](world/04-alliances-and-diplomacy.md)
+8. [`threat-analysis/00-threat-overview.md`](threat-analysis/00-threat-overview.md)
+9. [`doctrine/00-national-defense-strategy.md`](doctrine/00-national-defense-strategy.md)
+10. `designs/` — one design doc per program (reasoning + a short industry note)
+11. [`episodes/00-series-outline.md`](episodes/00-series-outline.md)
 
 ## Directory guide
 
 | Path | Contents |
 | --- | --- |
-| `world/` | World bible and legacy-force baseline |
+| `world/` | World bible, pecking order, Veldara baseline |
+| `maps/` | Image-gen briefs: world map + multi-type country maps |
 | `industry/` | Light industry/cost notes (deliberately thin) |
 | `data/` | Simple CSVs: `programs.csv`, `costs.csv` |
 | `threat-analysis/` | Ranked threats and scenarios |

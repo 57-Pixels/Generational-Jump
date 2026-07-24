@@ -5,7 +5,7 @@
 
 ## The strategic problem in one paragraph
 
-We watched a modern peer war elsewhere tear through forces that looked a lot like ours. Korvath saw it too and is modernizing. Staying on 80s–90s kit is a decision to lose the next war at home. We have the geographic access and political mandate to rebuild **logistics, soldier systems, C4ISR, land, air defense, air, and sea**. The series is that rebuild — focused on the design reasoning, with industry and cost kept as a light supporting note.
+We watched the **Maravic War** on Farreach tear through forces that looked a lot like ours. **Korvath** saw it too and is modernizing. Staying on 80s–90s kit is a decision to lose the next war at home. **Veldara** is a mini-US-scale major power with two-ocean access and the mandate to rebuild **logistics, soldier systems, C4ISR, land, air defense, air, and sea**. The series is that rebuild — focused on the design reasoning, with industry and cost kept as a light supporting note.
 
 ## Key questions before this is fully canon
 

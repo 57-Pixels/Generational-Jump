@@ -1,26 +1,32 @@
 # Neighbors and Threats
 
-> **Status:** framework — who exists around us.
-> Detailed war-games live in `threat-analysis/scenarios/`. The wake-up war is *elsewhere*; neighbors still define what we must be ready for.
+> **Status:** working design aligned with [`00-world-overview.md`](00-world-overview.md) pecking order.
+> Scenarios live in `threat-analysis/scenarios/`. The Maravic War is *elsewhere*; Aurelian neighbors define what we must be ready for.
 
-## Key questions to answer
+## On Aurelian (our continent)
 
-1. Who shares a border / maritime frontier, and what is each attitude?
-2. Which actor is the pacing threat for force design (even if the catalyst war is distant)?
-3. What does the pacing threat's military look like — especially post-wake-up modernization on *their* side?
-4. Non-state threats?
-5. Great-power patrons behind neighbors?
+| Actor | Front | Attitude | Tier | Notes |
+| --- | --- | --- | --- | --- |
+| **Korvath** | Long eastern land border | Rival → potential adversary | Major (T2) | Pacing threat. More militarized culture, leans **Kharzhan**. Racing us to modernize after Maravic. |
+| **Doverin** | Western land border | Friendly partner | Regional (T3) | Smaller, wealthy enough; co-production and interoperability soft-requirement. |
+| **Sereth** | Northern highland border | Cool / occasional crises | Regional (T3) | Mountains; secondary theater — must not eat the modernization budget. |
+| **West Ocean approaches** | Maritime west | Contested in crisis | — | Solara navy is friendly-leaning but not a treaty fleet. Our West Coast trade spine. |
+| **East Gulf / East Ocean** | Maritime east | Contested in crisis | — | Korvath + Kharzhan clients can pressure the gulf mouth. |
 
-## Starter suggestions
+## Great-power shadows
 
-> **[STARTER SUGGESTION]**
+- **Solara:** primary source of licenses, machine tools, and high-end aerospace options — with strings.
+- **Kharzhan State:** arms and finances Korvath; escalation ceiling if a Veldara–Korvath fight goes too well for us.
 
-| Actor | Front | Attitude | Notes |
-| --- | --- | --- | --- |
-| **Korvath** (land east) | Long land border | Rival → potential adversary | Regional peer-competitor. Also woke up from the distant war; racing us to modernize. Our full-domain jump is partly about not losing this race. |
-| **Sereth** (north mountains) | Mountain border | Cool / occasional crises | Secondary theater; must not consume the modernization budget. |
-| **Doverin** (west) | Land border | Friendly partner | Natural co-development and industrial partner; interoperability soft-requirement. |
-| **Maritime theater** | Open sea | Contested | Sea lines of communication for materials and fuel; navy is a first-class domain, not an afterthought. |
+## Pacing problem
 
-- **Pacing problem:** Korvath modernizing in parallel. A legacy-vs-legacy fight was thinkable; a legacy-vs-modern fight after they jump and we don't is the nightmare the wake-up war made vivid.
-- **Great powers:** eastern great power leans Korvath; western great power sells us tools, licenses, and some complete systems with strings.
+A legacy-vs-legacy fight with Korvath was thinkable. A **legacy-vs-modern** fight after they jump and we don't is the nightmare Maravic made vivid.
+
+## Farreach (wake-up theater — not our border)
+
+| Actor | Role |
+| --- | --- |
+| **Nerath Compact** | Maravic War belligerent; Solara-leaning |
+| **Tesen League** | Maravic War belligerent; Kharzhan-leaning |
+
+We watch, learn, and modernize. We do not intervene as a combatant in the series' baseline.
