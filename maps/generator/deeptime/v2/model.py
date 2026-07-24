@@ -24,6 +24,7 @@ from .settlement import (
 )
 from .tiers import resolve_grid_n
 from .topology import area_fraction, component_labels
+from .transfer import upsample
 
 EARTH_RADIUS_KM = 6371.0
 # Fixed reference sea level on the elevation field. Land fraction is emergent.
@@ -145,8 +146,9 @@ def _unpack_geology(
 
 
 def _load_or_simulate_geology(
-    grid: CubedSphere, config: WorldConfig
+    grid: CubedSphere, config: WorldConfig, *, tier_name: str | None = None
 ) -> tuple[GeologyFields, PlateModel]:
+    tier = tier_name or config.tier
     cache_key_meta = {
         "grid_n": grid.n,
         "ticks": config.ticks,
@@ -156,7 +158,7 @@ def _load_or_simulate_geology(
     }
     if config.use_cache:
         cached = checkpoint_mod.load(
-            config.cache_dir, config.tier, config.seed, GENERATOR_VERSION
+            config.cache_dir, tier, config.seed, GENERATOR_VERSION
         )
         if cached is not None:
             meta = cached.get("meta", {})
@@ -176,12 +178,107 @@ def _load_or_simulate_geology(
     if config.use_cache:
         checkpoint_mod.save(
             config.cache_dir,
-            config.tier,
+            tier,
             config.seed,
             GENERATOR_VERSION,
             {**_pack_geology(geology, plate_model), "meta": cache_key_meta},
         )
     return geology, plate_model
+
+
+def _upsample_geology(
+    geology: GeologyFields,
+    plate_model: PlateModel,
+    source_grid: CubedSphere,
+    target_grid: CubedSphere,
+) -> tuple[GeologyFields, PlateModel]:
+    def up_near(values: np.ndarray) -> np.ndarray:
+        return upsample(values, source_grid, target_grid, method="nearest")
+
+    def up_smooth(values: np.ndarray) -> np.ndarray:
+        return upsample(values, source_grid, target_grid, method="smooth")
+
+    plate_id = up_near(plate_model.plate_id).astype(np.int32)
+    continent_id = up_near(geology.continent_id).astype(np.int32)
+    terrane_id = up_near(geology.terrane_id).astype(np.int32)
+    transferred = GeologyFields(
+        plate_id=plate_id,
+        continent_id=continent_id,
+        terrane_id=terrane_id,
+        continental=np.clip(up_smooth(geology.continental), 0, 1),
+        crust_age_ma=up_smooth(geology.crust_age_ma),
+        crust_thickness_km=up_smooth(geology.crust_thickness_km),
+        elevation_m=up_smooth(geology.elevation_m),
+        orogeny=np.clip(up_smooth(geology.orogeny), 0, 1.5),
+        basin_depth=np.clip(up_smooth(geology.basin_depth), 0, 1),
+        sediment=np.clip(up_smooth(geology.sediment), 0, 1),
+        history={
+            name: np.clip(up_smooth(values), 0, 1.5)
+            for name, values in geology.history.items()
+        },
+        lithology={
+            name: np.clip(up_smooth(values), 0, 1)
+            for name, values in geology.lithology.items()
+        },
+        paleoclimate={
+            name: np.clip(up_smooth(values), 0, 1)
+            for name, values in geology.paleoclimate.items()
+        },
+    )
+    plates = PlateModel(
+        seed_xyz=plate_model.seed_xyz.copy(),
+        omega_xyz=plate_model.omega_xyz.copy(),
+        plate_id=plate_id,
+    )
+    return transferred, plates
+
+
+def _geology_for_config(
+    config: WorldConfig,
+) -> tuple[CubedSphere, GeologyFields, PlateModel]:
+    """Run or resume geology at the right tier, upsampling T0 → T1 when needed."""
+    if config.tier == "t1":
+        t1_n = resolve_grid_n("t1", config.grid_n)
+        t1_grid = CubedSphere.create(t1_n)
+        if config.use_cache:
+            cached = checkpoint_mod.load(
+                config.cache_dir, "t1", config.seed, GENERATOR_VERSION
+            )
+            if cached is not None and cached.get("meta", {}).get("grid_n") == t1_n:
+                geology, plates = _unpack_geology(cached)
+                return t1_grid, geology, plates
+
+        t0_n = resolve_grid_n("t0", config.grid_n)
+        t0_grid = CubedSphere.create(t0_n)
+        t0_config = WorldConfig(**{**config.__dict__, "tier": "t0", "grid_n": t0_n})
+        geology, plates = _load_or_simulate_geology(
+            t0_grid, t0_config, tier_name="t0"
+        )
+        geology, plates = _upsample_geology(geology, plates, t0_grid, t1_grid)
+        if config.use_cache:
+            checkpoint_mod.save(
+                config.cache_dir,
+                "t1",
+                config.seed,
+                GENERATOR_VERSION,
+                {
+                    **_pack_geology(geology, plates),
+                    "meta": {
+                        "grid_n": t1_n,
+                        "ticks": config.ticks,
+                        "dt_ma": config.dt_ma,
+                        "n_plates": config.n_plates,
+                        "n_continents": config.n_continents,
+                        "upsampled_from": "t0",
+                    },
+                },
+            )
+        return t1_grid, geology, plates
+
+    grid_n = resolve_grid_n(config.tier, config.grid_n)
+    grid = CubedSphere.create(grid_n)
+    geology, plates = _load_or_simulate_geology(grid, config, tier_name=config.tier)
+    return grid, geology, plates
 
 
 def _deposit_context(
@@ -411,9 +508,7 @@ def _settlement_inputs(
 def generate_world(config: WorldConfig) -> WorldResult:
     if config.era not in ("present", "lgm"):
         raise ValueError("era must be present or lgm")
-    grid_n = resolve_grid_n(config.tier, config.grid_n)
-    grid = CubedSphere.create(grid_n)
-    geology, plate_model = _load_or_simulate_geology(grid, config)
+    grid, geology, plate_model = _geology_for_config(config)
     sea_level = (
         PRESENT_SEA_LEVEL_M
         if config.era == "present"
@@ -451,8 +546,8 @@ def generate_world(config: WorldConfig) -> WorldResult:
     if config.validate:
         validate_contract(geology, climate, hydrology)
     # Re-bind config with the resolved face resolution for exporters/meta.
-    if grid_n != config.grid_n:
-        config = WorldConfig(**{**config.__dict__, "grid_n": grid_n})
+    if grid.n != config.grid_n:
+        config = WorldConfig(**{**config.__dict__, "grid_n": grid.n})
     return WorldResult(
         config=config,
         grid=grid,
