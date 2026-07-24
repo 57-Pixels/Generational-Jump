@@ -4,22 +4,17 @@ Google-Maps-style viewer: **2D mercator while zoomed in** (theater / war map), *
 
 ## Hosted URL (preferred)
 
-After GitHub Pages is enabled and the workflow runs:
-
-**https://57-pixels.github.io/&lt;repo-name&gt;/** (after rename, use the new repo name)
+**https://57-pixels.github.io/Generational-Jump/**
 
 No local install needed — open that on your phone.
 
-Asset paths are **relative** (`base: "./"`), so renaming the GitHub repo does not break the viewer.
+Asset paths are **relative** (`base: "./"`), so renaming the GitHub repo again will not break the viewer.
 
 ### One-time GitHub setup
 
 1. Repo **Settings → Pages**
 2. **Source:** GitHub Actions
-3. Push to `main` (or this branch) / wait for the **Deploy map viewer** workflow  
-   Or: Actions → Deploy map viewer → Run workflow
-
-If the link 404s, Pages source is usually still set to “branch” instead of “GitHub Actions”.
+3. Re-run **Deploy map viewer** if the site looks like plain text (old deploy still pointing at `/FantasyMilitaryProject/assets/...`)
 
 ## Local (optional)
 
@@ -55,3 +50,7 @@ Date scrubber UI is present but disabled until date filtering is implemented.
 ## Placeholder basemap
 
 MapLibre **demo Earth style** until custom Veldara tiles exist. Then swap `style` in `src/main.js`, move `EASTMARCH`, replace demo GeoJSON.
+
+## CI
+
+Built with **Node 24** in `.github/workflows/deploy-map-viewer.yml`.

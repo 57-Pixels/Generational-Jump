@@ -13,8 +13,8 @@ Cartography briefs + interactive viewer. **Geology first** — see [`../world/05
 
 ## Interactive viewer
 
-**Hosted (preferred):** GitHub Pages at `https://57-pixels.github.io/<repo-name>/`  
-(Enable Source: GitHub Actions once; see [`viewer/README.md`](viewer/README.md). Relative asset paths survive repo renames.)
+**Hosted (preferred):** https://57-pixels.github.io/Generational-Jump/  
+(GitHub Pages — Source: GitHub Actions; see [`viewer/README.md`](viewer/README.md). Relative asset paths survive repo renames.)
 
 ```bash
 cd maps/viewer && npm install && npm run dev   # optional local
