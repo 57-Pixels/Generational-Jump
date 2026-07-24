@@ -1,30 +1,68 @@
 # World Overview
 
-> **Status:** framework — answer the key questions, then replace starter suggestions with canon.
-> Every doc in `threat-analysis/`, `doctrine/`, `industry/`, and `designs/` inherits constraints from this folder.
+> **Status:** working world design.
+>
+> **Geology:** [`05-planetary-formation.md`](05-planetary-formation.md)  
+> **How countries form (grain → transport → borders):** [`06-settlement-and-borders.md`](06-settlement-and-borders.md)  
+> **Pseudo-histories:** [`07-pseudo-histories.md`](07-pseudo-histories.md)  
+> **Map brief:** [`../maps/00-world-map-brief.md`](../maps/00-world-map-brief.md)
 
 ## Ground rules (canon — see decisions-log)
 
-- **Technology level:** Earth, 2025. Everything that exists in the real world in 2025 exists here — no more, no less. No magic, no sci-fi.
-- **Different world:** geography, countries, and history are fictional. Equipment is described by real-world *analogue*.
-- **Physics and economics are real:** logistics, budgets, materials, and factory learning curves behave as on Earth.
-- **Our starting force:** 1980s–1990s generation equipment across the board. The series is about the **full generational jump** to modern systems in **every domain**.
-- **Catalyst:** a major conventional war **on the other side of the world** is the wake-up call. We are not fighting it; we are watching it and refusing to stay obsolete.
+- **Technology level:** Earth, 2025. No magic, no sci-fi.
+- **Different world:** fictional geography and states; equipment by real-world *analogue*.
+- **Physics and economics are real.**
+- **Countries are earned:** food cores and transport spines first; borders are freeze-frames of that history.
+- **Our starting force:** 1980s–1990s generation. Series = full generational jump, all domains.
+- **Catalyst:** the **Maravic War** on Farreach.
 
-## Key questions to answer
+## Landmasses (Earthlike — not four equal petals)
 
-1. **How many great powers exist, and where are we relative to them?**
-2. **Is there a global arms and materials market?** Who sells finished weapons, machine tools, microelectronics, and propellants?
-3. **Nuclear weapons:** who has them? (Shapes escalation, not our early modernization shopping list.)
-4. **What exactly is the wake-up-call war teaching?** Drones, artillery, air defense, EW, industrial surge, ships vs. missiles — name the lessons we are taking seriously (and the ones we might be misreading).
-5. **How connected is trade?** Sanctions and chokepoints only matter if we depend on imports for the jump.
+| Landmass | Rank | Role |
+| --- | --- | --- |
+| **Aurelian** | Continent | Home board — Veldara, Korvath, Doverin, Sereth + footnotes |
+| **Kharzhan** | Continent | Continental great-power homeland (other side of the East Ocean rift) |
+| **Farreach** | Continent | Maravic War theater (Nerath vs Tesen) |
+| **Solmar** | **Island-continent** | Solara's maritime homeland + arc islands (Australia-scale, not a fourth peer continent in speech) |
 
-## Starter suggestions
+Shapes still come from tectonics in `05`. Politics come from `06`/`07`.
 
-> **[STARTER SUGGESTION]** — overwrite freely; nothing below is canon until promoted in `decisions-log.md`.
+## Who is on stage vs footnote
 
-- **Structure:** one primary continent for our story, plus other continents where the wake-up war is being fought. Two rival great powers; we are a mid-to-upper mid-sized state with full geographic access to land, air, and sea domains (not a token coast).
-- **Wake-up war:** a multi-year peer conventional war elsewhere, still ongoing or recently frozen. Public, filmed, and dissected by every general staff. Headline lessons: mass drones + artillery, the primacy of air defense, industrial ammunition surge, and the vulnerability of legacy forces that look fine on parade.
-- **Arms / materials market:** exists and is tiered. We can buy machine tools and many components; current-generation complete weapon systems often need political alignment. **Our modernization prefers building capacity** (license + domestic lines) over forever-imports — because the series designs factories, not just purchases.
-- **Nuclear weapons:** both great powers have them. We do not pursue them in this series' scope.
-- **Our posture after the wake-up:** political consensus that the 80s–90s force would fail in a modern war. Mandate: full-domain generational jump over roughly 15–20 years, paced by budget and industrial capacity.
+**On stage** (get histories and matter to force design): Veldara, Korvath, Doverin, Sereth, Solara, Kharzhan State, Nerath Compact, Tesen League, Iberon Union (thin).
+
+**Footnotes** (name + one line, map texture): see bottom of `07-pseudo-histories.md`. Promote only when a scenario needs them.
+
+## Global pecking order
+
+### Tier 1 — Great powers (2)
+
+| Power | Character |
+| --- | --- |
+| **Solara** | Maritime/tech hegemon on Solmar. Licenses, aerospace, navy, credit. |
+| **Kharzhan State** | Continental industrial-military giant. Land power, magazines, clients (incl. Korvath). |
+
+### Tier 2 — Major powers
+
+| Power | Notes |
+| --- | --- |
+| **Veldara** (us) | Mini-US scale; Heartland grain federation + two coasts; modernizing from 80s–90s kit |
+| **Korvath** | Other silo empire on the shared Eastmarch plain; pacing rival |
+| **Nerath Compact** / **Tesen League** | Maravic belligerents |
+| **Iberon Union** | Trade/workshop broker — not a peer fighter |
+
+### Tier 3 — Regional (still on stage, thinner)
+
+**Doverin** (partner catchment), **Sereth** (highland).
+
+### Tier 4 — Footnotes
+
+Everyone else.
+
+## Wake-up call: the Maravic War
+
+Farreach, Nerath vs Tesen, multi-year peer war, still grinding by default. Lessons: drones, AD, ammo surge, EW, legacy-force fragility.
+
+## Arms market / nukes / our posture
+
+Tiered market (Solara/Kharzhan strings on top systems). Nukes: great powers; we don't pursue in-series. Mandate after Maravic: full-domain generational jump ~15–20 years, interest-driven program order.

@@ -17,7 +17,7 @@ Rank by likelihood × severity for conflict scenarios, and keep a separate note 
 | 2 | **Maritime interdiction of materials and fuel during crisis** | Medium–High | Major | Days–weeks | Navy + stockpiles + domestic lines for consumables |
 | 3 | **Korvath coercion short of war** while both modernize | High | Major | Days | Credible AD, ISR, and political stamina for the Act funding |
 | 4 | **Northern opportunistic crisis (Sereth)** | Medium | Limited | Days | Secondary forces that do not raid the modernization budget |
-| 5 | **Industrial failure** — lines slip, licenses stall, we field a hollow "modern" force | High (peacetime) | Existential long-term | Ongoing | The industry/cost discipline this repo exists to enforce |
+| 5 | **Industrial failure** — lines slip, licenses stall, we field a hollow "modern" force | High (peacetime) | Existential long-term | Ongoing | A rough affordability/build sanity-check per program (kept light) |
 
 ## Obsolescence risk (non-scenario, but real)
 

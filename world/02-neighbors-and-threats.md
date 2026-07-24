@@ -1,26 +1,29 @@
 # Neighbors and Threats
 
-> **Status:** framework — who exists around us.
-> Detailed war-games live in `threat-analysis/scenarios/`. The wake-up war is *elsewhere*; neighbors still define what we must be ready for.
+> **Histories:** [`07-pseudo-histories.md`](07-pseudo-histories.md) · **Settlement logic:** [`06-settlement-and-borders.md`](06-settlement-and-borders.md)
 
-## Key questions to answer
+## On stage (Aurelian)
 
-1. Who shares a border / maritime frontier, and what is each attitude?
-2. Which actor is the pacing threat for force design (even if the catalyst war is distant)?
-3. What does the pacing threat's military look like — especially post-wake-up modernization on *their* side?
-4. Non-state threats?
-5. Great-power patrons behind neighbors?
-
-## Starter suggestions
-
-> **[STARTER SUGGESTION]**
-
-| Actor | Front | Attitude | Notes |
+| Actor | Front | Attitude | Why (food/transport) |
 | --- | --- | --- | --- |
-| **Korvath** (land east) | Long land border | Rival → potential adversary | Regional peer-competitor. Also woke up from the distant war; racing us to modernize. Our full-domain jump is partly about not losing this race. |
-| **Sereth** (north mountains) | Mountain border | Cool / occasional crises | Secondary theater; must not consume the modernization budget. |
-| **Doverin** (west) | Land border | Friendly partner | Natural co-development and industrial partner; interoperability soft-requirement. |
-| **Maritime theater** | Open sea | Contested | Sea lines of communication for materials and fuel; navy is a first-class domain, not an afterthought. |
+| **Korvath** | Eastmarch | Rival | Same grain plain, weak natural border — two silo empires |
+| **Doverin** | West/SW | Partner | Different river catchment; divide makes a lazy stable border |
+| **Sereth** | Northwood | Cool | Highland pastoral/mining — barrier border, pass/mine crises only |
+| **West Ocean / East Gulf** | Maritime | Contested in crisis | Ports and SLOCs; Solara leans friendly-not-treaty; gulf can be pressured |
 
-- **Pacing problem:** Korvath modernizing in parallel. A legacy-vs-legacy fight was thinkable; a legacy-vs-modern fight after they jump and we don't is the nightmare the wake-up war made vivid.
-- **Great powers:** eastern great power leans Korvath; western great power sells us tools, licenses, and some complete systems with strings.
+## Great-power shadows
+
+- **Solara:** licenses, tools, high-end aerospace (strings).
+- **Kharzhan:** arms Korvath; escalation ceiling if we punch too deep.
+
+## Pacing problem
+
+Legacy-vs-legacy with Korvath was thinkable. Legacy-vs-modern after they jump and we don't is the Maravic nightmare.
+
+## Farreach (elsewhere)
+
+**Nerath Compact** vs **Tesen League** — Maravic War. We watch and modernize; we don't intervene as a baseline combatant.
+
+## Footnotes near us (texture — including improbables)
+
+**Mirrin Free City** (gulf chokepoint), **Three-Passes Republic** (buffer), **Lateran Quarter** (clerical remnant in Aurel City), **Neutral Bend** (treaty fossil), Halsford, Lake-Chain Cantons — see `07`. One-line states; not force-design drivers.

@@ -25,7 +25,7 @@ A mix that shifts by year of the race: early years still legacy-heavy; later yea
 
 ## 5. Where and how
 
-Eastern land axis remains the primary invasion geometry; maritime pressure on ports can accompany it to starve our lines of imported components.
+Primary axis: **Eastmarch** plains/low ridges into the **Heartland** (see `maps/01-country-maps-brief.md`). Maritime pressure on Westreach and Gulf Coast ports can accompany the land attack to starve imported components.
 
 ## 6. What failure looks like for us
 

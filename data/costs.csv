@@ -1,0 +1,2 @@
+program_id,quantity,unit_cost_pd,setup_cost_pd,program_total_pd,confidence,notes
+rifle-std-1,250000,1000,60000000,310000000,rough,"WORKED EXAMPLE — license-build modern rifle; ~1000 PD/unit at scale, ~60M setup; import path ~2.5x unit cost and builds no plant"
