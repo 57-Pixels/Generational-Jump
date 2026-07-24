@@ -23,6 +23,9 @@ const WAR_LAYER_IDS = [
   "events-circle",
 ];
 
+const asset = (path) =>
+  `${import.meta.env.BASE_URL}${path.replace(/^\//, "")}`;
+
 const map = new maplibregl.Map({
   container: "map",
   style: "https://demotiles.maplibre.org/style.json",
@@ -64,9 +67,9 @@ function setWarLayersVisible(visible) {
 
 async function addWarLayers() {
   const [control, front, events] = await Promise.all([
-    fetch("/data/layers/control.geojson").then((r) => r.json()),
-    fetch("/data/layers/front.geojson").then((r) => r.json()),
-    fetch("/data/layers/events.geojson").then((r) => r.json()),
+    fetch(asset("data/layers/control.geojson")).then((r) => r.json()),
+    fetch(asset("data/layers/front.geojson")).then((r) => r.json()),
+    fetch(asset("data/layers/events.geojson")).then((r) => r.json()),
   ]);
 
   map.addSource("war-control", { type: "geojson", data: control });

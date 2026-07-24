@@ -1,8 +1,25 @@
 # Veldara Map Viewer
 
-Google-Maps-style viewer for the project: **2D mercator while zoomed in** (theater / Ukraine-style war map), **globe when zoomed out**.
+Google-Maps-style viewer: **2D mercator while zoomed in** (theater / war map), **globe when zoomed out**.
 
-## Run
+## Hosted URL (preferred)
+
+After GitHub Pages is enabled and the workflow runs:
+
+**https://57-pixels.github.io/FantasyMilitaryProject/**
+
+No local install needed — open that on your phone.
+
+### One-time GitHub setup
+
+1. Repo **Settings → Pages**
+2. **Source:** GitHub Actions
+3. Push to `main` (or this branch) / wait for the **Deploy map viewer** workflow  
+   Or: Actions → Deploy map viewer → Run workflow
+
+If the link 404s, Pages source is usually still set to “branch” instead of “GitHub Actions”.
+
+## Local (optional)
 
 ```bash
 cd maps/viewer
@@ -10,7 +27,7 @@ npm install
 npm run dev
 ```
 
-Open the URL Vite prints (default `http://localhost:5173`).
+Open `http://localhost:5173`.
 
 ## Behavior
 
@@ -23,31 +40,16 @@ Threshold: `GLOBE_MAX_ZOOM` in `src/main.js`.
 
 ## War layers (ready for later)
 
-Demo GeoJSON loads from `public/data/layers/`:
+Demo GeoJSON in `public/data/layers/`:
 
 - `control.geojson` — control fills
 - `front.geojson` — front line
 - `events.geojson` — clickable events
 
-Schema: [`data/schema.md`](data/schema.md) (mirrored under `public/data/`).
+Schema: [`data/schema.md`](data/schema.md).
 
-UI: war-layer toggle works now; **date scrubber is disabled** until we filter by `date` / `date_start`–`date_end`.
+Date scrubber UI is present but disabled until date filtering is implemented.
 
-## Important — placeholder basemap
+## Placeholder basemap
 
-The basemap is MapLibre’s **demo Earth style**. It is temporary so the viewer works before custom Veldara tiles exist.
-
-When the world master map is locked:
-
-1. Cut raster tiles (or a single equirectangular raster source) from the canon map
-2. Point `style` in `src/main.js` at that style/tiles
-3. Move `EASTMARCH` center to the real Eastmarch lon/lat on that sphere
-4. Replace demo control/front/events geometry
-
-## Scripts
-
-| Command | Purpose |
-| --- | --- |
-| `npm run dev` | Local viewer |
-| `npm run build` | Static build to `dist/` (future site) |
-| `npm run preview` | Preview production build |
+MapLibre **demo Earth style** until custom Veldara tiles exist. Then swap `style` in `src/main.js`, move `EASTMARCH`, replace demo GeoJSON.

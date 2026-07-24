@@ -13,8 +13,11 @@ Cartography briefs + interactive viewer. **Geology first** — see [`../world/05
 
 ## Interactive viewer
 
+**Hosted (preferred):** https://57-pixels.github.io/FantasyMilitaryProject/  
+(GitHub Pages — enable Source: GitHub Actions once; see [`viewer/README.md`](viewer/README.md))
+
 ```bash
-cd maps/viewer && npm install && npm run dev
+cd maps/viewer && npm install && npm run dev   # optional local
 ```
 
-See [`viewer/README.md`](viewer/README.md). Basemap is a placeholder Earth style until custom Veldara tiles exist. GeoJSON war layers (`control` / `front` / `events`) are wired for a future Ukraine-style time scrubber.
+Basemap is a placeholder Earth style until custom Veldara tiles exist. GeoJSON war layers (`control` / `front` / `events`) are wired for a future Ukraine-style time scrubber.
