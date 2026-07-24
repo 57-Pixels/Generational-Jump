@@ -1,5 +1,9 @@
 # Nested morphology & canon re-anchoring
 
+Implementation plan:
+[`../plans/2026-07-24-nested-morphology.md`](../plans/2026-07-24-nested-morphology.md)
+(master, plus three phase files).
+
 Supersedes the resolution and land-morphology parts of
 [`2026-07-24-crust-field-morphology-design.md`](2026-07-24-crust-field-morphology-design.md).
 Plate model, emergent land fraction, fixed sea level and non-circular markers
