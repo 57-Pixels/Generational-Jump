@@ -116,6 +116,21 @@ def compute_hydrology(
         float(np.percentile(land_drainage, 82)) if len(land_drainage) else np.inf
     )
     river = land & (drainage >= threshold) & (discharge > 15.0)
+    # Grow rivers downstream along receivers so every channel reaches the coast.
+    # Without this, mid-threshold gaps leave inland stubs and wonky jumps.
+    grown = river.copy()
+    for cell in np.flatnonzero(river):
+        current = int(cell)
+        seen: set[int] = set()
+        while current >= 0 and current not in seen:
+            seen.add(current)
+            if land[current]:
+                grown[current] = True
+            downstream = int(receiver[current])
+            if downstream < 0:
+                break
+            current = downstream
+    river = grown
     depression = np.where(land, np.maximum(filled - elevation, 0.0), 0.0)
     lake_mask = land & (depression > 20.0)
     lake_id = component_labels(grid, lake_mask)

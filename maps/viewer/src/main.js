@@ -181,10 +181,22 @@ async function addSurfaceLayers() {
     id: "world-rivers",
     type: "line",
     source: "world-rivers",
+    layout: {
+      "line-cap": "round",
+      "line-join": "round",
+    },
     paint: {
-      "line-color": "#48b8f0",
-      "line-width": ["interpolate", ["linear"], ["zoom"], 0, 0.35, 6, 2.2],
-      "line-opacity": 0.8,
+      "line-color": "#5ec8f5",
+      "line-width": [
+        "interpolate",
+        ["linear"],
+        ["zoom"],
+        0,
+        ["interpolate", ["linear"], ["get", "discharge_m3_s"], 0, 0.6, 5000, 1.4, 50000, 2.4],
+        6,
+        ["interpolate", ["linear"], ["get", "discharge_m3_s"], 0, 1.2, 5000, 3.0, 50000, 5.0],
+      ],
+      "line-opacity": 0.88,
     },
   });
 

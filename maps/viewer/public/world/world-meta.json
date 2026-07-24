@@ -1,5 +1,6 @@
 {
   "method": "deeptime-spherical-v2",
+  "generator_version": "2.1.0",
   "seed": 42,
   "era": "present",
   "grid": {
@@ -57,6 +58,15 @@
     "continent": "continental crust lineage / terrane",
     "landmass": "connected dry land"
   },
+  "viewer_tiles": {
+    "scheme": "xyz",
+    "path": "tiles/color/{z}/{x}/{y}.png",
+    "max_zoom": 3,
+    "mercator_max_lat": 85.0511287798066,
+    "note": "MapLibre globe extends raster tiles to poles; image sources do not",
+    "tile_count": 85,
+    "tile_size": 256
+  },
   "config": {
     "seed": 42,
     "grid_n": 64,
@@ -66,6 +76,7 @@
     "n_continents": 7,
     "era": "present",
     "export_width": 1024,
-    "export_height": 512
+    "export_height": 512,
+    "validate": true
   }
 }

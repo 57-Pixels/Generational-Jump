@@ -161,42 +161,97 @@ def _resource_geojson(world: WorldResult) -> dict:
     }
 
 
+def _split_antimeridian(coords: list[list[float]]) -> list[list[list[float]]]:
+    """Split a polyline wherever consecutive longitudes jump more than 180°."""
+    if len(coords) < 2:
+        return []
+    parts: list[list[list[float]]] = []
+    current = [coords[0]]
+    for previous, point in zip(coords, coords[1:]):
+        if abs(point[0] - previous[0]) > 180.0:
+            if len(current) >= 2:
+                parts.append(current)
+            current = [point]
+        else:
+            current.append(point)
+    if len(current) >= 2:
+        parts.append(current)
+    return parts
+
+
+def _ocean_endpoint(
+    grid, land: np.ndarray, cell: int
+) -> list[float]:
+    """Lon/lat of the nearest ocean neighbour, else the cell itself."""
+    neighbors = grid.neighbors[cell]
+    neighbors = neighbors[neighbors >= 0]
+    wet = neighbors[~land[neighbors]]
+    if len(wet):
+        target = int(wet[0])
+        return [float(grid.lon_deg[target]), float(grid.lat_deg[target])]
+    return [float(grid.lon_deg[cell]), float(grid.lat_deg[cell])]
+
+
 def _river_geojson(world: WorldResult) -> dict:
+    """Export rivers as continuous head→mouth polylines (not single edges)."""
+    grid = world.grid
+    river = world.hydrology.river_mask
+    receiver = world.hydrology.receiver
+    discharge = world.hydrology.discharge_m3_s
+    drainage = world.hydrology.drainage_area_km2
+    land = world.land
+
+    river_cells = np.flatnonzero(river)
+    upstream_count = np.zeros(grid.size, dtype=np.int32)
+    for cell in river_cells:
+        downstream = int(receiver[cell])
+        if downstream >= 0 and river[downstream]:
+            upstream_count[downstream] += 1
+    heads = river_cells[upstream_count[river_cells] == 0]
+
     features: list[dict] = []
-    for cell in np.flatnonzero(world.hydrology.river_mask):
-        receiver = int(world.hydrology.receiver[cell])
-        if receiver < 0:
-            continue
-        features.append(
-            {
-                "type": "Feature",
-                "properties": {
-                    "discharge_m3_s": round(
-                        float(world.hydrology.discharge_m3_s[cell]), 2
-                    ),
-                    "drainage_km2": round(
-                        float(world.hydrology.drainage_area_km2[cell]), 2
-                    ),
-                },
-                "geometry": {
-                    "type": "LineString",
-                    "coordinates": [
-                        [
-                            float(world.grid.lon_deg[cell]),
-                            float(world.grid.lat_deg[cell]),
-                        ],
-                        [
-                            float(world.grid.lon_deg[receiver]),
-                            float(world.grid.lat_deg[receiver]),
-                        ],
-                    ],
-                },
-            }
-        )
+    for head in heads:
+        path = [int(head)]
+        current = int(head)
+        while True:
+            downstream = int(receiver[current])
+            if downstream < 0 or not river[downstream]:
+                break
+            path.append(downstream)
+            current = downstream
+
+        coords = [
+            [float(grid.lon_deg[cell]), float(grid.lat_deg[cell])] for cell in path
+        ]
+        # One-cell hop into the ocean so mouths visibly reach the coast.
+        end = _ocean_endpoint(grid, land, path[-1])
+        if end != coords[-1]:
+            coords.append(end)
+
+        mouth_cell = path[-1]
+        mouth_discharge = float(discharge[mouth_cell])
+        mouth_drainage = float(drainage[mouth_cell])
+
+        parts = _split_antimeridian(coords)
+        for index, part in enumerate(parts):
+            features.append(
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "discharge_m3_s": round(mouth_discharge, 2),
+                        "drainage_km2": round(mouth_drainage, 2),
+                        "role": "mouth" if index == len(parts) - 1 else "reach",
+                    },
+                    "geometry": {
+                        "type": "LineString",
+                        "coordinates": part,
+                    },
+                }
+            )
     return {
         "type": "FeatureCollection",
         "name": "rivers-v2",
-        "schema_version": "2.0",
+        "schema_version": "2.1",
         "features": features,
     }
 
