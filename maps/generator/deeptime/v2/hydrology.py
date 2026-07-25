@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import heapq
+from collections import deque
 from dataclasses import dataclass
 
 import numpy as np
@@ -223,23 +224,32 @@ def _classify_depressions(
             lake_id[cells] = int(lid)
         else:
             endorheic[cells] = True
-        for cell in cells:
-            if int(cell) == deepest:
-                recv[cell] = -1
-                continue
-            best = deepest
-            best_elev = elevation[deepest]
-            for nb in grid.neighbors[cell]:
+        # Route every basin cell toward ``deepest`` along neighbour edges only.
+        # Jumping straight to the sink drew long river chords across oceans.
+        cell_set = set(int(c) for c in cells)
+        toward_sink: dict[int, int] = {}
+        queue: deque[int] = deque([deepest])
+        reached = {deepest}
+        while queue:
+            current = queue.popleft()
+            for nb in grid.neighbors[current]:
                 if nb < 0:
                     continue
-                if wet and lake_id[nb] != lid:
+                n = int(nb)
+                if n not in cell_set or n in reached:
                     continue
-                if (not wet) and (not endorheic[nb]):
-                    continue
-                if elevation[nb] < best_elev - 1e-6:
-                    best = int(nb)
-                    best_elev = float(elevation[nb])
-            recv[cell] = best
+                reached.add(n)
+                toward_sink[n] = current
+                queue.append(n)
+        for cell in cells:
+            c = int(cell)
+            if c == deepest:
+                recv[c] = -1
+            elif c in toward_sink:
+                recv[c] = toward_sink[c]
+            else:
+                # Disconnected from deepest inside the label: keep prior flow.
+                pass
     return lake_id, endorheic, recv
 
 
