@@ -22,18 +22,20 @@ We are **Tier 2 major**, not a great power. We can field everything; we cannot o
 
 ## Geography (summary — detail in map + formation briefs)
 
-Oriented on western-central **Aurelian**. Terrain is **asymmetric on purpose**:
+Oriented on **Aurelian** on the algorithmic sphere (**seed 150**). Measured claim area ≈ **3.21M km²**, centered near **lon 144°, lat 31°** (bbox roughly 124–171°E, 11°S–69°N). Terrain remains **asymmetric on purpose**:
 
-- **Westreach + Highspine** — West Ocean subduction: wet coast, cordillera, rain shadow just inland ([`05-planetary-formation.md`](05-planetary-formation.md)).
-- **Heartland Plains** — stable interior with glacial soils; long rivers to the gulf; strategic depth / armor country.
-- **East Gulf / Gulf Coast / Southmere** — passive-margin embayment: deltas, wide shelf, humid subtropical, second maritime front.
-- **Northwood** — ice-scoured lakes; highland border with **Sereth** (old crust, not a young volcanic wall).
-- **Eastmarch** — continuous crust into **Korvath** (political border, not a plate edge) — open threat axis.
+- **Westreach + Highspine** — western fringe of the claim is higher-standing (cordillera / rain-shadow story from West Ocean subduction; [`05-planetary-formation.md`](05-planetary-formation.md)).
+- **Heartland Plains** — interior east of the western high ground; strategic depth / armor country.
+- **East Gulf / Gulf Coast / Southmere** — embayment and second maritime front on the claim’s eastern approaches.
+- **Northwood** — high-latitude ice-scoured lakes; highland border with **Sereth**.
+- **Eastmarch** — continuous crust into **Korvath** (political border, not a plate edge) — open threat axis on the eastern plain.
 - **West land border** — **Doverin**, same plate, friendlier politics.
+
+Two-ocean access is scored on this claim (west ocean + gulf/east approaches). Natural harbour candidates export in `world-navigation.geojson`.
 
 Climate spans near-subarctic north to humid subtropical gulf — kit must handle heat, cold, mud, salt air, and cordillera winters.
 
-**Maps:** [`../maps/01-country-maps-brief.md`](../maps/01-country-maps-brief.md).
+**Maps:** [`../maps/01-country-maps-brief.md`](../maps/01-country-maps-brief.md). **Canon seed:** [`../maps/generator/promoted-seed.json`](../maps/generator/promoted-seed.json).
 
 ## People and politics
 

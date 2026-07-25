@@ -1,0 +1,7018 @@
+{
+  "type": "FeatureCollection",
+  "name": "features-v2",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -45.81665268595771,
+          49.300469069096536
+        ]
+      },
+      "properties": {
+        "id": "cape-0196141f5cd7",
+        "name": "VeldHolm",
+        "kind": "cape",
+        "cell_count": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.937499999999996,
+          -24.62582613677904
+        ]
+      },
+      "properties": {
+        "id": "cape-0318a74782a8",
+        "name": "VeldGate",
+        "kind": "cape",
+        "cell_count": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.1468060986562034,
+          -55.493955395171305
+        ]
+      },
+      "properties": {
+        "id": "cape-0396f7d5ba15",
+        "name": "SouthSound",
+        "kind": "cape",
+        "cell_count": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          64.86328125,
+          -23.175998424117633
+        ]
+      },
+      "properties": {
+        "id": "cape-03fc2b2741ad",
+        "name": "TesenReach",
+        "kind": "cape",
+        "cell_count": 8
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -159.60937500000003,
+          -29.328583592874025
+        ]
+      },
+      "properties": {
+        "id": "cape-04594f8a39cf",
+        "name": "HighReach",
+        "kind": "cape",
+        "cell_count": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          54.51386067896306,
+          -57.381620682773075
+        ]
+      },
+      "properties": {
+        "id": "cape-054688d807c2",
+        "name": "DoverMark",
+        "kind": "cape",
+        "cell_count": 7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          58.35937500000001,
+          27.6810399451695
+        ]
+      },
+      "properties": {
+        "id": "cape-05685fa624fa",
+        "name": "HighBay",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          148.56026785714286,
+          20.7877163778502
+        ]
+      },
+      "properties": {
+        "id": "cape-05b9d89977e5",
+        "name": "SouthBay",
+        "kind": "cape",
+        "cell_count": 7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -13.080949830198858,
+          -78.59682567946814
+        ]
+      },
+      "properties": {
+        "id": "cape-069021091dc4",
+        "name": "SerethGate",
+        "kind": "cape",
+        "cell_count": 11
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -158.203125,
+          -32.49822582116459
+        ]
+      },
+      "properties": {
+        "id": "cape-06c323745c90",
+        "name": "IronMark",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          63.984375,
+          -13.967912458072572
+        ]
+      },
+      "properties": {
+        "id": "cape-0742d439acee",
+        "name": "SilverRidge",
+        "kind": "cape",
+        "cell_count": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -64.93423583645331,
+          -69.20370024046544
+        ]
+      },
+      "properties": {
+        "id": "cape-07621dcb1465",
+        "name": "SouthHolm",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          148.359375,
+          15.093984179116768
+        ]
+      },
+      "properties": {
+        "id": "cape-0776a0edb448",
+        "name": "CassianMark",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          56.953125,
+          37.89977906782267
+        ]
+      },
+      "properties": {
+        "id": "cape-087996c1d567",
+        "name": "VeldReach",
+        "kind": "cape",
+        "cell_count": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          82.828125,
+          22.757227642315804
+        ]
+      },
+      "properties": {
+        "id": "cape-08dcf0ca469a",
+        "name": "HighReach",
+        "kind": "cape",
+        "cell_count": 5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.421874999999996,
+          38.12786364803458
+        ]
+      },
+      "properties": {
+        "id": "cape-0998dd4fd89b",
+        "name": "EastMark",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.0,
+          -58.77475037001499
+        ]
+      },
+      "properties": {
+        "id": "cape-0a14fca5cebc",
+        "name": "CassianBay",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          42.89062499999999,
+          25.484517935911438
+        ]
+      },
+      "properties": {
+        "id": "cape-0b302db2ff2a",
+        "name": "WestGate",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.83522022730082,
+          -49.76708651996613
+        ]
+      },
+      "properties": {
+        "id": "cape-0c7605b48199",
+        "name": "WestSound",
+        "kind": "cape",
+        "cell_count": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -35.859375,
+          -15.576098702643767
+        ]
+      },
+      "properties": {
+        "id": "cape-0e95113e0197",
+        "name": "MirrinGate",
+        "kind": "cape",
+        "cell_count": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.890625,
+          21.986547873261653
+        ]
+      },
+      "properties": {
+        "id": "cape-0e9a8f6477e1",
+        "name": "AurelMark",
+        "kind": "cape",
+        "cell_count": 7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -135.0,
+          -61.389756681864554
+        ]
+      },
+      "properties": {
+        "id": "cape-0ec1ffbf7454",
+        "name": "EastMark",
+        "kind": "cape",
+        "cell_count": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.484375,
+          40.02496516538046
+        ]
+      },
+      "properties": {
+        "id": "cape-102cfe4ec040",
+        "name": "NorthReach",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.83443157508765,
+          39.582528608419906
+        ]
+      },
+      "properties": {
+        "id": "cape-106ca6b3dec6",
+        "name": "SouthGate",
+        "kind": "cape",
+        "cell_count": 5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.02860480053013,
+          -76.05604543959181
+        ]
+      },
+      "properties": {
+        "id": "cape-130df2827d96",
+        "name": "KorvReach",
+        "kind": "cape",
+        "cell_count": 7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.734375,
+          -41.224679789063124
+        ]
+      },
+      "properties": {
+        "id": "cape-13aa36f102a9",
+        "name": "VeldReach",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          151.171875,
+          8.023598838433935
+        ]
+      },
+      "properties": {
+        "id": "cape-13d6e002c3cd",
+        "name": "WestGate",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.031249999999998,
+          -30.74576930804197
+        ]
+      },
+      "properties": {
+        "id": "cape-14891140d4f7",
+        "name": "DoverBay",
+        "kind": "cape",
+        "cell_count": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -169.453125,
+          18.68607711581623
+        ]
+      },
+      "properties": {
+        "id": "cape-18762e03bbe1",
+        "name": "EastSound",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -30.9375,
+          -17.682336929360126
+        ]
+      },
+      "properties": {
+        "id": "cape-1b1d5086ffd8",
+        "name": "AurelGate",
+        "kind": "cape",
+        "cell_count": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.60937499999999,
+          3.1969890531374054
+        ]
+      },
+      "properties": {
+        "id": "cape-1becd806cdc6",
+        "name": "KorvMark",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -146.71875,
+          34.43257280622683
+        ]
+      },
+      "properties": {
+        "id": "cape-1e203c3e5dd0",
+        "name": "IronHolm",
+        "kind": "cape",
+        "cell_count": 6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.359375,
+          36.96511429827922
+        ]
+      },
+      "properties": {
+        "id": "cape-2086d9141a94",
+        "name": "DoverReach",
+        "kind": "cape",
+        "cell_count": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.671875,
+          -18.506974161369737
+        ]
+      },
+      "properties": {
+        "id": "cape-21afe344780e",
+        "name": "KorvMere",
+        "kind": "cape",
+        "cell_count": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.234375,
+          37.3783326303021
+        ]
+      },
+      "properties": {
+        "id": "cape-21eaf48d595d",
+        "name": "TesenGate",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.484375,
+          32.99756045161416
+        ]
+      },
+      "properties": {
+        "id": "cape-24605ca7ba5e",
+        "name": "VeldGate",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.12098516965916,
+          -74.85651091072823
+        ]
+      },
+      "properties": {
+        "id": "cape-2629346c07a8",
+        "name": "KorvRidge",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.734375,
+          -14.637191980453364
+        ]
+      },
+      "properties": {
+        "id": "cape-28f8e2eb491c",
+        "name": "AmberRidge",
+        "kind": "cape",
+        "cell_count": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.174432987230239,
+          -63.806425992143815
+        ]
+      },
+      "properties": {
+        "id": "cape-293f4181c869",
+        "name": "TesenRidge",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -44.139775283084326,
+          -32.46610662667113
+        ]
+      },
+      "properties": {
+        "id": "cape-2aa827906381",
+        "name": "NerathRidge",
+        "kind": "cape",
+        "cell_count": 9
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -14.765625,
+          -25.2650806782536
+        ]
+      },
+      "properties": {
+        "id": "cape-2aba9c5a3f5a",
+        "name": "NerathMark",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -172.265625,
+          27.208384856847584
+        ]
+      },
+      "properties": {
+        "id": "cape-2d54c443be15",
+        "name": "AmberMere",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.921875000000003,
+          36.46131086161202
+        ]
+      },
+      "properties": {
+        "id": "cape-2d949dce091f",
+        "name": "IronHolm",
+        "kind": "cape",
+        "cell_count": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -150.51484597479083,
+          53.95502687338329
+        ]
+      },
+      "properties": {
+        "id": "cape-2dcfd1c2623f",
+        "name": "DoverHolm",
+        "kind": "cape",
+        "cell_count": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -136.40625,
+          21.56062298362489
+        ]
+      },
+      "properties": {
+        "id": "cape-2e36aa62c532",
+        "name": "NorthMark",
+        "kind": "cape",
+        "cell_count": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.5925710353999147,
+          -68.17115869658934
+        ]
+      },
+      "properties": {
+        "id": "cape-2e5e3d0f2f3a",
+        "name": "CassianGate",
+        "kind": "cape",
+        "cell_count": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -139.331404520134,
+          50.91550513458062
+        ]
+      },
+      "properties": {
+        "id": "cape-301c2a8961db",
+        "name": "CassianReach",
+        "kind": "cape",
+        "cell_count": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.609375000000007,
+          40.18356162215384
+        ]
+      },
+      "properties": {
+        "id": "cape-30748597df76",
+        "name": "SouthRidge",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.859375,
+          29.916828991728888
+        ]
+      },
+      "properties": {
+        "id": "cape-30e78011f7f7",
+        "name": "TesenRidge",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -66.796875,
+          33.58960338672111
+        ]
+      },
+      "properties": {
+        "id": "cape-311773cd3661",
+        "name": "EastMere",
+        "kind": "cape",
+        "cell_count": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.90625,
+          -21.39816516844445
+        ]
+      },
+      "properties": {
+        "id": "cape-3338d1155197",
+        "name": "SouthSound",
+        "kind": "cape",
+        "cell_count": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -155.390625,
+          -33.31075414656405
+        ]
+      },
+      "properties": {
+        "id": "cape-35623598e0f9",
+        "name": "NorthRidge",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          175.078125,
+          7.706221189741027
+        ]
+      },
+      "properties": {
+        "id": "cape-360a7a81e563",
+        "name": "SerethHolm",
+        "kind": "cape",
+        "cell_count": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.828125,
+          26.487314347192548
+        ]
+      },
+      "properties": {
+        "id": "cape-3868ce827433",
+        "name": "HighSound",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.265625,
+          -23.045350450390085
+        ]
+      },
+      "properties": {
+        "id": "cape-38fc3a120ae0",
+        "name": "AurelMere",
+        "kind": "cape",
+        "cell_count": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.96875,
+          31.44584933142356
+        ]
+      },
+      "properties": {
+        "id": "cape-39bd47ec3db3",
+        "name": "HighMere",
+        "kind": "cape",
+        "cell_count": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.328124999999997,
+          39.90570741997243
+        ]
+      },
+      "properties": {
+        "id": "cape-3a8b52517149",
+        "name": "CassianSound",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          176.484375,
+          3.5090255374803387
+        ]
+      },
+      "properties": {
+        "id": "cape-3aceac97adab",
+        "name": "AmberGate",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.40625,
+          -2.073721220197726
+        ]
+      },
+      "properties": {
+        "id": "cape-3b4dbfd203b9",
+        "name": "NerathBay",
+        "kind": "cape",
+        "cell_count": 12
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.046875,
+          39.279732552054085
+        ]
+      },
+      "properties": {
+        "id": "cape-3c9dadf17451",
+        "name": "SouthMark",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.5049501898272,
+          -83.96149713576682
+        ]
+      },
+      "properties": {
+        "id": "cape-3dff71a1d391",
+        "name": "EastGate",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.609375000000004,
+          -15.423026740269874
+        ]
+      },
+      "properties": {
+        "id": "cape-3e188a7529d1",
+        "name": "AmberMark",
+        "kind": "cape",
+        "cell_count": 6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.18286376978445,
+          -77.5687593087241
+        ]
+      },
+      "properties": {
+        "id": "cape-3e1a90ba135d",
+        "name": "IronRidge",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.03550607614428,
+          -45.6554527922571
+        ]
+      },
+      "properties": {
+        "id": "cape-3e4cc953701a",
+        "name": "SolmarHolm",
+        "kind": "cape",
+        "cell_count": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -137.2969238591762,
+          46.96198782875919
+        ]
+      },
+      "properties": {
+        "id": "cape-3e9c31c41a73",
+        "name": "IronMark",
+        "kind": "cape",
+        "cell_count": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          60.46875,
+          -7.373468656124655
+        ]
+      },
+      "properties": {
+        "id": "cape-4167f63cafe2",
+        "name": "WestReach",
+        "kind": "cape",
+        "cell_count": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.734374999999997,
+          42.6296127411908
+        ]
+      },
+      "properties": {
+        "id": "cape-41f2547447f5",
+        "name": "NerathHolm",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.10608163126048,
+          67.09347564538002
+        ]
+      },
+      "properties": {
+        "id": "cape-42147bda9c7a",
+        "name": "IronRidge",
+        "kind": "cape",
+        "cell_count": 5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.00822899896306,
+          -56.2811390485774
+        ]
+      },
+      "properties": {
+        "id": "cape-42c6d228c21f",
+        "name": "HighHolm",
+        "kind": "cape",
+        "cell_count": 20
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.96875,
+          0.6977851567308129
+        ]
+      },
+      "properties": {
+        "id": "cape-448ac2a21734",
+        "name": "HighSound",
+        "kind": "cape",
+        "cell_count": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -142.21732750176727,
+          55.915029759696864
+        ]
+      },
+      "properties": {
+        "id": "cape-44d3541a0f6d",
+        "name": "MirrinMere",
+        "kind": "cape",
+        "cell_count": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.23520266333244,
+          -83.99209679816622
+        ]
+      },
+      "properties": {
+        "id": "cape-455ae506dd3c",
+        "name": "HighBay",
+        "kind": "cape",
+        "cell_count": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          146.953125,
+          12.458266543845186
+        ]
+      },
+      "properties": {
+        "id": "cape-45ea43b420b9",
+        "name": "DoverReach",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -45.0,
+          -55.38518376243741
+        ]
+      },
+      "properties": {
+        "id": "cape-46e5212b6609",
+        "name": "SerethSound",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          47.8303691200699,
+          -38.584457813202164
+        ]
+      },
+      "properties": {
+        "id": "cape-4721f9b0409a",
+        "name": "IronReach",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          142.734375,
+          21.22737916878513
+        ]
+      },
+      "properties": {
+        "id": "cape-481d4b9b374a",
+        "name": "VeldRidge",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.648707291859381,
+          -60.18699984351228
+        ]
+      },
+      "properties": {
+        "id": "cape-4852380cb5aa",
+        "name": "AurelBay",
+        "kind": "cape",
+        "cell_count": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          42.1875,
+          3.9958964870624905
+        ]
+      },
+      "properties": {
+        "id": "cape-4a34bb1fd8eb",
+        "name": "EastMark",
+        "kind": "cape",
+        "cell_count": 6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.7031249999999997,
+          -41.47649761523934
+        ]
+      },
+      "properties": {
+        "id": "cape-4a9481dd6f86",
+        "name": "EastMere",
+        "kind": "cape",
+        "cell_count": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.421874999999996,
+          -23.423730203151514
+        ]
+      },
+      "properties": {
+        "id": "cape-4b82f500bc2e",
+        "name": "WestMark",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.328125,
+          -38.50115816639026
+        ]
+      },
+      "properties": {
+        "id": "cape-4c24c3d768be",
+        "name": "CassianHolm",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.67187500000001,
+          41.310671382690984
+        ]
+      },
+      "properties": {
+        "id": "cape-4cca10ecf486",
+        "name": "MirrinMark",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.8125,
+          11.872839010503514
+        ]
+      },
+      "properties": {
+        "id": "cape-4cf44d16dd85",
+        "name": "MirrinHolm",
+        "kind": "cape",
+        "cell_count": 6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.48919813020681,
+          -45.824543307692686
+        ]
+      },
+      "properties": {
+        "id": "cape-4dce0b411f54",
+        "name": "AmberReach",
+        "kind": "cape",
+        "cell_count": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.970943028407103,
+          -77.16785568199779
+        ]
+      },
+      "properties": {
+        "id": "cape-4fbc0c58e436",
+        "name": "HighHolm",
+        "kind": "cape",
+        "cell_count": 8
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.5625,
+          22.008951886113437
+        ]
+      },
+      "properties": {
+        "id": "cape-5015a8ec8465",
+        "name": "HighMere",
+        "kind": "cape",
+        "cell_count": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          125.859375,
+          -27.804526674092642
+        ]
+      },
+      "properties": {
+        "id": "cape-5228c32b2c17",
+        "name": "SilverBay",
+        "kind": "cape",
+        "cell_count": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.296875,
+          19.68598831823347
+        ]
+      },
+      "properties": {
+        "id": "cape-527d7d5049cd",
+        "name": "IronReach",
+        "kind": "cape",
+        "cell_count": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.765625,
+          17.716030688523773
+        ]
+      },
+      "properties": {
+        "id": "cape-52b9a60a6e75",
+        "name": "MirrinMere",
+        "kind": "cape",
+        "cell_count": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.421875,
+          35.91908156088799
+        ]
+      },
+      "properties": {
+        "id": "cape-5370ac3484f1",
+        "name": "NorthGate",
+        "kind": "cape",
+        "cell_count": 7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.42187500000001,
+          11.903705900471607
+        ]
+      },
+      "properties": {
+        "id": "cape-5466e9d37627",
+        "name": "SilverMark",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.37890625,
+          -5.174243843236129
+        ]
+      },
+      "properties": {
+        "id": "cape-5788e6328a76",
+        "name": "KorvReach",
+        "kind": "cape",
+        "cell_count": 8
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.76823056439324,
+          -49.5636906235781
+        ]
+      },
+      "properties": {
+        "id": "cape-590131df2ba4",
+        "name": "EastMark",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.09286673163334,
+          61.36630024859489
+        ]
+      },
+      "properties": {
+        "id": "cape-5a8618633ff4",
+        "name": "AmberMere",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          67.5,
+          26.931467125729814
+        ]
+      },
+      "properties": {
+        "id": "cape-5b8b293ef44f",
+        "name": "WestMere",
+        "kind": "cape",
+        "cell_count": 6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -18.984375,
+          -23.41404889138602
+        ]
+      },
+      "properties": {
+        "id": "cape-5d7c8b0a5886",
+        "name": "NerathMark",
+        "kind": "cape",
+        "cell_count": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          157.5,
+          36.47166390165867
+        ]
+      },
+      "properties": {
+        "id": "cape-5dae1b91793e",
+        "name": "TesenRidge",
+        "kind": "cape",
+        "cell_count": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          59.765625,
+          -28.029250526750562
+        ]
+      },
+      "properties": {
+        "id": "cape-5e1e73a7850c",
+        "name": "SouthRidge",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.97174668600306,
+          -44.560937691338
+        ]
+      },
+      "properties": {
+        "id": "cape-5fccf5814f89",
+        "name": "SouthMark",
+        "kind": "cape",
+        "cell_count": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          42.89062499999999,
+          -29.13698507235394
+        ]
+      },
+      "properties": {
+        "id": "cape-6080c47ca249",
+        "name": "HighMere",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -128.0858116311067,
+          -68.9262700949445
+        ]
+      },
+      "properties": {
+        "id": "cape-60be4cd03221",
+        "name": "WestMark",
+        "kind": "cape",
+        "cell_count": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.88133264707523,
+          -66.51904258381208
+        ]
+      },
+      "properties": {
+        "id": "cape-619dd3b6a61d",
+        "name": "MirrinHolm",
+        "kind": "cape",
+        "cell_count": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.046875,
+          -39.279732552054085
+        ]
+      },
+      "properties": {
+        "id": "cape-6279528e2112",
+        "name": "KorvBay",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          148.359375,
+          10.216919521645924
+        ]
+      },
+      "properties": {
+        "id": "cape-640a755472e0",
+        "name": "KorvMere",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.234375,
+          38.434990381749884
+        ]
+      },
+      "properties": {
+        "id": "cape-64f1a6329709",
+        "name": "MirrinRidge",
+        "kind": "cape",
+        "cell_count": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -63.340996094270245,
+          58.34046971721049
+        ]
+      },
+      "properties": {
+        "id": "cape-658589b7be1c",
+        "name": "AmberGate",
+        "kind": "cape",
+        "cell_count": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          44.296875,
+          -31.69329432857114
+        ]
+      },
+      "properties": {
+        "id": "cape-6812b180fab2",
+        "name": "DoverBay",
+        "kind": "cape",
+        "cell_count": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          34.453125,
+          -36.09706939050032
+        ]
+      },
+      "properties": {
+        "id": "cape-6853c4e448ab",
+        "name": "NorthGate",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.85937500000001,
+          -32.31435860022366
+        ]
+      },
+      "properties": {
+        "id": "cape-686527d06e61",
+        "name": "NorthMere",
+        "kind": "cape",
+        "cell_count": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -132.1875,
+          18.17702581187625
+        ]
+      },
+      "properties": {
+        "id": "cape-68accfab0678",
+        "name": "SerethSound",
+        "kind": "cape",
+        "cell_count": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          56.95312500000001,
+          -28.60473838870606
+        ]
+      },
+      "properties": {
+        "id": "cape-69800f45a27b",
+        "name": "SolmarReach",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -156.33245248997892,
+          51.72031629932274
+        ]
+      },
+      "properties": {
+        "id": "cape-6e68daa86cff",
+        "name": "NerathMere",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -135.0,
+          44.37123399159845
+        ]
+      },
+      "properties": {
+        "id": "cape-70a96befd8d7",
+        "name": "CassianGate",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -11.25,
+          -27.664653480131605
+        ]
+      },
+      "properties": {
+        "id": "cape-7209b5ac3115",
+        "name": "KorvRidge",
+        "kind": "cape",
+        "cell_count": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.78125,
+          23.212312753499827
+        ]
+      },
+      "properties": {
+        "id": "cape-76dd558d7595",
+        "name": "SouthReach",
+        "kind": "cape",
+        "cell_count": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          158.77041028796737,
+          50.062732762413546
+        ]
+      },
+      "properties": {
+        "id": "cape-770ae17156ed",
+        "name": "SolmarBay",
+        "kind": "cape",
+        "cell_count": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          170.859375,
+          36.91337965874747
+        ]
+      },
+      "properties": {
+        "id": "cape-7947548255d5",
+        "name": "DoverHolm",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          48.51562500000001,
+          -25.983061585234783
+        ]
+      },
+      "properties": {
+        "id": "cape-797c21e08134",
+        "name": "DoverBay",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -148.359375,
+          -27.035469435936378
+        ]
+      },
+      "properties": {
+        "id": "cape-797ced02d5ee",
+        "name": "DoverHolm",
+        "kind": "cape",
+        "cell_count": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          34.453125,
+          -29.49822187513246
+        ]
+      },
+      "properties": {
+        "id": "cape-79888288532b",
+        "name": "HighHolm",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          164.53125,
+          43.238601570753744
+        ]
+      },
+      "properties": {
+        "id": "cape-7a8cf91b1159",
+        "name": "VeldRidge",
+        "kind": "cape",
+        "cell_count": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -131.38509475990261,
+          -65.3555112582246
+        ]
+      },
+      "properties": {
+        "id": "cape-7c41dadfaf5a",
+        "name": "CassianGate",
+        "kind": "cape",
+        "cell_count": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          113.28500997127854,
+          72.78751797637403
+        ]
+      },
+      "properties": {
+        "id": "cape-7efaf9006f7a",
+        "name": "HighGate",
+        "kind": "cape",
+        "cell_count": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          169.453125,
+          39.59790652125546
+        ]
+      },
+      "properties": {
+        "id": "cape-80e2be4c929b",
+        "name": "MirrinMark",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -44.296875,
+          -18.70315846357331
+        ]
+      },
+      "properties": {
+        "id": "cape-813f2178d2fc",
+        "name": "WestBay",
+        "kind": "cape",
+        "cell_count": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.453125,
+          42.39823882546113
+        ]
+      },
+      "properties": {
+        "id": "cape-815cc9137bf8",
+        "name": "SerethReach",
+        "kind": "cape",
+        "cell_count": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          168.04687500000003,
+          42.26488633984486
+        ]
+      },
+      "properties": {
+        "id": "cape-8167202767ed",
+        "name": "CassianHolm",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -46.89701443626873,
+          -57.89853103657282
+        ]
+      },
+      "properties": {
+        "id": "cape-8302c84dc5ad",
+        "name": "SolmarSound",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.078125,
+          -36.745532992607785
+        ]
+      },
+      "properties": {
+        "id": "cape-836553445d3a",
+        "name": "NorthGate",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.03444800552526,
+          -52.42692213889343
+        ]
+      },
+      "properties": {
+        "id": "cape-83944fd7405b",
+        "name": "SilverSound",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -130.078125,
+          15.312265990021132
+        ]
+      },
+      "properties": {
+        "id": "cape-8676ae8cc937",
+        "name": "NorthHolm",
+        "kind": "cape",
+        "cell_count": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.09375,
+          1.9679986988362603
+        ]
+      },
+      "properties": {
+        "id": "cape-87573f5a4a6a",
+        "name": "NerathMark",
+        "kind": "cape",
+        "cell_count": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.0625,
+          -2.750538189827775
+        ]
+      },
+      "properties": {
+        "id": "cape-87d065ec604b",
+        "name": "MirrinMark",
+        "kind": "cape",
+        "cell_count": 6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.234375,
+          26.642987474389983
+        ]
+      },
+      "properties": {
+        "id": "cape-893d453ff69d",
+        "name": "SerethBay",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          166.64062500000003,
+          3.4207210507935577
+        ]
+      },
+      "properties": {
+        "id": "cape-8a6632267f95",
+        "name": "HighBay",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -40.078125,
+          -15.876846471532751
+        ]
+      },
+      "properties": {
+        "id": "cape-8c3603aaff06",
+        "name": "IronRidge",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.82785439684557,
+          -61.28564853265815
+        ]
+      },
+      "properties": {
+        "id": "cape-8dc8273e02c1",
+        "name": "DoverRidge",
+        "kind": "cape",
+        "cell_count": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.984375,
+          30.180852513151375
+        ]
+      },
+      "properties": {
+        "id": "cape-8f744002024a",
+        "name": "IronMere",
+        "kind": "cape",
+        "cell_count": 5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.015625,
+          -21.06820095472494
+        ]
+      },
+      "properties": {
+        "id": "cape-8fa9464e6f55",
+        "name": "HighMark",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -160.53317108136065,
+          48.9622380740865
+        ]
+      },
+      "properties": {
+        "id": "cape-8fb728c1f35a",
+        "name": "SouthMark",
+        "kind": "cape",
+        "cell_count": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          20.014847426005694,
+          43.55793425027929
+        ]
+      },
+      "properties": {
+        "id": "cape-904753ee59cb",
+        "name": "NorthReach",
+        "kind": "cape",
+        "cell_count": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -142.03125,
+          24.674998562497912
+        ]
+      },
+      "properties": {
+        "id": "cape-92040a5f29f5",
+        "name": "SerethBay",
+        "kind": "cape",
+        "cell_count": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          61.17187499999999,
+          27.048350410069073
+        ]
+      },
+      "properties": {
+        "id": "cape-94d8d9293923",
+        "name": "SouthBay",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.20312500000001,
+          5.81993370497452
+        ]
+      },
+      "properties": {
+        "id": "cape-951f1d29cf08",
+        "name": "VeldSound",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -35.22497178466221,
+          77.72181933390758
+        ]
+      },
+      "properties": {
+        "id": "cape-96321b458b00",
+        "name": "EastRidge",
+        "kind": "cape",
+        "cell_count": 13
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.96875,
+          14.658322199081418
+        ]
+      },
+      "properties": {
+        "id": "cape-96786f3b66f9",
+        "name": "AmberRidge",
+        "kind": "cape",
+        "cell_count": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.546875,
+          -4.061720379305512
+        ]
+      },
+      "properties": {
+        "id": "cape-983de9a09e41",
+        "name": "NerathRidge",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.328125,
+          7.521713000284376
+        ]
+      },
+      "properties": {
+        "id": "cape-98488287cdae",
+        "name": "SilverSound",
+        "kind": "cape",
+        "cell_count": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -43.358842191467204,
+          -51.29232244655079
+        ]
+      },
+      "properties": {
+        "id": "cape-995c9b972293",
+        "name": "EastBay",
+        "kind": "cape",
+        "cell_count": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -175.07812500000003,
+          21.022796705969924
+        ]
+      },
+      "properties": {
+        "id": "cape-9aad5a4bd489",
+        "name": "CassianMere",
+        "kind": "cape",
+        "cell_count": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -156.796875,
+          -25.49501092610746
+        ]
+      },
+      "properties": {
+        "id": "cape-9bf88f7106fe",
+        "name": "EastGate",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.85937500000001,
+          1.7098232002111777
+        ]
+      },
+      "properties": {
+        "id": "cape-9c78376940e4",
+        "name": "TesenMere",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.55664867523081,
+          -41.89447523046974
+        ]
+      },
+      "properties": {
+        "id": "cape-9d88c32fecb1",
+        "name": "VeldHolm",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          46.05532318706523,
+          -35.75728160870571
+        ]
+      },
+      "properties": {
+        "id": "cape-9ec8abd02064",
+        "name": "KorvHolm",
+        "kind": "cape",
+        "cell_count": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.52706727148038,
+          -50.14364419454872
+        ]
+      },
+      "properties": {
+        "id": "cape-9f5a8a699829",
+        "name": "SilverRidge",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.265625,
+          18.823879062672834
+        ]
+      },
+      "properties": {
+        "id": "cape-9fd8883bad5b",
+        "name": "SilverBay",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.577664270301028,
+          -49.122962675209344
+        ]
+      },
+      "properties": {
+        "id": "cape-a073ccf3d8c4",
+        "name": "AmberMere",
+        "kind": "cape",
+        "cell_count": 6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.640625,
+          20.03781693295882
+        ]
+      },
+      "properties": {
+        "id": "cape-a171ebde4f6c",
+        "name": "MirrinGate",
+        "kind": "cape",
+        "cell_count": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.921875,
+          25.24304503822626
+        ]
+      },
+      "properties": {
+        "id": "cape-a2bfb2c1bab2",
+        "name": "VeldReach",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          52.2896197705515,
+          -43.23476199287573
+        ]
+      },
+      "properties": {
+        "id": "cape-a6a3f016f04a",
+        "name": "WestRidge",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.7243694458739,
+          -58.97215302881857
+        ]
+      },
+      "properties": {
+        "id": "cape-a7fd250c79a2",
+        "name": "HighMere",
+        "kind": "cape",
+        "cell_count": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.234375,
+          23.888926166662127
+        ]
+      },
+      "properties": {
+        "id": "cape-aa0c60b0f5d3",
+        "name": "DoverBay",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.484375,
+          13.335133077518172
+        ]
+      },
+      "properties": {
+        "id": "cape-aa6087128243",
+        "name": "NorthMark",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          52.734375,
+          -28.628655311264026
+        ]
+      },
+      "properties": {
+        "id": "cape-ab11bf358cf1",
+        "name": "CassianBay",
+        "kind": "cape",
+        "cell_count": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.89816545214589,
+          -80.22773892569141
+        ]
+      },
+      "properties": {
+        "id": "cape-ac4ef69cada7",
+        "name": "DoverSound",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.984375,
+          13.986686691645147
+        ]
+      },
+      "properties": {
+        "id": "cape-acf48bf3a3e2",
+        "name": "SilverMark",
+        "kind": "cape",
+        "cell_count": 5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.90625,
+          28.289351889565342
+        ]
+      },
+      "properties": {
+        "id": "cape-ae43b8bc1ed3",
+        "name": "HighMere",
+        "kind": "cape",
+        "cell_count": 20
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.046875,
+          -27.316304384608113
+        ]
+      },
+      "properties": {
+        "id": "cape-ae6a5bcbca8d",
+        "name": "TesenMark",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.71875,
+          15.463858539335458
+        ]
+      },
+      "properties": {
+        "id": "cape-ae77bb092c40",
+        "name": "CassianReach",
+        "kind": "cape",
+        "cell_count": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.271256087268654,
+          44.110424395313515
+        ]
+      },
+      "properties": {
+        "id": "cape-ae7fa52ca9e6",
+        "name": "WestReach",
+        "kind": "cape",
+        "cell_count": 11
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -128.671875,
+          12.757232746781641
+        ]
+      },
+      "properties": {
+        "id": "cape-afa26288d248",
+        "name": "HighHolm",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          170.859375,
+          25.03161385602213
+        ]
+      },
+      "properties": {
+        "id": "cape-b007f4cdda73",
+        "name": "EastMere",
+        "kind": "cape",
+        "cell_count": 6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.265625,
+          32.80815921069975
+        ]
+      },
+      "properties": {
+        "id": "cape-b0210a83105f",
+        "name": "EastSound",
+        "kind": "cape",
+        "cell_count": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.046875,
+          33.86272197138783
+        ]
+      },
+      "properties": {
+        "id": "cape-b0294bc65e2f",
+        "name": "IronGate",
+        "kind": "cape",
+        "cell_count": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -45.70312500000001,
+          -23.227724356583625
+        ]
+      },
+      "properties": {
+        "id": "cape-b0c11751a704",
+        "name": "AmberReach",
+        "kind": "cape",
+        "cell_count": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.42187500000001,
+          4.371129292061819
+        ]
+      },
+      "properties": {
+        "id": "cape-b130f8d68469",
+        "name": "AurelGate",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          169.453125,
+          2.0737695195465657
+        ]
+      },
+      "properties": {
+        "id": "cape-b1e931c7d0bc",
+        "name": "TesenReach",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -42.72668820037727,
+          41.29754131652135
+        ]
+      },
+      "properties": {
+        "id": "cape-b36bf9e5808f",
+        "name": "EastRidge",
+        "kind": "cape",
+        "cell_count": 11
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.25934095551389,
+          61.135108215847524
+        ]
+      },
+      "properties": {
+        "id": "cape-b48defd3180b",
+        "name": "SerethReach",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.359375000000005,
+          21.94983841503273
+        ]
+      },
+      "properties": {
+        "id": "cape-b66bc372fc25",
+        "name": "IronMere",
+        "kind": "cape",
+        "cell_count": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -132.8359012017737,
+          41.779762738043736
+        ]
+      },
+      "properties": {
+        "id": "cape-b72d4ccfff2c",
+        "name": "VeldHolm",
+        "kind": "cape",
+        "cell_count": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          67.81108405264217,
+          -59.26582919577407
+        ]
+      },
+      "properties": {
+        "id": "cape-b7817f25fef7",
+        "name": "EastRidge",
+        "kind": "cape",
+        "cell_count": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.671875,
+          29.24117774848891
+        ]
+      },
+      "properties": {
+        "id": "cape-b790348db44a",
+        "name": "VeldBay",
+        "kind": "cape",
+        "cell_count": 6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.921875,
+          11.771227478226002
+        ]
+      },
+      "properties": {
+        "id": "cape-b9d4f71726f8",
+        "name": "TesenReach",
+        "kind": "cape",
+        "cell_count": 9
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          143.4375,
+          30.791715515655845
+        ]
+      },
+      "properties": {
+        "id": "cape-ba487335efd7",
+        "name": "SilverGate",
+        "kind": "cape",
+        "cell_count": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -54.140625,
+          38.33715037582972
+        ]
+      },
+      "properties": {
+        "id": "cape-ba6c33f96410",
+        "name": "CassianReach",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          81.2109375,
+          34.4817024615561
+        ]
+      },
+      "properties": {
+        "id": "cape-baba7aa0b388",
+        "name": "WestMark",
+        "kind": "cape",
+        "cell_count": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.65625,
+          43.58140038862987
+        ]
+      },
+      "properties": {
+        "id": "cape-bb306b751039",
+        "name": "SilverGate",
+        "kind": "cape",
+        "cell_count": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -120.234375,
+          5.472961603627347
+        ]
+      },
+      "properties": {
+        "id": "cape-bd830b6c37a5",
+        "name": "IronBay",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.890625,
+          36.54392476073307
+        ]
+      },
+      "properties": {
+        "id": "cape-be3d9bc591ba",
+        "name": "SerethMere",
+        "kind": "cape",
+        "cell_count": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.265625,
+          -13.001369040706937
+        ]
+      },
+      "properties": {
+        "id": "cape-bec03dea3ccf",
+        "name": "NorthBay",
+        "kind": "cape",
+        "cell_count": 5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          123.02609783798339,
+          -67.63062469765809
+        ]
+      },
+      "properties": {
+        "id": "cape-bf88a26a93ef",
+        "name": "IronRidge",
+        "kind": "cape",
+        "cell_count": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          173.67187500000003,
+          13.980309904664816
+        ]
+      },
+      "properties": {
+        "id": "cape-bfe33cb6262d",
+        "name": "NerathReach",
+        "kind": "cape",
+        "cell_count": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          50.01302970775501,
+          -40.905205113529256
+        ]
+      },
+      "properties": {
+        "id": "cape-c185ef7d62d9",
+        "name": "CassianMark",
+        "kind": "cape",
+        "cell_count": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.2967026401493,
+          66.20554081917443
+        ]
+      },
+      "properties": {
+        "id": "cape-c23910e24ac2",
+        "name": "HighSound",
+        "kind": "cape",
+        "cell_count": 8
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          148.359375,
+          35.61600542599245
+        ]
+      },
+      "properties": {
+        "id": "cape-c48d99f5f117",
+        "name": "SilverGate",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          149.92208484717105,
+          45.70910161776801
+        ]
+      },
+      "properties": {
+        "id": "cape-c8e835c56602",
+        "name": "VeldMark",
+        "kind": "cape",
+        "cell_count": 9
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.6429888519037625,
+          -88.20158146307517
+        ]
+      },
+      "properties": {
+        "id": "cape-c9a3d0f223e9",
+        "name": "DoverHolm",
+        "kind": "cape",
+        "cell_count": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.78423274106748,
+          -55.370586580140476
+        ]
+      },
+      "properties": {
+        "id": "cape-c9e3342f4122",
+        "name": "EastMark",
+        "kind": "cape",
+        "cell_count": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -149.765625,
+          -24.144764193977412
+        ]
+      },
+      "properties": {
+        "id": "cape-cb9a452619f1",
+        "name": "KorvMark",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          65.45089572676275,
+          -51.507055667652295
+        ]
+      },
+      "properties": {
+        "id": "cape-cbce6aefdc70",
+        "name": "SouthMere",
+        "kind": "cape",
+        "cell_count": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          158.46506949072926,
+          54.30957299145035
+        ]
+      },
+      "properties": {
+        "id": "cape-cc7fd319325a",
+        "name": "CassianReach",
+        "kind": "cape",
+        "cell_count": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -52.833323874665695,
+          -63.34062932650737
+        ]
+      },
+      "properties": {
+        "id": "cape-cce90b9c5135",
+        "name": "HighMere",
+        "kind": "cape",
+        "cell_count": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.46412799014038,
+          -47.72199328879438
+        ]
+      },
+      "properties": {
+        "id": "cape-cd6caa8e3652",
+        "name": "HighMark",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.890625,
+          8.292152408785494
+        ]
+      },
+      "properties": {
+        "id": "cape-ce46982f7f33",
+        "name": "VeldHolm",
+        "kind": "cape",
+        "cell_count": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.421875,
+          30.422590794650876
+        ]
+      },
+      "properties": {
+        "id": "cape-ceca49c8245f",
+        "name": "NerathMere",
+        "kind": "cape",
+        "cell_count": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -152.57812500000003,
+          -32.683632280049565
+        ]
+      },
+      "properties": {
+        "id": "cape-cecd6e39791e",
+        "name": "SolmarMark",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          45.017242999756974,
+          -52.09452645710038
+        ]
+      },
+      "properties": {
+        "id": "cape-ceff9b554ed1",
+        "name": "SolmarReach",
+        "kind": "cape",
+        "cell_count": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.515625,
+          13.114972311624811
+        ]
+      },
+      "properties": {
+        "id": "cape-cf601adbd710",
+        "name": "SolmarGate",
+        "kind": "cape",
+        "cell_count": 7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          61.875,
+          36.575568943016236
+        ]
+      },
+      "properties": {
+        "id": "cape-d0860d8021b3",
+        "name": "WestMark",
+        "kind": "cape",
+        "cell_count": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.5156250000000013,
+          -35.803171100219004
+        ]
+      },
+      "properties": {
+        "id": "cape-d2874a205a36",
+        "name": "IronReach",
+        "kind": "cape",
+        "cell_count": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.921875,
+          22.83807709724609
+        ]
+      },
+      "properties": {
+        "id": "cape-d2ee398edb68",
+        "name": "NorthReach",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          52.11423205523777,
+          40.35117943987625
+        ]
+      },
+      "properties": {
+        "id": "cape-d38e2838cc23",
+        "name": "MirrinReach",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.328125,
+          -20.976610723521567
+        ]
+      },
+      "properties": {
+        "id": "cape-d58cf062da55",
+        "name": "HighSound",
+        "kind": "cape",
+        "cell_count": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.0768656597479,
+          -55.658888976188706
+        ]
+      },
+      "properties": {
+        "id": "cape-d800c34c08df",
+        "name": "HighMere",
+        "kind": "cape",
+        "cell_count": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.140625,
+          -9.721184606136742
+        ]
+      },
+      "properties": {
+        "id": "cape-d84a01af86aa",
+        "name": "SouthMere",
+        "kind": "cape",
+        "cell_count": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          152.57812500000003,
+          36.755426573670476
+        ]
+      },
+      "properties": {
+        "id": "cape-d888e1fd3b13",
+        "name": "AmberBay",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.32390859665713,
+          -52.03512964189872
+        ]
+      },
+      "properties": {
+        "id": "cape-d90637dbf439",
+        "name": "SolmarGate",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -172.265625,
+          17.427933420394407
+        ]
+      },
+      "properties": {
+        "id": "cape-d93da0990f7d",
+        "name": "SilverRidge",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          65.390625,
+          36.04145120737391
+        ]
+      },
+      "properties": {
+        "id": "cape-d9cb863fb881",
+        "name": "SolmarRidge",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          45.70312500000001,
+          -26.15318524490161
+        ]
+      },
+      "properties": {
+        "id": "cape-dcb442c8ac7e",
+        "name": "AurelSound",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -132.19768095626472,
+          -57.445603634035535
+        ]
+      },
+      "properties": {
+        "id": "cape-dd326287b19e",
+        "name": "CassianHolm",
+        "kind": "cape",
+        "cell_count": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.94343340779314,
+          85.90283010556641
+        ]
+      },
+      "properties": {
+        "id": "cape-df57059f062b",
+        "name": "SerethBay",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.75,
+          16.56617667481724
+        ]
+      },
+      "properties": {
+        "id": "cape-e0bba0ad197e",
+        "name": "SilverHolm",
+        "kind": "cape",
+        "cell_count": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          111.73363381079,
+          80.20001900703743
+        ]
+      },
+      "properties": {
+        "id": "cape-e1b7ebb34621",
+        "name": "SilverMark",
+        "kind": "cape",
+        "cell_count": 5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -136.75007261655801,
+          54.536895566275376
+        ]
+      },
+      "properties": {
+        "id": "cape-e335e2fab8ba",
+        "name": "NerathMark",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.44003842294785,
+          -63.969335359565086
+        ]
+      },
+      "properties": {
+        "id": "cape-e44d5781e678",
+        "name": "EastGate",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          158.90625,
+          6.704655079841654
+        ]
+      },
+      "properties": {
+        "id": "cape-e46a2d352605",
+        "name": "SilverGate",
+        "kind": "cape",
+        "cell_count": 8
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          59.77739581627282,
+          -48.6309216323332
+        ]
+      },
+      "properties": {
+        "id": "cape-e475bc20afe2",
+        "name": "DoverBay",
+        "kind": "cape",
+        "cell_count": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -94.92187500000001,
+          -30.844833886579153
+        ]
+      },
+      "properties": {
+        "id": "cape-e50ab0b0afe9",
+        "name": "AurelReach",
+        "kind": "cape",
+        "cell_count": 8
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -27.421875,
+          -19.543557747903236
+        ]
+      },
+      "properties": {
+        "id": "cape-e5326d8eca81",
+        "name": "NorthReach",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          145.9288779055169,
+          57.91451131937204
+        ]
+      },
+      "properties": {
+        "id": "cape-e5b5bfb033c9",
+        "name": "NerathRidge",
+        "kind": "cape",
+        "cell_count": 5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.34375,
+          24.769287590339538
+        ]
+      },
+      "properties": {
+        "id": "cape-e75bed633786",
+        "name": "TesenBay",
+        "kind": "cape",
+        "cell_count": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -173.67187500000003,
+          24.47706277140563
+        ]
+      },
+      "properties": {
+        "id": "cape-e76d03e45c8b",
+        "name": "HighRidge",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -153.28125,
+          -23.553383410655083
+        ]
+      },
+      "properties": {
+        "id": "cape-e7a32455d297",
+        "name": "AmberMark",
+        "kind": "cape",
+        "cell_count": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.26909298767482,
+          -74.49181820582088
+        ]
+      },
+      "properties": {
+        "id": "cape-e82b8825cfa6",
+        "name": "TesenHolm",
+        "kind": "cape",
+        "cell_count": 6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -123.04687500000001,
+          7.681216759615104
+        ]
+      },
+      "properties": {
+        "id": "cape-e8b2ec76bd93",
+        "name": "KorvMark",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.234375,
+          0.6071227616058258
+        ]
+      },
+      "properties": {
+        "id": "cape-eab0c782cecf",
+        "name": "IronMere",
+        "kind": "cape",
+        "cell_count": 5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.0016017992786,
+          -55.77104614415225
+        ]
+      },
+      "properties": {
+        "id": "cape-ec93381437e3",
+        "name": "NerathHolm",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          47.109375,
+          26.680499864175804
+        ]
+      },
+      "properties": {
+        "id": "cape-ecf782994887",
+        "name": "VeldSound",
+        "kind": "cape",
+        "cell_count": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          49.921875,
+          -0.5823629900586038
+        ]
+      },
+      "properties": {
+        "id": "cape-ee9489435c0b",
+        "name": "AmberMere",
+        "kind": "cape",
+        "cell_count": 5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          161.015625,
+          41.296856558036005
+        ]
+      },
+      "properties": {
+        "id": "cape-ef2f7e16a884",
+        "name": "NorthSound",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -53.71445454700231,
+          54.08332214508738
+        ]
+      },
+      "properties": {
+        "id": "cape-ef512658cded",
+        "name": "KorvGate",
+        "kind": "cape",
+        "cell_count": 5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          82.265625,
+          27.208384856847584
+        ]
+      },
+      "properties": {
+        "id": "cape-efae27fd5af9",
+        "name": "SerethRidge",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -155.23703432577483,
+          37.36755461970742
+        ]
+      },
+      "properties": {
+        "id": "cape-f03c2105f47b",
+        "name": "SolmarReach",
+        "kind": "cape",
+        "cell_count": 11
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -62.57812500000001,
+          35.390684206814655
+        ]
+      },
+      "properties": {
+        "id": "cape-f1b183ee5b2d",
+        "name": "HighMark",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.61353317663958,
+          -44.03606101046378
+        ]
+      },
+      "properties": {
+        "id": "cape-f233e183aef5",
+        "name": "VeldMere",
+        "kind": "cape",
+        "cell_count": 9
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          119.6143626073121,
+          66.82127793441981
+        ]
+      },
+      "properties": {
+        "id": "cape-f4be2b0d3b85",
+        "name": "SouthReach",
+        "kind": "cape",
+        "cell_count": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -42.890625,
+          -16.330291647267906
+        ]
+      },
+      "properties": {
+        "id": "cape-f59b32a782f5",
+        "name": "SolmarMere",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          49.17179627180273,
+          86.89926465284238
+        ]
+      },
+      "properties": {
+        "id": "cape-f5c6888fe014",
+        "name": "SolmarRidge",
+        "kind": "cape",
+        "cell_count": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          53.4375,
+          27.57809712785395
+        ]
+      },
+      "properties": {
+        "id": "cape-f702714e21f3",
+        "name": "MirrinGate",
+        "kind": "cape",
+        "cell_count": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -145.54687500000003,
+          26.934988143561245
+        ]
+      },
+      "properties": {
+        "id": "cape-fce78463c77a",
+        "name": "SerethReach",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -168.04687500000003,
+          24.138373981630792
+        ]
+      },
+      "properties": {
+        "id": "cape-fe0cf8b30aea",
+        "name": "SilverMark",
+        "kind": "cape",
+        "cell_count": 5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -49.0703040411492,
+          -60.4302006114277
+        ]
+      },
+      "properties": {
+        "id": "cape-fe37736cb2ab",
+        "name": "HighMere",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -135.12806660146225,
+          -73.31332615379175
+        ]
+      },
+      "properties": {
+        "id": "cape-fe516a38e4c1",
+        "name": "NorthRidge",
+        "kind": "cape",
+        "cell_count": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.3203125,
+          -32.76859438755223
+        ]
+      },
+      "properties": {
+        "id": "cape-fe76aab8ab0c",
+        "name": "AurelSound",
+        "kind": "cape",
+        "cell_count": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -45.0,
+          -43.671188881801704
+        ]
+      },
+      "properties": {
+        "id": "cape-fe99b3140a5e",
+        "name": "AurelMark",
+        "kind": "cape",
+        "cell_count": 6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.00462829892199,
+          41.404300822343124
+        ]
+      },
+      "properties": {
+        "id": "cape-ff61392b5907",
+        "name": "AmberRidge",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -130.74677121252506,
+          39.19876351518387
+        ]
+      },
+      "properties": {
+        "id": "cape-ffb6233ad885",
+        "name": "MirrinMere",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -149.765625,
+          -30.65742556200535
+        ]
+      },
+      "properties": {
+        "id": "cape-ffe46b50ed5e",
+        "name": "HighGate",
+        "kind": "cape",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.12098516965916,
+          -74.85651091072823
+        ]
+      },
+      "properties": {
+        "id": "islands-0f47aaf8282c",
+        "name": "Farreach",
+        "kind": "islands",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.20312500000001,
+          5.81993370497452
+        ]
+      },
+      "properties": {
+        "id": "islands-3e2415a17f3d",
+        "name": "Farreach",
+        "kind": "islands",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -146.71875,
+          34.43257280622683
+        ]
+      },
+      "properties": {
+        "id": "islands-62c3770b9bbe",
+        "name": "Farreach",
+        "kind": "islands",
+        "cell_count": 6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.09286673163334,
+          61.36630024859489
+        ]
+      },
+      "properties": {
+        "id": "islands-6626104e8911",
+        "name": "Farreach",
+        "kind": "islands",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.42187500000001,
+          11.903705900471607
+        ]
+      },
+      "properties": {
+        "id": "islands-8080263cff97",
+        "name": "Farreach",
+        "kind": "islands",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.18286376978445,
+          -77.5687593087241
+        ]
+      },
+      "properties": {
+        "id": "islands-8a0f7303aa21",
+        "name": "Farreach",
+        "kind": "islands",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.890625,
+          8.292152408785494
+        ]
+      },
+      "properties": {
+        "id": "islands-924c2a65c68c",
+        "name": "Farreach",
+        "kind": "islands",
+        "cell_count": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          119.6143626073121,
+          66.82127793441981
+        ]
+      },
+      "properties": {
+        "id": "islands-cab293c28bcf",
+        "name": "Farreach",
+        "kind": "islands",
+        "cell_count": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.89816545214589,
+          -80.22773892569141
+        ]
+      },
+      "properties": {
+        "id": "islands-d8eaa208558b",
+        "name": "Farreach",
+        "kind": "islands",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -150.35004058441558,
+          -4.529288318187654
+        ]
+      },
+      "properties": {
+        "id": "lake-02f3aa6483b6",
+        "name": "MirrinBay",
+        "kind": "lake",
+        "cell_count": 77
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          144.140625,
+          -2.8487722597699947
+        ]
+      },
+      "properties": {
+        "id": "lake-14faac732c48",
+        "name": "AmberMere",
+        "kind": "lake",
+        "cell_count": 5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.98394095452248,
+          53.49875338416228
+        ]
+      },
+      "properties": {
+        "id": "lake-160162a290b4",
+        "name": "IronMere",
+        "kind": "lake",
+        "cell_count": 6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -174.49439858490567,
+          -1.0987034855608708
+        ]
+      },
+      "properties": {
+        "id": "lake-18da38dfa35a",
+        "name": "AmberHolm",
+        "kind": "lake",
+        "cell_count": 53
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -44.99999999999999,
+          -70.48134169093096
+        ]
+      },
+      "properties": {
+        "id": "lake-21ce8e82d427",
+        "name": "DoverHolm",
+        "kind": "lake",
+        "cell_count": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.33597794623329,
+          57.72124870148128
+        ]
+      },
+      "properties": {
+        "id": "lake-33704fa3d67e",
+        "name": "CassianRidge",
+        "kind": "lake",
+        "cell_count": 54
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -156.59133711434177,
+          81.37467391931692
+        ]
+      },
+      "properties": {
+        "id": "lake-4303f340fad5",
+        "name": "MirrinSound",
+        "kind": "lake",
+        "cell_count": 13
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          157.4773185483871,
+          -5.565352206877673
+        ]
+      },
+      "properties": {
+        "id": "lake-49db3b7db8eb",
+        "name": "SolmarSound",
+        "kind": "lake",
+        "cell_count": 31
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.34375,
+          -13.76542006495778
+        ]
+      },
+      "properties": {
+        "id": "lake-533969a9deeb",
+        "name": "CassianReach",
+        "kind": "lake",
+        "cell_count": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -125.25031775712344,
+          58.918219526410795
+        ]
+      },
+      "properties": {
+        "id": "lake-5e384fc9a385",
+        "name": "SouthBay",
+        "kind": "lake",
+        "cell_count": 8
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -33.92029656691749,
+          -38.058983402984374
+        ]
+      },
+      "properties": {
+        "id": "lake-6b56bcd985a2",
+        "name": "SouthBay",
+        "kind": "lake",
+        "cell_count": 22
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -143.6017018867409,
+          66.03573487965542
+        ]
+      },
+      "properties": {
+        "id": "lake-8e9a1d5fa0a1",
+        "name": "CassianGate",
+        "kind": "lake",
+        "cell_count": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          149.7889497928612,
+          71.80802506732951
+        ]
+      },
+      "properties": {
+        "id": "lake-8fdd8cd8039a",
+        "name": "AurelSound",
+        "kind": "lake",
+        "cell_count": 8
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.35519265100775,
+          72.19989620867801
+        ]
+      },
+      "properties": {
+        "id": "lake-92dbd1b9efc2",
+        "name": "CassianReach",
+        "kind": "lake",
+        "cell_count": 43
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -149.203125,
+          15.184545769576069
+        ]
+      },
+      "properties": {
+        "id": "lake-a611086294ff",
+        "name": "HighSound",
+        "kind": "lake",
+        "cell_count": 35
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -130.3125,
+          -9.533105432553901
+        ]
+      },
+      "properties": {
+        "id": "lake-a69571a7adbc",
+        "name": "VeldGate",
+        "kind": "lake",
+        "cell_count": 6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -120.43526785714286,
+          -14.917993551133248
+        ]
+      },
+      "properties": {
+        "id": "lake-ae168a56c91a",
+        "name": "WestRidge",
+        "kind": "lake",
+        "cell_count": 7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -27.36778846153846,
+          29.353823430941393
+        ]
+      },
+      "properties": {
+        "id": "lake-b32521da2afb",
+        "name": "NorthBay",
+        "kind": "lake",
+        "cell_count": 26
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -33.05819712691398,
+          -61.20240550490566
+        ]
+      },
+      "properties": {
+        "id": "lake-c380ac8c7bc3",
+        "name": "KorvRidge",
+        "kind": "lake",
+        "cell_count": 17
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -164.18354298428432,
+          -62.138596430210306
+        ]
+      },
+      "properties": {
+        "id": "lake-d68729a14a1c",
+        "name": "AmberReach",
+        "kind": "lake",
+        "cell_count": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -165.703125,
+          2.9534335021425364
+        ]
+      },
+      "properties": {
+        "id": "lake-da39728fd12e",
+        "name": "VeldHolm",
+        "kind": "lake",
+        "cell_count": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -174.19601990282314,
+          45.221820194560806
+        ]
+      },
+      "properties": {
+        "id": "lake-eadf5dd4e879",
+        "name": "WestSound",
+        "kind": "lake",
+        "cell_count": 18
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.10199003500891,
+          -55.934063351364884
+        ]
+      },
+      "properties": {
+        "id": "lake-ef619d747434",
+        "name": "NerathHolm",
+        "kind": "lake",
+        "cell_count": 7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -166.67237523609532,
+          65.34874833521395
+        ]
+      },
+      "properties": {
+        "id": "lake-f8b1d34ad8e4",
+        "name": "KorvSound",
+        "kind": "lake",
+        "cell_count": 5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.0427900131561,
+          -64.95360234933442
+        ]
+      },
+      "properties": {
+        "id": "lake-ff08dcf3db57",
+        "name": "SerethReach",
+        "kind": "lake",
+        "cell_count": 161
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.27973790322581,
+          32.5754475434424
+        ]
+      },
+      "properties": {
+        "id": "pass-02caf17f3b0e",
+        "name": "SolmarRidge",
+        "kind": "pass",
+        "cell_count": 31
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          38.89209231584759,
+          44.82965443060205
+        ]
+      },
+      "properties": {
+        "id": "pass-06baa586eac5",
+        "name": "NorthSound",
+        "kind": "pass",
+        "cell_count": 10
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.00352740730912,
+          9.591564089877105
+        ]
+      },
+      "properties": {
+        "id": "pass-0b54739e7f6d",
+        "name": "KorvBay",
+        "kind": "pass",
+        "cell_count": 699
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.109375,
+          -5.585496949603872
+        ]
+      },
+      "properties": {
+        "id": "pass-0c038dbf3979",
+        "name": "SolmarRidge",
+        "kind": "pass",
+        "cell_count": 9
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          61.17187499999999,
+          27.048350410069073
+        ]
+      },
+      "properties": {
+        "id": "pass-0dce8faf6095",
+        "name": "SilverReach",
+        "kind": "pass",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -24.88539177952652,
+          -39.826184501590284
+        ]
+      },
+      "properties": {
+        "id": "pass-0e180b19117e",
+        "name": "AmberSound",
+        "kind": "pass",
+        "cell_count": 510
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -107.578125,
+          0.6702963785396038
+        ]
+      },
+      "properties": {
+        "id": "pass-12aef937eff6",
+        "name": "VeldGate",
+        "kind": "pass",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.65533088235294,
+          32.17634625691818
+        ]
+      },
+      "properties": {
+        "id": "pass-132574064995",
+        "name": "HighBay",
+        "kind": "pass",
+        "cell_count": 17
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -19.957324733158668,
+          -68.08623342822399
+        ]
+      },
+      "properties": {
+        "id": "pass-280f8bb517b6",
+        "name": "CassianBay",
+        "kind": "pass",
+        "cell_count": 56
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.74857552532447,
+          -61.20499681672141
+        ]
+      },
+      "properties": {
+        "id": "pass-295f74f3df0e",
+        "name": "CassianRidge",
+        "kind": "pass",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.35450664989274,
+          54.892529489745186
+        ]
+      },
+      "properties": {
+        "id": "pass-2ed4f6c79b04",
+        "name": "SouthRidge",
+        "kind": "pass",
+        "cell_count": 1277
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -130.74677121252506,
+          39.19876351518387
+        ]
+      },
+      "properties": {
+        "id": "pass-388b98f72c48",
+        "name": "SerethMark",
+        "kind": "pass",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -142.86495535714286,
+          17.413134672683892
+        ]
+      },
+      "properties": {
+        "id": "pass-39b39204826f",
+        "name": "MirrinBay",
+        "kind": "pass",
+        "cell_count": 140
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.75007261655801,
+          -54.536895566275376
+        ]
+      },
+      "properties": {
+        "id": "pass-3f0d202b5ad2",
+        "name": "VeldRidge",
+        "kind": "pass",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.83356556334252,
+          -76.17546083735691
+        ]
+      },
+      "properties": {
+        "id": "pass-43ca69f8d655",
+        "name": "IronSound",
+        "kind": "pass",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.574789599632075,
+          -42.27442722701286
+        ]
+      },
+      "properties": {
+        "id": "pass-495a6e25fe24",
+        "name": "VeldMark",
+        "kind": "pass",
+        "cell_count": 1220
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -159.60937500000003,
+          42.446380511014446
+        ]
+      },
+      "properties": {
+        "id": "pass-4aa55a114d35",
+        "name": "SouthMark",
+        "kind": "pass",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          58.35937500000001,
+          -5.393507986793932
+        ]
+      },
+      "properties": {
+        "id": "pass-4bd676998e36",
+        "name": "EastHolm",
+        "kind": "pass",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.53128257278414,
+          -46.596257821036225
+        ]
+      },
+      "properties": {
+        "id": "pass-51cdab8ac568",
+        "name": "IronRidge",
+        "kind": "pass",
+        "cell_count": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -168.04687500000003,
+          25.52428222098681
+        ]
+      },
+      "properties": {
+        "id": "pass-5a0c76c61a69",
+        "name": "IronGate",
+        "kind": "pass",
+        "cell_count": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          151.171875,
+          8.023598838433935
+        ]
+      },
+      "properties": {
+        "id": "pass-5dd76b53d25e",
+        "name": "SerethReach",
+        "kind": "pass",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          56.25,
+          38.36342158823771
+        ]
+      },
+      "properties": {
+        "id": "pass-5e2828f155a8",
+        "name": "VeldReach",
+        "kind": "pass",
+        "cell_count": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.25838348225292,
+          -41.21357936521688
+        ]
+      },
+      "properties": {
+        "id": "pass-5fbbc7abeaa9",
+        "name": "SouthHolm",
+        "kind": "pass",
+        "cell_count": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          169.453125,
+          2.0737695195465657
+        ]
+      },
+      "properties": {
+        "id": "pass-642509c4310d",
+        "name": "NerathHolm",
+        "kind": "pass",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -45.0,
+          38.64856224711353
+        ]
+      },
+      "properties": {
+        "id": "pass-66ae7fc350c8",
+        "name": "TesenBay",
+        "kind": "pass",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.30168269230769,
+          0.8762050432485429
+        ]
+      },
+      "properties": {
+        "id": "pass-676bd7443fa6",
+        "name": "IronMark",
+        "kind": "pass",
+        "cell_count": 39
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          63.984375,
+          26.318153869410157
+        ]
+      },
+      "properties": {
+        "id": "pass-6d559e8984f3",
+        "name": "SilverRidge",
+        "kind": "pass",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.940625,
+          4.458421728783231
+        ]
+      },
+      "properties": {
+        "id": "pass-73c57d419088",
+        "name": "TesenRidge",
+        "kind": "pass",
+        "cell_count": 25
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -43.444933420242194,
+          48.137757946113446
+        ]
+      },
+      "properties": {
+        "id": "pass-76ce7773decb",
+        "name": "CassianRidge",
+        "kind": "pass",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.546875,
+          -4.061720379305512
+        ]
+      },
+      "properties": {
+        "id": "pass-7728034fd0d8",
+        "name": "SouthMere",
+        "kind": "pass",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.14591170904341,
+          57.847864073036604
+        ]
+      },
+      "properties": {
+        "id": "pass-778b01d28232",
+        "name": "HighSound",
+        "kind": "pass",
+        "cell_count": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -155.109375,
+          36.79868725667453
+        ]
+      },
+      "properties": {
+        "id": "pass-7f193945f80f",
+        "name": "SolmarReach",
+        "kind": "pass",
+        "cell_count": 5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.32390859665713,
+          -52.03512964189872
+        ]
+      },
+      "properties": {
+        "id": "pass-83d2a6dbf806",
+        "name": "CassianMere",
+        "kind": "pass",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.828125,
+          26.487314347192548
+        ]
+      },
+      "properties": {
+        "id": "pass-87dafeb75ab5",
+        "name": "TesenReach",
+        "kind": "pass",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          160.546875,
+          5.92811349987887
+        ]
+      },
+      "properties": {
+        "id": "pass-981b9e3403cc",
+        "name": "MirrinBay",
+        "kind": "pass",
+        "cell_count": 12
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          156.33898539017397,
+          41.64742782765816
+        ]
+      },
+      "properties": {
+        "id": "pass-a3534d23cf19",
+        "name": "TesenBay",
+        "kind": "pass",
+        "cell_count": 22
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          56.15260539267537,
+          -53.37459520512572
+        ]
+      },
+      "properties": {
+        "id": "pass-a3d189999cf7",
+        "name": "SolmarMark",
+        "kind": "pass",
+        "cell_count": 42
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          83.67187500000001,
+          22.376499702663935
+        ]
+      },
+      "properties": {
+        "id": "pass-a6301d141bbc",
+        "name": "MirrinBay",
+        "kind": "pass",
+        "cell_count": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.859375,
+          22.93913439851455
+        ]
+      },
+      "properties": {
+        "id": "pass-aa41e4b0d5f6",
+        "name": "WestMark",
+        "kind": "pass",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.328125,
+          7.16008552106535
+        ]
+      },
+      "properties": {
+        "id": "pass-c25999276515",
+        "name": "VeldGate",
+        "kind": "pass",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -133.35744249534423,
+          -72.84226601179573
+        ]
+      },
+      "properties": {
+        "id": "pass-c677c2a42f78",
+        "name": "AurelMark",
+        "kind": "pass",
+        "cell_count": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          58.35937500000001,
+          27.6810399451695
+        ]
+      },
+      "properties": {
+        "id": "pass-c757e9f41035",
+        "name": "DoverReach",
+        "kind": "pass",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          149.73286842474053,
+          56.72769203017656
+        ]
+      },
+      "properties": {
+        "id": "pass-d00e171aaa16",
+        "name": "HighReach",
+        "kind": "pass",
+        "cell_count": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.698454001660703,
+          28.805829797011157
+        ]
+      },
+      "properties": {
+        "id": "pass-d4fdd7ff8ffb",
+        "name": "EastMark",
+        "kind": "pass",
+        "cell_count": 314
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.42738970588235,
+          20.96602705486499
+        ]
+      },
+      "properties": {
+        "id": "pass-d76b2b460c6e",
+        "name": "AurelGate",
+        "kind": "pass",
+        "cell_count": 153
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.046875,
+          24.137261430242724
+        ]
+      },
+      "properties": {
+        "id": "pass-db53969a855b",
+        "name": "NerathMark",
+        "kind": "pass",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.765625,
+          -39.127311047302385
+        ]
+      },
+      "properties": {
+        "id": "pass-e54a64e54586",
+        "name": "AmberMark",
+        "kind": "pass",
+        "cell_count": 8
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.82457165431543,
+          -78.86702448529901
+        ]
+      },
+      "properties": {
+        "id": "pass-f3b68524b903",
+        "name": "NerathHolm",
+        "kind": "pass",
+        "cell_count": 6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          47.87895672855573,
+          41.39666102782497
+        ]
+      },
+      "properties": {
+        "id": "pass-f78ff01f1f36",
+        "name": "TesenSound",
+        "kind": "pass",
+        "cell_count": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          45.83309048991743,
+          -27.873991067765427
+        ]
+      },
+      "properties": {
+        "id": "pass-fcf64b4f8984",
+        "name": "SouthMere",
+        "kind": "pass",
+        "cell_count": 233
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.33794969930932,
+          -11.94193616438974
+        ]
+      },
+      "properties": {
+        "id": "pass-fd0e5ac57520",
+        "name": "AmberMark",
+        "kind": "pass",
+        "cell_count": 147
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.230853873239436,
+          37.90189278385173
+        ]
+      },
+      "properties": {
+        "id": "range-0591833a3f25",
+        "name": "Highspine",
+        "kind": "range",
+        "cell_count": 71
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -19.882803622695285,
+          -68.07088520080167
+        ]
+      },
+      "properties": {
+        "id": "range-24e6a322ac80",
+        "name": "HighSound",
+        "kind": "range",
+        "cell_count": 26
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.85642224409449,
+          24.1330152016616
+        ]
+      },
+      "properties": {
+        "id": "range-4a665932586c",
+        "name": "Highspine",
+        "kind": "range",
+        "cell_count": 127
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -40.14840033572498,
+          4.424012844547503
+        ]
+      },
+      "properties": {
+        "id": "range-783a55303787",
+        "name": "NorthMere",
+        "kind": "range",
+        "cell_count": 5901
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.34332654575847,
+          33.74144561279947
+        ]
+      },
+      "properties": {
+        "id": "range-8c7411626ec8",
+        "name": "KorvReach",
+        "kind": "range",
+        "cell_count": 250
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -35.15625,
+          -20.53105796429981
+        ]
+      },
+      "properties": {
+        "id": "range-987c1c0e774a",
+        "name": "Highspine",
+        "kind": "range",
+        "cell_count": 6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.86240524904298,
+          -46.273309235965996
+        ]
+      },
+      "properties": {
+        "id": "range-ae00b44e736a",
+        "name": "AurelHolm",
+        "kind": "range",
+        "cell_count": 32
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          156.47690093738277,
+          41.58188428227184
+        ]
+      },
+      "properties": {
+        "id": "range-ba0acd43e743",
+        "name": "CassianRidge",
+        "kind": "range",
+        "cell_count": 6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          56.15069751664002,
+          -53.409869981962466
+        ]
+      },
+      "properties": {
+        "id": "range-ca4629e25f73",
+        "name": "Highspine",
+        "kind": "range",
+        "cell_count": 16
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          42.82498893932513,
+          -14.94936535627196
+        ]
+      },
+      "properties": {
+        "id": "range-dc214f2749ea",
+        "name": "Highspine",
+        "kind": "range",
+        "cell_count": 668
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -24.015524465020828,
+          -41.00666259376465
+        ]
+      },
+      "properties": {
+        "id": "range-e5f33d84c52f",
+        "name": "KorvMere",
+        "kind": "range",
+        "cell_count": 375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.75104608391966,
+          54.06159324979447
+        ]
+      },
+      "properties": {
+        "id": "river-01d010d7fdbd",
+        "name": "AmberGate",
+        "kind": "river",
+        "cell_count": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          170.96754807692307,
+          -14.27142775261132
+        ]
+      },
+      "properties": {
+        "id": "river-0d5ece1f997b",
+        "name": "SolmarRidge",
+        "kind": "river",
+        "cell_count": 13
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          153.18629681171367,
+          -49.521646850917016
+        ]
+      },
+      "properties": {
+        "id": "river-0fe02a0ba68c",
+        "name": "TesenMark",
+        "kind": "river",
+        "cell_count": 5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          61.875,
+          -17.351724728546955
+        ]
+      },
+      "properties": {
+        "id": "river-142d6c56feed",
+        "name": "IronGate",
+        "kind": "river",
+        "cell_count": 8
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -170.37110435539054,
+          50.143691785904295
+        ]
+      },
+      "properties": {
+        "id": "river-15695f38b48f",
+        "name": "DoverMark",
+        "kind": "river",
+        "cell_count": 13
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.07572115384615,
+          -12.314516681370236
+        ]
+      },
+      "properties": {
+        "id": "river-19158915f396",
+        "name": "SerethMere",
+        "kind": "river",
+        "cell_count": 78
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -165.9375,
+          -43.350534369851516
+        ]
+      },
+      "properties": {
+        "id": "river-1f888783bf3f",
+        "name": "TesenBay",
+        "kind": "river",
+        "cell_count": 10
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -177.3046875,
+          32.543141235310124
+        ]
+      },
+      "properties": {
+        "id": "river-20277febafd0",
+        "name": "SouthHolm",
+        "kind": "river",
+        "cell_count": 12
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -137.390625,
+          -33.175361381275
+        ]
+      },
+      "properties": {
+        "id": "river-21de386b360f",
+        "name": "VeldRidge",
+        "kind": "river",
+        "cell_count": 10
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.828125,
+          -12.325365129012162
+        ]
+      },
+      "properties": {
+        "id": "river-265840aac9f2",
+        "name": "AurelRidge",
+        "kind": "river",
+        "cell_count": 24
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          45.043386310812025,
+          -51.27818421358754
+        ]
+      },
+      "properties": {
+        "id": "river-276e1dae6877",
+        "name": "HighMark",
+        "kind": "river",
+        "cell_count": 8
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -101.04369406248769,
+          69.36205910526014
+        ]
+      },
+      "properties": {
+        "id": "river-2933c7c67324",
+        "name": "NerathReach",
+        "kind": "river",
+        "cell_count": 10
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -36.20812079440983,
+          71.41376329511735
+        ]
+      },
+      "properties": {
+        "id": "river-3000916a37cd",
+        "name": "NorthBay",
+        "kind": "river",
+        "cell_count": 113
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          177.890625,
+          31.623296192002982
+        ]
+      },
+      "properties": {
+        "id": "river-322bcfe8507c",
+        "name": "IronSound",
+        "kind": "river",
+        "cell_count": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.85937500000001,
+          -38.329302263165744
+        ]
+      },
+      "properties": {
+        "id": "river-38931a51da60",
+        "name": "VeldReach",
+        "kind": "river",
+        "cell_count": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -60.04517158698873,
+          44.13026358643856
+        ]
+      },
+      "properties": {
+        "id": "river-3cb3667bf429",
+        "name": "AmberRidge",
+        "kind": "river",
+        "cell_count": 22
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          151.38014889181588,
+          -60.544651061428866
+        ]
+      },
+      "properties": {
+        "id": "river-3cf283bb7bd4",
+        "name": "AmberRidge",
+        "kind": "river",
+        "cell_count": 14
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.530356650313292,
+          -71.18889147924578
+        ]
+      },
+      "properties": {
+        "id": "river-40ace580a952",
+        "name": "MirrinSound",
+        "kind": "river",
+        "cell_count": 5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -29.671875,
+          -20.172802171216098
+        ]
+      },
+      "properties": {
+        "id": "river-43656d1fa3ea",
+        "name": "AmberHolm",
+        "kind": "river",
+        "cell_count": 5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          146.015625,
+          -10.746817895662948
+        ]
+      },
+      "properties": {
+        "id": "river-45173cc49e9c",
+        "name": "AurelMark",
+        "kind": "river",
+        "cell_count": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -146.0546875,
+          -13.472732057548985
+        ]
+      },
+      "properties": {
+        "id": "river-48b6874011a5",
+        "name": "NerathRidge",
+        "kind": "river",
+        "cell_count": 36
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.3515625,
+          -31.97978281864589
+        ]
+      },
+      "properties": {
+        "id": "river-4be965de7d53",
+        "name": "HighMark",
+        "kind": "river",
+        "cell_count": 12
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.1463068181818,
+          -14.567366692112612
+        ]
+      },
+      "properties": {
+        "id": "river-522d341536f5",
+        "name": "SolmarReach",
+        "kind": "river",
+        "cell_count": 11
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -119.59109042553192,
+          -19.582738331381268
+        ]
+      },
+      "properties": {
+        "id": "river-537d9eff71d9",
+        "name": "CassianGate",
+        "kind": "river",
+        "cell_count": 94
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -35.859375,
+          -37.87532582082899
+        ]
+      },
+      "properties": {
+        "id": "river-54a0397d27f0",
+        "name": "CassianMark",
+        "kind": "river",
+        "cell_count": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          145.14508928571428,
+          12.532999530470745
+        ]
+      },
+      "properties": {
+        "id": "river-585b13fcb2cf",
+        "name": "AurelBay",
+        "kind": "river",
+        "cell_count": 7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          54.796875,
+          -22.39994296126931
+        ]
+      },
+      "properties": {
+        "id": "river-5924ee3c0468",
+        "name": "WestReach",
+        "kind": "river",
+        "cell_count": 45
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.015625,
+          17.186140167612468
+        ]
+      },
+      "properties": {
+        "id": "river-5c632ca5b1f7",
+        "name": "VeldMark",
+        "kind": "river",
+        "cell_count": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          153.984375,
+          -41.226347429930435
+        ]
+      },
+      "properties": {
+        "id": "river-5cce1fbf5248",
+        "name": "SouthMere",
+        "kind": "river",
+        "cell_count": 5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.62276785714286,
+          33.76961343693786
+        ]
+      },
+      "properties": {
+        "id": "river-5cd7b0ed2b2d",
+        "name": "CassianMark",
+        "kind": "river",
+        "cell_count": 14
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.1364428082016,
+          51.66446528760644
+        ]
+      },
+      "properties": {
+        "id": "river-5e493dbe157b",
+        "name": "DoverRidge",
+        "kind": "river",
+        "cell_count": 16
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          47.390625,
+          -0.9342914294611454
+        ]
+      },
+      "properties": {
+        "id": "river-5e66511938e1",
+        "name": "SolmarMark",
+        "kind": "river",
+        "cell_count": 5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -172.47401165643575,
+          43.79926758166081
+        ]
+      },
+      "properties": {
+        "id": "river-61c0984e973d",
+        "name": "WestMere",
+        "kind": "river",
+        "cell_count": 6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          173.62309994630775,
+          46.35122466947418
+        ]
+      },
+      "properties": {
+        "id": "river-70f7f87733c7",
+        "name": "CassianHolm",
+        "kind": "river",
+        "cell_count": 33
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.765625,
+          -27.60138323186344
+        ]
+      },
+      "properties": {
+        "id": "river-79ab2608f659",
+        "name": "KorvGate",
+        "kind": "river",
+        "cell_count": 15
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -10.269006422705907,
+          -49.6405631447119
+        ]
+      },
+      "properties": {
+        "id": "river-7dcc8dd137a4",
+        "name": "SouthMark",
+        "kind": "river",
+        "cell_count": 19
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -150.68003007248714,
+          -62.111841670812424
+        ]
+      },
+      "properties": {
+        "id": "river-7f2aea7702ae",
+        "name": "CassianHolm",
+        "kind": "river",
+        "cell_count": 44
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -129.98520874920163,
+          45.378349353596384
+        ]
+      },
+      "properties": {
+        "id": "river-81e82fdca252",
+        "name": "HighMere",
+        "kind": "river",
+        "cell_count": 6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.70312500000003,
+          13.382524614137346
+        ]
+      },
+      "properties": {
+        "id": "river-836794b8d8d6",
+        "name": "MirrinReach",
+        "kind": "river",
+        "cell_count": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -36.15890622094625,
+          -77.51611892427093
+        ]
+      },
+      "properties": {
+        "id": "river-8cc6e4b0b9a2",
+        "name": "DoverBay",
+        "kind": "river",
+        "cell_count": 24
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.72545752313846,
+          -35.861539415063646
+        ]
+      },
+      "properties": {
+        "id": "river-8d54693893ee",
+        "name": "MirrinReach",
+        "kind": "river",
+        "cell_count": 24
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -176.484375,
+          -35.79325834195521
+        ]
+      },
+      "properties": {
+        "id": "river-8f0c1c49e409",
+        "name": "TesenMere",
+        "kind": "river",
+        "cell_count": 5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -156.328125,
+          0.21308810098084044
+        ]
+      },
+      "properties": {
+        "id": "river-9116928782ad",
+        "name": "VeldGate",
+        "kind": "river",
+        "cell_count": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -135.05408653846155,
+          -19.354813235728987
+        ]
+      },
+      "properties": {
+        "id": "river-93b757f3ce18",
+        "name": "SerethReach",
+        "kind": "river",
+        "cell_count": 13
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -160.59375,
+          -27.15242113695616
+        ]
+      },
+      "properties": {
+        "id": "river-93ebeda59184",
+        "name": "TesenHolm",
+        "kind": "river",
+        "cell_count": 10
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -31.11328125,
+          -30.07784209448235
+        ]
+      },
+      "properties": {
+        "id": "river-96b11e775ad3",
+        "name": "AmberGate",
+        "kind": "river",
+        "cell_count": 8
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.95162847286429,
+          67.02951201101422
+        ]
+      },
+      "properties": {
+        "id": "river-9aef918d0e63",
+        "name": "VeldBay",
+        "kind": "river",
+        "cell_count": 5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -28.50396362702583,
+          -60.221192321906045
+        ]
+      },
+      "properties": {
+        "id": "river-9b45f8709c5e",
+        "name": "NorthMere",
+        "kind": "river",
+        "cell_count": 29
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          161.33316532258064,
+          -7.474719276362099
+        ]
+      },
+      "properties": {
+        "id": "river-9be4aa65f256",
+        "name": "SerethMere",
+        "kind": "river",
+        "cell_count": 31
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          147.421875,
+          36.689458441664705
+        ]
+      },
+      "properties": {
+        "id": "river-9ce13e67384c",
+        "name": "SerethMark",
+        "kind": "river",
+        "cell_count": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.58280935952112,
+          -39.317881802410824
+        ]
+      },
+      "properties": {
+        "id": "river-a08dd402bf2e",
+        "name": "MirrinRidge",
+        "kind": "river",
+        "cell_count": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.828125,
+          27.43418733166051
+        ]
+      },
+      "properties": {
+        "id": "river-a4459122670d",
+        "name": "HighSound",
+        "kind": "river",
+        "cell_count": 6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          144.55078125,
+          -2.8809263914729275
+        ]
+      },
+      "properties": {
+        "id": "river-a7efc1153db3",
+        "name": "SolmarReach",
+        "kind": "river",
+        "cell_count": 24
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -134.0711481745386,
+          55.804715796188546
+        ]
+      },
+      "properties": {
+        "id": "river-a9101e680671",
+        "name": "HighHolm",
+        "kind": "river",
+        "cell_count": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -94.9428027580784,
+          54.49804031621301
+        ]
+      },
+      "properties": {
+        "id": "river-a9f779a0f745",
+        "name": "DoverBay",
+        "kind": "river",
+        "cell_count": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -41.41817775517466,
+          -52.15249151488551
+        ]
+      },
+      "properties": {
+        "id": "river-aabd65ff5669",
+        "name": "VeldHolm",
+        "kind": "river",
+        "cell_count": 19
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          88.76800941137856,
+          -47.798394315406824
+        ]
+      },
+      "properties": {
+        "id": "river-af5ccf893767",
+        "name": "EastHolm",
+        "kind": "river",
+        "cell_count": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.6875,
+          31.80812036372782
+        ]
+      },
+      "properties": {
+        "id": "river-b462777f0f37",
+        "name": "EastMark",
+        "kind": "river",
+        "cell_count": 22
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.484375,
+          15.355168720462226
+        ]
+      },
+      "properties": {
+        "id": "river-b7496a586082",
+        "name": "AurelSound",
+        "kind": "river",
+        "cell_count": 9
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -40.54892412202711,
+          -44.69421270848037
+        ]
+      },
+      "properties": {
+        "id": "river-bfd7aa439b8c",
+        "name": "SouthGate",
+        "kind": "river",
+        "cell_count": 7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.421874999999998,
+          34.067536763524345
+        ]
+      },
+      "properties": {
+        "id": "river-c1c5b4adb0c6",
+        "name": "AmberBay",
+        "kind": "river",
+        "cell_count": 9
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -26.796875,
+          -40.85163549712655
+        ]
+      },
+      "properties": {
+        "id": "river-c3f319152376",
+        "name": "VeldMark",
+        "kind": "river",
+        "cell_count": 9
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -167.421875,
+          30.545206074070094
+        ]
+      },
+      "properties": {
+        "id": "river-c97a07485652",
+        "name": "WestBay",
+        "kind": "river",
+        "cell_count": 9
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.171875,
+          29.85420096563574
+        ]
+      },
+      "properties": {
+        "id": "river-d2a1519021de",
+        "name": "NorthMere",
+        "kind": "river",
+        "cell_count": 9
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -150.53819444444446,
+          9.389308367881199
+        ]
+      },
+      "properties": {
+        "id": "river-d40a4c26b874",
+        "name": "WestRidge",
+        "kind": "river",
+        "cell_count": 162
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.4296875,
+          0.9173294279835646
+        ]
+      },
+      "properties": {
+        "id": "river-d6b591b86a33",
+        "name": "DoverMark",
+        "kind": "river",
+        "cell_count": 40
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.765625,
+          -26.84786045886502
+        ]
+      },
+      "properties": {
+        "id": "river-d72177dbffec",
+        "name": "TesenMark",
+        "kind": "river",
+        "cell_count": 5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.171875,
+          32.49085959351278
+        ]
+      },
+      "properties": {
+        "id": "river-d76fd24f05a1",
+        "name": "SerethBay",
+        "kind": "river",
+        "cell_count": 18
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.00751053313125,
+          43.43165117631838
+        ]
+      },
+      "properties": {
+        "id": "river-d8e03f9aeb8d",
+        "name": "WestHolm",
+        "kind": "river",
+        "cell_count": 9
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.95908740797238,
+          59.57118491846504
+        ]
+      },
+      "properties": {
+        "id": "river-da213a64c1c1",
+        "name": "IronMark",
+        "kind": "river",
+        "cell_count": 17
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.828125,
+          37.54271760190577
+        ]
+      },
+      "properties": {
+        "id": "river-e30705fd91a9",
+        "name": "CassianMark",
+        "kind": "river",
+        "cell_count": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -50.130611842116416,
+          76.71943233586822
+        ]
+      },
+      "properties": {
+        "id": "river-e5e5bc1cbc78",
+        "name": "KorvRidge",
+        "kind": "river",
+        "cell_count": 5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.250000000000002,
+          30.43656427204113
+        ]
+      },
+      "properties": {
+        "id": "river-e68d871c497d",
+        "name": "WestReach",
+        "kind": "river",
+        "cell_count": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.6328125,
+          -1.324079244630761
+        ]
+      },
+      "properties": {
+        "id": "river-e74567610527",
+        "name": "AmberReach",
+        "kind": "river",
+        "cell_count": 12
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.47601563577668,
+          54.52588608336098
+        ]
+      },
+      "properties": {
+        "id": "river-ea35276f53fc",
+        "name": "AmberHolm",
+        "kind": "river",
+        "cell_count": 6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.47098214285714,
+          31.851848687592142
+        ]
+      },
+      "properties": {
+        "id": "river-ef514596b9be",
+        "name": "MirrinHolm",
+        "kind": "river",
+        "cell_count": 63
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -157.65625,
+          31.255385615367718
+        ]
+      },
+      "properties": {
+        "id": "river-f1ce7ea2716a",
+        "name": "AurelMere",
+        "kind": "river",
+        "cell_count": 18
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -158.25334821428572,
+          -11.84425127497074
+        ]
+      },
+      "properties": {
+        "id": "river-fbb2fc8bb119",
+        "name": "TesenMark",
+        "kind": "river",
+        "cell_count": 28
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          159.7547401685393,
+          21.982795805801864
+        ]
+      },
+      "properties": {
+        "id": "sea-00b4efc96d7a",
+        "name": "SolmarMark",
+        "kind": "sea",
+        "cell_count": 445,
+        "enclosed": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -153.91036184210526,
+          -28.486370431446858
+        ]
+      },
+      "properties": {
+        "id": "sea-04bd0020942e",
+        "name": "AurelReach",
+        "kind": "sea",
+        "cell_count": 38,
+        "enclosed": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.640625,
+          37.12055355937509
+        ]
+      },
+      "properties": {
+        "id": "sea-0a47c8efdf11",
+        "name": "TesenSound",
+        "kind": "sea",
+        "cell_count": 45,
+        "enclosed": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -171.253125,
+          23.064424302746932
+        ]
+      },
+      "properties": {
+        "id": "sea-78433d8efde2",
+        "name": "WestMere",
+        "kind": "sea",
+        "cell_count": 25,
+        "enclosed": true
+      }
+    }
+  ]
+}

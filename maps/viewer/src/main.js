@@ -5,11 +5,12 @@ import maplibregl from "maplibre-gl";
 const GLOBE_MAX_ZOOM = 4.25;
 
 /**
- * Eastmarch theater on the *algorithmic* world sphere (see maps/generator).
- * Lon/lat are equirectangular coords from generate_world.py, not Earth.
+ * Eastmarch theater on the *algorithmic* world sphere (seed 150).
+ * Lon/lat are equirectangular coords from deeptime v2, not Earth.
+ * Centered on the scored Veldara claim region (~3.2M km²).
  */
 const EASTMARCH = {
-  center: [-12, 34],
+  center: [144, 31],
   zoom: 3.2,
   bearing: 0,
   pitch: 0,

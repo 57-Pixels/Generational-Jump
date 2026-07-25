@@ -19,9 +19,9 @@
 
 ## Continents vs landmasses
 
-**Plate = current rigid kinematic domain. Continent = continental-crust/terrane lineage. Landmass = continuous dry land.** These overlap but are not aliases. Present ocean ≈ 71% / land ≈ **29%**. See [`12`](12-worldbuilding-principles.md).
+**Plate = current rigid kinematic domain. Continent = continental-crust/terrane lineage. Landmass = continuous dry land.** These overlap but are not aliases. Present land fraction is **emergent** from crust history (no clamp). The **promoted algorithmic seed 150** measures ≈ **44%** land; the older ellipse reference-campaign board was authored near Earth ≈ 29%. See [`12`](12-worldbuilding-principles.md) and `maps/generator/promoted-seed.json`.
 
-| Name | Kind | Role (reference campaign) |
+| Name | Kind | Role (reference campaign / seed 150) |
 | --- | --- | --- |
 | **Aurelian** | Continent lineage (mostly one present plate) | Home board — Veldara, Korvath, Doverin, Sereth + footnotes |
 | **Kharzhan** | Continent lineage (mostly one present plate) | Great-power homeland across the East Ocean rift |
@@ -29,7 +29,7 @@
 | **Farreach** | **Landmass** (not one plate) | Sutured Nerath + Tesen; one dry board, two continents |
 | **Solmar** | Continental fragment lineage | Solara homeland + arc islands (Australia-scale) |
 
-Reference-campaign shapes: `05`. New stories may regenerate from deep-time seeds. Politics: `06`/`07`.
+**Canonical generator:** `python3 -m deeptime --engine v2 --seed 150` (`GENERATOR_VERSION` 2.2.0). Politics: `06`/`07`. Ellipse shapes in `05` remain the formation *story*; coordinates for new work come from the promoted seed.
 ## Who is on stage vs footnote
 
 **Fuller history** for: **important/neighbors**, **odd ones out** (improbable leftovers), and **countries of interest**. Detail still scales with recency ([`12`](12-worldbuilding-principles.md)).

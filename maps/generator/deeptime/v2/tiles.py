@@ -47,11 +47,11 @@ class DeepWindow:
         )
 
 
-# Mid-frame northern focus: Aurelian theatre + nested Veldara board.
-# Sized so z7–z11 coverage is ~tens of thousands of tiles, not millions.
+# Promoted seed 150 Veldara claim (~144°E, 31°N) + Aurelian theatre.
+# Sized so z7–z11 coverage stays tens of thousands of tiles, not millions.
 DEFAULT_DEEP_WINDOWS: tuple[DeepWindow, ...] = (
-    DeepWindow("aurelian", -10.0, 24.0, 26.0, 48.0),
-    DeepWindow("veldara", -4.0, 18.0, 30.0, 44.0),
+    DeepWindow("aurelian", 125.0, 160.0, 5.0, 50.0),
+    DeepWindow("veldara", 132.0, 155.0, 18.0, 45.0),
 )
 
 

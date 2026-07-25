@@ -17,7 +17,8 @@
 | Spec | Value |
 | --- | --- |
 | Extent | Veldara + faded slivers of Korvath (E), Doverin (W/SW), Sereth (N) |
-| Outline | Exact world-master crop |
+| Algorithmic sphere (seed 150) | Claim ≈ **3.21M km²**; center **~144°E, 31°N**; bbox ~124–171°E, 11°S–69°N |
+| Outline | Exact world-master crop from deeptime export |
 | North | Up |
 | Style | Same Earthlike atlas family as the world physical map |
 

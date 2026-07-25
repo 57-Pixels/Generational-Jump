@@ -1,28 +1,28 @@
 {
   "method": "deeptime-spherical-v2",
-  "generator_version": "2.1.0",
-  "seed": 42,
+  "generator_version": "2.2.0",
+  "seed": 150,
   "era": "lgm",
   "grid": {
     "kind": "cubed-sphere",
     "face_n": 64,
     "cells": 24576
   },
-  "ticks": 80,
+  "ticks": 40,
   "ma_per_tick": 8.0,
   "sea_level_m": -120.0,
-  "land_fraction": 0.2833282411472662,
+  "land_fraction": 0.4615565788717661,
   "land_fraction_emergent": true,
   "plate_count": 12,
   "continent_count": 7,
-  "landmass_count": 7,
-  "resource_deposit_count": 34,
+  "landmass_count": 11,
+  "resource_deposit_count": 41,
   "resource_counts": {
     "coal_basin": 1,
     "petroleum_system": 1,
     "helium_gas": 1,
-    "bif_iron": 2,
-    "bauxite_laterite": 5,
+    "bif_iron": 1,
+    "bauxite_laterite": 6,
     "sedimentary_manganese": 1,
     "vanadium_titanomagnetite": 1,
     "layered_chromite_pgm": 1,
@@ -38,7 +38,7 @@
     "antimony_hydrothermal": 1,
     "uranium_system": 1,
     "carbonatite_ree_nb": 1,
-    "ionic_clay_hree": 1,
+    "ionic_clay_hree": 8,
     "mineral_sands": 1,
     "lithium_brine": 1,
     "lct_pegmatite": 1,
@@ -53,6 +53,137 @@
     "habitability_separate_from_incentives": true,
     "site_count": 120
   },
+  "features": {
+    "count": 445
+  },
+  "navigation": {
+    "harbour_sites": 1150,
+    "top_harbour_rating": 0.863,
+    "chokepoint_count": 32,
+    "shelf_break_cells": 200,
+    "chokepoints": [
+      {
+        "id": 3,
+        "width_km": 0.0,
+        "length_km": 139.1,
+        "mean_depth_m": 19.2,
+        "cell_count": 1,
+        "has_alternative_route": true,
+        "lon": 34.453125,
+        "lat": -32.103635900466216
+      },
+      {
+        "id": 4,
+        "width_km": 0.0,
+        "length_km": 144.52,
+        "mean_depth_m": 1804.8,
+        "cell_count": 1,
+        "has_alternative_route": true,
+        "lon": -158.203125,
+        "lat": -27.069041732316585
+      },
+      {
+        "id": 5,
+        "width_km": 0.0,
+        "length_km": 142.38,
+        "mean_depth_m": 4308.3,
+        "cell_count": 1,
+        "has_alternative_route": true,
+        "lon": -149.765625,
+        "lat": -25.432280420357024
+      },
+      {
+        "id": 6,
+        "width_km": 0.0,
+        "length_km": 140.46,
+        "mean_depth_m": 3167.5,
+        "cell_count": 1,
+        "has_alternative_route": true,
+        "lon": -153.984375,
+        "lat": -33.006191233400884
+      },
+      {
+        "id": 7,
+        "width_km": 0.0,
+        "length_km": 146.97,
+        "mean_depth_m": 6.7,
+        "cell_count": 1,
+        "has_alternative_route": true,
+        "lon": 9.140625,
+        "lat": 27.123647269520177
+      },
+      {
+        "id": 8,
+        "width_km": 0.0,
+        "length_km": 140.78,
+        "mean_depth_m": 2648.5,
+        "cell_count": 1,
+        "has_alternative_route": true,
+        "lon": 144.140625,
+        "lat": 6.281446935919767
+      },
+      {
+        "id": 9,
+        "width_km": 0.0,
+        "length_km": 145.03,
+        "mean_depth_m": 2612.6,
+        "cell_count": 1,
+        "has_alternative_route": true,
+        "lon": 149.765625,
+        "lat": 9.13826638548685
+      },
+      {
+        "id": 10,
+        "width_km": 0.0,
+        "length_km": 151.73,
+        "mean_depth_m": 4857.7,
+        "cell_count": 1,
+        "has_alternative_route": true,
+        "lon": -173.671875,
+        "lat": 18.87691565303735
+      },
+      {
+        "id": 11,
+        "width_km": 0.0,
+        "length_km": 140.46,
+        "mean_depth_m": 267.9,
+        "cell_count": 1,
+        "has_alternative_route": true,
+        "lon": 144.140625,
+        "lat": 21.5817706392309
+      },
+      {
+        "id": 12,
+        "width_km": 0.0,
+        "length_km": 139.5,
+        "mean_depth_m": 4168.4,
+        "cell_count": 1,
+        "has_alternative_route": true,
+        "lon": -149.765625,
+        "lat": 33.319005174525195
+      },
+      {
+        "id": 13,
+        "width_km": 0.0,
+        "length_km": 134.52,
+        "mean_depth_m": 3918.5,
+        "cell_count": 1,
+        "has_alternative_route": true,
+        "lon": 166.64062500000003,
+        "lat": 42.10774718821986
+      },
+      {
+        "id": 14,
+        "width_km": 0.0,
+        "length_km": 156.02,
+        "mean_depth_m": 5438.1,
+        "cell_count": 1,
+        "has_alternative_route": true,
+        "lon": 175.07812500000003,
+        "lat": 2.1016039038376735
+      }
+    ]
+  },
   "semantics": {
     "plate": "instantaneous rigid kinematic domain",
     "continent": "continental crust lineage / terrane",
@@ -62,19 +193,42 @@
     "scheme": "xyz",
     "path": "tiles/color/{z}/{x}/{y}.png",
     "max_zoom": 3,
+    "global_max_zoom": 2,
+    "deep_max_zoom": 3,
     "mercator_max_lat": 85.0511287798066,
     "note": "MapLibre globe extends raster tiles to poles; image sources do not"
   },
   "config": {
-    "seed": 42,
+    "seed": 150,
     "grid_n": 64,
-    "ticks": 80,
+    "ticks": 40,
     "dt_ma": 8.0,
     "n_plates": 12,
     "n_continents": 7,
     "era": "lgm",
     "export_width": 1024,
     "export_height": 512,
-    "validate": true
+    "validate": true,
+    "tier": "dev",
+    "cache_dir": "/workspace/.cache/deeptime",
+    "use_cache": true,
+    "tile_global_max_zoom": 2,
+    "tile_deep_max_zoom": 3,
+    "tile_deep_windows": [
+      {
+        "name": "aurelian",
+        "lon_min": -10.0,
+        "lon_max": 24.0,
+        "lat_min": 26.0,
+        "lat_max": 48.0
+      },
+      {
+        "name": "veldara",
+        "lon_min": -4.0,
+        "lon_max": 18.0,
+        "lat_min": 30.0,
+        "lat_max": 44.0
+      }
+    ]
   }
 }

@@ -25,7 +25,7 @@ A mix that shifts by year of the race: early years still legacy-heavy; later yea
 
 ## 5. Where and how
 
-Primary axis: **Eastmarch** plains/low ridges into the **Heartland** (see `maps/01-country-maps-brief.md`). Maritime pressure on Westreach and Gulf Coast ports can accompany the land attack to starve imported components.
+Primary axis: **Eastmarch** plains/low ridges into the **Heartland** (see `maps/01-country-maps-brief.md`). On the algorithmic sphere (seed **150**) that claim sits near **~144°E, 31°N**; the eastern approach remains an open plain on continuous Aurelian crust — no plate-boundary wall. Maritime pressure on Westreach and Gulf Coast ports can accompany the land attack to starve imported components.
 
 ## 6. What failure looks like for us
 

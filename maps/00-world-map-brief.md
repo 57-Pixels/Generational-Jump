@@ -8,11 +8,14 @@
 ## Workflow
 
 1. Skim `05-planetary-formation.md`.
-2. Run `maps/generator/generate_world.py` (seeded, deterministic).
-3. Inspect `maps/exports/world-color.png` / `world-height.png` against the acceptance checklist.
+2. Run the **promoted** deep-time seed (canon):  
+   `cd maps/generator && python3 -m deeptime --engine v2 --seed 150 --tier t0`
+3. Inspect `maps/exports/world-color.png` / tiles / GeoJSON against the acceptance checklist and `tests/test_v2_morphology_validation.py`.
 4. Commit exports + `viewer/public/world/` copies; Pages viewer picks them up on deploy.
 5. Optional: upscale the color PNG for print — **do not** redraw continents in an image model.
 6. Label pass / political overlays later as GeoJSON on the same sphere.
+
+**Canon:** seed **150**, `GENERATOR_VERSION` **2.2.0**, Veldara claim ≈ lon **144°** / lat **31°** on the algorithmic sphere (see `generator/promoted-seed.json`, decisions-log **D-0028**).
 
 ## Map specs
 
@@ -27,9 +30,9 @@
 
 ## Continents / landmasses to draw
 
-**Definitions:** plate = current rigid motion; continent = continental-crust lineage; landmass = continuous dry land. Present land ≈ 29%.
+**Definitions:** plate = current rigid motion; continent = continental-crust lineage; landmass = continuous dry land. Present land fraction is **emergent** (promoted seed 150 ≈ 44%).
 
-**Reference campaign speech:** plates **Aurelian**, **Kharzhan**, **Solmar**, **Nerath**, **Tesen**; landmass **Farreach** = Nerath+Tesen suture. Prefer regenerating via [`generator/deeptime`](generator/deeptime/) for new stories.
+**Reference campaign speech:** plates **Aurelian**, **Kharzhan**, **Solmar**, **Nerath**, **Tesen**; landmass **Farreach** = Nerath+Tesen suture. Prefer regenerating via [`generator/deeptime`](generator/deeptime/) with **seed 150** for new stories.
 
 ### Aurelian (home) — mid-frame, northern hemisphere heavy
 
