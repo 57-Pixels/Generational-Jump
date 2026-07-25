@@ -23,6 +23,7 @@ from .settlement import (
     SettlementInputs,
     compute_settlement,
 )
+from .navigation import NavigationFields, compute_navigation
 from .surface import evolve_surface
 from .tiers import resolve_grid_n
 from .topology import area_fraction, component_labels
@@ -83,6 +84,7 @@ class WorldResult:
     bulk_materials: dict[str, np.ndarray]
     incentives: IncentiveFields
     settlement: SettlementFields
+    navigation: NavigationFields
 
 
 def _pack_geology(
@@ -609,6 +611,9 @@ def generate_world(config: WorldConfig) -> WorldResult:
         incentives,
     )
     settlement = compute_settlement(inputs, incentives)
+    navigation = compute_navigation(
+        grid, geology.elevation_m, sea_level, climate.wind_xyz, climate
+    )
     if config.validate:
         validate_contract(geology, climate, hydrology)
     # Re-bind config with the resolved face resolution for exporters/meta.
@@ -629,4 +634,5 @@ def generate_world(config: WorldConfig) -> WorldResult:
         bulk_materials=bulk,
         incentives=incentives,
         settlement=settlement,
+        navigation=navigation,
     )

@@ -14,6 +14,7 @@ from PIL import Image, ImageDraw
 from .contract import GENERATOR_VERSION
 from .features import extract_features, features_to_geojson
 from .model import WorldResult
+from .navigation import chokepoint_geometry, navigation_to_geojson
 from .tiles import MERCATOR_MAX_LAT, write_mercator_tiles
 
 
@@ -379,11 +380,20 @@ def save_world(world: WorldResult, destinations: list[Path]) -> dict:
     settlement_geojson = _settlement_sites(world)
     feature_list = extract_features(world)
     feature_geojson = features_to_geojson(feature_list, world)
+    navigation_geojson = navigation_to_geojson(world.navigation, world.grid)
+    chokepoints = chokepoint_geometry(
+        world.grid,
+        world.geology.elevation_m,
+        world.sea_level_m,
+        world.navigation.chokepoint_mask,
+    )
     deposit_counts: dict[str, int] = {}
     for deposit in world.deposits:
         deposit_counts[deposit.deposit_class] = (
             deposit_counts.get(deposit.deposit_class, 0) + 1
         )
+    harbour = world.navigation.harbour_rating
+    top_harbour = float(np.max(harbour)) if harbour.size else 0.0
     meta = {
         "method": "deeptime-spherical-v2",
         "generator_version": GENERATOR_VERSION,
@@ -415,6 +425,13 @@ def save_world(world: WorldResult, destinations: list[Path]) -> dict:
         },
         "features": {
             "count": len(feature_list),
+        },
+        "navigation": {
+            "harbour_sites": int(np.sum(harbour >= 0.55)),
+            "top_harbour_rating": round(top_harbour, 3),
+            "chokepoint_count": len(chokepoints),
+            "shelf_break_cells": int(np.sum(world.navigation.shelf_break_mask)),
+            "chokepoints": chokepoints[:12],
         },
         "semantics": {
             "plate": "instantaneous rigid kinematic domain",
@@ -460,6 +477,9 @@ def save_world(world: WorldResult, destinations: list[Path]) -> dict:
         )
         (destination / f"world-features{suffix}.geojson").write_text(
             json.dumps(feature_geojson, indent=2) + "\n"
+        )
+        (destination / f"world-navigation{suffix}.geojson").write_text(
+            json.dumps(navigation_geojson, indent=2) + "\n"
         )
         (destination / f"world-meta{suffix}.json").write_text(
             json.dumps(meta, indent=2) + "\n"
