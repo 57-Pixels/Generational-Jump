@@ -22,6 +22,7 @@ from .settlement import (
     SettlementInputs,
     compute_settlement,
 )
+from .surface import evolve_surface
 from .tiers import resolve_grid_n
 from .topology import area_fraction, component_labels
 from .transfer import upsample
@@ -514,6 +515,15 @@ def _settlement_inputs(
     )
 
 
+def _surface_iterations(tier: str) -> int:
+    """Fluvial/glacial iteration budget by tier. ``dev`` skips for fast tests."""
+    if tier == "t1":
+        return 240
+    if tier == "t0":
+        return 40
+    return 0
+
+
 def generate_world(config: WorldConfig) -> WorldResult:
     if config.era not in ("present", "lgm"):
         raise ValueError("era must be present or lgm")
@@ -527,7 +537,28 @@ def generate_world(config: WorldConfig) -> WorldResult:
     land_fraction = area_fraction(land, grid.area_sr)
     geology.landmass_id = component_labels(grid, land)
     climate = compute_climate(grid, geology.elevation_m, sea_level, era=config.era)
-    hydrology = compute_hydrology(grid, geology.elevation_m, sea_level, climate)
+    surface_iters = _surface_iterations(config.tier)
+    if surface_iters > 0:
+        surface = evolve_surface(
+            grid,
+            geology.elevation_m,
+            sea_level,
+            climate,
+            iterations=surface_iters,
+            seed=config.seed,
+        )
+        geology.elevation_m = surface.elevation_m
+        climate = compute_climate(
+            grid, geology.elevation_m, sea_level, era=config.era
+        )
+        hydrology = surface.hydrology
+        land = geology.elevation_m >= sea_level
+        land_fraction = area_fraction(land, grid.area_sr)
+        geology.landmass_id = component_labels(grid, land)
+    else:
+        hydrology = compute_hydrology(
+            grid, geology.elevation_m, sea_level, climate, seed=config.seed
+        )
     environment = compute_environment(
         grid,
         geology.elevation_m,

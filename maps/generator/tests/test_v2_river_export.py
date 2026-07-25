@@ -15,28 +15,37 @@ class RiverExportTests(unittest.TestCase):
         world = generate_world(
             WorldConfig(seed=42, grid_n=24, ticks=16, export_width=128, export_height=64)
         )
-        # Every river cell can walk receivers through the river mask to the coast.
+        # Every river cell walks receivers to the ocean or a lake/endorheic sink.
         river = world.hydrology.river_mask
         receiver = world.hydrology.receiver
+        lake_id = world.hydrology.lake_id
+        endorheic = world.hydrology.endorheic_mask
+        if endorheic is None:
+            endorheic = np.zeros(world.grid.size, dtype=bool)
         land = world.land
         for start in np.flatnonzero(river)[::5]:
             current = int(start)
             seen: set[int] = set()
-            reached_ocean = False
+            reached_sink = False
             for _ in range(world.grid.size):
                 if current in seen:
                     break
                 seen.add(current)
+                if lake_id[current] >= 0 or endorheic[current]:
+                    reached_sink = True
+                    break
                 downstream = int(receiver[current])
                 if downstream < 0:
                     neighbors = world.grid.neighbors[current]
                     neighbors = neighbors[neighbors >= 0]
-                    reached_ocean = bool(np.any(~land[neighbors]))
+                    reached_sink = bool(np.any(~land[neighbors]))
                     break
                 if not river[downstream]:
                     break
                 current = downstream
-            self.assertTrue(reached_ocean, msg=f"river cell {start} does not reach coast")
+            self.assertTrue(
+                reached_sink, msg=f"river cell {start} does not reach ocean/lake"
+            )
 
         geo = _river_geojson(world)
         self.assertGreater(len(geo["features"]), 0)
@@ -57,7 +66,11 @@ class RiverExportTests(unittest.TestCase):
             neighbors = world.grid.neighbors[end_cell]
             neighbors = neighbors[neighbors >= 0]
             touches_ocean = (not land[end_cell]) or np.any(~land[neighbors])
-            self.assertTrue(touches_ocean, msg=f"mouth at {coords[-1]} not coastal")
+            inland_sink = bool(lake_id[end_cell] >= 0 or endorheic[end_cell])
+            self.assertTrue(
+                touches_ocean or inland_sink,
+                msg=f"mouth at {coords[-1]} not coastal or lake",
+            )
 
     def test_no_orphaned_two_point_only_network(self) -> None:
         world = generate_world(

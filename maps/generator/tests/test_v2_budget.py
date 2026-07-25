@@ -94,7 +94,7 @@ class ClimateHydrologyIdentityTests(unittest.TestCase):
                 land = grid.xyz[:, 0] > 0.0
                 elevation[land] = 200.0 + 800.0 * grid.xyz[land, 0]
                 filled, parent, _ = _priority_flood(grid, elevation, land)
-                got = _receivers(grid, filled, land, parent)
+                got = _receivers(grid, filled, land, parent, stochastic=False)
                 expected = _legacy_receivers(grid, filled, land, parent)
                 np.testing.assert_array_equal(got, expected)
 
