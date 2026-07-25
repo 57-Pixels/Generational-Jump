@@ -1,0 +1,1854 @@
+{
+  "type": "FeatureCollection",
+  "name": "navigation-v2",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          95.39469732410387,
+          -56.83675805772637
+        ]
+      },
+      "properties": {
+        "kind": "harbour",
+        "rank": 1,
+        "rating": 0.863,
+        "channel_depth_m": 66.4,
+        "approach_width_km": 143.15
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          95.69385163354207,
+          -58.23267171272749
+        ]
+      },
+      "properties": {
+        "kind": "harbour",
+        "rank": 2,
+        "rating": 0.862,
+        "channel_depth_m": 56.6,
+        "approach_width_km": 144.25
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -133.10298556373127,
+          -57.89853103657282
+        ]
+      },
+      "properties": {
+        "kind": "harbour",
+        "rank": 3,
+        "rating": 0.849,
+        "channel_depth_m": 645.5,
+        "approach_width_km": 145.89
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.52690995271826,
+          -56.441568939284785
+        ]
+      },
+      "properties": {
+        "kind": "harbour",
+        "rank": 4,
+        "rating": 0.834,
+        "channel_depth_m": 688.6,
+        "approach_width_km": 144.42
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.45373249520802,
+          -56.93673914583269
+        ]
+      },
+      "properties": {
+        "kind": "harbour",
+        "rank": 5,
+        "rating": 0.826,
+        "channel_depth_m": 37.1,
+        "approach_width_km": 289.15
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -135.0,
+          -58.77475037001499
+        ]
+      },
+      "properties": {
+        "kind": "harbour",
+        "rank": 6,
+        "rating": 0.824,
+        "channel_depth_m": 645.5,
+        "approach_width_km": 146.37
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -107.578125,
+          23.588308571062907
+        ]
+      },
+      "properties": {
+        "kind": "harbour",
+        "rank": 7,
+        "rating": 0.812,
+        "channel_depth_m": 82.3,
+        "approach_width_km": 147.32
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -66.84312111684123,
+          -84.64923164423014
+        ]
+      },
+      "properties": {
+        "kind": "harbour",
+        "rank": 8,
+        "rating": 0.808,
+        "channel_depth_m": 54.4,
+        "approach_width_km": 156.02
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -108.984375,
+          24.77439936048595
+        ]
+      },
+      "properties": {
+        "kind": "harbour",
+        "rank": 9,
+        "rating": 0.808,
+        "channel_depth_m": 82.6,
+        "approach_width_km": 146.38
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.09351992388368,
+          74.50231863513002
+        ]
+      },
+      "properties": {
+        "kind": "harbour",
+        "rank": 10,
+        "rating": 0.807,
+        "channel_depth_m": 102.6,
+        "approach_width_km": 307.06
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -148.8996099892873,
+          54.26056295296811
+        ]
+      },
+      "properties": {
+        "kind": "harbour",
+        "rank": 11,
+        "rating": 0.806,
+        "channel_depth_m": 4423.1,
+        "approach_width_km": 286.58
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.9727358409193928,
+          -54.13670446125198
+        ]
+      },
+      "properties": {
+        "kind": "harbour",
+        "rank": 12,
+        "rating": 0.803,
+        "channel_depth_m": 72.3,
+        "approach_width_km": 140.77
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.0016017992786,
+          -55.77104614415225
+        ]
+      },
+      "properties": {
+        "kind": "harbour",
+        "rank": 13,
+        "rating": 0.803,
+        "channel_depth_m": 1439.8,
+        "approach_width_km": 289.03
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.17187500000001,
+          22.37711468440898
+        ]
+      },
+      "properties": {
+        "kind": "harbour",
+        "rank": 14,
+        "rating": 0.802,
+        "channel_depth_m": 80.5,
+        "approach_width_km": 148.25
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -129.33002947611195,
+          -57.748785517100636
+        ]
+      },
+      "properties": {
+        "kind": "harbour",
+        "rank": 15,
+        "rating": 0.801,
+        "channel_depth_m": 4498.9,
+        "approach_width_km": 437.23
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -40.078125,
+          -15.876846471532751
+        ]
+      },
+      "properties": {
+        "kind": "harbour",
+        "rank": 16,
+        "rating": 0.8,
+        "channel_depth_m": 57.7,
+        "approach_width_km": 137.65
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.35937500000001,
+          36.9724940269926
+        ]
+      },
+      "properties": {
+        "kind": "harbour",
+        "rank": 17,
+        "rating": 0.798,
+        "channel_depth_m": 96.5,
+        "approach_width_km": 137.53
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.62728420982367,
+          -83.33496195210228
+        ]
+      },
+      "properties": {
+        "kind": "harbour",
+        "rank": 18,
+        "rating": 0.798,
+        "channel_depth_m": 5543.1,
+        "approach_width_km": 311.67
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -127.62434282068229,
+          -56.77239886951611
+        ]
+      },
+      "properties": {
+        "kind": "harbour",
+        "rank": 19,
+        "rating": 0.797,
+        "channel_depth_m": 4205.4,
+        "approach_width_km": 435.45
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.140625,
+          -43.930935502526424
+        ]
+      },
+      "properties": {
+        "kind": "harbour",
+        "rank": 20,
+        "rating": 0.795,
+        "channel_depth_m": 90.0,
+        "approach_width_km": 265.34
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.390625,
+          25.93479035762041
+        ]
+      },
+      "properties": {
+        "kind": "harbour",
+        "rank": 21,
+        "rating": 0.794,
+        "channel_depth_m": 80.8,
+        "approach_width_km": 145.45
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.46412799014038,
+          -47.72199328879438
+        ]
+      },
+      "properties": {
+        "kind": "harbour",
+        "rank": 22,
+        "rating": 0.793,
+        "channel_depth_m": 95.8,
+        "approach_width_km": 271.57
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -168.04687500000003,
+          19.983835204442645
+        ]
+      },
+      "properties": {
+        "kind": "harbour",
+        "rank": 23,
+        "rating": 0.79,
+        "channel_depth_m": 3552.5,
+        "approach_width_km": 300.65
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.265625,
+          18.823879062672834
+        ]
+      },
+      "properties": {
+        "kind": "harbour",
+        "rank": 24,
+        "rating": 0.79,
+        "channel_depth_m": 81.5,
+        "approach_width_km": 303.15
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          34.453125,
+          -32.103635900466216
+        ]
+      },
+      "properties": {
+        "kind": "chokepoint",
+        "channel_depth_m": 19.2,
+        "channel_width_km": 417.3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.140625,
+          27.123647269520177
+        ]
+      },
+      "properties": {
+        "kind": "chokepoint",
+        "channel_depth_m": 6.7,
+        "channel_width_km": 440.91
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -153.984375,
+          -33.006191233400884
+        ]
+      },
+      "properties": {
+        "kind": "chokepoint",
+        "channel_depth_m": 3167.5,
+        "channel_width_km": 421.38
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -149.765625,
+          -29.339295762369044
+        ]
+      },
+      "properties": {
+        "kind": "chokepoint",
+        "channel_depth_m": 2802.8,
+        "channel_width_km": 423.37
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -158.203125,
+          -27.069041732316585
+        ]
+      },
+      "properties": {
+        "kind": "chokepoint",
+        "channel_depth_m": 1804.8,
+        "channel_width_km": 433.55
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -149.765625,
+          -25.432280420357024
+        ]
+      },
+      "properties": {
+        "kind": "chokepoint",
+        "channel_depth_m": 4308.3,
+        "channel_width_km": 427.14
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          175.07812500000003,
+          2.1016039038376735
+        ]
+      },
+      "properties": {
+        "kind": "chokepoint",
+        "channel_depth_m": 5438.1,
+        "channel_width_km": 468.07
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          144.140625,
+          6.281446935919767
+        ]
+      },
+      "properties": {
+        "kind": "chokepoint",
+        "channel_depth_m": 2648.5,
+        "channel_width_km": 422.35
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          149.765625,
+          9.13826638548685
+        ]
+      },
+      "properties": {
+        "kind": "chokepoint",
+        "channel_depth_m": 2612.6,
+        "channel_width_km": 435.1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -173.671875,
+          18.87691565303735
+        ]
+      },
+      "properties": {
+        "kind": "chokepoint",
+        "channel_depth_m": 4857.7,
+        "channel_width_km": 455.2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          144.140625,
+          21.5817706392309
+        ]
+      },
+      "properties": {
+        "kind": "chokepoint",
+        "channel_depth_m": 267.9,
+        "channel_width_km": 421.38
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -170.859375,
+          28.519870636529262
+        ]
+      },
+      "properties": {
+        "kind": "chokepoint",
+        "channel_depth_m": 2233.5,
+        "channel_width_km": 438.2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -169.453125,
+          28.417617044281506
+        ]
+      },
+      "properties": {
+        "kind": "chokepoint",
+        "channel_depth_m": 3261.2,
+        "channel_width_km": 437.9
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -149.765625,
+          33.319005174525195
+        ]
+      },
+      "properties": {
+        "kind": "chokepoint",
+        "channel_depth_m": 4168.4,
+        "channel_width_km": 418.51
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          166.64062500000003,
+          42.10774718821986
+        ]
+      },
+      "properties": {
+        "kind": "chokepoint",
+        "channel_depth_m": 3918.5,
+        "channel_width_km": 403.56
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          47.109375,
+          -35.56057253711163
+        ]
+      },
+      "properties": {
+        "kind": "chokepoint",
+        "channel_depth_m": 10.6,
+        "channel_width_km": 411.62
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          47.109375,
+          25.484517935911438
+        ]
+      },
+      "properties": {
+        "kind": "chokepoint",
+        "channel_depth_m": 4.4,
+        "channel_width_km": 410.83
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.60937499999999,
+          4.476718578385983
+        ]
+      },
+      "properties": {
+        "kind": "chokepoint",
+        "channel_depth_m": 22.2,
+        "channel_width_km": 446.89
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.64062500000001,
+          9.00701264175803
+        ]
+      },
+      "properties": {
+        "kind": "chokepoint",
+        "channel_depth_m": 62.7,
+        "channel_width_km": 432.15
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -127.265625,
+          12.99566096324896
+        ]
+      },
+      "properties": {
+        "kind": "chokepoint",
+        "channel_depth_m": 2698.4,
+        "channel_width_km": 419.09
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.484375,
+          34.40279510347667
+        ]
+      },
+      "properties": {
+        "kind": "chokepoint",
+        "channel_depth_m": 3556.8,
+        "channel_width_km": 425.96
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.640625,
+          40.70579434147264
+        ]
+      },
+      "properties": {
+        "kind": "chokepoint",
+        "channel_depth_m": 3314.0,
+        "channel_width_km": 407.67
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          113.15687888315878,
+          84.64923164423014
+        ]
+      },
+      "properties": {
+        "kind": "chokepoint",
+        "channel_depth_m": 3603.0,
+        "channel_width_km": 468.07
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          118.42229930536136,
+          68.6358893029189
+        ]
+      },
+      "properties": {
+        "kind": "chokepoint",
+        "channel_depth_m": 4452.8,
+        "channel_width_km": 453.49
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.60694748883172,
+          68.00414939498302
+        ]
+      },
+      "properties": {
+        "kind": "chokepoint",
+        "channel_depth_m": 3826.3,
+        "channel_width_km": 301.82
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          124.61795556682033,
+          67.31353149120909
+        ]
+      },
+      "properties": {
+        "kind": "chokepoint",
+        "channel_depth_m": 65.4,
+        "channel_width_km": 451.86
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.215357682288,
+          63.13877913584263
+        ]
+      },
+      "properties": {
+        "kind": "chokepoint",
+        "channel_depth_m": 7.3,
+        "channel_width_km": 445.94
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -138.5615670644888,
+          55.31338286560289
+        ]
+      },
+      "properties": {
+        "kind": "chokepoint",
+        "channel_depth_m": 1673.7,
+        "channel_width_km": 144.47
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -140.2330340696572,
+          54.39541965708053
+        ]
+      },
+      "properties": {
+        "kind": "chokepoint",
+        "channel_depth_m": 37.6,
+        "channel_width_km": 431.77
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          154.79684678355636,
+          55.7446755668789
+        ]
+      },
+      "properties": {
+        "kind": "chokepoint",
+        "channel_depth_m": 1313.1,
+        "channel_width_km": 431.1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.35976671646733,
+          -38.3930415593422
+        ]
+      },
+      "properties": {
+        "kind": "chokepoint",
+        "channel_depth_m": 1491.1,
+        "channel_width_km": 410.86
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -133.0122596893581,
+          -59.61935308388936
+        ]
+      },
+      "properties": {
+        "kind": "chokepoint",
+        "channel_depth_m": 645.5,
+        "channel_width_km": 440.44
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -124.03325281202785,
+          -56.40966485363032
+        ]
+      },
+      "properties": {
+        "kind": "chokepoint",
+        "channel_depth_m": 123.4,
+        "channel_width_km": 434.31
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.92969595885083,
+          -60.4302006114277
+        ]
+      },
+      "properties": {
+        "kind": "chokepoint",
+        "channel_depth_m": 24.3,
+        "channel_width_km": 441.66
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.38549514202788,
+          -62.97004556157558
+        ]
+      },
+      "properties": {
+        "kind": "chokepoint",
+        "channel_depth_m": 32.2,
+        "channel_width_km": 445.54
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.240348783072959,
+          -56.911205214963495
+        ]
+      },
+      "properties": {
+        "kind": "chokepoint",
+        "channel_depth_m": 23.5,
+        "channel_width_km": 429.46
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.640624999999993,
+          -28.98063520023317
+        ]
+      },
+      "properties": {
+        "kind": "shelf_break",
+        "depth_m": 87.5,
+        "tidal_range_proxy_m": 3.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.015625,
+          -24.997944249547984
+        ]
+      },
+      "properties": {
+        "kind": "shelf_break",
+        "depth_m": 107.1,
+        "tidal_range_proxy_m": 0.65
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.203125,
+          -21.504045453821263
+        ]
+      },
+      "properties": {
+        "kind": "shelf_break",
+        "depth_m": 122.7,
+        "tidal_range_proxy_m": 0.7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -28.828125000000004,
+          -16.77217189280741
+        ]
+      },
+      "properties": {
+        "kind": "shelf_break",
+        "depth_m": 109.1,
+        "tidal_range_proxy_m": 0.7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          20.390624999999993,
+          -8.576659697680364
+        ]
+      },
+      "properties": {
+        "kind": "shelf_break",
+        "depth_m": 129.9,
+        "tidal_range_proxy_m": 0.7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          20.390624999999993,
+          -4.614841761058048
+        ]
+      },
+      "properties": {
+        "kind": "shelf_break",
+        "depth_m": 87.7,
+        "tidal_range_proxy_m": 3.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          42.89062499999999,
+          6.723287330125299
+        ]
+      },
+      "properties": {
+        "kind": "shelf_break",
+        "depth_m": 145.9,
+        "tidal_range_proxy_m": 0.6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.578125000000004,
+          11.409968745607229
+        ]
+      },
+      "properties": {
+        "kind": "shelf_break",
+        "depth_m": 128.3,
+        "tidal_range_proxy_m": 0.7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.203125,
+          12.313125520951957
+        ]
+      },
+      "properties": {
+        "kind": "shelf_break",
+        "depth_m": 93.9,
+        "tidal_range_proxy_m": 3.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.828125000000004,
+          14.254734968916488
+        ]
+      },
+      "properties": {
+        "kind": "shelf_break",
+        "depth_m": 85.3,
+        "tidal_range_proxy_m": 3.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.140625000000002,
+          25.728134432153915
+        ]
+      },
+      "properties": {
+        "kind": "shelf_break",
+        "depth_m": 122.1,
+        "tidal_range_proxy_m": 0.7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.515625000000001,
+          32.99756045161416
+        ]
+      },
+      "properties": {
+        "kind": "shelf_break",
+        "depth_m": 114.4,
+        "tidal_range_proxy_m": 0.7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.421875,
+          39.50813988087027
+        ]
+      },
+      "properties": {
+        "kind": "shelf_break",
+        "depth_m": 93.5,
+        "tidal_range_proxy_m": 3.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.515625,
+          0.5267481300567584
+        ]
+      },
+      "properties": {
+        "kind": "shelf_break",
+        "depth_m": 168.0,
+        "tidal_range_proxy_m": 3.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          151.171875,
+          16.77217189280741
+        ]
+      },
+      "properties": {
+        "kind": "shelf_break",
+        "depth_m": 108.1,
+        "tidal_range_proxy_m": 0.7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -138.515625,
+          24.778250616503882
+        ]
+      },
+      "properties": {
+        "kind": "shelf_break",
+        "depth_m": 118.9,
+        "tidal_range_proxy_m": 3.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          156.796875,
+          32.23483136612071
+        ]
+      },
+      "properties": {
+        "kind": "shelf_break",
+        "depth_m": 156.9,
+        "tidal_range_proxy_m": 0.6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          159.609375,
+          34.117951743898544
+        ]
+      },
+      "properties": {
+        "kind": "shelf_break",
+        "depth_m": 134.6,
+        "tidal_range_proxy_m": 0.65
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          161.015625,
+          37.11889218641773
+        ]
+      },
+      "properties": {
+        "kind": "shelf_break",
+        "depth_m": 82.1,
+        "tidal_range_proxy_m": 0.7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.10937500000003,
+          34.23924221375131
+        ]
+      },
+      "properties": {
+        "kind": "shelf_break",
+        "depth_m": 95.3,
+        "tidal_range_proxy_m": 3.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.546875,
+          -30.795471940264935
+        ]
+      },
+      "properties": {
+        "kind": "shelf_break",
+        "depth_m": 110.6,
+        "tidal_range_proxy_m": 0.7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          63.984375,
+          -28.975358385961634
+        ]
+      },
+      "properties": {
+        "kind": "shelf_break",
+        "depth_m": 115.5,
+        "tidal_range_proxy_m": 0.7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          68.203125,
+          -25.722054700967863
+        ]
+      },
+      "properties": {
+        "kind": "shelf_break",
+        "depth_m": 110.0,
+        "tidal_range_proxy_m": 0.7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          125.859375,
+          -9.735734423035964
+        ]
+      },
+      "properties": {
+        "kind": "shelf_break",
+        "depth_m": 113.2,
+        "tidal_range_proxy_m": 0.7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.484375,
+          -3.6911372184743194
+        ]
+      },
+      "properties": {
+        "kind": "shelf_break",
+        "depth_m": 103.7,
+        "tidal_range_proxy_m": 3.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          49.921875,
+          1.6143269913522404
+        ]
+      },
+      "properties": {
+        "kind": "shelf_break",
+        "depth_m": 98.9,
+        "tidal_range_proxy_m": 3.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          49.921875,
+          25.24304503822626
+        ]
+      },
+      "properties": {
+        "kind": "shelf_break",
+        "depth_m": 97.8,
+        "tidal_range_proxy_m": 3.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          83.67187500000001,
+          35.693285719843246
+        ]
+      },
+      "properties": {
+        "kind": "shelf_break",
+        "depth_m": 106.1,
+        "tidal_range_proxy_m": 0.7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.015625,
+          38.50780939295994
+        ]
+      },
+      "properties": {
+        "kind": "shelf_break",
+        "depth_m": 107.4,
+        "tidal_range_proxy_m": 3.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.296875,
+          31.057799122569598
+        ]
+      },
+      "properties": {
+        "kind": "shelf_break",
+        "depth_m": 103.0,
+        "tidal_range_proxy_m": 3.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -47.10937500000001,
+          -27.90399226181769
+        ]
+      },
+      "properties": {
+        "kind": "shelf_break",
+        "depth_m": 113.8,
+        "tidal_range_proxy_m": 3.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.109375,
+          -33.02912455389392
+        ]
+      },
+      "properties": {
+        "kind": "shelf_break",
+        "depth_m": 94.9,
+        "tidal_range_proxy_m": 3.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.140625,
+          -4.859675399696355
+        ]
+      },
+      "properties": {
+        "kind": "shelf_break",
+        "depth_m": 118.1,
+        "tidal_range_proxy_m": 0.7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -108.984375,
+          3.324842043461544
+        ]
+      },
+      "properties": {
+        "kind": "shelf_break",
+        "depth_m": 111.9,
+        "tidal_range_proxy_m": 0.7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.109375,
+          9.134535627023
+        ]
+      },
+      "properties": {
+        "kind": "shelf_break",
+        "depth_m": 140.6,
+        "tidal_range_proxy_m": 0.65
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.890625,
+          10.539888468419987
+        ]
+      },
+      "properties": {
+        "kind": "shelf_break",
+        "depth_m": 102.0,
+        "tidal_range_proxy_m": 0.7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.859375,
+          13.19570146818323
+        ]
+      },
+      "properties": {
+        "kind": "shelf_break",
+        "depth_m": 105.5,
+        "tidal_range_proxy_m": 0.7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.015625,
+          19.366171959351785
+        ]
+      },
+      "properties": {
+        "kind": "shelf_break",
+        "depth_m": 156.7,
+        "tidal_range_proxy_m": 0.6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.015625,
+          20.714418538886708
+        ]
+      },
+      "properties": {
+        "kind": "shelf_break",
+        "depth_m": 154.2,
+        "tidal_range_proxy_m": 0.6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -130.078125,
+          19.314154418756697
+        ]
+      },
+      "properties": {
+        "kind": "shelf_break",
+        "depth_m": 99.5,
+        "tidal_range_proxy_m": 0.7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.796875,
+          24.378900548013444
+        ]
+      },
+      "properties": {
+        "kind": "shelf_break",
+        "depth_m": 80.8,
+        "tidal_range_proxy_m": 3.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -65.390625,
+          31.954236204826497
+        ]
+      },
+      "properties": {
+        "kind": "shelf_break",
+        "depth_m": 94.6,
+        "tidal_range_proxy_m": 3.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.272164160979365,
+          40.90999146817201
+        ]
+      },
+      "properties": {
+        "kind": "shelf_break",
+        "depth_m": 91.0,
+        "tidal_range_proxy_m": 3.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          38.73775630420307,
+          48.666257924280785
+        ]
+      },
+      "properties": {
+        "kind": "shelf_break",
+        "depth_m": 150.0,
+        "tidal_range_proxy_m": 0.6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.7712118013247524,
+          79.43075282991533
+        ]
+      },
+      "properties": {
+        "kind": "shelf_break",
+        "depth_m": 94.0,
+        "tidal_range_proxy_m": 0.7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.986021743361736,
+          82.77467639203658
+        ]
+      },
+      "properties": {
+        "kind": "shelf_break",
+        "depth_m": 128.2,
+        "tidal_range_proxy_m": 0.7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.96144880198781,
+          73.48854640265246
+        ]
+      },
+      "properties": {
+        "kind": "shelf_break",
+        "depth_m": 102.6,
+        "tidal_range_proxy_m": 0.7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          155.66957627237392,
+          50.13778570595432
+        ]
+      },
+      "properties": {
+        "kind": "shelf_break",
+        "depth_m": 86.9,
+        "tidal_range_proxy_m": 3.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.89360852877545,
+          44.114297063383326
+        ]
+      },
+      "properties": {
+        "kind": "shelf_break",
+        "depth_m": 91.2,
+        "tidal_range_proxy_m": 3.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.83036912006992,
+          38.584457813202164
+        ]
+      },
+      "properties": {
+        "kind": "shelf_break",
+        "depth_m": 105.4,
+        "tidal_range_proxy_m": 0.7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.1697467073685,
+          -57.81595194897889
+        ]
+      },
+      "properties": {
+        "kind": "shelf_break",
+        "depth_m": 82.9,
+        "tidal_range_proxy_m": 0.65
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.32484949964923,
+          -53.014248856141904
+        ]
+      },
+      "properties": {
+        "kind": "shelf_break",
+        "depth_m": 142.1,
+        "tidal_range_proxy_m": 0.65
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.92416090604706,
+          -45.42831851341699
+        ]
+      },
+      "properties": {
+        "kind": "shelf_break",
+        "depth_m": 90.0,
+        "tidal_range_proxy_m": 0.7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          99.67378897877468,
+          -56.57695937654383
+        ]
+      },
+      "properties": {
+        "kind": "shelf_break",
+        "depth_m": 110.0,
+        "tidal_range_proxy_m": 0.7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          96.79423643725313,
+          -53.94871223197169
+        ]
+      },
+      "properties": {
+        "kind": "shelf_break",
+        "depth_m": 157.5,
+        "tidal_range_proxy_m": 0.65
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          93.82850568845907,
+          -61.1177696550815
+        ]
+      },
+      "properties": {
+        "kind": "shelf_break",
+        "depth_m": 126.0,
+        "tidal_range_proxy_m": 3.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.68224460100544,
+          -78.02738572463272
+        ]
+      },
+      "properties": {
+        "kind": "shelf_break",
+        "depth_m": 101.5,
+        "tidal_range_proxy_m": 3.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.76162617942897,
+          -73.7050762292457
+        ]
+      },
+      "properties": {
+        "kind": "shelf_break",
+        "depth_m": 96.6,
+        "tidal_range_proxy_m": 0.7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          54.49504981017281,
+          -83.96149713576682
+        ]
+      },
+      "properties": {
+        "kind": "shelf_break",
+        "depth_m": 87.1,
+        "tidal_range_proxy_m": 3.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.830184509543145,
+          -82.00752202862016
+        ]
+      },
+      "properties": {
+        "kind": "shelf_break",
+        "depth_m": 86.9,
+        "tidal_range_proxy_m": 3.0
+      }
+    }
+  ]
+}

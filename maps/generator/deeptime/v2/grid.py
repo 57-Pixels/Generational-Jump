@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from functools import lru_cache
 
 import numpy as np
@@ -38,6 +38,17 @@ _FACE_EV = np.array(
     ]
 )
 
+_NEIGHBOR_OFFSETS = (
+    (-1, -1),
+    (0, -1),
+    (1, -1),
+    (-1, 0),
+    (1, 0),
+    (-1, 1),
+    (0, 1),
+    (1, 1),
+)
+
 
 def _normalize(vectors: np.ndarray) -> np.ndarray:
     return vectors / np.maximum(np.linalg.norm(vectors, axis=-1, keepdims=True), 1e-15)
@@ -63,22 +74,81 @@ def _triangle_area(a: np.ndarray, b: np.ndarray, c: np.ndarray) -> np.ndarray:
     return 2.0 * np.arctan2(numerator, denominator)
 
 
-@dataclass(frozen=True)
+def _build_neighbors(n: int, alpha: np.ndarray, beta: np.ndarray, delta: float) -> np.ndarray:
+    """Dense (N, 8) neighbour table via extended face coordinates.
+
+    Prototyped against the legacy set-based builder: set-identical at every
+    tested ``n``, and already fully symmetric, so no repair pass is needed.
+    """
+    size = 6 * n * n
+    neighbors = np.full((size, 8), -1, dtype=np.int32)
+    for slot, (di, dj) in enumerate(_NEIGHBOR_OFFSETS):
+        aa = alpha + di * delta
+        bb = beta + dj * delta
+        for face in range(6):
+            target = CubedSphere.indices_for_xyz_static(
+                _face_vectors(face, aa, bb).reshape(-1, 3), n
+            )
+            neighbors[face * n * n : (face + 1) * n * n, slot] = target
+    self_ref = neighbors == np.arange(size, dtype=np.int32)[:, None]
+    neighbors[self_ref] = -1
+    # Corner cells can map two offsets onto the same neighbour. Compact to
+    # unique ids so degree matches the undirected graph (24 cells of degree 7).
+    sentinel = np.iinfo(np.int32).max
+    keyed = np.where(neighbors >= 0, neighbors, sentinel)
+    order = np.argsort(keyed, axis=1)
+    sorted_nb = np.take_along_axis(neighbors, order, axis=1)
+    duplicate = np.zeros_like(sorted_nb, dtype=bool)
+    duplicate[:, 1:] = (sorted_nb[:, 1:] == sorted_nb[:, :-1]) & (sorted_nb[:, 1:] >= 0)
+    sorted_nb[duplicate] = -1
+    compact_key = np.where(sorted_nb >= 0, 0, 1)
+    compact_order = np.argsort(compact_key, axis=1, kind="stable")
+    return np.take_along_axis(sorted_nb, compact_order, axis=1)
+
+
+@dataclass
 class CubedSphere:
     n: int
     xyz: np.ndarray
     area_sr: np.ndarray
     neighbors: np.ndarray
-    edge_cells: np.ndarray
-    lon_deg: np.ndarray
-    lat_deg: np.ndarray
+    _edge_cells: np.ndarray | None = field(default=None, repr=False, compare=False)
+    _lon_deg: np.ndarray | None = field(default=None, repr=False, compare=False)
+    _lat_deg: np.ndarray | None = field(default=None, repr=False, compare=False)
 
     @property
     def size(self) -> int:
         return int(self.xyz.shape[0])
 
+    @property
+    def lon_deg(self) -> np.ndarray:
+        if self._lon_deg is None:
+            self._lon_deg = np.rad2deg(np.arctan2(self.xyz[:, 1], self.xyz[:, 0]))
+        return self._lon_deg
+
+    @property
+    def lat_deg(self) -> np.ndarray:
+        if self._lat_deg is None:
+            self._lat_deg = np.rad2deg(
+                np.arcsin(np.clip(self.xyz[:, 2], -1.0, 1.0))
+            )
+        return self._lat_deg
+
+    @property
+    def edge_cells(self) -> np.ndarray:
+        """Undirected unique neighbour pairs. Built lazily — never at T1."""
+        if self._edge_cells is None:
+            valid = self.neighbors >= 0
+            src = np.repeat(
+                np.arange(self.size, dtype=np.int32), self.neighbors.shape[1]
+            )
+            dst = self.neighbors.ravel()
+            mask = valid.ravel() & (src < dst)
+            self._edge_cells = np.stack((src[mask], dst[mask]), axis=1)
+        return self._edge_cells
+
     @classmethod
-    @lru_cache(maxsize=12)
+    @lru_cache(maxsize=2)
     def create(cls, n: int) -> "CubedSphere":
         if n < 4:
             raise ValueError("cubed-sphere face resolution must be >= 4")
@@ -104,51 +174,13 @@ class CubedSphere:
         xyz = np.concatenate(faces, axis=0)
         area_sr = np.concatenate(areas)
         area_sr *= (4.0 * np.pi) / float(area_sr.sum())
+        neighbors = _build_neighbors(n, alpha, beta, delta)
 
-        # Build eight-neighbor candidate graph, then symmetrize it. Extended
-        # face coordinates naturally cross cube seams before inverse mapping.
-        source = np.arange(6 * n * n, dtype=np.int32).reshape(6, n, n)
-        pairs: list[np.ndarray] = []
-        for di, dj in (
-            (-1, -1),
-            (0, -1),
-            (1, -1),
-            (-1, 0),
-            (1, 0),
-            (-1, 1),
-            (0, 1),
-            (1, 1),
-        ):
-            aa = alpha + di * delta
-            bb = beta + dj * delta
-            for face in range(6):
-                target_xyz = _face_vectors(face, aa, bb).reshape(-1, 3)
-                target = cls.indices_for_xyz_static(target_xyz, n)
-                src = source[face].ravel()
-                pair = np.stack((np.minimum(src, target), np.maximum(src, target)), axis=1)
-                pairs.append(pair[pair[:, 0] != pair[:, 1]])
-        edge_cells = np.unique(np.concatenate(pairs, axis=0), axis=0).astype(np.int32)
-
-        adjacency: list[set[int]] = [set() for _ in range(6 * n * n)]
-        for left, right in edge_cells:
-            adjacency[int(left)].add(int(right))
-            adjacency[int(right)].add(int(left))
-        max_degree = max(len(items) for items in adjacency)
-        neighbors = np.full((6 * n * n, max_degree), -1, dtype=np.int32)
-        for cell, items in enumerate(adjacency):
-            ordered = sorted(items)
-            neighbors[cell, : len(ordered)] = ordered
-
-        lon_deg = np.rad2deg(np.arctan2(xyz[:, 1], xyz[:, 0]))
-        lat_deg = np.rad2deg(np.arcsin(np.clip(xyz[:, 2], -1.0, 1.0)))
         return cls(
             n=n,
             xyz=xyz,
             area_sr=area_sr,
             neighbors=neighbors,
-            edge_cells=edge_cells,
-            lon_deg=lon_deg,
-            lat_deg=lat_deg,
         )
 
     @staticmethod
@@ -182,27 +214,17 @@ class CubedSphere:
         return self.indices_for_xyz_static(xyz, self.n)
 
     def components(self, mask: np.ndarray) -> list[np.ndarray]:
-        mask = np.asarray(mask, dtype=bool)
-        seen = np.zeros(self.size, dtype=bool)
-        result: list[np.ndarray] = []
-        for start in np.flatnonzero(mask):
-            if seen[start]:
-                continue
-            stack = [int(start)]
-            seen[start] = True
-            cells: list[int] = []
-            while stack:
-                cell = stack.pop()
-                cells.append(cell)
-                for neighbor in self.neighbors[cell]:
-                    if neighbor < 0:
-                        continue
-                    n = int(neighbor)
-                    if mask[n] and not seen[n]:
-                        seen[n] = True
-                        stack.append(n)
-            result.append(np.asarray(cells, dtype=np.int32))
-        return sorted(result, key=len, reverse=True)
+        # Circular with topology.component_labels; import deferred by design.
+        from .topology import component_labels
+
+        labels = component_labels(self, mask)
+        if not np.any(labels >= 0):
+            return []
+        count = int(labels.max()) + 1
+        return [
+            np.flatnonzero(labels == label).astype(np.int32)
+            for label in range(count)
+        ]
 
     def smooth(self, field: np.ndarray, iterations: int = 1, self_weight: float = 2.0) -> np.ndarray:
         out = np.asarray(field, dtype=np.float64).copy()
@@ -215,10 +237,25 @@ class CubedSphere:
         return out
 
     def to_equirect(
-        self, field: np.ndarray, width: int = 1024, height: int = 512
+        self,
+        field: np.ndarray,
+        width: int = 1024,
+        height: int = 512,
+        *,
+        blend: bool | None = None,
+        blend_power: float = 6.0,
     ) -> np.ndarray:
+        """Sample ``field`` onto an equirectangular image.
+
+        When ``blend`` is true (default for floating fields), each pixel is a
+        spherical weight of the nearest cell and its neighbours so cell edges
+        do not print as hard squares.
+        """
         lon = np.linspace(-np.pi, np.pi, width, endpoint=False)
-        lat = np.linspace(np.pi / 2, -np.pi / 2, height, endpoint=False) - np.pi / (2 * height)
+        lat = (
+            np.linspace(np.pi / 2, -np.pi / 2, height, endpoint=False)
+            - np.pi / (2 * height)
+        )
         llon, llat = np.meshgrid(lon, lat)
         xyz = np.stack(
             (
@@ -228,6 +265,47 @@ class CubedSphere:
             ),
             axis=-1,
         )
-        index = self.indices_for_xyz(xyz.reshape(-1, 3))
+        flat_xyz = xyz.reshape(-1, 3)
+        index = self.indices_for_xyz(flat_xyz)
         values = np.asarray(field)
-        return values[index].reshape((height, width) + values.shape[1:])
+        if blend is None:
+            blend = bool(np.issubdtype(values.dtype, np.floating))
+        if not blend:
+            return values[index].reshape((height, width) + values.shape[1:])
+
+        # Promote to float for weighted blend; cast back for float32 inputs.
+        sample = values.astype(np.float64, copy=False)
+        multi = sample.ndim > 1
+        if not multi:
+            sample = sample[:, None]
+
+        n_pix = flat_xyz.shape[0]
+        accum = np.zeros((n_pix, sample.shape[1]), dtype=np.float64)
+        weight = np.zeros(n_pix, dtype=np.float64)
+
+        def _accumulate(cell_idx: np.ndarray, mask: np.ndarray) -> None:
+            if not np.any(mask):
+                return
+            dots = np.sum(flat_xyz[mask] * self.xyz[cell_idx[mask]], axis=1)
+            w = np.maximum(dots, 0.0) ** blend_power
+            accum[mask] += w[:, None] * sample[cell_idx[mask]]
+            weight[mask] += w
+
+        _accumulate(index, np.ones(n_pix, dtype=bool))
+        neigh = self.neighbors[index]
+        for slot in range(neigh.shape[1]):
+            cells = neigh[:, slot]
+            _accumulate(cells, cells >= 0)
+
+        # Degenerate poles / cracks: fall back to nearest.
+        bare = weight < 1e-12
+        if np.any(bare):
+            accum[bare] = sample[index[bare]]
+            weight[bare] = 1.0
+        out = accum / weight[:, None]
+        shaped = out.reshape((height, width, sample.shape[1]))
+        if not multi:
+            shaped = shaped[..., 0]
+        if values.dtype == np.float32:
+            return shaped.astype(np.float32)
+        return shaped

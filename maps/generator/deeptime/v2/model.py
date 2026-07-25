@@ -2,13 +2,17 @@
 
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
+from pathlib import Path
 
 import numpy as np
 
+from . import checkpoint as checkpoint_mod
 from .climate import ClimateFields, compute_climate
+from .coastal import evolve_coastline
+from .contract import GENERATOR_VERSION, validate_contract
 from .environment import EnvironmentFields, compute_environment
-from .geology import GeologyConfig, GeologyFields, simulate_geology
+from .geology import EVENT_NAMES, GeologyConfig, GeologyFields, simulate_geology
 from .grid import CubedSphere
 from .hydrology import HydrologyFields, compute_hydrology
 from .plates import PlateModel
@@ -19,12 +23,38 @@ from .settlement import (
     SettlementInputs,
     compute_settlement,
 )
+from .navigation import NavigationFields, compute_navigation
+from .surface import evolve_surface
+from .tiers import resolve_grid_n
+from .tiles import (
+    DEFAULT_DEEP_MAX_ZOOM,
+    DEFAULT_DEEP_WINDOWS,
+    DEFAULT_GLOBAL_MAX_ZOOM,
+    DeepWindow,
+)
 from .topology import area_fraction, component_labels
+from .transfer import upsample
 
 EARTH_RADIUS_KM = 6371.0
 # Fixed reference sea level on the elevation field. Land fraction is emergent.
 PRESENT_SEA_LEVEL_M = 0.0
 LGM_SEA_LEVEL_DROP_M = 120.0
+DEFAULT_CACHE_DIR = Path("/workspace/.cache/deeptime")
+
+_GEOLOGY_SCALARS = (
+    "plate_id",
+    "continent_id",
+    "terrane_id",
+    "continental",
+    "crust_age_ma",
+    "crust_thickness_km",
+    "elevation_m",
+    "orogeny",
+    "basin_depth",
+    "sediment",
+    "landmass_id",
+    "seafloor_age_ma",
+)
 
 
 @dataclass(frozen=True)
@@ -38,6 +68,16 @@ class WorldConfig:
     era: str = "present"
     export_width: int = 1024
     export_height: int = 512
+    validate: bool = True
+    tier: str = "dev"
+    cache_dir: Path = field(default_factory=lambda: Path("/workspace/.cache/deeptime"))
+    use_cache: bool = True
+    tile_global_max_zoom: int = 2
+    tile_deep_max_zoom: int = 3
+    # Lon/lat deep-zoom windows; empty uses DEFAULT_DEEP_WINDOWS at export.
+    # Production exports should set zooms to DEFAULT_GLOBAL_MAX_ZOOM /
+    # DEFAULT_DEEP_MAX_ZOOM (6 / 11).
+    tile_deep_windows: tuple[DeepWindow, ...] = DEFAULT_DEEP_WINDOWS
 
 
 @dataclass
@@ -56,6 +96,214 @@ class WorldResult:
     bulk_materials: dict[str, np.ndarray]
     incentives: IncentiveFields
     settlement: SettlementFields
+    navigation: NavigationFields
+
+
+def _pack_geology(
+    geology: GeologyFields, plate_model: PlateModel
+) -> dict[str, np.ndarray]:
+    payload: dict[str, np.ndarray] = {
+        "plate_seed_xyz": plate_model.seed_xyz,
+        "plate_omega_xyz": plate_model.omega_xyz,
+        "plate_labels": plate_model.plate_id,
+    }
+    for name in _GEOLOGY_SCALARS:
+        payload[name] = getattr(geology, name)
+    for name, values in geology.history.items():
+        payload[f"history__{name}"] = values
+    for name, values in geology.lithology.items():
+        payload[f"lithology__{name}"] = values
+    for name, values in geology.paleoclimate.items():
+        payload[f"paleoclimate__{name}"] = values
+    return payload
+
+
+def _unpack_geology(
+    payload: dict,
+) -> tuple[GeologyFields, PlateModel]:
+    history = {
+        name: payload[f"history__{name}"]
+        for name in EVENT_NAMES
+        if f"history__{name}" in payload
+    }
+    lithology = {
+        key.split("__", 1)[1]: payload[key]
+        for key in payload
+        if key.startswith("lithology__")
+    }
+    paleoclimate = {
+        key.split("__", 1)[1]: payload[key]
+        for key in payload
+        if key.startswith("paleoclimate__")
+    }
+    geology = GeologyFields(
+        plate_id=payload["plate_id"],
+        continent_id=payload["continent_id"],
+        terrane_id=payload["terrane_id"],
+        continental=payload["continental"],
+        crust_age_ma=payload["crust_age_ma"],
+        crust_thickness_km=payload["crust_thickness_km"],
+        elevation_m=payload["elevation_m"],
+        orogeny=payload["orogeny"],
+        basin_depth=payload["basin_depth"],
+        sediment=payload["sediment"],
+        history=history,
+        lithology=lithology,
+        paleoclimate=paleoclimate,
+        landmass_id=payload.get(
+            "landmass_id", np.empty(0, dtype=np.int32)
+        ),
+        seafloor_age_ma=payload.get(
+            "seafloor_age_ma", np.zeros_like(payload["elevation_m"])
+        ),
+    )
+    plate_model = PlateModel(
+        seed_xyz=payload["plate_seed_xyz"],
+        omega_xyz=payload["plate_omega_xyz"],
+        plate_id=payload["plate_labels"],
+    )
+    return geology, plate_model
+
+
+def _load_or_simulate_geology(
+    grid: CubedSphere, config: WorldConfig, *, tier_name: str | None = None
+) -> tuple[GeologyFields, PlateModel]:
+    tier = tier_name or config.tier
+    cache_key_meta = {
+        "grid_n": grid.n,
+        "ticks": config.ticks,
+        "dt_ma": config.dt_ma,
+        "n_plates": config.n_plates,
+        "n_continents": config.n_continents,
+    }
+    if config.use_cache:
+        cached = checkpoint_mod.load(
+            config.cache_dir, tier, config.seed, GENERATOR_VERSION
+        )
+        if cached is not None:
+            meta = cached.get("meta", {})
+            if all(meta.get(k) == v for k, v in cache_key_meta.items()):
+                return _unpack_geology(cached)
+
+    geology, plate_model = simulate_geology(
+        grid,
+        GeologyConfig(
+            seed=config.seed,
+            ticks=config.ticks,
+            dt_ma=config.dt_ma,
+            n_plates=config.n_plates,
+            n_continents=config.n_continents,
+        ),
+    )
+    if config.use_cache:
+        checkpoint_mod.save(
+            config.cache_dir,
+            tier,
+            config.seed,
+            GENERATOR_VERSION,
+            {**_pack_geology(geology, plate_model), "meta": cache_key_meta},
+        )
+    return geology, plate_model
+
+
+def _upsample_geology(
+    geology: GeologyFields,
+    plate_model: PlateModel,
+    source_grid: CubedSphere,
+    target_grid: CubedSphere,
+) -> tuple[GeologyFields, PlateModel]:
+    def up_near(values: np.ndarray) -> np.ndarray:
+        return upsample(values, source_grid, target_grid, method="nearest")
+
+    def up_smooth(values: np.ndarray) -> np.ndarray:
+        return upsample(values, source_grid, target_grid, method="smooth")
+
+    plate_id = up_near(plate_model.plate_id).astype(np.int32)
+    continent_id = up_near(geology.continent_id).astype(np.int32)
+    terrane_id = up_near(geology.terrane_id).astype(np.int32)
+    transferred = GeologyFields(
+        plate_id=plate_id,
+        continent_id=continent_id,
+        terrane_id=terrane_id,
+        continental=np.clip(up_smooth(geology.continental), 0, 1),
+        crust_age_ma=up_smooth(geology.crust_age_ma),
+        crust_thickness_km=up_smooth(geology.crust_thickness_km),
+        elevation_m=up_smooth(geology.elevation_m),
+        orogeny=np.clip(up_smooth(geology.orogeny), 0, 1.5),
+        basin_depth=np.clip(up_smooth(geology.basin_depth), 0, 1),
+        sediment=np.clip(up_smooth(geology.sediment), 0, 1),
+        history={
+            name: np.clip(up_smooth(values), 0, 1.5)
+            for name, values in geology.history.items()
+        },
+        lithology={
+            name: np.clip(up_smooth(values), 0, 1)
+            for name, values in geology.lithology.items()
+        },
+        paleoclimate={
+            name: np.clip(up_smooth(values), 0, 1)
+            for name, values in geology.paleoclimate.items()
+        },
+        seafloor_age_ma=up_smooth(
+            geology.seafloor_age_ma
+            if geology.seafloor_age_ma.size
+            else np.zeros(source_grid.size)
+        ),
+    )
+    plates = PlateModel(
+        seed_xyz=plate_model.seed_xyz.copy(),
+        omega_xyz=plate_model.omega_xyz.copy(),
+        plate_id=plate_id,
+    )
+    return transferred, plates
+
+
+def _geology_for_config(
+    config: WorldConfig,
+) -> tuple[CubedSphere, GeologyFields, PlateModel]:
+    """Run or resume geology at the right tier, upsampling T0 → T1 when needed."""
+    if config.tier == "t1":
+        t1_n = resolve_grid_n("t1", config.grid_n)
+        t1_grid = CubedSphere.create(t1_n)
+        if config.use_cache:
+            cached = checkpoint_mod.load(
+                config.cache_dir, "t1", config.seed, GENERATOR_VERSION
+            )
+            if cached is not None and cached.get("meta", {}).get("grid_n") == t1_n:
+                geology, plates = _unpack_geology(cached)
+                return t1_grid, geology, plates
+
+        t0_n = resolve_grid_n("t0", config.grid_n)
+        t0_grid = CubedSphere.create(t0_n)
+        t0_config = WorldConfig(**{**config.__dict__, "tier": "t0", "grid_n": t0_n})
+        geology, plates = _load_or_simulate_geology(
+            t0_grid, t0_config, tier_name="t0"
+        )
+        geology, plates = _upsample_geology(geology, plates, t0_grid, t1_grid)
+        if config.use_cache:
+            checkpoint_mod.save(
+                config.cache_dir,
+                "t1",
+                config.seed,
+                GENERATOR_VERSION,
+                {
+                    **_pack_geology(geology, plates),
+                    "meta": {
+                        "grid_n": t1_n,
+                        "ticks": config.ticks,
+                        "dt_ma": config.dt_ma,
+                        "n_plates": config.n_plates,
+                        "n_continents": config.n_continents,
+                        "upsampled_from": "t0",
+                    },
+                },
+            )
+        return t1_grid, geology, plates
+
+    grid_n = resolve_grid_n(config.tier, config.grid_n)
+    grid = CubedSphere.create(grid_n)
+    geology, plates = _load_or_simulate_geology(grid, config, tier_name=config.tier)
+    return grid, geology, plates
 
 
 def _deposit_context(
@@ -282,20 +530,27 @@ def _settlement_inputs(
     )
 
 
+def _surface_iterations(tier: str) -> int:
+    """Fluvial/glacial iteration budget by tier. ``dev`` skips for fast tests."""
+    if tier == "t1":
+        return 240
+    if tier == "t0":
+        return 40
+    return 0
+
+
+def _coastal_iterations(tier: str) -> int:
+    if tier == "t1":
+        return 48
+    if tier == "t0":
+        return 16
+    return 0
+
+
 def generate_world(config: WorldConfig) -> WorldResult:
     if config.era not in ("present", "lgm"):
         raise ValueError("era must be present or lgm")
-    grid = CubedSphere.create(config.grid_n)
-    geology, plate_model = simulate_geology(
-        grid,
-        GeologyConfig(
-            seed=config.seed,
-            ticks=config.ticks,
-            dt_ma=config.dt_ma,
-            n_plates=config.n_plates,
-            n_continents=config.n_continents,
-        ),
-    )
+    grid, geology, plate_model = _geology_for_config(config)
     sea_level = (
         PRESENT_SEA_LEVEL_M
         if config.era == "present"
@@ -305,7 +560,45 @@ def generate_world(config: WorldConfig) -> WorldResult:
     land_fraction = area_fraction(land, grid.area_sr)
     geology.landmass_id = component_labels(grid, land)
     climate = compute_climate(grid, geology.elevation_m, sea_level, era=config.era)
-    hydrology = compute_hydrology(grid, geology.elevation_m, sea_level, climate)
+    surface_iters = _surface_iterations(config.tier)
+    if surface_iters > 0:
+        surface = evolve_surface(
+            grid,
+            geology.elevation_m,
+            sea_level,
+            climate,
+            iterations=surface_iters,
+            seed=config.seed,
+        )
+        geology.elevation_m = surface.elevation_m
+        climate = compute_climate(
+            grid, geology.elevation_m, sea_level, era=config.era
+        )
+    coastal_iters = _coastal_iterations(config.tier)
+    if coastal_iters > 0:
+        coast = evolve_coastline(
+            grid,
+            geology.elevation_m,
+            sea_level,
+            climate.wind_xyz,
+            iterations=coastal_iters,
+            seed=config.seed + 17,
+        )
+        geology.elevation_m = coast.elevation_m
+        climate = compute_climate(
+            grid, geology.elevation_m, sea_level, era=config.era
+        )
+    if surface_iters > 0 or coastal_iters > 0:
+        hydrology = compute_hydrology(
+            grid, geology.elevation_m, sea_level, climate, seed=config.seed
+        )
+        land = geology.elevation_m >= sea_level
+        land_fraction = area_fraction(land, grid.area_sr)
+        geology.landmass_id = component_labels(grid, land)
+    else:
+        hydrology = compute_hydrology(
+            grid, geology.elevation_m, sea_level, climate, seed=config.seed
+        )
     environment = compute_environment(
         grid,
         geology.elevation_m,
@@ -330,6 +623,14 @@ def generate_world(config: WorldConfig) -> WorldResult:
         incentives,
     )
     settlement = compute_settlement(inputs, incentives)
+    navigation = compute_navigation(
+        grid, geology.elevation_m, sea_level, climate.wind_xyz, climate
+    )
+    if config.validate:
+        validate_contract(geology, climate, hydrology)
+    # Re-bind config with the resolved face resolution for exporters/meta.
+    if grid.n != config.grid_n:
+        config = WorldConfig(**{**config.__dict__, "grid_n": grid.n})
     return WorldResult(
         config=config,
         grid=grid,
@@ -345,4 +646,5 @@ def generate_world(config: WorldConfig) -> WorldResult:
         bulk_materials=bulk,
         incentives=incentives,
         settlement=settlement,
+        navigation=navigation,
     )

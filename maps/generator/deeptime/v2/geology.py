@@ -14,6 +14,11 @@ from .plates import (
     PlateModel,
     rodrigues_rotate,
 )
+from .seafloor import (
+    advance_seafloor_age,
+    apply_variable_shelves,
+    build_seafloor_elevation,
+)
 
 EVENT_NAMES = (
     "ridge",
@@ -69,6 +74,9 @@ class GeologyFields:
     lithology: dict[str, np.ndarray]
     paleoclimate: dict[str, np.ndarray]
     landmass_id: np.ndarray = field(default_factory=lambda: np.empty(0, dtype=np.int32))
+    seafloor_age_ma: np.ndarray = field(
+        default_factory=lambda: np.empty(0, dtype=np.float64)
+    )
 
 
 def _tangent_basis(center: np.ndarray) -> tuple[np.ndarray, np.ndarray]:
@@ -305,6 +313,11 @@ def simulate_geology(
     thickness, continent_id, basement_age = _seed_crust_fields(
         grid, plates, config, rng
     )
+    seafloor_age = np.where(
+        continent_id < 0,
+        rng.uniform(5.0, 80.0, size=grid.size),
+        0.0,
+    )
     cumulative = {name: np.zeros(grid.size, dtype=np.float64) for name in EVENT_NAMES}
     memory = {name: np.zeros(grid.size, dtype=np.float64) for name in EVENT_NAMES}
     decay_ma = {
@@ -383,12 +396,18 @@ def simulate_geology(
             config.dt_ma,
             rng,
         )
+        continental = _continental_fraction(thickness)
+        seafloor_age = advance_seafloor_age(
+            seafloor_age, continental, current["ridge"], config.dt_ma
+        )
         thickness = _advect_scalar(grid, plates, thickness, config.dt_ma)
         basement_age = _advect_scalar(grid, plates, basement_age, config.dt_ma)
+        seafloor_age = _advect_scalar(grid, plates, seafloor_age, config.dt_ma)
         continent_id = _advect_labels(grid, plates, continent_id, config.dt_ma)
         # Heal remesh speckles from nearest-neighbor advection.
         thickness = grid.smooth(thickness, iterations=1, self_weight=4.0)
         continent_id[thickness < CONTINENT_MIN_KM] = -1
+        seafloor_age[continent_id >= 0] = 0.0
         plates.advance(grid, config.dt_ma)
 
     continental = _continental_fraction(thickness)
@@ -440,8 +459,13 @@ def simulate_geology(
     )
 
     ridge = memory["ridge"]
-    ocean_age = np.clip(
-        180.0 * (1.0 - 0.85 * ridge) + 20.0 * (texture + 1.0), 0.0, 220.0
+    ocean_age = seafloor_age.copy()
+    ocean_age[continental > 0.25] = 0.0
+    # Fill any remaining oceanic zeros with a soft fallback so brand-new cells
+    # still get a depth.
+    need_age = (continental <= 0.25) & (ocean_age <= 0.0)
+    ocean_age[need_age] = np.clip(
+        40.0 * (1.0 - 0.85 * ridge[need_age]) + 10.0, 0.0, 180.0
     )
     crust_age = np.where(continental > 0.25, basement_age, ocean_age)
     crust_thickness = np.where(
@@ -470,8 +494,11 @@ def simulate_geology(
         1,
     )
 
-    # Isostasy-ish with an explicit shelf band so LGM (−120 m) expands coasts.
-    ocean_elevation = -2600.0 - 250.0 * np.sqrt(np.clip(ocean_age, 0, 180))
+    ocean_elevation, seafloor_extras = build_seafloor_elevation(
+        grid, ocean_age, continental_soft, memory, seed=config.seed
+    )
+    memory["trench"] = seafloor_extras["trench"]
+    memory["back_arc"] = seafloor_extras["back_arc"]
     continental_elevation = (
         40.0
         + 48.0 * (crust_thickness - OCEAN_THICKNESS_KM)
@@ -481,15 +508,9 @@ def simulate_geology(
     )
     transition = _smoothstep(0.18, 0.58, continental_soft)
     elevation = ocean_elevation * (1.0 - transition) + continental_elevation * transition
-    shelf_zone = (
-        (continental_soft > 0.10)
-        & (continental_soft < 0.52)
-        & (continental < 0.55)
+    elevation = apply_variable_shelves(
+        elevation, continental_soft, continental, memory, grid
     )
-    elevation[shelf_zone] = -240.0 + 520.0 * (
-        (continental_soft[shelf_zone] - 0.10) / 0.42
-    )
-    elevation += 450.0 * ridge * (1.0 - transition)
     continental = continental_soft
 
     ancient = np.clip((crust_age - 1200.0) / 1800.0, 0, 1) * continental
@@ -546,6 +567,7 @@ def simulate_geology(
             history=memory,
             lithology=lithology,
             paleoclimate=paleoclimate,
+            seafloor_age_ma=ocean_age,
         ),
         plates,
     )

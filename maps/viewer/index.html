@@ -48,6 +48,14 @@
           Settlement
         </label>
         <label class="toggle">
+          <input type="checkbox" id="feature-layers" checked />
+          Features
+        </label>
+        <label class="toggle">
+          <input type="checkbox" id="nav-layers" />
+          Navigation
+        </label>
+        <label class="toggle">
           <input type="checkbox" id="war-layers" />
           War layers
         </label>
@@ -75,6 +83,12 @@
         <p class="note">
           Deposits from deep-time geology (gold, REE, HP silica, oil, copper…).
           Toggle above. Source: <code>world-resources.geojson</code>.
+        </p>
+        <h1>Features / Navigation</h1>
+        <p class="note">
+          Named seas, ranges, straits, and harbours from morphology export
+          (<code>world-features.geojson</code>, <code>world-navigation.geojson</code>).
+          Raster basemap overzooms outside the deep Aurelian/Veldara tile window.
         </p>
         <p class="note">Eastmarch placeholder bbox centered for future scenarios.</p>
       </aside>

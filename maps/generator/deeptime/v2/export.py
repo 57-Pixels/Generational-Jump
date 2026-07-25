@@ -11,7 +11,10 @@ from pathlib import Path
 import numpy as np
 from PIL import Image, ImageDraw
 
+from .contract import GENERATOR_VERSION
+from .features import extract_features, features_to_geojson
 from .model import WorldResult
+from .navigation import chokepoint_geometry, navigation_to_geojson
 from .tiles import MERCATOR_MAX_LAT, write_mercator_tiles
 
 
@@ -160,42 +163,97 @@ def _resource_geojson(world: WorldResult) -> dict:
     }
 
 
+def _split_antimeridian(coords: list[list[float]]) -> list[list[list[float]]]:
+    """Split a polyline wherever consecutive longitudes jump more than 180°."""
+    if len(coords) < 2:
+        return []
+    parts: list[list[list[float]]] = []
+    current = [coords[0]]
+    for previous, point in zip(coords, coords[1:]):
+        if abs(point[0] - previous[0]) > 180.0:
+            if len(current) >= 2:
+                parts.append(current)
+            current = [point]
+        else:
+            current.append(point)
+    if len(current) >= 2:
+        parts.append(current)
+    return parts
+
+
+def _ocean_endpoint(
+    grid, land: np.ndarray, cell: int
+) -> list[float]:
+    """Lon/lat of the nearest ocean neighbour, else the cell itself."""
+    neighbors = grid.neighbors[cell]
+    neighbors = neighbors[neighbors >= 0]
+    wet = neighbors[~land[neighbors]]
+    if len(wet):
+        target = int(wet[0])
+        return [float(grid.lon_deg[target]), float(grid.lat_deg[target])]
+    return [float(grid.lon_deg[cell]), float(grid.lat_deg[cell])]
+
+
 def _river_geojson(world: WorldResult) -> dict:
+    """Export rivers as continuous head→mouth polylines (not single edges)."""
+    grid = world.grid
+    river = world.hydrology.river_mask
+    receiver = world.hydrology.receiver
+    discharge = world.hydrology.discharge_m3_s
+    drainage = world.hydrology.drainage_area_km2
+    land = world.land
+
+    river_cells = np.flatnonzero(river)
+    upstream_count = np.zeros(grid.size, dtype=np.int32)
+    for cell in river_cells:
+        downstream = int(receiver[cell])
+        if downstream >= 0 and river[downstream]:
+            upstream_count[downstream] += 1
+    heads = river_cells[upstream_count[river_cells] == 0]
+
     features: list[dict] = []
-    for cell in np.flatnonzero(world.hydrology.river_mask):
-        receiver = int(world.hydrology.receiver[cell])
-        if receiver < 0:
-            continue
-        features.append(
-            {
-                "type": "Feature",
-                "properties": {
-                    "discharge_m3_s": round(
-                        float(world.hydrology.discharge_m3_s[cell]), 2
-                    ),
-                    "drainage_km2": round(
-                        float(world.hydrology.drainage_area_km2[cell]), 2
-                    ),
-                },
-                "geometry": {
-                    "type": "LineString",
-                    "coordinates": [
-                        [
-                            float(world.grid.lon_deg[cell]),
-                            float(world.grid.lat_deg[cell]),
-                        ],
-                        [
-                            float(world.grid.lon_deg[receiver]),
-                            float(world.grid.lat_deg[receiver]),
-                        ],
-                    ],
-                },
-            }
-        )
+    for head in heads:
+        path = [int(head)]
+        current = int(head)
+        while True:
+            downstream = int(receiver[current])
+            if downstream < 0 or not river[downstream]:
+                break
+            path.append(downstream)
+            current = downstream
+
+        coords = [
+            [float(grid.lon_deg[cell]), float(grid.lat_deg[cell])] for cell in path
+        ]
+        # One-cell hop into the ocean so mouths visibly reach the coast.
+        end = _ocean_endpoint(grid, land, path[-1])
+        if end != coords[-1]:
+            coords.append(end)
+
+        mouth_cell = path[-1]
+        mouth_discharge = float(discharge[mouth_cell])
+        mouth_drainage = float(drainage[mouth_cell])
+
+        parts = _split_antimeridian(coords)
+        for index, part in enumerate(parts):
+            features.append(
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "discharge_m3_s": round(mouth_discharge, 2),
+                        "drainage_km2": round(mouth_drainage, 2),
+                        "role": "mouth" if index == len(parts) - 1 else "reach",
+                    },
+                    "geometry": {
+                        "type": "LineString",
+                        "coordinates": part,
+                    },
+                }
+            )
     return {
         "type": "FeatureCollection",
         "name": "rivers-v2",
-        "schema_version": "2.0",
+        "schema_version": "2.1",
         "features": features,
     }
 
@@ -292,13 +350,20 @@ def save_world(world: WorldResult, destinations: list[Path]) -> dict:
     grid = world.grid
 
     base_cells = _atlas_color(world)
-    base = grid.to_equirect(base_cells, width, height)
-    plates = grid.to_equirect(_palette(world.geology.plate_id, 11), width, height)
+    # Soften hard cubed-sphere cell edges before equirect sampling.
+    for channel in range(base_cells.shape[1]):
+        base_cells[:, channel] = grid.smooth(
+            base_cells[:, channel], iterations=1, self_weight=3.5
+        )
+    base = grid.to_equirect(base_cells, width, height, blend=True)
+    plates = grid.to_equirect(
+        _palette(world.geology.plate_id, 11), width, height, blend=True
+    )
     continents = grid.to_equirect(
-        _palette(world.geology.continent_id, 23), width, height
+        _palette(world.geology.continent_id, 23), width, height, blend=True
     )
     landmasses = grid.to_equirect(
-        _palette(world.geology.landmass_id, 37), width, height
+        _palette(world.geology.landmass_id, 37), width, height, blend=True
     )
     climate_cells = np.stack(
         (
@@ -308,25 +373,44 @@ def save_world(world: WorldResult, destinations: list[Path]) -> dict:
         ),
         axis=1,
     )
-    climate = grid.to_equirect(climate_cells, width, height)
+    for channel in range(climate_cells.shape[1]):
+        climate_cells[:, channel] = grid.smooth(
+            climate_cells[:, channel], iterations=1, self_weight=3.5
+        )
+    climate = grid.to_equirect(climate_cells, width, height, blend=True)
     settlement = grid.to_equirect(
-        _heat_color(world.settlement.settle_ac, world.land), width, height
+        _heat_color(world.settlement.settle_ac, world.land),
+        width,
+        height,
+        blend=True,
     )
     river_cells = base_cells.copy()
     river_cells[world.hydrology.river_mask] = (0.20, 0.65, 0.95)
-    rivers_raster = grid.to_equirect(river_cells, width, height)
+    rivers_raster = grid.to_equirect(river_cells, width, height, blend=True)
     resources = _resource_overlay(world, base)
 
     resource_geojson = _resource_geojson(world)
     river_geojson = _river_geojson(world)
     settlement_geojson = _settlement_sites(world)
+    feature_list = extract_features(world)
+    feature_geojson = features_to_geojson(feature_list, world)
+    navigation_geojson = navigation_to_geojson(world.navigation, world.grid)
+    chokepoints = chokepoint_geometry(
+        world.grid,
+        world.geology.elevation_m,
+        world.sea_level_m,
+        world.navigation.chokepoint_mask,
+    )
     deposit_counts: dict[str, int] = {}
     for deposit in world.deposits:
         deposit_counts[deposit.deposit_class] = (
             deposit_counts.get(deposit.deposit_class, 0) + 1
         )
+    harbour = world.navigation.harbour_rating
+    top_harbour = float(np.max(harbour)) if harbour.size else 0.0
     meta = {
         "method": "deeptime-spherical-v2",
+        "generator_version": GENERATOR_VERSION,
         "seed": world.config.seed,
         "era": world.config.era,
         "grid": {
@@ -353,6 +437,16 @@ def save_world(world: WorldResult, destinations: list[Path]) -> dict:
             "habitability_separate_from_incentives": True,
             "site_count": len(settlement_geojson["features"]),
         },
+        "features": {
+            "count": len(feature_list),
+        },
+        "navigation": {
+            "harbour_sites": int(np.sum(harbour >= 0.55)),
+            "top_harbour_rating": round(top_harbour, 3),
+            "chokepoint_count": len(chokepoints),
+            "shelf_break_cells": int(np.sum(world.navigation.shelf_break_mask)),
+            "chokepoints": chokepoints[:12],
+        },
         "semantics": {
             "plate": "instantaneous rigid kinematic domain",
             "continent": "continental crust lineage / terrane",
@@ -361,11 +455,16 @@ def save_world(world: WorldResult, destinations: list[Path]) -> dict:
         "viewer_tiles": {
             "scheme": "xyz",
             "path": "tiles/color/{z}/{x}/{y}.png",
-            "max_zoom": 3,
+            "max_zoom": world.config.tile_deep_max_zoom,
+            "global_max_zoom": world.config.tile_global_max_zoom,
+            "deep_max_zoom": world.config.tile_deep_max_zoom,
             "mercator_max_lat": MERCATOR_MAX_LAT,
             "note": "MapLibre globe extends raster tiles to poles; image sources do not",
         },
-        "config": asdict(world.config),
+        "config": {
+            key: (str(value) if isinstance(value, Path) else value)
+            for key, value in asdict(world.config).items()
+        },
     }
 
     for destination in destinations:
@@ -380,7 +479,11 @@ def save_world(world: WorldResult, destinations: list[Path]) -> dict:
         _save_rgb(destination / f"world-settlement{suffix}.png", settlement)
         if world.config.era == "present":
             tile_meta = write_mercator_tiles(
-                base, destination / "tiles" / "color", max_zoom=3
+                base,
+                destination / "tiles" / "color",
+                global_max_zoom=world.config.tile_global_max_zoom,
+                deep_max_zoom=world.config.tile_deep_max_zoom,
+                deep_windows=world.config.tile_deep_windows,
             )
             meta["viewer_tiles"].update(tile_meta)
         (destination / f"world-resources{suffix}.geojson").write_text(
@@ -391,6 +494,12 @@ def save_world(world: WorldResult, destinations: list[Path]) -> dict:
         )
         (destination / f"world-settlement{suffix}.geojson").write_text(
             json.dumps(settlement_geojson, indent=2) + "\n"
+        )
+        (destination / f"world-features{suffix}.geojson").write_text(
+            json.dumps(feature_geojson, indent=2) + "\n"
+        )
+        (destination / f"world-navigation{suffix}.geojson").write_text(
+            json.dumps(navigation_geojson, indent=2) + "\n"
         )
         (destination / f"world-meta{suffix}.json").write_text(
             json.dumps(meta, indent=2) + "\n"

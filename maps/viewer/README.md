@@ -41,6 +41,16 @@ Earth/satellite path: tile meshes cover ±85.05°, and **globe mode stretches
 edge tiles to the poles**. A single full-world `image` source cannot do that
 (`allowPoles` is false for ImageSource).
 
+Tile coverage is **sparse**: global pyramid through z6, then deep z7–z11 only
+over the Aurelian / Veldara windows (see `tiles/color/coverage.json`). The
+raster source `maxzoom` is raised to the deep maximum so MapLibre **overzooms**
+parents outside those windows. `world-meta.json` → `viewer_tiles.max_zoom`
+drives the value (fallback 11).
+
+Toggleable overlays include resources, rivers, settlement, **features**, and
+**navigation** (harbours / chokepoints / shelf break). Resources and settlements
+stay as polygon fill/line layers.
+
 ## War layers (ready for later)
 
 Demo GeoJSON in `public/data/layers/`:
