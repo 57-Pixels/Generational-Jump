@@ -65,32 +65,45 @@
         </label>
       </header>
       <div id="map"></div>
-      <aside id="legend">
-        <h1>Layers</h1>
-        <p class="note">
-          2D while zoomed in (theater / war map). Globe when zoomed out past
-          threshold. Basemap is <strong>algorithmic</strong> (see
-          <code>maps/generator</code>) — not image-gen. War layers off until
-          reauthored on this sphere.
-        </p>
-        <ul>
-          <li><span class="swatch control-a"></span> Control — Veldara</li>
-          <li><span class="swatch control-b"></span> Control — Korvath</li>
-          <li><span class="swatch front"></span> Front line</li>
-          <li><span class="swatch event"></span> Events</li>
-        </ul>
-        <h1>Resources</h1>
-        <p class="note">
-          Deposits from deep-time geology (gold, REE, HP silica, oil, copper…).
-          Toggle above. Source: <code>world-resources.geojson</code>.
-        </p>
-        <h1>Features / Navigation</h1>
-        <p class="note">
-          Named seas, ranges, straits, and harbours from morphology export
-          (<code>world-features.geojson</code>, <code>world-navigation.geojson</code>).
-          Raster basemap overzooms outside the deep Aurelian/Veldara tile window.
-        </p>
-        <p class="note">Eastmarch placeholder bbox centered for future scenarios.</p>
+      <aside id="legend" class="legend is-collapsed">
+        <div class="legend-bar">
+          <h1 class="legend-title">Legend</h1>
+          <button
+            type="button"
+            id="legend-toggle"
+            class="legend-toggle"
+            aria-expanded="false"
+            aria-controls="legend-body"
+          >
+            Show
+          </button>
+        </div>
+        <div id="legend-body" class="legend-body">
+          <p class="note">
+            2D while zoomed in (theater / war map). Globe when zoomed out past
+            threshold. Basemap is <strong>algorithmic</strong> (see
+            <code>maps/generator</code>) — not image-gen. War layers off until
+            reauthored on this sphere.
+          </p>
+          <ul>
+            <li><span class="swatch control-a"></span> Control — Veldara</li>
+            <li><span class="swatch control-b"></span> Control — Korvath</li>
+            <li><span class="swatch front"></span> Front line</li>
+            <li><span class="swatch event"></span> Events</li>
+          </ul>
+          <h2>Resources</h2>
+          <p class="note">
+            Deposits from deep-time geology (gold, REE, HP silica, oil, copper…).
+            Toggle above. Source: <code>world-resources.geojson</code>.
+          </p>
+          <h2>Features / Navigation</h2>
+          <p class="note">
+            Named seas, ranges, straits, and harbours from morphology export
+            (<code>world-features.geojson</code>, <code>world-navigation.geojson</code>).
+            Raster basemap overzooms outside the deep Aurelian/Veldara tile window.
+          </p>
+          <p class="note">Eastmarch theater centered on the algorithmic claim.</p>
+        </div>
       </aside>
     </div>
     <script type="module" src="/src/main.js"></script>

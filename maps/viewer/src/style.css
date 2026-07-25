@@ -85,21 +85,62 @@ body,
   left: 1rem;
   bottom: 1.5rem;
   width: min(280px, calc(100vw - 2rem));
-  padding: 0.9rem 1rem;
+  padding: 0.75rem 0.9rem;
   background: #1a222cee;
   border: 1px solid #2c3846;
   border-radius: 8px;
   backdrop-filter: blur(6px);
 }
 
-#legend h1 {
-  margin: 0 0 0.4rem;
+.legend-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.legend-title {
+  margin: 0;
   font-size: 0.95rem;
+}
+
+.legend-toggle {
+  flex: 0 0 auto;
+  margin: 0;
+  padding: 0.2rem 0.55rem;
+  border: 1px solid #2c3846;
+  border-radius: 4px;
+  background: #101820;
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.legend-toggle:hover,
+.legend-toggle:focus-visible {
+  color: var(--text);
+  border-color: #3d5166;
+  outline: none;
+}
+
+.legend-body {
+  margin-top: 0.55rem;
+}
+
+.legend.is-collapsed .legend-body {
+  display: none;
+}
+
+#legend h2 {
+  margin: 0.75rem 0 0.35rem;
+  font-size: 0.85rem;
+  font-weight: 600;
 }
 
 #legend ul {
   list-style: none;
-  margin: 0.6rem 0;
+  margin: 0.45rem 0;
   padding: 0;
   font-size: 0.85rem;
 }
@@ -108,7 +149,7 @@ body,
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  margin: 0.35rem 0;
+  margin: 0.3rem 0;
 }
 
 .swatch {
@@ -145,3 +186,51 @@ body,
 .maplibregl-ctrl-attrib a {
   color: var(--accent);
 }
+
+/* Phone / narrow: compact bar by default, body hidden until expanded. */
+@media (max-width: 720px) {
+  #legend {
+    left: 0.65rem;
+    right: auto;
+    bottom: max(0.75rem, env(safe-area-inset-bottom, 0px));
+    width: auto;
+    max-width: min(220px, calc(100vw - 5.5rem));
+    padding: 0.45rem 0.55rem;
+  }
+
+  .legend-title {
+    font-size: 0.8rem;
+  }
+
+  .legend-toggle {
+    padding: 0.15rem 0.45rem;
+    font-size: 0.7rem;
+  }
+
+  .legend:not(.is-collapsed) {
+    width: min(240px, calc(100vw - 1.3rem));
+    max-height: min(42vh, 320px);
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .legend:not(.is-collapsed) .legend-body {
+    margin-top: 0.4rem;
+  }
+
+  #legend h2 {
+    margin-top: 0.55rem;
+    font-size: 0.78rem;
+  }
+
+  #legend ul {
+    font-size: 0.75rem;
+    margin: 0.3rem 0;
+  }
+
+  .note {
+    font-size: 0.68rem;
+    line-height: 1.3;
+  }
+}
+
