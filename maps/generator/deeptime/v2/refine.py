@@ -62,16 +62,9 @@ def _lonlat_to_xyz(lon_deg: np.ndarray, lat_deg: np.ndarray) -> np.ndarray:
 def _sample_parent(
     grid: CubedSphere, values: np.ndarray, lon: np.ndarray, lat: np.ndarray
 ) -> np.ndarray:
+    """Nearest parent cell via cubed-sphere face indices (O(n_samples))."""
     xyz = _lonlat_to_xyz(lon, lat)
-    # Nearest parent cell on the sphere.
-    # For modest windows this is fine; chunk if needed later.
-    out = np.empty(lon.shape[0], dtype=np.float64)
-    chunk = 4000
-    for start in range(0, lon.shape[0], chunk):
-        end = min(start + chunk, lon.shape[0])
-        dots = xyz[start:end] @ grid.xyz.T
-        out[start:end] = values[np.argmax(dots, axis=1)]
-    return out
+    return np.asarray(values, dtype=np.float64)[grid.indices_for_xyz(xyz)]
 
 
 def _parent_slope(grid: CubedSphere, elevation: np.ndarray) -> np.ndarray:

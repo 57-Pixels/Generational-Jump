@@ -140,6 +140,28 @@ class DrainageNetworkTests(unittest.TestCase):
         self.assertTrue(np.any(hydro.lake_id >= 0))
         self.assertTrue(np.any(result.endorheic_mask))
 
+    def test_receivers_are_grid_neighbors(self) -> None:
+        """Every positive receiver must be an immediate grid neighbour.
+
+        Depression rewiring used to point lake/endorheic cells at the basin
+        deepest cell even when it was not adjacent, which drew river chords
+        across oceans in the equirect export.
+        """
+        hydro = compute_hydrology(
+            self.grid, self.elevation, 0.0, self.climate, seed=3
+        )
+        land = self.elevation >= 0.0
+        flowing = np.flatnonzero(land & (hydro.receiver >= 0))
+        self.assertGreater(len(flowing), 50)
+        bad = 0
+        for cell in flowing:
+            recv = int(hydro.receiver[cell])
+            neighbors = self.grid.neighbors[cell]
+            neighbors = neighbors[neighbors >= 0]
+            if recv not in set(int(n) for n in neighbors):
+                bad += 1
+        self.assertEqual(bad, 0, msg=f"{bad} receiver hops are not neighbours")
+
     def test_hypsometry_near_earth(self) -> None:
         result = evolve_surface(
             self.grid, self.elevation, 0.0, self.climate, iterations=24, seed=5

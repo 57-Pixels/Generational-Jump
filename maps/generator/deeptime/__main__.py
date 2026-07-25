@@ -9,11 +9,11 @@ from pathlib import Path
 # Allow `python3 -m deeptime` from maps/generator
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
+from deeptime.publish import resolve_publish_settings
 from deeptime.simulate import SimConfig, run_until_hooks, save_result, simulate
 from deeptime.v2.export import save_world
 from deeptime.v2.model import WorldConfig, generate_world
 from deeptime.v2.tiers import TIERS, resolve_grid_n
-from deeptime.v2.tiles import DEFAULT_DEEP_MAX_ZOOM, DEFAULT_GLOBAL_MAX_ZOOM
 
 GENERATOR = Path(__file__).resolve().parent.parent
 EXPORTS = GENERATOR.parent / "exports"
@@ -50,8 +50,9 @@ def main(argv: list[str] | None = None) -> None:
         "--publish",
         action="store_true",
         help=(
-            "Smoother viewer export: denser equirect, global tiles through z6, "
-            "deep tiles through z8 over Aurelian/Veldara"
+            "High-quality viewer export: tier t1 morphology (unless --tier set), "
+            "≥4096×2048 equirect, global tiles through z6, deep tiles through z11 "
+            "over Aurelian/Veldara"
         ),
     )
     p.add_argument(
@@ -64,7 +65,7 @@ def main(argv: list[str] | None = None) -> None:
         "--tile-deep-max-zoom",
         type=int,
         default=None,
-        help="Override deep-window tile max zoom (default: 3, or 8 with --publish)",
+        help="Override deep-window tile max zoom (default: 3, or 11 with --publish)",
     )
     p.add_argument(
         "--reroll-hooks",
@@ -132,39 +133,27 @@ def main(argv: list[str] | None = None) -> None:
         save_result(result)
         return
 
-    grid_n = resolve_grid_n(args.tier, args.grid_n)
-    # Full sparse pyramid for real tiers; keep dev/default zooms cheap.
-    if args.publish:
-        tile_global = DEFAULT_GLOBAL_MAX_ZOOM
-        tile_deep = min(8, DEFAULT_DEEP_MAX_ZOOM)
-        export_width = max(args.width, 2048)
-        export_height = max(args.height, 1024)
-    elif args.tier in ("t0", "t1"):
-        tile_global = DEFAULT_GLOBAL_MAX_ZOOM
-        tile_deep = DEFAULT_DEEP_MAX_ZOOM
-        export_width = args.width
-        export_height = args.height
-    else:
-        tile_global = 2
-        tile_deep = 3
-        export_width = args.width
-        export_height = args.height
-    if args.tile_global_max_zoom is not None:
-        tile_global = args.tile_global_max_zoom
-    if args.tile_deep_max_zoom is not None:
-        tile_deep = args.tile_deep_max_zoom
+    settings = resolve_publish_settings(
+        tier=args.tier,
+        grid_n=args.grid_n,
+        width=args.width,
+        height=args.height,
+        publish=args.publish,
+        tile_global_max_zoom=args.tile_global_max_zoom,
+        tile_deep_max_zoom=args.tile_deep_max_zoom,
+    )
     world = generate_world(
         WorldConfig(
             seed=args.seed,
-            grid_n=grid_n,
+            grid_n=settings.grid_n,
             ticks=args.ticks,
             era=args.era,
-            export_width=export_width,
-            export_height=export_height,
-            tier=args.tier,
+            export_width=settings.export_width,
+            export_height=settings.export_height,
+            tier=settings.tier,
             use_cache=not args.no_cache,
-            tile_global_max_zoom=tile_global,
-            tile_deep_max_zoom=tile_deep,
+            tile_global_max_zoom=settings.tile_global_max_zoom,
+            tile_deep_max_zoom=settings.tile_deep_max_zoom,
         )
     )
     destinations = [EXPORTS]
@@ -172,7 +161,7 @@ def main(argv: list[str] | None = None) -> None:
         destinations.append(VIEWER_WORLD)
     meta = save_world(world, destinations)
     print(
-        f"v2 seed={args.seed} tier={args.tier} land={meta['land_fraction']:.3f} "
+        f"v2 seed={args.seed} tier={settings.tier} land={meta['land_fraction']:.3f} "
         f"plates={meta['plate_count']} continents={meta['continent_count']} "
         f"landmasses={meta['landmass_count']} deposits={meta['resource_deposit_count']}"
     )

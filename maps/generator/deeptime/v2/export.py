@@ -15,7 +15,9 @@ from .contract import GENERATOR_VERSION
 from .features import extract_features, features_to_geojson
 from .model import WorldResult
 from .navigation import chokepoint_geometry, navigation_to_geojson
+from .theater import build_theater_overlays
 from .tiles import MERCATOR_MAX_LAT, write_mercator_tiles
+from .tiers import get_tier
 
 
 def _palette(values: np.ndarray, seed: int = 0) -> np.ndarray:
@@ -467,6 +469,27 @@ def save_world(world: WorldResult, destinations: list[Path]) -> dict:
         },
     }
 
+    theater_overlays = None
+    theater_target_km = None
+    if world.config.era == "present" and (
+        world.config.tile_deep_max_zoom > world.config.tile_global_max_zoom
+    ):
+        # Build once — refining large windows is expensive; do not redo per dest.
+        tier = get_tier(world.config.tier)
+        theater_target_km = float(tier.target_km) if tier.target_km else 1.0
+        if not tier.windowed:
+            theater_target_km = 1.0
+        theater_overlays = build_theater_overlays(
+            world.grid,
+            world.geology.elevation_m,
+            world.climate,
+            sea_level_m=world.sea_level_m,
+            windows=world.config.tile_deep_windows,
+            target_km=theater_target_km,
+            seed=world.config.seed,
+            iterations=12,
+        )
+
     for destination in destinations:
         destination.mkdir(parents=True, exist_ok=True)
         _save_rgb(destination / f"world-color{suffix}.png", base)
@@ -484,8 +507,14 @@ def save_world(world: WorldResult, destinations: list[Path]) -> dict:
                 global_max_zoom=world.config.tile_global_max_zoom,
                 deep_max_zoom=world.config.tile_deep_max_zoom,
                 deep_windows=world.config.tile_deep_windows,
+                theater_overlays=theater_overlays,
             )
             meta["viewer_tiles"].update(tile_meta)
+            if theater_overlays is not None:
+                meta["viewer_tiles"]["theater_target_km"] = theater_target_km
+                meta["viewer_tiles"]["theater_windows"] = [
+                    ov.name for ov in theater_overlays
+                ]
         (destination / f"world-resources{suffix}.geojson").write_text(
             json.dumps(resource_geojson, indent=2) + "\n"
         )
