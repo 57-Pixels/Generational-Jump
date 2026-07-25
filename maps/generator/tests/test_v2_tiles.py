@@ -78,12 +78,43 @@ class MercatorTileTests(unittest.TestCase):
             # Outside the deep window at z=deep_z there must be no tiles.
             deep_tiles = tiles_covering_window(window, deep_z)
             self.assertGreater(len(deep_tiles), 0)
+            on_disk = {
+                (int(p.parent.name), int(p.stem))
+                for p in (root / str(deep_z)).rglob("*.png")
+            }
+            self.assertEqual(on_disk, set(deep_tiles))
             outside_x = (1 << deep_z) - 1
             outside_y = (1 << deep_z) - 1
             if (outside_x, outside_y) not in deep_tiles:
                 self.assertFalse(
                     (root / str(deep_z) / str(outside_x) / f"{outside_y}.png").is_file()
                 )
+
+    def test_sparse_write_removes_stale_tiles(self) -> None:
+        """A prior dense pyramid must not survive a sparse rewrite."""
+        window = DeepWindow("test", 0.0, 10.0, 30.0, 40.0)
+        height, width = 90, 180
+        image = np.full((height, width, 3), 80, dtype=np.uint8)
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp) / "color"
+            # Plant a stale full z=3 tile outside the deep window.
+            stale = root / "3" / "7" / "7.png"
+            stale.parent.mkdir(parents=True, exist_ok=True)
+            Image.fromarray(
+                np.full((32, 32, 3), 255, dtype=np.uint8), mode="RGB"
+            ).save(stale)
+            self.assertTrue(stale.is_file())
+            write_mercator_tiles(
+                image,
+                root,
+                global_max_zoom=1,
+                deep_max_zoom=2,
+                deep_windows=(window,),
+                tile_size=32,
+            )
+            self.assertFalse(stale.is_file())
+            self.assertFalse((root / "3").exists())
+            self.assertTrue((root / "0" / "0" / "0.png").is_file())
 
     def test_deep_tile_differs_from_overzoomed_parent(self) -> None:
         """z_deep sampling must carry real detail, not parent upscaling."""

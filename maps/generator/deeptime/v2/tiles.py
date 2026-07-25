@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import json
 import math
+import shutil
 from dataclasses import asdict, dataclass
 from pathlib import Path
 from typing import Iterable, Sequence
@@ -201,6 +202,14 @@ def write_mercator_tiles(
         pixels = equirect_rgb
 
     destination.mkdir(parents=True, exist_ok=True)
+    # Wipe prior zoom dirs so sparse exports cannot leave stale tiles from an
+    # older seed/world (MapLibre will happily stitch the Frankenstein pyramid).
+    for child in list(destination.iterdir()):
+        if child.is_dir() and child.name.isdigit():
+            shutil.rmtree(child)
+        elif child.name == "coverage.json":
+            child.unlink(missing_ok=True)
+
     windows = tuple(deep_windows) if deep_windows is not None else DEFAULT_DEEP_WINDOWS
     written = 0
     deep_written = 0
