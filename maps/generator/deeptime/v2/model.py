@@ -9,6 +9,7 @@ import numpy as np
 
 from . import checkpoint as checkpoint_mod
 from .climate import ClimateFields, compute_climate
+from .coastal import evolve_coastline
 from .contract import GENERATOR_VERSION, validate_contract
 from .environment import EnvironmentFields, compute_environment
 from .geology import EVENT_NAMES, GeologyConfig, GeologyFields, simulate_geology
@@ -524,6 +525,14 @@ def _surface_iterations(tier: str) -> int:
     return 0
 
 
+def _coastal_iterations(tier: str) -> int:
+    if tier == "t1":
+        return 48
+    if tier == "t0":
+        return 16
+    return 0
+
+
 def generate_world(config: WorldConfig) -> WorldResult:
     if config.era not in ("present", "lgm"):
         raise ValueError("era must be present or lgm")
@@ -551,7 +560,24 @@ def generate_world(config: WorldConfig) -> WorldResult:
         climate = compute_climate(
             grid, geology.elevation_m, sea_level, era=config.era
         )
-        hydrology = surface.hydrology
+    coastal_iters = _coastal_iterations(config.tier)
+    if coastal_iters > 0:
+        coast = evolve_coastline(
+            grid,
+            geology.elevation_m,
+            sea_level,
+            climate.wind_xyz,
+            iterations=coastal_iters,
+            seed=config.seed + 17,
+        )
+        geology.elevation_m = coast.elevation_m
+        climate = compute_climate(
+            grid, geology.elevation_m, sea_level, era=config.era
+        )
+    if surface_iters > 0 or coastal_iters > 0:
+        hydrology = compute_hydrology(
+            grid, geology.elevation_m, sea_level, climate, seed=config.seed
+        )
         land = geology.elevation_m >= sea_level
         land_fraction = area_fraction(land, grid.area_sr)
         geology.landmass_id = component_labels(grid, land)
