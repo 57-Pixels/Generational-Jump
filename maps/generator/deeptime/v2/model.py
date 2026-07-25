@@ -26,6 +26,12 @@ from .settlement import (
 from .navigation import NavigationFields, compute_navigation
 from .surface import evolve_surface
 from .tiers import resolve_grid_n
+from .tiles import (
+    DEFAULT_DEEP_MAX_ZOOM,
+    DEFAULT_DEEP_WINDOWS,
+    DEFAULT_GLOBAL_MAX_ZOOM,
+    DeepWindow,
+)
 from .topology import area_fraction, component_labels
 from .transfer import upsample
 
@@ -66,6 +72,10 @@ class WorldConfig:
     tier: str = "dev"
     cache_dir: Path = field(default_factory=lambda: Path("/workspace/.cache/deeptime"))
     use_cache: bool = True
+    tile_global_max_zoom: int = DEFAULT_GLOBAL_MAX_ZOOM
+    tile_deep_max_zoom: int = DEFAULT_DEEP_MAX_ZOOM
+    # Lon/lat deep-zoom windows; empty uses DEFAULT_DEEP_WINDOWS at export.
+    tile_deep_windows: tuple[DeepWindow, ...] = DEFAULT_DEEP_WINDOWS
 
 
 @dataclass

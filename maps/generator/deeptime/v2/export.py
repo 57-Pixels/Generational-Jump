@@ -441,7 +441,9 @@ def save_world(world: WorldResult, destinations: list[Path]) -> dict:
         "viewer_tiles": {
             "scheme": "xyz",
             "path": "tiles/color/{z}/{x}/{y}.png",
-            "max_zoom": 3,
+            "max_zoom": world.config.tile_deep_max_zoom,
+            "global_max_zoom": world.config.tile_global_max_zoom,
+            "deep_max_zoom": world.config.tile_deep_max_zoom,
             "mercator_max_lat": MERCATOR_MAX_LAT,
             "note": "MapLibre globe extends raster tiles to poles; image sources do not",
         },
@@ -463,7 +465,11 @@ def save_world(world: WorldResult, destinations: list[Path]) -> dict:
         _save_rgb(destination / f"world-settlement{suffix}.png", settlement)
         if world.config.era == "present":
             tile_meta = write_mercator_tiles(
-                base, destination / "tiles" / "color", max_zoom=3
+                base,
+                destination / "tiles" / "color",
+                global_max_zoom=world.config.tile_global_max_zoom,
+                deep_max_zoom=world.config.tile_deep_max_zoom,
+                deep_windows=world.config.tile_deep_windows,
             )
             meta["viewer_tiles"].update(tile_meta)
         (destination / f"world-resources{suffix}.geojson").write_text(
