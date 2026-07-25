@@ -237,10 +237,25 @@ class CubedSphere:
         return out
 
     def to_equirect(
-        self, field: np.ndarray, width: int = 1024, height: int = 512
+        self,
+        field: np.ndarray,
+        width: int = 1024,
+        height: int = 512,
+        *,
+        blend: bool | None = None,
+        blend_power: float = 6.0,
     ) -> np.ndarray:
+        """Sample ``field`` onto an equirectangular image.
+
+        When ``blend`` is true (default for floating fields), each pixel is a
+        spherical weight of the nearest cell and its neighbours so cell edges
+        do not print as hard squares.
+        """
         lon = np.linspace(-np.pi, np.pi, width, endpoint=False)
-        lat = np.linspace(np.pi / 2, -np.pi / 2, height, endpoint=False) - np.pi / (2 * height)
+        lat = (
+            np.linspace(np.pi / 2, -np.pi / 2, height, endpoint=False)
+            - np.pi / (2 * height)
+        )
         llon, llat = np.meshgrid(lon, lat)
         xyz = np.stack(
             (
@@ -250,6 +265,47 @@ class CubedSphere:
             ),
             axis=-1,
         )
-        index = self.indices_for_xyz(xyz.reshape(-1, 3))
+        flat_xyz = xyz.reshape(-1, 3)
+        index = self.indices_for_xyz(flat_xyz)
         values = np.asarray(field)
-        return values[index].reshape((height, width) + values.shape[1:])
+        if blend is None:
+            blend = bool(np.issubdtype(values.dtype, np.floating))
+        if not blend:
+            return values[index].reshape((height, width) + values.shape[1:])
+
+        # Promote to float for weighted blend; cast back for float32 inputs.
+        sample = values.astype(np.float64, copy=False)
+        multi = sample.ndim > 1
+        if not multi:
+            sample = sample[:, None]
+
+        n_pix = flat_xyz.shape[0]
+        accum = np.zeros((n_pix, sample.shape[1]), dtype=np.float64)
+        weight = np.zeros(n_pix, dtype=np.float64)
+
+        def _accumulate(cell_idx: np.ndarray, mask: np.ndarray) -> None:
+            if not np.any(mask):
+                return
+            dots = np.sum(flat_xyz[mask] * self.xyz[cell_idx[mask]], axis=1)
+            w = np.maximum(dots, 0.0) ** blend_power
+            accum[mask] += w[:, None] * sample[cell_idx[mask]]
+            weight[mask] += w
+
+        _accumulate(index, np.ones(n_pix, dtype=bool))
+        neigh = self.neighbors[index]
+        for slot in range(neigh.shape[1]):
+            cells = neigh[:, slot]
+            _accumulate(cells, cells >= 0)
+
+        # Degenerate poles / cracks: fall back to nearest.
+        bare = weight < 1e-12
+        if np.any(bare):
+            accum[bare] = sample[index[bare]]
+            weight[bare] = 1.0
+        out = accum / weight[:, None]
+        shaped = out.reshape((height, width, sample.shape[1]))
+        if not multi:
+            shaped = shaped[..., 0]
+        if values.dtype == np.float32:
+            return shaped.astype(np.float32)
+        return shaped

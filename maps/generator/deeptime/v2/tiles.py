@@ -59,12 +59,31 @@ DEFAULT_DEEP_WINDOWS: tuple[DeepWindow, ...] = (
 def _sample_equirect(
     image: np.ndarray, lon: np.ndarray, lat: np.ndarray
 ) -> np.ndarray:
+    """Bilinear sample equirect RGB; lon wraps, lat clamps."""
     height, width = image.shape[:2]
     x = (lon + 180.0) / 360.0 * width
     y = (90.0 - lat) / 180.0 * height
-    x0 = np.floor(x).astype(np.int64) % width
-    y0 = np.clip(np.floor(y).astype(np.int64), 0, height - 1)
-    return image[y0, x0]
+    x0 = np.floor(x).astype(np.int64)
+    y0 = np.floor(y).astype(np.int64)
+    fx = (x - x0).astype(np.float64)
+    fy = (y - y0).astype(np.float64)
+    x0m = x0 % width
+    x1m = (x0 + 1) % width
+    y0c = np.clip(y0, 0, height - 1)
+    y1c = np.clip(y0 + 1, 0, height - 1)
+    # Avoid bleeding past poles: zero the vertical fraction on the last row.
+    fy = np.where(y0 >= height - 1, 0.0, fy)
+    fy = np.where(y0 < 0, 0.0, fy)
+
+    src = image.astype(np.float64, copy=False)
+    c00 = src[y0c, x0m]
+    c10 = src[y0c, x1m]
+    c01 = src[y1c, x0m]
+    c11 = src[y1c, x1m]
+    top = c00 * (1.0 - fx)[..., None] + c10 * fx[..., None]
+    bot = c01 * (1.0 - fx)[..., None] + c11 * fx[..., None]
+    out = top * (1.0 - fy)[..., None] + bot * fy[..., None]
+    return np.clip(np.rint(out), 0, 255).astype(np.uint8)
 
 
 def _lon_to_tile_x(lon_deg: float, zoom: int) -> int:

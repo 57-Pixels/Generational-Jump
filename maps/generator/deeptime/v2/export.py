@@ -350,13 +350,20 @@ def save_world(world: WorldResult, destinations: list[Path]) -> dict:
     grid = world.grid
 
     base_cells = _atlas_color(world)
-    base = grid.to_equirect(base_cells, width, height)
-    plates = grid.to_equirect(_palette(world.geology.plate_id, 11), width, height)
+    # Soften hard cubed-sphere cell edges before equirect sampling.
+    for channel in range(base_cells.shape[1]):
+        base_cells[:, channel] = grid.smooth(
+            base_cells[:, channel], iterations=1, self_weight=3.5
+        )
+    base = grid.to_equirect(base_cells, width, height, blend=True)
+    plates = grid.to_equirect(
+        _palette(world.geology.plate_id, 11), width, height, blend=True
+    )
     continents = grid.to_equirect(
-        _palette(world.geology.continent_id, 23), width, height
+        _palette(world.geology.continent_id, 23), width, height, blend=True
     )
     landmasses = grid.to_equirect(
-        _palette(world.geology.landmass_id, 37), width, height
+        _palette(world.geology.landmass_id, 37), width, height, blend=True
     )
     climate_cells = np.stack(
         (
@@ -366,13 +373,20 @@ def save_world(world: WorldResult, destinations: list[Path]) -> dict:
         ),
         axis=1,
     )
-    climate = grid.to_equirect(climate_cells, width, height)
+    for channel in range(climate_cells.shape[1]):
+        climate_cells[:, channel] = grid.smooth(
+            climate_cells[:, channel], iterations=1, self_weight=3.5
+        )
+    climate = grid.to_equirect(climate_cells, width, height, blend=True)
     settlement = grid.to_equirect(
-        _heat_color(world.settlement.settle_ac, world.land), width, height
+        _heat_color(world.settlement.settle_ac, world.land),
+        width,
+        height,
+        blend=True,
     )
     river_cells = base_cells.copy()
     river_cells[world.hydrology.river_mask] = (0.20, 0.65, 0.95)
-    rivers_raster = grid.to_equirect(river_cells, width, height)
+    rivers_raster = grid.to_equirect(river_cells, width, height, blend=True)
     resources = _resource_overlay(world, base)
 
     resource_geojson = _resource_geojson(world)

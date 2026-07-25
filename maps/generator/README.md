@@ -19,8 +19,13 @@ cd maps/generator
 pip install -r requirements.txt
 python3 -m deeptime --engine v2 --seed 150 --tier t0 --width 1024 --height 512
 python3 -m deeptime --engine v2 --seed 150 --tier t0 --era lgm
+python3 -m deeptime --engine v2 --seed 150 --publish
 python3 -m deeptime --sweep-seeds 200 --grid-n 64 --ticks 40 --tier dev
 ```
+
+`--publish` writes a smoother viewer package: ≥2048×1024 equirect, blended spherical
+sampling, dense global tiles through z6, and deep tiles through z8 over the
+Aurelian/Veldara windows.
 
 ### Resolution tiers
 

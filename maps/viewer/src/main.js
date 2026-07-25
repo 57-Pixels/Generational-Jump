@@ -68,6 +68,7 @@ function worldStyle(maxzoom) {
         tileSize: 256,
         minzoom: 0,
         maxzoom,
+        // Keep parents while children load so zoom does not flash empty.
         attribution: "Algorithmic world (deeptime v2)",
       },
     },
@@ -81,7 +82,12 @@ function worldStyle(maxzoom) {
         id: "world-raster",
         type: "raster",
         source: "world",
-        paint: { "raster-opacity": 1, "raster-fade-duration": 0 },
+        paint: {
+          "raster-opacity": 1,
+          // Cross-fade tiles during zoom/pan instead of hard pops.
+          "raster-fade-duration": 280,
+          "raster-resampling": "linear",
+        },
       },
     ],
   };
@@ -96,6 +102,11 @@ const map = new maplibregl.Map({
   zoom: EASTMARCH.zoom,
   attributionControl: true,
   maxPitch: 60,
+  // Prefetch / retain more tiles so panning the theater stays fluid.
+  maxTileCacheSize: 750,
+  refreshExpiredTiles: false,
+  fadeDuration: 280,
+  renderWorldCopies: false,
 });
 
 map.addControl(new maplibregl.NavigationControl({ visualizePitch: true }), "top-right");
@@ -339,7 +350,7 @@ async function addFeatureLayers() {
       "text-halo-width": 2.4,
       "text-opacity": 0.55,
     },
-    minzoom: 2.5,
+    minzoom: 3.2,
   });
   map.addLayer({
     id: "features-label",
@@ -351,6 +362,7 @@ async function addFeatureLayers() {
       "text-offset": [0, 0.2],
       "text-optional": true,
       "text-max-width": 10,
+      "text-padding": 4,
     },
     paint: {
       "text-color": [
@@ -373,7 +385,7 @@ async function addFeatureLayers() {
       "text-halo-color": "#0a1218",
       "text-halo-width": 1.1,
     },
-    minzoom: 2.5,
+    minzoom: 3.2,
   });
 }
 

@@ -47,6 +47,26 @@ def main(argv: list[str] | None = None) -> None:
     )
     p.add_argument("--era", choices=("present", "lgm"), default="present")
     p.add_argument(
+        "--publish",
+        action="store_true",
+        help=(
+            "Smoother viewer export: denser equirect, global tiles through z6, "
+            "deep tiles through z8 over Aurelian/Veldara"
+        ),
+    )
+    p.add_argument(
+        "--tile-global-max-zoom",
+        type=int,
+        default=None,
+        help="Override global dense tile max zoom (default: 2, or 6 with --publish)",
+    )
+    p.add_argument(
+        "--tile-deep-max-zoom",
+        type=int,
+        default=None,
+        help="Override deep-window tile max zoom (default: 3, or 8 with --publish)",
+    )
+    p.add_argument(
         "--reroll-hooks",
         action="store_true",
         help="Try nearby seeds until story hooks pass",
@@ -114,20 +134,35 @@ def main(argv: list[str] | None = None) -> None:
 
     grid_n = resolve_grid_n(args.tier, args.grid_n)
     # Full sparse pyramid for real tiers; keep dev/default zooms cheap.
-    if args.tier in ("t0", "t1"):
+    if args.publish:
+        tile_global = DEFAULT_GLOBAL_MAX_ZOOM
+        tile_deep = min(8, DEFAULT_DEEP_MAX_ZOOM)
+        export_width = max(args.width, 2048)
+        export_height = max(args.height, 1024)
+        if args.tier == "dev":
+            grid_n = max(grid_n, 128)
+    elif args.tier in ("t0", "t1"):
         tile_global = DEFAULT_GLOBAL_MAX_ZOOM
         tile_deep = DEFAULT_DEEP_MAX_ZOOM
+        export_width = args.width
+        export_height = args.height
     else:
         tile_global = 2
         tile_deep = 3
+        export_width = args.width
+        export_height = args.height
+    if args.tile_global_max_zoom is not None:
+        tile_global = args.tile_global_max_zoom
+    if args.tile_deep_max_zoom is not None:
+        tile_deep = args.tile_deep_max_zoom
     world = generate_world(
         WorldConfig(
             seed=args.seed,
             grid_n=grid_n,
             ticks=args.ticks,
             era=args.era,
-            export_width=args.width,
-            export_height=args.height,
+            export_width=export_width,
+            export_height=export_height,
             tier=args.tier,
             use_cache=not args.no_cache,
             tile_global_max_zoom=tile_global,
@@ -143,6 +178,12 @@ def main(argv: list[str] | None = None) -> None:
         f"plates={meta['plate_count']} continents={meta['continent_count']} "
         f"landmasses={meta['landmass_count']} deposits={meta['resource_deposit_count']}"
     )
+    tiles = meta.get("viewer_tiles") or {}
+    if tiles.get("tile_count"):
+        print(
+            f"tiles={tiles['tile_count']} global_z={tiles.get('global_max_zoom')} "
+            f"deep_z={tiles.get('deep_max_zoom')} sparse={tiles.get('sparse')}"
+        )
 
 
 if __name__ == "__main__":
