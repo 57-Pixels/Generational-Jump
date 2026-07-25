@@ -72,9 +72,11 @@ class WorldConfig:
     tier: str = "dev"
     cache_dir: Path = field(default_factory=lambda: Path("/workspace/.cache/deeptime"))
     use_cache: bool = True
-    tile_global_max_zoom: int = DEFAULT_GLOBAL_MAX_ZOOM
-    tile_deep_max_zoom: int = DEFAULT_DEEP_MAX_ZOOM
+    tile_global_max_zoom: int = 2
+    tile_deep_max_zoom: int = 3
     # Lon/lat deep-zoom windows; empty uses DEFAULT_DEEP_WINDOWS at export.
+    # Production exports should set zooms to DEFAULT_GLOBAL_MAX_ZOOM /
+    # DEFAULT_DEEP_MAX_ZOOM (6 / 11).
     tile_deep_windows: tuple[DeepWindow, ...] = DEFAULT_DEEP_WINDOWS
 
 

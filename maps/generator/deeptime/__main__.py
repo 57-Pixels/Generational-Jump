@@ -13,6 +13,7 @@ from deeptime.simulate import SimConfig, run_until_hooks, save_result, simulate
 from deeptime.v2.export import save_world
 from deeptime.v2.model import WorldConfig, generate_world
 from deeptime.v2.tiers import TIERS, resolve_grid_n
+from deeptime.v2.tiles import DEFAULT_DEEP_MAX_ZOOM, DEFAULT_GLOBAL_MAX_ZOOM
 
 GENERATOR = Path(__file__).resolve().parent.parent
 EXPORTS = GENERATOR.parent / "exports"
@@ -112,6 +113,13 @@ def main(argv: list[str] | None = None) -> None:
         return
 
     grid_n = resolve_grid_n(args.tier, args.grid_n)
+    # Full sparse pyramid for real tiers; keep dev/default zooms cheap.
+    if args.tier in ("t0", "t1"):
+        tile_global = DEFAULT_GLOBAL_MAX_ZOOM
+        tile_deep = DEFAULT_DEEP_MAX_ZOOM
+    else:
+        tile_global = 2
+        tile_deep = 3
     world = generate_world(
         WorldConfig(
             seed=args.seed,
@@ -122,6 +130,8 @@ def main(argv: list[str] | None = None) -> None:
             export_height=args.height,
             tier=args.tier,
             use_cache=not args.no_cache,
+            tile_global_max_zoom=tile_global,
+            tile_deep_max_zoom=tile_deep,
         )
     )
     destinations = [EXPORTS]

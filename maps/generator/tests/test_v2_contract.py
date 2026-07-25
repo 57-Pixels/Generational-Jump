@@ -31,7 +31,15 @@ class ContractTests(unittest.TestCase):
         import tempfile
         from pathlib import Path
 
-        world = generate_world(WorldConfig(seed=11, grid_n=32, ticks=8))
+        world = generate_world(
+            WorldConfig(
+                seed=11,
+                grid_n=32,
+                ticks=8,
+                tile_global_max_zoom=1,
+                tile_deep_max_zoom=1,
+            )
+        )
         with tempfile.TemporaryDirectory() as tmp:
             meta = save_world(world, [Path(tmp)])
         self.assertEqual(meta["seed"], 11)
