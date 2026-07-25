@@ -34,12 +34,28 @@ const WORLD_IMAGE_BOUNDS = [
   [-180, -MERCATOR_MAX_LAT],
 ];
 
+/** Fallback when world-meta.json is missing (matches sparse pyramid plan). */
+const DEFAULT_TILE_MAX_ZOOM = 11;
+
+async function loadTileMaxZoom() {
+  try {
+    const res = await fetch(asset("world/world-meta.json"));
+    if (!res.ok) return DEFAULT_TILE_MAX_ZOOM;
+    const meta = await res.json();
+    const tiles = meta?.viewer_tiles ?? {};
+    return Number(tiles.max_zoom ?? tiles.deep_max_zoom ?? DEFAULT_TILE_MAX_ZOOM);
+  } catch {
+    return DEFAULT_TILE_MAX_ZOOM;
+  }
+}
+
 /**
  * Basemap as XYZ raster tiles (not an image source).
  * MapLibre globe extends tile meshes to the poles the same way it does for
  * Earth satellite rasters; ImageSource passes allowPoles=false.
+ * Outside sparse deep coverage MapLibre overzooms the last available parent.
  */
-function worldStyle() {
+function worldStyle(maxzoom) {
   const tiles = [asset("world/tiles/color/{z}/{x}/{y}.png")];
   return {
     version: 8,
@@ -50,7 +66,7 @@ function worldStyle() {
         tiles,
         tileSize: 256,
         minzoom: 0,
-        maxzoom: 3,
+        maxzoom,
         attribution: "Algorithmic world (deeptime v2)",
       },
     },
@@ -70,9 +86,11 @@ function worldStyle() {
   };
 }
 
+const tileMaxZoom = await loadTileMaxZoom();
+
 const map = new maplibregl.Map({
   container: "map",
-  style: worldStyle(),
+  style: worldStyle(tileMaxZoom),
   center: EASTMARCH.center,
   zoom: EASTMARCH.zoom,
   attributionControl: true,
@@ -121,6 +139,8 @@ const RESOURCE_COLORS = {
 
 const riverToggle = document.getElementById("river-layers");
 const settlementToggle = document.getElementById("settlement-layers");
+const featureToggle = document.getElementById("feature-layers");
+const navToggle = document.getElementById("nav-layers");
 
 function projectionForZoom(zoom) {
   return zoom < GLOBE_MAX_ZOOM ? "globe" : "mercator";
@@ -167,6 +187,35 @@ function setSettlementLayersVisible(visible) {
     if (map.getLayer(id)) {
       map.setLayoutProperty(id, "visibility", visibility);
     }
+  }
+}
+
+function setFeatureLayersVisible(visible) {
+  const visibility = visible ? "visible" : "none";
+  for (const id of ["features-label", "features-halo"]) {
+    if (map.getLayer(id)) {
+      map.setLayoutProperty(id, "visibility", visibility);
+    }
+  }
+}
+
+function setNavLayersVisible(visible) {
+  const visibility = visible ? "visible" : "none";
+  for (const id of ["navigation-label", "navigation-halo"]) {
+    if (map.getLayer(id)) {
+      map.setLayoutProperty(id, "visibility", visibility);
+    }
+  }
+}
+
+async function fetchGeoJson(path) {
+  try {
+    const res = await fetch(asset(path));
+    if (!res.ok) throw new Error(String(res.status));
+    return await res.json();
+  } catch {
+    console.warn(`GeoJSON missing: ${path}`);
+    return null;
   }
 }
 
@@ -262,6 +311,149 @@ async function addSurfaceLayers() {
           `<span>A/C ${properties.ac_kwh_pc_yr} kWh/person/year</span>`,
       )
       .addTo(map);
+  });
+}
+
+async function addFeatureLayers() {
+  const data = await fetchGeoJson("world/world-features.geojson");
+  if (!data) return;
+
+  map.addSource("world-features", { type: "geojson", data });
+  // Symbol labels (not circles) for named morphology features.
+  map.addLayer({
+    id: "features-halo",
+    type: "symbol",
+    source: "world-features",
+    layout: {
+      "text-field": ["coalesce", ["get", "name"], ["get", "kind"]],
+      "text-size": 11,
+      "text-offset": [0, 0.2],
+      "text-optional": true,
+      "text-max-width": 10,
+      "text-allow-overlap": false,
+    },
+    paint: {
+      "text-color": "#0a1218",
+      "text-halo-color": "#0a1218",
+      "text-halo-width": 2.4,
+      "text-opacity": 0.55,
+    },
+    minzoom: 2.5,
+  });
+  map.addLayer({
+    id: "features-label",
+    type: "symbol",
+    source: "world-features",
+    layout: {
+      "text-field": ["coalesce", ["get", "name"], ["get", "kind"]],
+      "text-size": 11,
+      "text-offset": [0, 0.2],
+      "text-optional": true,
+      "text-max-width": 10,
+    },
+    paint: {
+      "text-color": [
+        "match",
+        ["get", "kind"],
+        "sea",
+        "#9fd4ff",
+        "lake",
+        "#7ec8e8",
+        "range",
+        "#e8d4a8",
+        "river",
+        "#5ec8f5",
+        "islands",
+        "#c5e6a8",
+        "strait",
+        "#ffe08a",
+        "#f2f5f8",
+      ],
+      "text-halo-color": "#0a1218",
+      "text-halo-width": 1.1,
+    },
+    minzoom: 2.5,
+  });
+}
+
+async function addNavigationLayers() {
+  const data = await fetchGeoJson("world/world-navigation.geojson");
+  if (!data) return;
+
+  map.addSource("world-navigation", { type: "geojson", data });
+  map.addLayer({
+    id: "navigation-halo",
+    type: "symbol",
+    source: "world-navigation",
+    layout: {
+      visibility: "none",
+      "text-field": [
+        "match",
+        ["get", "kind"],
+        "harbour",
+        ["concat", "H", ["to-string", ["get", "rank"]]],
+        "chokepoint",
+        "∥",
+        "shelf_break",
+        "—",
+        ["get", "kind"],
+      ],
+      "text-size": 12,
+      "text-optional": true,
+      "text-allow-overlap": false,
+    },
+    paint: {
+      "text-color": "#0a1218",
+      "text-halo-color": "#0a1218",
+      "text-halo-width": 2.2,
+      "text-opacity": 0.5,
+    },
+    minzoom: 3.0,
+  });
+  map.addLayer({
+    id: "navigation-label",
+    type: "symbol",
+    source: "world-navigation",
+    layout: {
+      visibility: "none",
+      "text-field": [
+        "match",
+        ["get", "kind"],
+        "harbour",
+        [
+          "concat",
+          "Harbour ",
+          ["to-string", ["get", "rank"]],
+          " (",
+          ["to-string", ["get", "rating"]],
+          ")",
+        ],
+        "chokepoint",
+        "Chokepoint",
+        "shelf_break",
+        ["concat", "Shelf ", ["to-string", ["get", "depth_m"]], " m"],
+        ["get", "kind"],
+      ],
+      "text-size": 11,
+      "text-optional": true,
+      "text-max-width": 12,
+    },
+    paint: {
+      "text-color": [
+        "match",
+        ["get", "kind"],
+        "harbour",
+        "#7dffb0",
+        "chokepoint",
+        "#ffb86c",
+        "shelf_break",
+        "#9ab6ff",
+        "#f2f5f8",
+      ],
+      "text-halo-color": "#0a1218",
+      "text-halo-width": 1.1,
+    },
+    minzoom: 3.0,
   });
 }
 
@@ -449,6 +641,8 @@ map.on("load", async () => {
   applyProjection();
   await addSurfaceLayers();
   await addResourceLayers();
+  await addFeatureLayers();
+  await addNavigationLayers();
   await addWarLayers();
   if (warToggle) warToggle.checked = false;
   setWarLayersVisible(false);
@@ -471,6 +665,20 @@ map.on("load", async () => {
     setSettlementLayersVisible(false);
     settlementToggle.addEventListener("change", () => {
       setSettlementLayersVisible(settlementToggle.checked);
+    });
+  }
+  if (featureToggle) {
+    featureToggle.checked = true;
+    setFeatureLayersVisible(true);
+    featureToggle.addEventListener("change", () => {
+      setFeatureLayersVisible(featureToggle.checked);
+    });
+  }
+  if (navToggle) {
+    navToggle.checked = false;
+    setNavLayersVisible(false);
+    navToggle.addEventListener("change", () => {
+      setNavLayersVisible(navToggle.checked);
     });
   }
 });
