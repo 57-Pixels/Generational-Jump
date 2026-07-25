@@ -1,0 +1,24 @@
+{
+  "status": "promoted",
+  "seed": 150,
+  "generator_version": "2.2.0",
+  "tier": "dev",
+  "grid_n": 64,
+  "ticks": 40,
+  "land_fraction": 0.44366187712759503,
+  "threshold": 0.5,
+  "scores": {
+    "continent_scale": 1.0,
+    "veldara_claim": 0.9999881422010903,
+    "west_cordillera": 1.0,
+    "gulf": 1.0,
+    "highspine": 1.0,
+    "eastmarch": 0.9441554246827655,
+    "farreach": 1.0,
+    "harbours": 1.0,
+    "total": 0.993017945860482
+  },
+  "region_cell_count": 169,
+  "candidates_scored": 200,
+  "candidates_passing": 51
+}

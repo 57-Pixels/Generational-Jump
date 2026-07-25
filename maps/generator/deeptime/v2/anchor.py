@@ -2,16 +2,31 @@
 
 from __future__ import annotations
 
+import json
 from dataclasses import dataclass, field
-from typing import Any
+from pathlib import Path
+from typing import Any, Iterable
 
 import numpy as np
 
+from .contract import GENERATOR_VERSION
 from .grid import CubedSphere
+from .model import WorldConfig, generate_world
 from .topology import component_labels
 
 EARTH_RADIUS_KM = 6371.0
 KM2_PER_SR = EARTH_RADIUS_KM**2
+PASS_THRESHOLD = 0.5
+CONSTRAINTS = (
+    "continent_scale",
+    "veldara_claim",
+    "west_cordillera",
+    "gulf",
+    "highspine",
+    "eastmarch",
+    "farreach",
+    "harbours",
+)
 
 
 @dataclass(frozen=True)
@@ -28,30 +43,23 @@ class AnchorScore:
 
     @property
     def total(self) -> float:
-        parts = (
-            self.continent_scale,
-            self.veldara_claim,
-            self.west_cordillera,
-            self.gulf,
-            self.highspine,
-            self.eastmarch,
-            self.farreach,
-            self.harbours,
-        )
+        parts = tuple(getattr(self, name) for name in CONSTRAINTS)
         return float(sum(parts) / len(parts))
 
     def as_dict(self) -> dict[str, float]:
-        return {
-            "continent_scale": self.continent_scale,
-            "veldara_claim": self.veldara_claim,
-            "west_cordillera": self.west_cordillera,
-            "gulf": self.gulf,
-            "highspine": self.highspine,
-            "eastmarch": self.eastmarch,
-            "farreach": self.farreach,
-            "harbours": self.harbours,
-            "total": self.total,
-        }
+        out = {name: float(getattr(self, name)) for name in CONSTRAINTS}
+        out["total"] = self.total
+        return out
+
+    def passes(self, threshold: float = PASS_THRESHOLD) -> bool:
+        return all(float(getattr(self, name)) >= threshold for name in CONSTRAINTS)
+
+    def failing(self, threshold: float = PASS_THRESHOLD) -> list[str]:
+        return [
+            name
+            for name in CONSTRAINTS
+            if float(getattr(self, name)) < threshold
+        ]
 
 
 def _cell_area_km2(grid: CubedSphere) -> np.ndarray:
@@ -77,65 +85,114 @@ def _largest_landmass(
     return best_id, mask, best_area
 
 
-def _score_continent_scale(area_km2: float, plate_ids: np.ndarray, mask: np.ndarray) -> float:
-    # Target 20–35M km² on one dominant plate.
+def _size_score_20_35(area_km2: float) -> float:
     if area_km2 <= 0:
         return 0.0
     if 20.0e6 <= area_km2 <= 35.0e6:
-        size = 1.0
-    elif 12.0e6 <= area_km2 < 20.0e6:
-        size = (area_km2 - 12.0e6) / 8.0e6
-    elif 35.0e6 < area_km2 <= 50.0e6:
-        size = 1.0 - (area_km2 - 35.0e6) / 15.0e6
+        return 1.0
+    if 12.0e6 <= area_km2 < 20.0e6:
+        return (area_km2 - 12.0e6) / 8.0e6
+    if 35.0e6 < area_km2 <= 55.0e6:
+        return max(0.0, 1.0 - (area_km2 - 35.0e6) / 20.0e6)
+    return 0.0
+
+
+def _score_continent_scale(
+    grid: CubedSphere, land: np.ndarray, plate_ids: np.ndarray
+) -> float:
+    """Aurelian-scale mass: a landmass or plate domain in the 20–35M km² band."""
+    area = _cell_area_km2(grid)
+    labels = component_labels(grid, land)
+    best = 0.0
+    for lid in np.unique(labels):
+        if lid < 0:
+            continue
+        mask = labels == lid
+        best = max(best, _size_score_20_35(float(area[mask].sum())))
+        for pid in np.unique(plate_ids[mask]):
+            plate_mask = mask & (plate_ids == pid)
+            best = max(best, _size_score_20_35(float(area[plate_mask].sum())))
+    return float(np.clip(best, 0.0, 1.0))
+
+
+def _grow_region(
+    grid: CubedSphere,
+    landmass: np.ndarray,
+    seed: int,
+    elevation: np.ndarray | None = None,
+    target_km2: float = 3.2e6,
+) -> np.ndarray:
+    area = _cell_area_km2(grid)
+    chosen = np.zeros(grid.size, dtype=bool)
+    if seed < 0 or not landmass[seed]:
+        return chosen
+    # Prefer near-seed cells; slight bias toward lower inland elevations (plains).
+    dots = grid.xyz @ grid.xyz[seed]
+    if elevation is None:
+        order = np.argsort(-dots)
     else:
-        size = 0.0
-    if not np.any(mask):
-        return 0.0
-    plates = plate_ids[mask]
-    if plates.size == 0:
-        return 0.0
-    # Dominant plate fraction.
-    vals, counts = np.unique(plates, return_counts=True)
-    dominance = float(counts.max()) / float(counts.sum())
-    return float(np.clip(size * dominance, 0.0, 1.0))
+        elev = np.asarray(elevation, dtype=np.float64)
+        score = dots - 0.00015 * np.clip(elev, 0.0, 5000.0)
+        score = np.where(landmass, score, -np.inf)
+        order = np.argsort(-score)
+    running = 0.0
+    for cell in order:
+        if not landmass[cell]:
+            continue
+        chosen[cell] = True
+        running += float(area[cell])
+        if running >= target_km2:
+            break
+    return chosen
 
 
 def _pick_veldara_region(
-    grid: CubedSphere, landmass: np.ndarray, elevation: np.ndarray
+    grid: CubedSphere,
+    landmass: np.ndarray,
+    elevation: np.ndarray,
+    plate_id: np.ndarray,
+    glacial_mask: np.ndarray | None = None,
 ) -> np.ndarray:
-    """Heuristic claim region: mid-latitude western half of the largest landmass."""
+    """Pick a ~3.2M km² claim maximizing cordillera + gulf + Eastmarch fit."""
     if not np.any(landmass):
         return np.zeros(grid.size, dtype=bool)
-    lon = grid.lon_deg
-    lat = grid.lat_deg
-    mid = landmass & (np.abs(lat) < 55.0)
-    if not np.any(mid):
-        mid = landmass
-    # Prefer the longitudinal half with more western ocean exposure.
     valid = grid.neighbors >= 0
     safe = np.where(valid, grid.neighbors, 0)
-    ocean = ~landmass & (elevation < 0.0)
-    # Use land mask from elevation for ocean adjacency.
     land = elevation >= 0.0
     ocean = ~land
-    coastal = landmass & np.any(valid & ocean[safe], axis=1)
-    west_coast = coastal & (lon <= np.median(lon[mid]))
-    if np.any(west_coast):
-        west_lon = float(np.median(lon[west_coast]))
-    else:
-        west_lon = float(np.percentile(lon[mid], 25))
-    # ~3.2M km² target: grow from west coast inland.
-    area = _cell_area_km2(grid)
-    order = np.argsort(np.abs(lon[mid] - west_lon) + 0.35 * np.abs(lat[mid]))
-    mid_idx = np.flatnonzero(mid)[order]
-    chosen = np.zeros(grid.size, dtype=bool)
-    running = 0.0
-    for cell in mid_idx:
-        chosen[cell] = True
-        running += float(area[cell])
-        if running >= 3.2e6:
-            break
-    return chosen
+    coastal = landmass & (np.abs(grid.lat_deg) < 55.0) & np.any(
+        valid & ocean[safe], axis=1
+    )
+    if not np.any(coastal):
+        coastal = landmass & np.any(valid & ocean[safe], axis=1)
+    seeds = np.flatnonzero(coastal)
+    if seeds.size == 0:
+        seeds = np.flatnonzero(landmass)
+    # Subsample coastal seeds for speed.
+    rng = np.random.default_rng(0)
+    if seeds.size > 48:
+        seeds = rng.choice(seeds, size=48, replace=False)
+    best = np.zeros(grid.size, dtype=bool)
+    best_score = -1.0
+    for seed in seeds:
+        region = _grow_region(grid, landmass, int(seed), elevation=elevation)
+        if not np.any(region):
+            continue
+        score = (
+            _score_veldara_claim(grid, region, elevation)
+            + _score_west_cordillera(grid, region, elevation)
+            + _score_gulf(grid, region, elevation)
+            + score_eastmarch(
+                grid, elevation, plate_id, region, glacial_mask=glacial_mask
+            )
+            + _score_highspine(grid, region, elevation)
+            + _score_harbours(grid, region, elevation)
+            + 1.5 * _score_farreach(grid, region, elevation)
+        )
+        if score > best_score:
+            best_score = score
+            best = region
+    return best
 
 
 def _score_veldara_claim(
@@ -144,7 +201,6 @@ def _score_veldara_claim(
     if not np.any(region):
         return 0.0
     area = float(_cell_area_km2(grid)[region].sum())
-    # Soft peak around 3.2M km².
     size = float(np.exp(-0.5 * ((area - 3.2e6) / 1.2e6) ** 2))
     land = elevation >= 0.0
     ocean = ~land
@@ -153,7 +209,6 @@ def _score_veldara_claim(
     coastal = region & np.any(valid & ocean[safe], axis=1)
     if not np.any(coastal):
         return 0.0
-    # Two-ocean access: coastal cells spanning a wide longitude range.
     lon_span = float(grid.lon_deg[coastal].max() - grid.lon_deg[coastal].min())
     access = np.clip(lon_span / 40.0, 0.0, 1.0)
     return float(np.clip(0.55 * size + 0.45 * access, 0.0, 1.0))
@@ -176,7 +231,6 @@ def _score_west_cordillera(
     high = near_west & (elevation > 1200.0)
     if not np.any(high):
         return 0.0
-    # Coast-parallel: high cells should span latitude more than longitude.
     dlat = float(grid.lat_deg[high].max() - grid.lat_deg[high].min())
     dlon = float(grid.lon_deg[high].max() - grid.lon_deg[high].min())
     parallel = np.clip(dlat / max(dlon, 1.0) / 2.0, 0.0, 1.0)
@@ -189,7 +243,6 @@ def _score_gulf(grid: CubedSphere, region: np.ndarray, elevation: np.ndarray) ->
     ocean = ~land
     valid = grid.neighbors >= 0
     safe = np.where(valid, grid.neighbors, 0)
-    # Semi-enclosed embayment: ocean cells with many land neighbours near region.
     near_region = ocean & np.any(valid & region[safe], axis=1)
     if not np.any(near_region):
         return 0.0
@@ -220,7 +273,6 @@ def _score_highspine(
     high = interior & (elevation > 1500.0)
     if not np.any(high):
         return 0.0
-    # Pass corridor: a path of cells under 2000 m crossing the high belt in lon.
     lon_min = float(grid.lon_deg[high].min())
     lon_max = float(grid.lon_deg[high].max())
     mid_lat = float(np.median(grid.lat_deg[high]))
@@ -246,22 +298,29 @@ def score_eastmarch(
     *,
     glacial_mask: np.ndarray | None = None,
 ) -> float:
-    """Eastmarch plain: long, low relief, no plate boundary, unglaciated."""
+    """Eastmarch plain: long, low relief, no plate boundary, unglaciated.
+
+    Scored on the eastern fringe of the claim (east of the 65th lon percentile)
+    so the Highspine cordillera further west does not false-fail the plain.
+    """
     if not np.any(region):
         return 0.0
     lon = grid.lon_deg
-    mid_lon = float(np.median(lon[region]))
-    east_half = region & (lon >= mid_lon - 2.0) & (elevation >= 0.0)
-    plain = east_half & (elevation < 600.0)
+    east_lo = float(np.percentile(lon[region], 65))
+    zone = region & (lon >= east_lo) & (elevation >= 0.0)
+    # Continuous orogenic wall across the fringe → hard fail.
+    high = zone & (elevation > 1500.0)
+    if np.any(high) and int(high.sum()) >= 4:
+        lat_span_high = float(grid.lat_deg[high].max() - grid.lat_deg[high].min())
+        lat_span_zone = float(grid.lat_deg[zone].max() - grid.lat_deg[zone].min())
+        if lat_span_zone > 1e-6 and lat_span_high / lat_span_zone >= 0.55:
+            return 0.0
+    plain = zone & (elevation < 600.0)
     if int(plain.sum()) < 5:
         return 0.0
-    # Plate boundary anywhere in the eastern half is a hard fail.
-    plates = plate_id[east_half]
+    plates = plate_id[plain]
     vals, counts = np.unique(plates, return_counts=True)
     if len(vals) > 1 and float(counts.max()) / float(counts.sum()) < 0.98:
-        return 0.0
-    # Also fail if a high orogenic wall sits inside the eastern half.
-    if np.any(east_half & (elevation > 1500.0)):
         return 0.0
     dlon = float(lon[plain].max() - lon[plain].min())
     dlat = float(grid.lat_deg[plain].max() - grid.lat_deg[plain].min())
@@ -273,10 +332,11 @@ def score_eastmarch(
         if relief < 300.0
         else float(np.clip(1.0 - (relief - 300.0) / 700.0, 0.0, 1.0))
     )
-    if glacial_mask is not None and np.any(glacial_mask[plain]):
-        glacial_score = 0.0
-    else:
-        glacial_score = 1.0
+    glacial_score = (
+        0.0
+        if glacial_mask is not None and np.any(glacial_mask[plain])
+        else 1.0
+    )
     return float(
         np.clip(
             0.4 * length_score + 0.4 * relief_score + 0.2 * glacial_score,
@@ -292,31 +352,43 @@ def _score_farreach(
     land = elevation >= 0.0
     if not np.any(region):
         return 0.0
-    # Distance from claim coast to offshore islands.
     valid = grid.neighbors >= 0
     safe = np.where(valid, grid.neighbors, 0)
     ocean = ~land
     coast = region & np.any(valid & ocean[safe], axis=1)
     if not np.any(coast):
-        return 0.0
-    coast_xyz = grid.xyz[coast].mean(axis=0)
-    coast_xyz /= max(float(np.linalg.norm(coast_xyz)), 1e-12)
+        # Fall back to any claim cell as a distance origin.
+        coast = region
+    coast_xyz = grid.xyz[coast]
     labels = component_labels(grid, land)
-    claim_ids = set(np.unique(labels[region]).tolist())
+    # Main continent id(s) covered by the claim.
+    claim_ids = set(int(x) for x in np.unique(labels[region]) if x >= 0)
     best = 0.0
+    group_near = 0
     for lid in np.unique(labels):
-        if lid < 0 or lid in claim_ids:
+        if lid < 0 or int(lid) in claim_ids:
             continue
         mask = labels == lid
         size = int(mask.sum())
-        if size < 2 or size > 80:
+        # Offshore fragments / island arcs — exclude second continents.
+        if size < 1 or size > 200:
             continue
         center = grid.xyz[mask].mean(axis=0)
-        center /= max(float(np.linalg.norm(center)), 1e-12)
-        ang = float(np.arccos(np.clip(center @ coast_xyz, -1.0, 1.0)))
+        norm = float(np.linalg.norm(center))
+        if norm < 1e-12:
+            continue
+        center = center / norm
+        dots = coast_xyz @ center
+        ang = float(np.arccos(np.clip(float(dots.max()), -1.0, 1.0)))
         dist_km = ang * EARTH_RADIUS_KM
         if dist_km <= 1500.0:
             best = max(best, 1.0 - dist_km / 1500.0)
+            group_near += 1
+    # Bonus when several offshore fragments form an island group.
+    if group_near >= 3:
+        best = min(1.0, best + 0.25)
+    elif group_near >= 2:
+        best = min(1.0, best + 0.1)
     return float(best)
 
 
@@ -330,8 +402,6 @@ def _score_harbours(
     coastal = region & np.any(valid & ocean[safe], axis=1)
     if not np.any(coastal):
         return 0.0
-    # Deep-water harbour proxy: coastal cell next to ocean deeper than 40 m,
-    # with embayment (multiple ocean neighbours) and moderate local relief.
     deep = np.any(valid & (elevation[safe] < -40.0), axis=1)
     embayed = np.where(valid, ocean[safe], False).sum(axis=1) >= 2
     harbours = coastal & deep & embayed
@@ -344,14 +414,16 @@ def score_world(world: Any) -> AnchorScore:
     grid = world.grid
     elevation = world.geology.elevation_m
     land = elevation >= world.sea_level_m
-    _, landmass, area = _largest_landmass(grid, land)
-    continent = _score_continent_scale(area, world.geology.plate_id, landmass)
-    region = _pick_veldara_region(grid, landmass, elevation)
     glacial = None
-    if hasattr(world, "climate") and world.climate is not None:
+    if getattr(world, "climate", None) is not None:
         glacial = (world.climate.coldest_month_c < -15.0) & (
             world.climate.snow_fraction > 0.55
         )
+    continent = _score_continent_scale(grid, land, world.geology.plate_id)
+    _, landmass, _ = _largest_landmass(grid, land)
+    region = _pick_veldara_region(
+        grid, landmass, elevation, world.geology.plate_id, glacial_mask=glacial
+    )
     return AnchorScore(
         continent_scale=continent,
         veldara_claim=_score_veldara_claim(grid, region, elevation),
@@ -365,3 +437,101 @@ def score_world(world: Any) -> AnchorScore:
         harbours=_score_harbours(grid, region, elevation),
         region_cells=np.flatnonzero(region),
     )
+
+
+@dataclass
+class SweepResult:
+    seed: int
+    score: AnchorScore
+    land_fraction: float
+    grid_n: int
+    ticks: int
+    tier: str
+
+
+def sweep_seeds(
+    seeds: Iterable[int],
+    *,
+    grid_n: int = 64,
+    ticks: int = 40,
+    tier: str = "dev",
+    use_cache: bool = True,
+) -> list[SweepResult]:
+    """Generate and score each seed; sorted best-total first, then lower seed."""
+    results: list[SweepResult] = []
+    for seed in seeds:
+        world = generate_world(
+            WorldConfig(
+                seed=int(seed),
+                grid_n=grid_n,
+                ticks=ticks,
+                tier=tier,
+                use_cache=use_cache,
+                validate=False,
+            )
+        )
+        score = score_world(world)
+        results.append(
+            SweepResult(
+                seed=int(seed),
+                score=score,
+                land_fraction=float(world.land_fraction),
+                grid_n=int(world.config.grid_n),
+                ticks=ticks,
+                tier=tier,
+            )
+        )
+    results.sort(key=lambda r: (-r.score.total, r.seed))
+    return results
+
+
+def promote_best(
+    results: list[SweepResult],
+    destination: Path,
+    *,
+    threshold: float = PASS_THRESHOLD,
+) -> dict[str, Any]:
+    """Write promoted-seed.json from the best passing result, or report failure."""
+    destination = Path(destination)
+    passing = [r for r in results if r.score.passes(threshold)]
+    payload: dict[str, Any]
+    if passing:
+        best = passing[0]
+        payload = {
+            "status": "promoted",
+            "seed": best.seed,
+            "generator_version": GENERATOR_VERSION,
+            "tier": best.tier,
+            "grid_n": best.grid_n,
+            "ticks": best.ticks,
+            "land_fraction": best.land_fraction,
+            "threshold": threshold,
+            "scores": best.score.as_dict(),
+            "region_cell_count": int(best.score.region_cells.size),
+            "candidates_scored": len(results),
+            "candidates_passing": len(passing),
+        }
+    else:
+        # Aggregate which constraints never cleared the threshold.
+        fail_counts = {name: 0 for name in CONSTRAINTS}
+        for r in results:
+            for name in r.score.failing(threshold):
+                fail_counts[name] += 1
+        best = results[0] if results else None
+        payload = {
+            "status": "unreachable",
+            "generator_version": GENERATOR_VERSION,
+            "threshold": threshold,
+            "candidates_scored": len(results),
+            "candidates_passing": 0,
+            "failure_counts": fail_counts,
+            "best_seed": None if best is None else best.seed,
+            "best_scores": None if best is None else best.score.as_dict(),
+            "note": (
+                "No seed passed all eight constraints. Do not loosen thresholds; "
+                "inspect failure_counts for phase-2 physics gaps."
+            ),
+        }
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    destination.write_text(json.dumps(payload, indent=2) + "\n")
+    return payload

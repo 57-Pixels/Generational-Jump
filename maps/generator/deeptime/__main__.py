@@ -56,10 +56,45 @@ def main(argv: list[str] | None = None) -> None:
         action="store_true",
         help="Unused placeholder; exports always copy to viewer for now",
     )
+    p.add_argument(
+        "--sweep-seeds",
+        type=int,
+        default=0,
+        help="If >0, score this many seeds (0..N-1) and write promoted-seed.json",
+    )
+    p.add_argument(
+        "--promote-path",
+        type=Path,
+        default=GENERATOR / "promoted-seed.json",
+        help="Where to write the promoted seed record",
+    )
     args = p.parse_args(argv)
 
     if args.width % 2:
         raise SystemExit("width should be even")
+
+    if args.sweep_seeds > 0:
+        from deeptime.v2.anchor import promote_best, sweep_seeds
+
+        grid_n = resolve_grid_n(args.tier, args.grid_n)
+        results = sweep_seeds(
+            range(args.sweep_seeds),
+            grid_n=grid_n,
+            ticks=args.ticks,
+            tier=args.tier,
+            use_cache=not args.no_cache,
+        )
+        payload = promote_best(results, args.promote_path)
+        best = results[0]
+        print(
+            f"sweep n={args.sweep_seeds} status={payload['status']} "
+            f"best_seed={best.seed} total={best.score.total:.3f} "
+            f"failing={best.score.failing()} -> {args.promote_path}"
+        )
+        if payload["status"] != "promoted":
+            print("failure_counts=", payload.get("failure_counts"))
+            raise SystemExit(2)
+        return
 
     if args.engine == "v1":
         cfg = SimConfig(

@@ -2,12 +2,20 @@
 
 from __future__ import annotations
 
+import json
+import tempfile
 import unittest
+from pathlib import Path
 from types import SimpleNamespace
 
 import numpy as np
 
-from deeptime.v2.anchor import score_eastmarch, score_world
+from deeptime.v2.anchor import (
+    promote_best,
+    score_eastmarch,
+    score_world,
+    sweep_seeds,
+)
 from deeptime.v2.climate import compute_climate
 from deeptime.v2.grid import CubedSphere
 
@@ -50,10 +58,32 @@ class AnchorScoreTests(unittest.TestCase):
             geology=SimpleNamespace(elevation_m=elevation, plate_id=plate),
             climate=climate,
         )
-        a = score_world(world)  # type: ignore[arg-type]
-        b = score_world(world)  # type: ignore[arg-type]
+        a = score_world(world)
+        b = score_world(world)
         self.assertEqual(a.as_dict(), b.as_dict())
         np.testing.assert_array_equal(a.region_cells, b.region_cells)
+
+    def test_sweep_ranks_deterministically(self) -> None:
+        results = sweep_seeds(
+            [3, 1, 2],
+            grid_n=16,
+            ticks=6,
+            tier="dev",
+            use_cache=False,
+        )
+        self.assertEqual(len(results), 3)
+        totals = [r.score.total for r in results]
+        self.assertEqual(totals, sorted(totals, reverse=True))
+        for i in range(len(results) - 1):
+            if abs(results[i].score.total - results[i + 1].score.total) < 1e-12:
+                self.assertLessEqual(results[i].seed, results[i + 1].seed)
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "promoted-seed.json"
+            payload = promote_best(results, path)
+            self.assertTrue(path.exists())
+            loaded = json.loads(path.read_text())
+            self.assertEqual(loaded["status"], payload["status"])
+            self.assertIn(loaded["status"], ("promoted", "unreachable"))
 
 
 if __name__ == "__main__":
