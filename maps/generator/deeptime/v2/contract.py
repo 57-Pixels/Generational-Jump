@@ -11,7 +11,7 @@ from typing import Any
 
 import numpy as np
 
-GENERATOR_VERSION = "2.1.0"
+GENERATOR_VERSION = "2.2.0"
 
 # (dtype kind letter or 'dict', units, (lo, hi) or None for dicts/labels)
 FieldSpec = tuple[str, str, tuple[float, float] | None]
@@ -24,6 +24,7 @@ GEOLOGY_SCALARS: dict[str, FieldSpec] = {
     "sediment": ("f", "fraction", (0.0, 1.0)),
     "crust_thickness_km": ("f", "km", (5.0, 80.0)),
     "crust_age_ma": ("f", "Ma", (0.0, 4500.0)),
+    "seafloor_age_ma": ("f", "Ma", (0.0, 250.0)),
 }
 
 GEOLOGY_HISTORY_KEYS: tuple[str, ...] = (

@@ -36,7 +36,7 @@ class ContractTests(unittest.TestCase):
             meta = save_world(world, [Path(tmp)])
         self.assertEqual(meta["seed"], 11)
         self.assertEqual(meta["generator_version"], GENERATOR_VERSION)
-        self.assertEqual(GENERATOR_VERSION, "2.1.0")
+        self.assertEqual(GENERATOR_VERSION, "2.2.0")
 
 
 if __name__ == "__main__":

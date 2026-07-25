@@ -44,6 +44,7 @@ _GEOLOGY_SCALARS = (
     "basin_depth",
     "sediment",
     "landmass_id",
+    "seafloor_age_ma",
 )
 
 
@@ -136,6 +137,9 @@ def _unpack_geology(
         landmass_id=payload.get(
             "landmass_id", np.empty(0, dtype=np.int32)
         ),
+        seafloor_age_ma=payload.get(
+            "seafloor_age_ma", np.zeros_like(payload["elevation_m"])
+        ),
     )
     plate_model = PlateModel(
         seed_xyz=payload["plate_seed_xyz"],
@@ -224,6 +228,11 @@ def _upsample_geology(
             name: np.clip(up_smooth(values), 0, 1)
             for name, values in geology.paleoclimate.items()
         },
+        seafloor_age_ma=up_smooth(
+            geology.seafloor_age_ma
+            if geology.seafloor_age_ma.size
+            else np.zeros(source_grid.size)
+        ),
     )
     plates = PlateModel(
         seed_xyz=plate_model.seed_xyz.copy(),
