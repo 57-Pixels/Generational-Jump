@@ -702,3 +702,27 @@ map.on("zoomend", applyProjection);
 warToggle?.addEventListener("change", () => {
   setWarLayersVisible(warToggle.checked);
 });
+
+const legend = document.getElementById("legend");
+const legendToggle = document.getElementById("legend-toggle");
+const MOBILE_LEGEND_MQ = window.matchMedia("(max-width: 720px)");
+
+function setLegendCollapsed(collapsed) {
+  if (!legend || !legendToggle) return;
+  legend.classList.toggle("is-collapsed", collapsed);
+  legendToggle.setAttribute("aria-expanded", collapsed ? "false" : "true");
+  legendToggle.textContent = collapsed ? "Show" : "Hide";
+}
+
+function syncLegendToViewport() {
+  // Phones: collapsed chip. Desktop: open by default.
+  setLegendCollapsed(MOBILE_LEGEND_MQ.matches);
+}
+
+legendToggle?.addEventListener("click", () => {
+  const collapsed = !legend?.classList.contains("is-collapsed");
+  setLegendCollapsed(collapsed);
+});
+
+syncLegendToViewport();
+MOBILE_LEGEND_MQ.addEventListener("change", syncLegendToViewport);
