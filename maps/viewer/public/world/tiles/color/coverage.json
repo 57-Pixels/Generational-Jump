@@ -1,15 +1,15 @@
 {
   "scheme": "xyz",
   "path": "tiles/color/{z}/{x}/{y}.png",
-  "tile_count": 25,
-  "deep_tile_count": 4,
-  "max_zoom": 3,
-  "global_max_zoom": 2,
-  "deep_max_zoom": 3,
+  "tile_count": 6735,
+  "deep_tile_count": 1274,
+  "max_zoom": 8,
+  "global_max_zoom": 6,
+  "deep_max_zoom": 8,
   "tile_size": 256,
   "mercator_max_lat": 85.0511287798066,
   "sparse": true,
-  "expected_dense_tile_count": 85,
+  "expected_dense_tile_count": 87381,
   "deep_windows": [
     {
       "name": "aurelian",
@@ -29,14 +29,22 @@
   "coverage": {
     "aurelian": [
       {
-        "zoom": 3,
-        "tile_count": 4
+        "zoom": 7,
+        "tile_count": 260
+      },
+      {
+        "zoom": 8,
+        "tile_count": 1014
       }
     ],
     "veldara": [
       {
-        "zoom": 3,
-        "tile_count": 4
+        "zoom": 7,
+        "tile_count": 120
+      },
+      {
+        "zoom": 8,
+        "tile_count": 414
       }
     ]
   }

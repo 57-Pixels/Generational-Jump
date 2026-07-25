@@ -192,16 +192,16 @@
   "viewer_tiles": {
     "scheme": "xyz",
     "path": "tiles/color/{z}/{x}/{y}.png",
-    "max_zoom": 3,
-    "global_max_zoom": 2,
-    "deep_max_zoom": 3,
+    "max_zoom": 8,
+    "global_max_zoom": 6,
+    "deep_max_zoom": 8,
     "mercator_max_lat": 85.0511287798066,
     "note": "MapLibre globe extends raster tiles to poles; image sources do not",
-    "tile_count": 25,
-    "deep_tile_count": 4,
+    "tile_count": 6735,
+    "deep_tile_count": 1274,
     "tile_size": 256,
     "sparse": true,
-    "expected_dense_tile_count": 85,
+    "expected_dense_tile_count": 87381,
     "deep_windows": [
       {
         "name": "aurelian",
@@ -221,14 +221,22 @@
     "coverage": {
       "aurelian": [
         {
-          "zoom": 3,
-          "tile_count": 4
+          "zoom": 7,
+          "tile_count": 260
+        },
+        {
+          "zoom": 8,
+          "tile_count": 1014
         }
       ],
       "veldara": [
         {
-          "zoom": 3,
-          "tile_count": 4
+          "zoom": 7,
+          "tile_count": 120
+        },
+        {
+          "zoom": 8,
+          "tile_count": 414
         }
       ]
     }
@@ -241,14 +249,14 @@
     "n_plates": 12,
     "n_continents": 7,
     "era": "present",
-    "export_width": 1024,
-    "export_height": 512,
+    "export_width": 2048,
+    "export_height": 1024,
     "validate": true,
     "tier": "dev",
     "cache_dir": "/workspace/.cache/deeptime",
     "use_cache": true,
-    "tile_global_max_zoom": 2,
-    "tile_deep_max_zoom": 3,
+    "tile_global_max_zoom": 6,
+    "tile_deep_max_zoom": 8,
     "tile_deep_windows": [
       {
         "name": "aurelian",

@@ -139,8 +139,6 @@ def main(argv: list[str] | None = None) -> None:
         tile_deep = min(8, DEFAULT_DEEP_MAX_ZOOM)
         export_width = max(args.width, 2048)
         export_height = max(args.height, 1024)
-        if args.tier == "dev":
-            grid_n = max(grid_n, 128)
     elif args.tier in ("t0", "t1"):
         tile_global = DEFAULT_GLOBAL_MAX_ZOOM
         tile_deep = DEFAULT_DEEP_MAX_ZOOM

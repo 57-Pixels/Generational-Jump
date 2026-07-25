@@ -192,9 +192,9 @@
   "viewer_tiles": {
     "scheme": "xyz",
     "path": "tiles/color/{z}/{x}/{y}.png",
-    "max_zoom": 3,
-    "global_max_zoom": 2,
-    "deep_max_zoom": 3,
+    "max_zoom": 8,
+    "global_max_zoom": 6,
+    "deep_max_zoom": 8,
     "mercator_max_lat": 85.0511287798066,
     "note": "MapLibre globe extends raster tiles to poles; image sources do not"
   },
@@ -206,28 +206,28 @@
     "n_plates": 12,
     "n_continents": 7,
     "era": "lgm",
-    "export_width": 1024,
-    "export_height": 512,
+    "export_width": 2048,
+    "export_height": 1024,
     "validate": true,
     "tier": "dev",
     "cache_dir": "/workspace/.cache/deeptime",
     "use_cache": true,
-    "tile_global_max_zoom": 2,
-    "tile_deep_max_zoom": 3,
+    "tile_global_max_zoom": 6,
+    "tile_deep_max_zoom": 8,
     "tile_deep_windows": [
       {
         "name": "aurelian",
-        "lon_min": -10.0,
-        "lon_max": 24.0,
-        "lat_min": 26.0,
-        "lat_max": 48.0
+        "lon_min": 125.0,
+        "lon_max": 160.0,
+        "lat_min": 5.0,
+        "lat_max": 50.0
       },
       {
         "name": "veldara",
-        "lon_min": -4.0,
-        "lon_max": 18.0,
-        "lat_min": 30.0,
-        "lat_max": 44.0
+        "lon_min": 132.0,
+        "lon_max": 155.0,
+        "lat_min": 18.0,
+        "lat_max": 45.0
       }
     ]
   }
