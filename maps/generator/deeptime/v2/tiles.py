@@ -15,10 +15,13 @@ import math
 import shutil
 from dataclasses import asdict, dataclass
 from pathlib import Path
-from typing import Iterable, Sequence
+from typing import TYPE_CHECKING, Iterable, Sequence
 
 import numpy as np
 from PIL import Image
+
+if TYPE_CHECKING:
+    from .theater import TheaterOverlay
 
 # Same limit MapLibre / EPSG:3857 use.
 MERCATOR_MAX_LAT = 85.0511287798066
@@ -178,6 +181,7 @@ def _write_one_tile(
     tile_x: int,
     tile_y: int,
     tile_size: int,
+    overlays: Sequence["TheaterOverlay"] | None = None,
 ) -> None:
     n = 1 << zoom
     u = (np.arange(tile_size) + 0.5) / tile_size
@@ -189,6 +193,12 @@ def _write_one_tile(
     )
     lat = np.clip(lat, -MERCATOR_MAX_LAT, MERCATOR_MAX_LAT)
     tile = _sample_equirect(pixels, lon, lat)
+    if overlays:
+        from .theater import sample_overlays
+
+        base = tile.astype(np.float64) / 255.0
+        blended = sample_overlays(overlays, lon, lat, base)
+        tile = (np.clip(blended, 0, 1) * 255).astype(np.uint8)
     path = destination / str(zoom) / str(tile_x) / f"{tile_y}.png"
     path.parent.mkdir(parents=True, exist_ok=True)
     Image.fromarray(tile, mode="RGB").save(path)
@@ -204,6 +214,7 @@ def write_mercator_tiles(
     deep_windows: Sequence[DeepWindow] | None = None,
     tile_size: int = 256,
     write_manifest: bool = True,
+    theater_overlays: Sequence["TheaterOverlay"] | None = None,
 ) -> dict:
     """Write XYZ PNG tiles covering the Web Mercator world.
 
@@ -214,6 +225,9 @@ def write_mercator_tiles(
     - Sparse (default when ``max_zoom`` is None): write every tile through
       ``global_max_zoom``, then only tiles intersecting ``deep_windows``
       through ``deep_max_zoom``.
+
+    When ``theater_overlays`` are provided, deep-zoom tiles sample refined
+    theater color instead of (only) the coarse equirect.
     """
     if equirect_rgb.dtype != np.uint8:
         pixels = (np.clip(equirect_rgb, 0, 1) * 255).astype(np.uint8)
@@ -284,7 +298,13 @@ def write_mercator_tiles(
                     continue
                 seen.add((tile_x, tile_y))
                 _write_one_tile(
-                    pixels, destination, zoom, tile_x, tile_y, tile_size
+                    pixels,
+                    destination,
+                    zoom,
+                    tile_x,
+                    tile_y,
+                    tile_size,
+                    overlays=theater_overlays,
                 )
                 written += 1
                 deep_written += 1
@@ -303,6 +323,7 @@ def write_mercator_tiles(
         "expected_dense_tile_count": dense_tile_count(deep_max_zoom),
         "deep_windows": [asdict(w) for w in windows],
         "coverage": coverage,
+        "theater_refine": bool(theater_overlays),
     }
     if write_manifest:
         (destination / "coverage.json").write_text(json.dumps(meta, indent=2) + "\n")
