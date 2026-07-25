@@ -12,6 +12,7 @@ import numpy as np
 from PIL import Image, ImageDraw
 
 from .contract import GENERATOR_VERSION
+from .features import extract_features, features_to_geojson
 from .model import WorldResult
 from .tiles import MERCATOR_MAX_LAT, write_mercator_tiles
 
@@ -376,6 +377,8 @@ def save_world(world: WorldResult, destinations: list[Path]) -> dict:
     resource_geojson = _resource_geojson(world)
     river_geojson = _river_geojson(world)
     settlement_geojson = _settlement_sites(world)
+    feature_list = extract_features(world)
+    feature_geojson = features_to_geojson(feature_list, world)
     deposit_counts: dict[str, int] = {}
     for deposit in world.deposits:
         deposit_counts[deposit.deposit_class] = (
@@ -409,6 +412,9 @@ def save_world(world: WorldResult, destinations: list[Path]) -> dict:
             "ac_changes_habitability": True,
             "habitability_separate_from_incentives": True,
             "site_count": len(settlement_geojson["features"]),
+        },
+        "features": {
+            "count": len(feature_list),
         },
         "semantics": {
             "plate": "instantaneous rigid kinematic domain",
@@ -451,6 +457,9 @@ def save_world(world: WorldResult, destinations: list[Path]) -> dict:
         )
         (destination / f"world-settlement{suffix}.geojson").write_text(
             json.dumps(settlement_geojson, indent=2) + "\n"
+        )
+        (destination / f"world-features{suffix}.geojson").write_text(
+            json.dumps(feature_geojson, indent=2) + "\n"
         )
         (destination / f"world-meta{suffix}.json").write_text(
             json.dumps(meta, indent=2) + "\n"
