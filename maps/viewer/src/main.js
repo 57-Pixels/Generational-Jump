@@ -102,6 +102,8 @@ const map = new maplibregl.Map({
   zoom: EASTMARCH.zoom,
   attributionControl: true,
   maxPitch: 60,
+  // Do not overzoom past real tile detail (avoids soft mush).
+  maxZoom: tileMaxZoom,
   // Prefetch / retain more tiles so panning the theater stays fluid.
   maxTileCacheSize: 750,
   refreshExpiredTiles: false,

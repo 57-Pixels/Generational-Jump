@@ -23,9 +23,10 @@ python3 -m deeptime --engine v2 --seed 150 --publish
 python3 -m deeptime --sweep-seeds 200 --grid-n 64 --ticks 40 --tier dev
 ```
 
-`--publish` writes a smoother viewer package: ≥2048×1024 equirect, blended spherical
-sampling, dense global tiles through z6, and deep tiles through z8 over the
-Aurelian/Veldara windows. It does **not** change `--grid-n` / seed geology.
+`--publish` writes a high-quality viewer package: **`t1` morphology** by default
+(unless `--tier` is set), ≥4096×2048 equirect, blended spherical sampling, dense
+global tiles through z6, and deep tiles through z11 over the Aurelian/Veldara
+windows. Canon seed scoring is separate from publish quality.
 
 ### Resolution tiers
 
