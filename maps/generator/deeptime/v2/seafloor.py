@@ -7,6 +7,7 @@ from typing import Any
 import numpy as np
 
 from .grid import CubedSphere
+from .reefs import apply_island_arc_and_hotspots
 
 EARTH_RADIUS_KM = 6371.0
 
@@ -99,10 +100,17 @@ def build_seafloor_elevation(
     ridge = np.asarray(memory.get("ridge", np.zeros(grid.size)), dtype=np.float64)
     elevation += 450.0 * ridge * ocean.astype(float)
 
+    # Discrete volcanic arcs along subduction corridors only (no random islands
+    # here — hotspot chains are applied by callers that want them).
+    elevation, island_extras = apply_island_arc_and_hotspots(
+        grid, elevation, memory, seed=seed, include_hotspots=False
+    )
+
     extras = {
         "trench": trench_strength,
         "back_arc": back_arc_soft,
         "swell": swells * ocean.astype(float),
+        **island_extras,
     }
     return elevation, extras
 
