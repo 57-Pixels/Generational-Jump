@@ -7,6 +7,7 @@ from dataclasses import dataclass
 import numpy as np
 
 from .grid import CubedSphere
+from .ocean import compute_ocean
 
 
 @dataclass
@@ -25,6 +26,8 @@ class ClimateFields:
     snow_fraction: np.ndarray
     sea_ice_fraction: np.ndarray
     cdd24: np.ndarray
+    sst_c: np.ndarray | None = None
+    upwelling: np.ndarray | None = None
 
 
 _CHUNK = 2_000_000
@@ -138,13 +141,56 @@ def compute_climate(
         precipitation += rain
         humidity_air = np.where(ocean, 1.0, np.clip(incoming - rain, 0.0, 1.0))
 
-    # ITCZ convection and subtropical subsidence.
+    ocean_state = compute_ocean(grid, land, wind, temperature)
+    valid = grid.neighbors >= 0
+    safe = np.where(valid, grid.neighbors, 0)
+    coastal = land & np.any(valid & ocean[safe], axis=1)
+    neighbor_sst = np.where(valid, ocean_state.sst_c[safe], temperature[:, None])
+    ocean_nb = valid & ocean[safe]
+    sst_coast = np.where(
+        ocean_nb.any(axis=1),
+        np.where(ocean_nb, neighbor_sst, -np.inf).max(axis=1),
+        temperature,
+    )
+    temperature = np.where(coastal, 0.55 * temperature + 0.45 * sst_coast, temperature)
+    hottest = temperature + 0.5 * seasonal_range
+    coldest = temperature - 0.5 * seasonal_range
+
     itcz = np.exp(-((lat / 10.0) ** 2))
     subtropical_dry = np.exp(-((abs_lat - 27.0) / 8.5) ** 2)
+    upwelling_onshore = np.zeros(grid.size)
+    for slot in range(grid.neighbors.shape[1]):
+        n = safe[:, slot]
+        mask = valid[:, slot] & coastal & ocean[n]
+        upwelling_onshore[mask] = np.maximum(
+            upwelling_onshore[mask], ocean_state.upwelling[n[mask]]
+        )
+
     precipitation = (
         precipitation * 950.0
         + 1600.0 * itcz * (0.35 + 0.65 * ocean_influence)
         - 500.0 * subtropical_dry * continentality
+        - 900.0 * upwelling_onshore * land.astype(float)
+    )
+    # Rain shadow after mm conversion so lee drying survives large-scale terms.
+    # Multi-hop barrier: dry cells that sit below high terrain along the wind path.
+    barrier_m = np.zeros(grid.size, dtype=np.float64)
+    cursor = np.arange(grid.size)
+    peak = elevation_m.copy()
+    for _ in range(6):
+        cursor = upstream[cursor]
+        peak = np.maximum(peak, elevation_m[cursor])
+        barrier_m = np.maximum(barrier_m, peak - elevation_m)
+    descent_m = np.maximum(0.0, elevation_m[upstream] - elevation_m)
+    shadow_m = np.maximum(descent_m, 0.65 * barrier_m)
+    lee = land & (shadow_m > 40.0)
+    precipitation = np.where(
+        lee, precipitation * np.exp(-shadow_m / 900.0), precipitation
+    )
+    ascent_m = np.maximum(0.0, elevation_m - elevation_m[upstream])
+    windward = land & (ascent_m > 40.0)
+    precipitation = np.where(
+        windward, precipitation * (1.0 + ascent_m / 1000.0), precipitation
     )
     precipitation = np.clip(precipitation, 30.0, 4800.0)
     if era == "lgm":
@@ -158,17 +204,15 @@ def compute_climate(
     )
     hottest_wet_bulb = hottest - (1.0 - humidity) * 8.0
 
-    # A coarse seasonal rainfall contrast; continental tropical/subtropical
-    # cells receive the strongest monsoon tendency.
     monsoon = np.clip(
         continentality
         * np.exp(-((abs_lat - 20.0) / 16.0) ** 2)
-        * (precipitation / 1800.0),
+        * (precipitation / 1800.0)
+        * (0.55 + 0.45 * ocean_influence),
         0,
         1,
     )
     snow = np.where(land, np.clip((2.0 - coldest) / 22.0, 0, 1), 0.0)
-    # Partial sea ice avoids the old opaque, straight white polar bars.
     sea_ice = np.where(
         ocean,
         np.clip((-1.5 - coldest) / 18.0, 0, 0.88),
@@ -190,4 +234,6 @@ def compute_climate(
         snow_fraction=snow,
         sea_ice_fraction=sea_ice,
         cdd24=cdd24,
+        sst_c=ocean_state.sst_c,
+        upwelling=ocean_state.upwelling,
     )
