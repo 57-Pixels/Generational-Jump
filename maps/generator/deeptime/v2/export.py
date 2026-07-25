@@ -469,6 +469,27 @@ def save_world(world: WorldResult, destinations: list[Path]) -> dict:
         },
     }
 
+    theater_overlays = None
+    theater_target_km = None
+    if world.config.era == "present" and (
+        world.config.tile_deep_max_zoom > world.config.tile_global_max_zoom
+    ):
+        # Build once — refining large windows is expensive; do not redo per dest.
+        tier = get_tier(world.config.tier)
+        theater_target_km = float(tier.target_km) if tier.target_km else 1.0
+        if not tier.windowed:
+            theater_target_km = 1.0
+        theater_overlays = build_theater_overlays(
+            world.grid,
+            world.geology.elevation_m,
+            world.climate,
+            sea_level_m=world.sea_level_m,
+            windows=world.config.tile_deep_windows,
+            target_km=theater_target_km,
+            seed=world.config.seed,
+            iterations=12,
+        )
+
     for destination in destinations:
         destination.mkdir(parents=True, exist_ok=True)
         _save_rgb(destination / f"world-color{suffix}.png", base)
@@ -480,25 +501,6 @@ def save_world(world: WorldResult, destinations: list[Path]) -> dict:
         _save_rgb(destination / f"world-resources{suffix}.png", resources)
         _save_rgb(destination / f"world-settlement{suffix}.png", settlement)
         if world.config.era == "present":
-            theater_overlays = None
-            if world.config.tile_deep_max_zoom > world.config.tile_global_max_zoom:
-                # Nested refine target: prefer tier ladder spacing, else t2 (1 km).
-                tier = get_tier(world.config.tier)
-                target_km = float(tier.target_km) if tier.target_km else 1.0
-                # Windowed tiers (t2–t4) already express local spacing; for global
-                # parents use t2 (1 km) so deep tiles gain theater detail.
-                if not tier.windowed:
-                    target_km = 1.0
-                theater_overlays = build_theater_overlays(
-                    world.grid,
-                    world.geology.elevation_m,
-                    world.climate,
-                    sea_level_m=world.sea_level_m,
-                    windows=world.config.tile_deep_windows,
-                    target_km=target_km,
-                    seed=world.config.seed,
-                    iterations=12,
-                )
             tile_meta = write_mercator_tiles(
                 base,
                 destination / "tiles" / "color",
@@ -508,8 +510,8 @@ def save_world(world: WorldResult, destinations: list[Path]) -> dict:
                 theater_overlays=theater_overlays,
             )
             meta["viewer_tiles"].update(tile_meta)
-            if theater_overlays:
-                meta["viewer_tiles"]["theater_target_km"] = target_km
+            if theater_overlays is not None:
+                meta["viewer_tiles"]["theater_target_km"] = theater_target_km
                 meta["viewer_tiles"]["theater_windows"] = [
                     ov.name for ov in theater_overlays
                 ]
