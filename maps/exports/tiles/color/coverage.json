@@ -1,15 +1,15 @@
 {
   "scheme": "xyz",
   "path": "tiles/color/{z}/{x}/{y}.png",
-  "tile_count": 6735,
-  "deep_tile_count": 1274,
-  "max_zoom": 8,
+  "tile_count": 86262,
+  "deep_tile_count": 80801,
+  "max_zoom": 11,
   "global_max_zoom": 6,
-  "deep_max_zoom": 8,
+  "deep_max_zoom": 11,
   "tile_size": 256,
   "mercator_max_lat": 85.0511287798066,
   "sparse": true,
-  "expected_dense_tile_count": 87381,
+  "expected_dense_tile_count": 5592405,
   "deep_windows": [
     {
       "name": "aurelian",
@@ -35,6 +35,18 @@
       {
         "zoom": 8,
         "tile_count": 1014
+      },
+      {
+        "zoom": 9,
+        "tile_count": 3876
+      },
+      {
+        "zoom": 10,
+        "tile_count": 15251
+      },
+      {
+        "zoom": 11,
+        "tile_count": 60400
       }
     ],
     "veldara": [
@@ -45,7 +57,20 @@
       {
         "zoom": 8,
         "tile_count": 414
+      },
+      {
+        "zoom": 9,
+        "tile_count": 1564
+      },
+      {
+        "zoom": 10,
+        "tile_count": 6072
+      },
+      {
+        "zoom": 11,
+        "tile_count": 24288
       }
     ]
-  }
+  },
+  "theater_refine": true
 }
